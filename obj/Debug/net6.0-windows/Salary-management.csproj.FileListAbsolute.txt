@@ -1,0 +1,17 @@
+D:\Programming\.Projects\Salary-management\bin\Debug\net6.0-windows\Salary-management.exe
+D:\Programming\.Projects\Salary-management\bin\Debug\net6.0-windows\Salary-management.deps.json
+D:\Programming\.Projects\Salary-management\bin\Debug\net6.0-windows\Salary-management.runtimeconfig.json
+D:\Programming\.Projects\Salary-management\bin\Debug\net6.0-windows\Salary-management.dll
+D:\Programming\.Projects\Salary-management\bin\Debug\net6.0-windows\Salary-management.pdb
+D:\Programming\.Projects\Salary-management\obj\Debug\net6.0-windows\Salary-management.csproj.AssemblyReference.cache
+D:\Programming\.Projects\Salary-management\obj\Debug\net6.0-windows\Salary_management.Form1.resources
+D:\Programming\.Projects\Salary-management\obj\Debug\net6.0-windows\Salary-management.csproj.GenerateResource.cache
+D:\Programming\.Projects\Salary-management\obj\Debug\net6.0-windows\Salary-management.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\.Projects\Salary-management\obj\Debug\net6.0-windows\Salary-management.AssemblyInfoInputs.cache
+D:\Programming\.Projects\Salary-management\obj\Debug\net6.0-windows\Salary-management.AssemblyInfo.cs
+D:\Programming\.Projects\Salary-management\obj\Debug\net6.0-windows\Salary-management.csproj.CoreCompileInputs.cache
+D:\Programming\.Projects\Salary-management\obj\Debug\net6.0-windows\Salary-management.dll
+D:\Programming\.Projects\Salary-management\obj\Debug\net6.0-windows\refint\Salary-management.dll
+D:\Programming\.Projects\Salary-management\obj\Debug\net6.0-windows\Salary-management.pdb
+D:\Programming\.Projects\Salary-management\obj\Debug\net6.0-windows\Salary-management.genruntimeconfig.cache
+D:\Programming\.Projects\Salary-management\obj\Debug\net6.0-windows\ref\Salary-management.dll
