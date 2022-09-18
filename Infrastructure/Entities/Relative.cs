@@ -10,6 +10,7 @@ namespace Salary_management.Infrastructure.Entities
 {
 	public class Relative
 	{
+		public int Id { get; set; }
 		public DateOnly DateOfBirth { get; set; }
 
 		[MaxLength(255)]

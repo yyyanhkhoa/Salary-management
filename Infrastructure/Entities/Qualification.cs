@@ -14,7 +14,9 @@ namespace Salary_management.Infrastructure.Entities
 		
 		[MaxLength(255)] 
 		public string Name { get; set; } = null!;
-		
+
+		public float Score { get; set; }
+
 		public DateOnly IssueDate { get; set; }
 		
 		[MaxLength(255)] 
