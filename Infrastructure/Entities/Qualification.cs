@@ -15,20 +15,7 @@ namespace Salary_management.Infrastructure.Entities
 		[MaxLength(255)] 
 		public string Name { get; set; } = null!;
 
-		public float Score { get; set; }
-
-		public DateOnly IssueDate { get; set; }
-		
-		[MaxLength(255)] 
-		public string PlaceOfIssue { get; set; } = null!;
-		
-		public int Allowance { get; set; } 
-
 		public int ExpertiseId { get; set; }
 		public Expertise Expertise { get; set; } = null!;
-
-		public string StaffId { get; set; } = null!;
-		public Staff Staff { get; set; } = null!;
-
 	}
 }

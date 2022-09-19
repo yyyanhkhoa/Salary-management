@@ -20,6 +20,8 @@ namespace Salary_management.Infrastructure
 		public DbSet<PositionHistory> PositionHistories { get; set; } = null!;
 		public DbSet<Relative> Relatives { get; set; } = null!;
 		public DbSet<Qualification> Qualifications { get; set; } = null!;
+		public DbSet<StaffQualification> StaffQualifications { get; set; } = null!;
+		public DbSet<QualificationAllowanceHistory> QualificationAllowanceHistories { get; set; } = null!;
 
 
 		static SalaryManContext()
@@ -45,6 +47,11 @@ namespace Salary_management.Infrastructure
 			modelBuilder.Entity<UnionHistory>()
 						.HasKey(c => new { c.StaffId, c.UnionId });
 
+			modelBuilder.Entity<StaffQualification>()
+						.HasKey(c => new { c.StaffId, c.QualificationId });
+
+			modelBuilder.Entity<QualificationAllowanceHistory>()
+						.HasKey(c => new { c.QualificationId, c.Year } );
 		}
 	}
 }
