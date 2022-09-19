@@ -46,7 +46,7 @@ namespace Salary_management
                     currentButton = (Button)btnSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     panelTitleBar.BackColor = color;
                     panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     ThemeColor.PrimaryColor = color;
@@ -93,6 +93,21 @@ namespace Salary_management
         {
             OpenChildForm(new Forms.FormSetting(), sender);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
         }
     }
 }
