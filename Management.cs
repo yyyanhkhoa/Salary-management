@@ -15,6 +15,7 @@ namespace Salary_management
         private Button currentButton;
         private Random random;
         private int tempIndex;
+        private Form activeForm;
 
         public Management()
         {
@@ -67,14 +68,30 @@ namespace Salary_management
             }
         }
 
+        private void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            ActivateButton(btnSender);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.panelDesktopPanel.Controls.Add(childForm);
+            this.panelDesktopPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblTitle.Text = childForm.Text;
+        }
+
         private void PeronalBtn_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormPersonalInformation(), sender);
         }
 
         private void SettingBtn_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormSetting(), sender);
 
         }
     }
