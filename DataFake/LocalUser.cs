@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Salary_management.Infrastructure.Entities;
+using Salary_management.Infrastructure.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +12,7 @@ namespace Salary_management.DataFake
     {
         int mark = 0;
         List<User> _users;
+		AuthRepository _authRepo = new AuthRepository();
 
         public LocalUser(int mark, List<User> users)
         {
@@ -19,20 +22,17 @@ namespace Salary_management.DataFake
 
         public void createNewUser(string username, string password)
         {
-            mark++;
-            User newUser = new User(mark, username, password);
-            _users.Add(newUser);
-        }
+			var result = _authRepo.CreateUser(username, password);
+
+			if (result.Success)
+			{
+				mark++;
+				User newUser = new User(result.Payload.Id, username, password);
+				_users.Add(newUser);
+			}
+		}
 
         public bool checkUserExist(string username, string password)
-        {
-            foreach (User user in _users)
-            {
-                if (user.GetUserName() == username && user.GetPassWord() == password) return true;
-            }
-            return false;
-        }
-
-
+			=> new AuthRepository().CheckUserExist(username, password);
     }
 }
