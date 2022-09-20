@@ -37,24 +37,27 @@ namespace Salary_management.Infrastructure
 			modelBuilder.HasPostgresEnum<Gender>()
 						.HasPostgresEnum<RelativeType>();
 
-			// config composite keys
+			// config
+			modelBuilder.Entity<Auth>().HasAlternateKey(e => e.Username);
+
 			modelBuilder.Entity<PositionHistory>()
-						.HasKey(c => new{ c.StaffId, c.PositionId });
+						.HasKey(e => new{ e.StaffId, e.PositionId });
 
 			modelBuilder.Entity<UnitHistory>()
-						.HasKey(c => new{ c.StaffId, c.UnitId });
+						.HasKey(e => new{ e.StaffId, e.UnitId });
 
 			modelBuilder.Entity<UnionHistory>()
-						.HasKey(c => new { c.StaffId, c.UnionId });
+						.HasKey(e => new { e.StaffId, e.UnionId });
 
 			modelBuilder.Entity<StaffQualification>()
-						.HasKey(c => new { c.StaffId, c.QualificationId });
+						.HasKey(e => new { e.StaffId, e.QualificationId });
 
 			modelBuilder.Entity<QualificationAllowanceHistory>()
-						.HasKey(c => new { c.QualificationId, c.Year } );
+						.HasKey(e => new { e.QualificationId, e.Year } );
 
 			// seed DB
-			modelBuilder.Entity<Auth>().HasData(new Auth { Username = "admin", Password = "admin" });
+			modelBuilder.Entity<Auth>()
+						.HasData(new Auth { Id = 1, Username = "admin", Password = "admin" });
 		}
 	}
 }
