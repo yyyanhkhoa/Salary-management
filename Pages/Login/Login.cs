@@ -1,4 +1,6 @@
 
+using Salary_management.Infrastructure.Repositories;
+
 namespace Salary_management
 {   
     public partial class Login : Form
@@ -18,8 +20,11 @@ namespace Salary_management
         // Kiem tra login
         private void checkLogin(string username , string password)
         {
-            if (((username != "admin") || (password != "admin"))) MessageBox.Show("Incorrect Information");
-            else
+			var authRepo = new AuthRepository();
+            if (!authRepo.CheckUserExist(username, password))
+				MessageBox.Show("Incorrect Information");
+            
+			else
             {
                 Management mng = new Management();
                 this.Hide();
