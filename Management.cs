@@ -109,5 +109,10 @@ namespace Salary_management
         {
             ActivateButton(sender);
         }
-    }
+
+		private void Management_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			Application.Exit();
+		}
+	}
 }
