@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Salary_management
+namespace Salary_management.DataFake
 {
     internal class User
     {
@@ -12,7 +12,7 @@ namespace Salary_management
         string username;
         string password;
 
-        public User(int id,string username, string password)
+        public User(int id, string username, string password)
         {
             this.id = id;
             this.username = username;

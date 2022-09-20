@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Salary_management
+namespace Salary_management.DataFake
 {
     internal class LocalUser
     {
@@ -17,18 +17,18 @@ namespace Salary_management
             _users = users;
         }
 
-        public void createNewUser(string username,string password)
+        public void createNewUser(string username, string password)
         {
             mark++;
-            User newUser = new User(mark,username, password);
+            User newUser = new User(mark, username, password);
             _users.Add(newUser);
         }
 
-        public bool checkUserExist(string username,string password)
+        public bool checkUserExist(string username, string password)
         {
-            foreach(User user in _users)
+            foreach (User user in _users)
             {
-                if ((user.GetUserName() == username) && (user.GetPassWord() == password)) return true;
+                if (user.GetUserName() == username && user.GetPassWord() == password) return true;
             }
             return false;
         }
