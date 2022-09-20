@@ -10,7 +10,7 @@ namespace Salary_management.Infrastructure.Repositories
 	public class AuthRepository : Repository
 	{
 		public bool CheckUserExist(string username, string password)
-			=> Context.Auths.Contains(new Auth { Username = username, Password = password });
+			=> Context.Auths.Any(a => a.Username == username && a.Password == password);
 
 		public bool CheckUsernameExists(string username)
 			=> Context.Auths.Any(a => a.Username == username);
