@@ -52,6 +52,9 @@ namespace Salary_management.Infrastructure
 
 			modelBuilder.Entity<QualificationAllowanceHistory>()
 						.HasKey(c => new { c.QualificationId, c.Year } );
+
+			// seed DB
+			modelBuilder.Entity<Auth>().HasData(new Auth { Username = "admin", Password = "admin" });
 		}
 	}
 }
