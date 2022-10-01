@@ -7,7 +7,7 @@ This program uses Postgresql to store data.
 
 Download and install Postgresql: https://www.postgresql.org/download/ 
 
-**!! While installing postgresql, set your superuser's username and password to 'postgres' or you'll have to manually change the connection string for this program to run !!**
+**!! While installing postgresql, set your superuser's username and password to 'postgres' or you'll have to manually change the connection string inside `connection-string.txt` for this program to run !!**
 
 ## Setup
 1. Clone this repository: run `git clone https://github.com/yyyanhkhoa/Salary-management.git` and `cd Salary-management`
