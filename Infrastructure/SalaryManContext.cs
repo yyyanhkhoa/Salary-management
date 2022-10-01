@@ -29,7 +29,7 @@ namespace Salary_management.Infrastructure
 												.MapEnum<RelativeType>();
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-			=> optionsBuilder.UseNpgsql("Host=localhost;Database=SalaryMan;Username=postgres;Password=postgres")
+			=> optionsBuilder.UseNpgsql(File.ReadLines("connection-string.txt").First())
 							 .UseSnakeCaseNamingConvention();
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
