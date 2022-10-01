@@ -1,1 +1,0 @@
-Host=localhost;Database=SalaryMan;Username=postgres;Password=0945958952

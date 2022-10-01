@@ -29,9 +29,15 @@ namespace Salary_management.Infrastructure
 												.MapEnum<RelativeType>();
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-			=> optionsBuilder.UseNpgsql(File.ReadLines("connection-string.txt").First())
+		{
+			string connectionString = File.Exists("connection-string.txt") ? 
+				File.ReadLines("connection-string.txt").First() :
+				"Host=localhost;Database=SalaryMan;Username=postgres;Password=postgres";
+			
+			optionsBuilder.UseNpgsql(connectionString)
 							 .UseSnakeCaseNamingConvention();
 
+		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.HasPostgresEnum<Gender>()
