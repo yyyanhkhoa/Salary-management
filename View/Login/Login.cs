@@ -3,7 +3,6 @@ namespace Salary_management
 {   
     public partial class Login : Form
     {
-
         public Login()
         {
             InitializeComponent();
@@ -20,11 +19,20 @@ namespace Salary_management
         {
             if (((username != "admin") || (password != "admin"))) MessageBox.Show("Incorrect Information");
             else
+			var authRepo = new AuthRepository();            
+            if (!authRepo.CheckUserExist(username, password))
+				MessageBox.Show("Incorrect Information");            
+			else
             {
                 Management mng = new Management();
                 this.Hide();
                 mng.Show();
             }
+        }
+
+        private void closeBT_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
