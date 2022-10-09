@@ -42,5 +42,3 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		}
 	}
 }
-
-
