@@ -1,11 +1,12 @@
-﻿using Salary_management.Infrastructure.Entities;
+﻿using Salary_management.Controller.Infrastructure.Data;
+using Salary_management.Infrastructure.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Salary_management.Infrastructure.Repositories
+namespace Salary_management.Controller.Infrastructure.Repositories
 {
 	public class AuthRepository : Repository
 	{
@@ -18,7 +19,7 @@ namespace Salary_management.Infrastructure.Repositories
 		public Result<Auth> CreateUser(string username, string password)
 		{
 			if (!CheckUsernameExists(username))
-				return new Result<Auth> { Success = false, ErrorMessage = "Username already exists."};
+				return new Result<Auth> { Success = false, ErrorMessage = "Username already exists." };
 
 			var userAuth = new Auth { Username = username, Password = password };
 			Context.Auths.Add(new Auth { Username = username, Password = password });

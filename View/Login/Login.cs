@@ -1,5 +1,6 @@
 
-using Salary_management.Infrastructure.Repositories;
+
+using Salary_management.Controller.Infrastructure.Repositories;
 
 namespace Salary_management
 {   

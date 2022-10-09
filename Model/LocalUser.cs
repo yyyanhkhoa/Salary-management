@@ -1,5 +1,5 @@
-﻿using Salary_management.Infrastructure.Entities;
-using Salary_management.Infrastructure.Repositories;
+﻿using Salary_management.Controller.Infrastructure.Repositories;
+using Salary_management.Infrastructure.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Salary_management.DataFake
 {
-    internal class LocalUser
+	internal class LocalUser
     {
         int mark = 0;
         List<User> _users;
