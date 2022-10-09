@@ -12,7 +12,7 @@ namespace Salary_management.DataFake
     {
         int mark = 0;
         List<User> _users;
-		AuthRepository _authRepo = new AuthRepository();
+		RepositoryAuth _authRepo = new RepositoryAuth();
 
         public LocalUser(int mark, List<User> users)
         {
@@ -22,7 +22,7 @@ namespace Salary_management.DataFake
 
         public void createNewUser(string username, string password)
         {
-			var result = _authRepo.CreateUser(username, password);
+			var result = _authRepo.InsertUser(username, password);
 
 			if (result.Success)
 			{
@@ -33,6 +33,6 @@ namespace Salary_management.DataFake
 		}
 
         public bool checkUserExist(string username, string password)
-			=> new AuthRepository().CheckUserExist(username, password);
+			=> new RepositoryAuth().CheckUserExist(username, password);
     }
 }
