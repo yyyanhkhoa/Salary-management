@@ -13,7 +13,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 		public Result<Models.Auth> InsertUser(string username, string password)
 		{
-			if (!CheckUsernameExists(username))
+			if (CheckUsernameExists(username))
 				return new Result<Models.Auth> { Success = false, ErrorMessage = "Username already exists." };
 
 			var userAuth = new Models.Auth { Username = username, Password = password };
