@@ -21,4 +21,4 @@ Download and install Postgresql: https://www.postgresql.org/download/
 ## To change the connection string
 1. Create file named "connection-string.txt" in the project root
 
-2. Write your connection string inside the file, example: Host=localhost;Database=SalaryMan;Username=postgres;Password=postgres
+2. Write your connection string inside the file, example: `Host=localhost;Database=SalaryMan;Username=postgres;Password=postgres`
