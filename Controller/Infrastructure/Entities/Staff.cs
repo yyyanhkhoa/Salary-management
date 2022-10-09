@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Salary_management.Infrastructure.Entities
 {
-	public class Staff
+	public class Employee
 	{
 		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		[MaxLength(255)]

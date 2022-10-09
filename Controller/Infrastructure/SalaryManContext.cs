@@ -14,13 +14,13 @@ namespace Salary_management.Infrastructure
 	{
 		public DbSet<RewardOrDiscipline> RewardOrDisciplines { get; set; } = null!;
 		public DbSet<Auth> Auths { get; set; } = null!;
-		public DbSet<Staff> Staffs { get; set; } = null!;
+		public DbSet<Employee> Employees { get; set; } = null!;
 		public DbSet<UnitHistory> UnitHistories { get; set; } = null!;
 		public DbSet<Position> Positions { get; set; } = null!;
 		public DbSet<PositionHistory> PositionHistories { get; set; } = null!;
 		public DbSet<Relative> Relatives { get; set; } = null!;
 		public DbSet<Qualification> Qualifications { get; set; } = null!;
-		public DbSet<StaffQualification> StaffQualifications { get; set; } = null!;
+		public DbSet<EmployeeQualification> EmployeeQualifications { get; set; } = null!;
 		public DbSet<QualificationAllowanceHistory> QualificationAllowanceHistories { get; set; } = null!;
 
 
@@ -47,16 +47,16 @@ namespace Salary_management.Infrastructure
 			modelBuilder.Entity<Auth>().HasAlternateKey(e => e.Username);
 
 			modelBuilder.Entity<PositionHistory>()
-						.HasKey(e => new{ e.StaffId, e.PositionId });
+						.HasKey(e => new{ e.EmployeeId, e.PositionId });
 
 			modelBuilder.Entity<UnitHistory>()
-						.HasKey(e => new{ e.StaffId, e.UnitId });
+						.HasKey(e => new{ e.EmployeeId, e.UnitId });
 
 			modelBuilder.Entity<UnionHistory>()
-						.HasKey(e => new { e.StaffId, e.UnionId });
+						.HasKey(e => new { e.EmployeeId, e.UnionId });
 
-			modelBuilder.Entity<StaffQualification>()
-						.HasKey(e => new { e.StaffId, e.QualificationId });
+			modelBuilder.Entity<EmployeeQualification>()
+						.HasKey(e => new { e.EmployeeId, e.QualificationId });
 
 			modelBuilder.Entity<QualificationAllowanceHistory>()
 						.HasKey(e => new { e.QualificationId, e.Year } );
