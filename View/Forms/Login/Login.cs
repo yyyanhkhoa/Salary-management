@@ -21,7 +21,7 @@ namespace Salary_management
         // Kiem tra login
         private void checkLogin(string username , string password)
         {
-			var authRepo = new AuthRepository();
+			var authRepo = new RepositoryAuth();
             if (!authRepo.CheckUserExist(username, password))
 				MessageBox.Show("Incorrect Information");
             
