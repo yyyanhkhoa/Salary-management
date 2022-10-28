@@ -13,26 +13,11 @@ namespace Salary_management
     public partial class Management : Form
     {
         private Button currentButton;
-        private Random random;
-        private int tempIndex;
         private Form activeForm;
 
         public Management()
         {
             InitializeComponent();
-            random = new Random();
-        }
-
-        private Color SelectThemeColor()
-        {
-            int index = random.Next(ThemeColor.ColorList.Count);
-            while (tempIndex == index)
-            {
-                index = random.Next(ThemeColor.ColorList.Count);
-            }
-            tempIndex = index;
-            string color = ThemeColor.ColorList[index];
-            return ColorTranslator.FromHtml(color);
         }
 
         private void ActivateButton(object btnSender)
@@ -42,15 +27,9 @@ namespace Salary_management
                 if (currentButton != (Button)btnSender)
                 {
                     DisableButton();
-                    Color color = SelectThemeColor();
                     currentButton = (Button)btnSender;
-                    currentButton.BackColor = color;
-                    currentButton.ForeColor = Color.White;
+                    currentButton.ForeColor = Color.Black;
                     currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    panelTitleBar.BackColor = color;
-                    panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-                    ThemeColor.PrimaryColor = color;
-                    ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                 }
             }
         }
@@ -61,8 +40,6 @@ namespace Salary_management
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
-                    previousBtn.ForeColor = Color.Gainsboro;
                     previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
@@ -81,13 +58,8 @@ namespace Salary_management
             this.panelDesktopPanel.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitle.Text = childForm.Text;
         }
 
-        private void PeronalBtn_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.FormPersonalInformation(), sender);
-        }
 
         private void SettingBtn_Click(object sender, EventArgs e)
         {
@@ -114,5 +86,11 @@ namespace Salary_management
 		{
 			Application.Exit();
 		}
-	}
+
+        private void ListEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.ListFormEmployeeInformation(), sender);
+
+        }
+    }
 }

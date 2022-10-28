@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Salary_management.Forms
 {
-    public partial class FormPersonalInformation : Form
+    public partial class ListFormEmployeeInformation : Form
     {
-        public FormPersonalInformation()
+        public ListFormEmployeeInformation()
         {
             InitializeComponent();
         }

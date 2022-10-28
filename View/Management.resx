@@ -181,7 +181,7 @@
   <data name="SettingBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAYAAACMRWrdAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7BAAAOwQG4kWvtAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA68AAAOvAGVvHJJAAAAB3RJ
         TUUH5gkTEQoTIMCoLAAADZhJREFUaEPtmnlwldUZxg8WtXTQAEOBqba2TLXVmY7+08ofDMqMIhKiyBa2
         sBkWmQAGFCQgiAiEEJBVEZB9V3YMm6yBAAKyKIsssig7QgkmJPHC6fM7/Q5zibnEBDqlHc7MO/fmLuc7
         z3me93nf892Yu+Pu+D8eH3zwwQ0xevRoF6NGjbohRo4caYYNG2Z69Ohh3n777eDbd+j45JNPzIQJE8zS
@@ -243,7 +243,7 @@
         HhI8533euzvujrvjf2kY8y/zxJZXiCEskgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="PeronalBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ListEmployeeBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAYAAACMRWrdAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
         JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5gkTDBgVpalN6QAABeRJREFU
