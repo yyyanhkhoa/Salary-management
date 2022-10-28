@@ -43,6 +43,7 @@
             // 
             this.panelMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelMenu.BackColor = System.Drawing.Color.White;
+            this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.button2);
             this.panelMenu.Controls.Add(this.button1);
@@ -65,7 +66,7 @@
             this.button3.Location = new System.Drawing.Point(0, 264);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(184, 66);
+            this.button3.Size = new System.Drawing.Size(182, 66);
             this.button3.TabIndex = 5;
             this.button3.Text = "    Option5";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -83,7 +84,7 @@
             this.button2.Location = new System.Drawing.Point(0, 198);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(184, 66);
+            this.button2.Size = new System.Drawing.Size(182, 66);
             this.button2.TabIndex = 4;
             this.button2.Text = "    Option4";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -101,7 +102,7 @@
             this.button1.Location = new System.Drawing.Point(0, 132);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(184, 66);
+            this.button1.Size = new System.Drawing.Size(182, 66);
             this.button1.TabIndex = 3;
             this.button1.Text = "    Option3";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -119,7 +120,7 @@
             this.SettingBtn.Location = new System.Drawing.Point(0, 66);
             this.SettingBtn.Name = "SettingBtn";
             this.SettingBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.SettingBtn.Size = new System.Drawing.Size(184, 66);
+            this.SettingBtn.Size = new System.Drawing.Size(182, 66);
             this.SettingBtn.TabIndex = 2;
             this.SettingBtn.Text = "    Setting";
             this.SettingBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -137,7 +138,7 @@
             this.ListEmployeeBtn.Location = new System.Drawing.Point(0, 0);
             this.ListEmployeeBtn.Name = "ListEmployeeBtn";
             this.ListEmployeeBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ListEmployeeBtn.Size = new System.Drawing.Size(184, 66);
+            this.ListEmployeeBtn.Size = new System.Drawing.Size(182, 66);
             this.ListEmployeeBtn.TabIndex = 1;
             this.ListEmployeeBtn.Text = "Employee";
             this.ListEmployeeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

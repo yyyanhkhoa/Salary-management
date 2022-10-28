@@ -30,9 +30,9 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ListViewEmployee = new System.Windows.Forms.DataGridView();
             this.IdEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,7 +45,7 @@
             this.TitleListEmployee = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListViewEmployee)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +63,8 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.ListViewEmployee);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(10, 160);
             this.panel4.Name = "panel4";
@@ -71,23 +72,23 @@
             this.panel4.Size = new System.Drawing.Size(760, 260);
             this.panel4.TabIndex = 2;
             // 
-            // dataGridView1
+            // ListViewEmployee
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ListViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListViewEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdEmployee,
-            this.Name,
+            this.NameEmployee,
             this.Birth,
             this.CurrentUnit,
             this.CurrentSalary,
             this.Detail});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(740, 240);
-            this.dataGridView1.TabIndex = 0;
+            this.ListViewEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListViewEmployee.Location = new System.Drawing.Point(10, 10);
+            this.ListViewEmployee.Name = "ListViewEmployee";
+            this.ListViewEmployee.RowHeadersWidth = 51;
+            this.ListViewEmployee.RowTemplate.Height = 29;
+            this.ListViewEmployee.Size = new System.Drawing.Size(736, 236);
+            this.ListViewEmployee.TabIndex = 0;
             // 
             // IdEmployee
             // 
@@ -97,12 +98,12 @@
             this.IdEmployee.ReadOnly = true;
             this.IdEmployee.Width = 125;
             // 
-            // Name
+            // NameEmployee
             // 
-            this.Name.HeaderText = "Name";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.Width = 125;
+            this.NameEmployee.HeaderText = "Name";
+            this.NameEmployee.MinimumWidth = 6;
+            this.NameEmployee.Name = "NameEmployee";
+            this.NameEmployee.Width = 125;
             // 
             // Birth
             // 
@@ -211,7 +212,7 @@
             this.Text = "ListEmployee";
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListViewEmployee)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -230,9 +231,9 @@
         private TextBox textBox1;
         private ComboBox comboBox1;
         private Panel panel4;
-        private DataGridView dataGridView1;
+        private DataGridView ListViewEmployee;
         private DataGridViewTextBoxColumn IdEmployee;
-        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn NameEmployee;
         private DataGridViewTextBoxColumn Birth;
         private DataGridViewTextBoxColumn CurrentUnit;
         private DataGridViewTextBoxColumn CurrentSalary;

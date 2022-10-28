@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Salary_management.DataFake
+namespace Salary_management.Model.Auth
 {
     internal class User
     {
