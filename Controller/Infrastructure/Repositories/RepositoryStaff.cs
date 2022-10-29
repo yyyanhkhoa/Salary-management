@@ -9,25 +9,25 @@ using Models = Salary_management.Model;
 
 namespace Salary_management.Controller.Infrastructure.Repositories
 {
-	public class RepositoryStaff : Repository
+	public class RepositoryEmployee : Repository
 	{
-		public bool CheckStaffExist(string identityCardNumber)
-			=> Context.Staffs.Any(a => a.IdentityCardNumber == identityCardNumber);
+		public bool CheckEmployeeExist(string identityCardNumber)
+			=> Context.Employees.Any(a => a.IdentityCardNumber == identityCardNumber);
 
-		public Result<Models.Staff> InsertStaff(StaffInput input)
+		public Result<Models.Employee> InsertEmployee(EmployeeInput input)
 		{
-			if (CheckStaffExist(input.Name))
-				return new Result<Models.Staff> { Success = false, ErrorMessage = "Staff with this ID card already exists." };
+			if (CheckEmployeeExist(input.Name))
+				return new Result<Models.Employee> { Success = false, ErrorMessage = "Employee with this ID card already exists." };
 
-			var staff = Map(input);
-			Context.Staffs.Add(staff);
+			var Employee = Map(input);
+			Context.Employees.Add(Employee);
 			Context.SaveChanges();
-			return new Result<Models.Staff> { Success = true, Payload = staff };
+			return new Result<Models.Employee> { Success = true, Payload = Employee };
 		}
 
-		public static Models.Staff Map(StaffInput input)
+		public static Models.Employee Map(EmployeeInput input)
 		{
-			return new Models.Staff
+			return new Models.Employee
 			{
 				Name = input.Name,
 				Gender = input.Gender,
@@ -42,3 +42,5 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		}
 	}
 }
+
+

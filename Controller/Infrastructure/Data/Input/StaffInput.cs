@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Salary_management.Controller.Infrastructure.Data.Input
 {
-	public class StaffInput
+	public class EmployeeInput
 	{
 		public string Name { get; set; } = null!;
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Salary_management.Model
 {
-	public class Staff : Infrastructure.Entities.Staff
+	public class Employee : Infrastructure.Entities.Employee
 	{
 	}
 }
