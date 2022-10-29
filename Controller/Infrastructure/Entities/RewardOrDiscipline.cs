@@ -18,7 +18,7 @@ namespace Salary_management.Infrastructure.Entities
 		public DateOnly Date { get; set; }
 		public string Content { get; set; } = null!;
 
-		public string StaffId { get; set; } = null!;
-		public Staff Staff { get; set; } = null!;
+		public string EmployeeId { get; set; } = null!;
+		public Employee Employee { get; set; } = null!;
 	}
 }

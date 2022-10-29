@@ -1,6 +1,6 @@
-﻿namespace Salary_management.Forms
+﻿namespace Salary_management.View.Forms.Employee
 {
-    partial class FormPersonalInformation
+    partial class AddEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -34,21 +34,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(126, 160);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(216, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(565, 67);
+            this.label1.Size = new System.Drawing.Size(321, 46);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Đây là thông tin cá nhân";
+            this.label1.Text = "Them vao Employee";
             // 
-            // FormPersonalInformation
+            // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Name = "FormPersonalInformation";
-            this.Text = "FormPersonalInformation";
+            this.Name = "AddEmployee";
+            this.Text = "AddEmployee";
             this.ResumeLayout(false);
             this.PerformLayout();
 
