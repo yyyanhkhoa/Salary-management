@@ -16,6 +16,7 @@ namespace Salary_management.Infrastructure
 		public DbSet<RewardOrDiscipline> RewardOrDisciplines { get; set; } = null!;
 		public DbSet<Auth> Auths { get; set; } = null!;
 		public DbSet<Employee> Employees { get; set; } = null!;
+		public DbSet<Rank> Ranks { get; set; } = null!;
 		public DbSet<Unit> Units { get; set; } = null!;
 		public DbSet<UnitHistory> UnitHistories { get; set; } = null!;
 		public DbSet<Union> Unions { get; set; } = null!;

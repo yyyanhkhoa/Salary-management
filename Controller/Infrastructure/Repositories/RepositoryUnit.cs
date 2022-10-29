@@ -14,14 +14,14 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			if (CheckUnitExists(input.Name))
 				return new() { Success = false, ErrorMessage = "This unit already exists" };
 
-			var unit = Map(input);
+			var unit = MapToModel(input);
 			Context.Units.Add(unit);
 			Context.SaveChanges();
 
 			return new Result<Models.Unit> { Success = true, Payload = unit };
 		}
 
-		private static Models.Unit Map(UnitInput input)
+		private static Models.Unit MapToModel(UnitInput input)
 		{
 			return new Models.Unit
 			{
