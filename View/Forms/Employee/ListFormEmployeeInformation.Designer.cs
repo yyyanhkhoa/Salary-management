@@ -38,6 +38,8 @@
             this.CurrentSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Detail = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.AddBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.SearchBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -47,6 +49,7 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListViewEmployee)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +61,7 @@
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(780, 430);
+            this.panel1.Size = new System.Drawing.Size(822, 445);
             this.panel1.TabIndex = 0;
             // 
             // panel4
@@ -69,7 +72,7 @@
             this.panel4.Location = new System.Drawing.Point(10, 160);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(10);
-            this.panel4.Size = new System.Drawing.Size(760, 260);
+            this.panel4.Size = new System.Drawing.Size(802, 275);
             this.panel4.TabIndex = 2;
             // 
             // ListViewEmployee
@@ -87,8 +90,9 @@
             this.ListViewEmployee.Name = "ListViewEmployee";
             this.ListViewEmployee.RowHeadersWidth = 51;
             this.ListViewEmployee.RowTemplate.Height = 29;
-            this.ListViewEmployee.Size = new System.Drawing.Size(736, 236);
+            this.ListViewEmployee.Size = new System.Drawing.Size(778, 251);
             this.ListViewEmployee.TabIndex = 0;
+            this.ListViewEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListViewEmployee_CellContentClick);
             // 
             // IdEmployee
             // 
@@ -136,14 +140,35 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.TitleListEmployee);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(10, 10);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(760, 150);
+            this.panel2.Size = new System.Drawing.Size(802, 150);
             this.panel2.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.AddBtn);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(664, 10);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(124, 87);
+            this.panel5.TabIndex = 3;
+            // 
+            // AddBtn
+            // 
+            this.AddBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AddBtn.Location = new System.Drawing.Point(0, 0);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(124, 49);
+            this.AddBtn.TabIndex = 0;
+            this.AddBtn.Text = "Add";
+            this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // panel3
             // 
@@ -154,19 +179,20 @@
             this.panel3.Location = new System.Drawing.Point(10, 97);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(2);
-            this.panel3.Size = new System.Drawing.Size(736, 39);
+            this.panel3.Size = new System.Drawing.Size(778, 39);
             this.panel3.TabIndex = 1;
             // 
             // SearchBtn
             // 
             this.SearchBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.SearchBtn.Location = new System.Drawing.Point(612, 2);
+            this.SearchBtn.Location = new System.Drawing.Point(654, 2);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(122, 35);
             this.SearchBtn.TabIndex = 2;
             this.SearchBtn.Text = "search";
             this.SearchBtn.UseVisualStyleBackColor = true;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // textBox1
             // 
@@ -174,7 +200,7 @@
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.Location = new System.Drawing.Point(107, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(527, 34);
+            this.textBox1.Size = new System.Drawing.Size(541, 34);
             this.textBox1.TabIndex = 1;
             // 
             // comboBox1
@@ -192,7 +218,7 @@
             // TitleListEmployee
             // 
             this.TitleListEmployee.AutoSize = true;
-            this.TitleListEmployee.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TitleListEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TitleListEmployee.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TitleListEmployee.Location = new System.Drawing.Point(10, 10);
             this.TitleListEmployee.Name = "TitleListEmployee";
@@ -205,7 +231,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(842, 465);
             this.Controls.Add(this.panel1);
             this.Name = "ListFormEmployeeInformation";
             this.Padding = new System.Windows.Forms.Padding(10);
@@ -215,6 +241,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ListViewEmployee)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -238,5 +265,7 @@
         private DataGridViewTextBoxColumn CurrentUnit;
         private DataGridViewTextBoxColumn CurrentSalary;
         private DataGridViewButtonColumn Detail;
+        private Panel panel5;
+        private Button AddBtn;
     }
 }

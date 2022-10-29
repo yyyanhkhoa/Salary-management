@@ -12,7 +12,6 @@ namespace Salary_management
 {
     public partial class Management : Form
     {
-        private Button currentButton;
         private Form activeForm;
 
         public Management()
@@ -20,19 +19,7 @@ namespace Salary_management
             InitializeComponent();
         }
 
-        private void ActivateButton(object btnSender)
-        {
-            if (btnSender != null)
-            {
-                if (currentButton != (Button)btnSender)
-                {
-                    DisableButton();
-                    currentButton = (Button)btnSender;
-                    currentButton.ForeColor = Color.Black;
-                    currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                }
-            }
-        }
+ 
 
         private void DisableButton()
         {
@@ -45,11 +32,10 @@ namespace Salary_management
             }
         }
 
-        private void OpenChildForm(Form childForm, object btnSender)
+        public void OpenChildForm(Form childForm, object btnSender)
         {
             if (activeForm != null)
                 activeForm.Close();
-            ActivateButton(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -69,17 +55,15 @@ namespace Salary_management
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.ListFormEmployeeInformation(this), sender);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
         }
 
 		private void Management_FormClosed(object sender, FormClosedEventArgs e)
@@ -89,7 +73,7 @@ namespace Salary_management
 
         private void ListEmployeeBtn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.ListFormEmployeeInformation(), sender);
+            OpenChildForm(new Forms.ListFormEmployeeInformation(this), sender);
 
         }
     }

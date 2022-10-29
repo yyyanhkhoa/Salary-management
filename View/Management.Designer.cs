@@ -50,9 +50,9 @@
             this.panelMenu.Controls.Add(this.SettingBtn);
             this.panelMenu.Controls.Add(this.ListEmployeeBtn);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Location = new System.Drawing.Point(10, 10);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(184, 616);
+            this.panelMenu.Size = new System.Drawing.Size(184, 596);
             this.panelMenu.TabIndex = 0;
             // 
             // button3
@@ -148,9 +148,9 @@
             // panelDesktopPanel
             // 
             this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPanel.Location = new System.Drawing.Point(184, 0);
+            this.panelDesktopPanel.Location = new System.Drawing.Point(194, 10);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(799, 616);
+            this.panelDesktopPanel.Size = new System.Drawing.Size(779, 596);
             this.panelDesktopPanel.TabIndex = 2;
             // 
             // Management
@@ -161,6 +161,7 @@
             this.Controls.Add(this.panelDesktopPanel);
             this.Controls.Add(this.panelMenu);
             this.Name = "Management";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Management";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Management_FormClosed);
             this.panelMenu.ResumeLayout(false);
