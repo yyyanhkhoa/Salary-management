@@ -16,5 +16,15 @@ namespace Salary_management.View.Forms.Employee
         {
             InitializeComponent();
         }
+
+        private void ImagePicture_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
