@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Npgsql;
+using Salary_management.Controller.Infrastructure.Entities.Enums;
 using Salary_management.Infrastructure.Entities;
 using Salary_management.Infrastructure.Entities.Enums;
 using System;
@@ -28,7 +29,8 @@ namespace Salary_management.Infrastructure
 
 		static SalaryManContext()
 			=> NpgsqlConnection.GlobalTypeMapper.MapEnum<Gender>()
-												.MapEnum<RelativeType>();
+												.MapEnum<RelativeType>()
+												.MapEnum<Role>();
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -43,7 +45,8 @@ namespace Salary_management.Infrastructure
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.HasPostgresEnum<Gender>()
-						.HasPostgresEnum<RelativeType>();
+						.HasPostgresEnum<RelativeType>()
+						.HasPostgresEnum<Role>();
 
 			// config
 			modelBuilder.Entity<Auth>().HasAlternateKey(e => e.Username);
