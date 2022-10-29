@@ -1,6 +1,6 @@
 ﻿namespace Salary_management.View.Forms.Employee
 {
-    partial class AddEmployee
+    partial class Add
     {
         /// <summary>
         /// Required designer variable.
@@ -432,16 +432,16 @@
             this.BackBtn.Text = "< Back";
             this.BackBtn.UseVisualStyleBackColor = true;
             // 
-            // AddEmployee
+            // Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(893, 488);
             this.Controls.Add(this.panel1);
-            this.Name = "AddEmployee";
+            this.Name = "Add";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Text = "AddEmployee";
+            this.Text = "Add Employee";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.AddEmployeeGroupBox.ResumeLayout(false);

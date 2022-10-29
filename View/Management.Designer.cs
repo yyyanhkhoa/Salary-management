@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Management));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.SettingBtn = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SettingBtn = new System.Windows.Forms.Button();
+            this.PositionBtn = new System.Windows.Forms.Button();
             this.ListEmployeeBtn = new System.Windows.Forms.Button();
             this.panelDesktopPanel = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
@@ -44,16 +44,33 @@
             this.panelMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelMenu.BackColor = System.Drawing.Color.White;
             this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMenu.Controls.Add(this.SettingBtn);
             this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.button2);
-            this.panelMenu.Controls.Add(this.button1);
-            this.panelMenu.Controls.Add(this.SettingBtn);
+            this.panelMenu.Controls.Add(this.PositionBtn);
             this.panelMenu.Controls.Add(this.ListEmployeeBtn);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(10, 10);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(184, 596);
             this.panelMenu.TabIndex = 0;
+            // 
+            // SettingBtn
+            // 
+            this.SettingBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SettingBtn.FlatAppearance.BorderSize = 0;
+            this.SettingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SettingBtn.ForeColor = System.Drawing.Color.Black;
+            this.SettingBtn.Image = ((System.Drawing.Image)(resources.GetObject("SettingBtn.Image")));
+            this.SettingBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SettingBtn.Location = new System.Drawing.Point(0, 264);
+            this.SettingBtn.Name = "SettingBtn";
+            this.SettingBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.SettingBtn.Size = new System.Drawing.Size(182, 66);
+            this.SettingBtn.TabIndex = 6;
+            this.SettingBtn.Text = "    Setting";
+            this.SettingBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SettingBtn.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -63,7 +80,7 @@
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 264);
+            this.button3.Location = new System.Drawing.Point(0, 198);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(182, 66);
@@ -81,7 +98,7 @@
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 198);
+            this.button2.Location = new System.Drawing.Point(0, 132);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button2.Size = new System.Drawing.Size(182, 66);
@@ -91,41 +108,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // PositionBtn
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 132);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(182, 66);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "    Option3";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // SettingBtn
-            // 
-            this.SettingBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SettingBtn.FlatAppearance.BorderSize = 0;
-            this.SettingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SettingBtn.ForeColor = System.Drawing.Color.Black;
-            this.SettingBtn.Image = ((System.Drawing.Image)(resources.GetObject("SettingBtn.Image")));
-            this.SettingBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SettingBtn.Location = new System.Drawing.Point(0, 66);
-            this.SettingBtn.Name = "SettingBtn";
-            this.SettingBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.SettingBtn.Size = new System.Drawing.Size(182, 66);
-            this.SettingBtn.TabIndex = 2;
-            this.SettingBtn.Text = "    Setting";
-            this.SettingBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SettingBtn.UseVisualStyleBackColor = true;
-            this.SettingBtn.Click += new System.EventHandler(this.SettingBtn_Click);
+            this.PositionBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PositionBtn.FlatAppearance.BorderSize = 0;
+            this.PositionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PositionBtn.ForeColor = System.Drawing.Color.Black;
+            this.PositionBtn.Image = ((System.Drawing.Image)(resources.GetObject("PositionBtn.Image")));
+            this.PositionBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PositionBtn.Location = new System.Drawing.Point(0, 66);
+            this.PositionBtn.Name = "PositionBtn";
+            this.PositionBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.PositionBtn.Size = new System.Drawing.Size(182, 66);
+            this.PositionBtn.TabIndex = 3;
+            this.PositionBtn.Text = "Position";
+            this.PositionBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.PositionBtn.UseVisualStyleBackColor = true;
+            this.PositionBtn.Click += new System.EventHandler(this.PositionBtn_Click);
             // 
             // ListEmployeeBtn
             // 
@@ -173,10 +172,10 @@
 
         private Panel panelMenu;
         private Button ListEmployeeBtn;
-        private Button SettingBtn;
         private Panel panelDesktopPanel;
         private Button button3;
         private Button button2;
-        private Button button1;
-	}
+        private Button PositionBtn;
+        private Button SettingBtn;
+    }
 }

@@ -53,9 +53,7 @@ namespace Salary_management
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
+   
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -73,6 +71,12 @@ namespace Salary_management
         private void ListEmployeeBtn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new View.Forms.Employee.ListInformation(this), sender);
+        }
+
+        private void PositionBtn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.Forms.Position.ListPosition(this), sender);
+
         }
     }
 }

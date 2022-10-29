@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Salary_management.View.Forms.Employee
+namespace Salary_management.View.Forms.Position
 {
-    public partial class Add : Form
+    public partial class AddPosition : Form
     {
-        public Add()
+        public AddPosition()
         {
             InitializeComponent();
-        }
-
-        private void ImagePicture_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

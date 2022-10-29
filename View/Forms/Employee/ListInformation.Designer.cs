@@ -60,7 +60,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(822, 445);
             this.panel1.TabIndex = 0;
             // 
@@ -69,10 +69,10 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.ListViewEmployee);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(10, 160);
+            this.panel4.Location = new System.Drawing.Point(5, 155);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(10);
-            this.panel4.Size = new System.Drawing.Size(802, 275);
+            this.panel4.Size = new System.Drawing.Size(812, 285);
             this.panel4.TabIndex = 2;
             // 
             // ListViewEmployee
@@ -90,7 +90,7 @@
             this.ListViewEmployee.Name = "ListViewEmployee";
             this.ListViewEmployee.RowHeadersWidth = 51;
             this.ListViewEmployee.RowTemplate.Height = 29;
-            this.ListViewEmployee.Size = new System.Drawing.Size(778, 251);
+            this.ListViewEmployee.Size = new System.Drawing.Size(788, 261);
             this.ListViewEmployee.TabIndex = 0;
             this.ListViewEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListViewEmployee_CellContentClick);
             // 
@@ -144,17 +144,17 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.TitleListEmployee);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(10, 10);
+            this.panel2.Location = new System.Drawing.Point(5, 5);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(802, 150);
+            this.panel2.Size = new System.Drawing.Size(812, 150);
             this.panel2.TabIndex = 1;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.AddBtn);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(664, 10);
+            this.panel5.Location = new System.Drawing.Point(674, 10);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(124, 87);
             this.panel5.TabIndex = 3;
@@ -179,14 +179,14 @@
             this.panel3.Location = new System.Drawing.Point(10, 97);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(2);
-            this.panel3.Size = new System.Drawing.Size(778, 39);
+            this.panel3.Size = new System.Drawing.Size(788, 39);
             this.panel3.TabIndex = 1;
             // 
             // SearchBtn
             // 
             this.SearchBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.SearchBtn.Location = new System.Drawing.Point(654, 2);
+            this.SearchBtn.Location = new System.Drawing.Point(664, 2);
             this.SearchBtn.Name = "SearchBtn";
             this.SearchBtn.Size = new System.Drawing.Size(122, 35);
             this.SearchBtn.TabIndex = 2;
