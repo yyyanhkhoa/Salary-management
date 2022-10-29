@@ -1,6 +1,6 @@
-﻿namespace Salary_management.Forms
+﻿namespace Salary_management.View.Forms.Employee
 {
-    partial class ListFormEmployeeInformation
+    partial class ListInformation
     {
         /// <summary>
         /// Required designer variable.
@@ -226,14 +226,14 @@
             this.TitleListEmployee.TabIndex = 0;
             this.TitleListEmployee.Text = "Employee Management";
             // 
-            // ListFormEmployeeInformation
+            // ListInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(842, 465);
             this.Controls.Add(this.panel1);
-            this.Name = "ListFormEmployeeInformation";
+            this.Name = "ListInformation";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "ListEmployee";
             this.panel1.ResumeLayout(false);

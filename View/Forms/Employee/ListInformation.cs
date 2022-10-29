@@ -9,19 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Salary_management.Forms
+namespace Salary_management.View.Forms.Employee
 {
-    public partial class ListFormEmployeeInformation : Form
+    public partial class ListInformation : Form
     {
         private Management mng;
 
-        public ListFormEmployeeInformation(Management mng)
+        public ListInformation(Management mng)
         {
             this.mng = mng;
             InitializeComponent();
         }
 
-        public ListFormEmployeeInformation()
+        public ListInformation()
         {
 
             InitializeComponent();
