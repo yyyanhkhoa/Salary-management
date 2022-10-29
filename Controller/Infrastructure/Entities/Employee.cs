@@ -33,7 +33,7 @@ namespace Salary_management.Infrastructure.Entities
 		[MaxLength(12)]
 		public string IdentityCardNumber { get; set; } = null!;
 		
-		public string Image { get; set; } = null!;
+		public string? Image { get; set; }
 		
 		public float CoefficientAllowance { get; set; }
 	}
