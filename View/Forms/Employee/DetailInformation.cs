@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Salary_management.View.Forms
+namespace Salary_management.View.Forms.Employee
 {
     public partial class FormEmployeeDetail : Form
     {

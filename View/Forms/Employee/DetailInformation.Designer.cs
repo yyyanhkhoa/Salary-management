@@ -1,4 +1,4 @@
-﻿namespace Salary_management.View.Forms
+﻿namespace Salary_management.View.Forms.Employee
 {
     partial class FormEmployeeDetail
     {

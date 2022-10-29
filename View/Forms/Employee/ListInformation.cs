@@ -39,7 +39,7 @@ namespace Salary_management.Forms
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-                mng.OpenChildForm(new View.Forms.FormEmployeeDetail(), sender);
+                mng.OpenChildForm(new View.Forms.Employee.FormEmployeeDetail(), sender);
             }
         }
 
