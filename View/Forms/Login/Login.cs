@@ -1,5 +1,6 @@
 
-using Salary_management.Infrastructure.Repositories;
+
+using Salary_management.Controller.Infrastructure.Repositories;
 
 namespace Salary_management
 {   
@@ -20,7 +21,7 @@ namespace Salary_management
         // Kiem tra login
         private void checkLogin(string username , string password)
         {
-			var authRepo = new AuthRepository();
+			var authRepo = new RepositoryAuth();
             if (!authRepo.CheckUserExist(username, password))
 				MessageBox.Show("Incorrect Information");
             

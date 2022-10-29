@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Salary_management.Infrastructure.Entities
 {
-	public class StaffQualification
+	public class EmployeeQualification
 	{
 		public float Score { get; set; }
 
@@ -19,7 +19,7 @@ namespace Salary_management.Infrastructure.Entities
 		public int QualificationId { get; set; }
 		public Qualification Qualification { get; set; } = null!;
 
-		public string StaffId { get; set; } = null!;
-		public Staff Staff { get; set; } = null!;
+		public string EmployeeId { get; set; } = null!;
+		public Employee Employee { get; set; } = null!;
 	}
 }
