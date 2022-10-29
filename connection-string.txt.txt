@@ -1,1 +1,1 @@
-Host=localhost;Database=SalaryMan;Username=0945958952;Password=postgres
+Host=localhost;Database=SalaryMan;Username=0945958952;Password=0945958952

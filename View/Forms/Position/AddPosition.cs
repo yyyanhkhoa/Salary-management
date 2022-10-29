@@ -12,9 +12,16 @@ namespace Salary_management.View.Forms.Position
 {
     public partial class AddPosition : Form
     {
-        public AddPosition()
+        private Management mng;
+        public AddPosition(Management mng)
         {
+            this.mng = mng;
             InitializeComponent();
+        }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Position.ListPosition(this.mng), sender);
         }
     }
 }

@@ -32,6 +32,7 @@
             this.AddBtn = new System.Windows.Forms.Button();
             this.BackBtn = new System.Windows.Forms.Button();
             this.AddEmployeeGroupBox = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.RankGroupBox = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -41,7 +42,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.NameText = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.AddEmployeeGroupBox.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -82,6 +82,7 @@
             this.BackBtn.TabIndex = 0;
             this.BackBtn.Text = "< Back";
             this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // AddEmployeeGroupBox
             // 
@@ -100,6 +101,14 @@
             this.AddEmployeeGroupBox.TabIndex = 5;
             this.AddEmployeeGroupBox.TabStop = false;
             this.AddEmployeeGroupBox.Text = "Add Rank Form";
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(5, 286);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(790, 113);
+            this.panel1.TabIndex = 5;
             // 
             // panel4
             // 
@@ -191,14 +200,6 @@
             this.NameText.Name = "NameText";
             this.NameText.Size = new System.Drawing.Size(764, 27);
             this.NameText.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(5, 286);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(790, 113);
-            this.panel1.TabIndex = 5;
             // 
             // AddRank
             // 

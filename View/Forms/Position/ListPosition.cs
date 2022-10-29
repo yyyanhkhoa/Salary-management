@@ -20,12 +20,6 @@ namespace Salary_management.View.Forms.Position
             InitializeComponent();
         }
 
-        public ListPosition()
-        {
-
-            InitializeComponent();
-        }
-
         private void ListViewPosition_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
@@ -39,13 +33,13 @@ namespace Salary_management.View.Forms.Position
 
         private void AddRankBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Position.AddRank(), sender);
+            mng.OpenChildForm(new View.Forms.Position.AddRank(this.mng), sender);
 
         }
 
         private void AddPositionBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Position.AddPosition(), sender);
+            mng.OpenChildForm(new View.Forms.Position.AddPosition(this.mng), sender);
 
         }
     }

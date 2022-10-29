@@ -332,6 +332,7 @@
             this.GenderGroupBox.Controls.Add(this.MaleBtn);
             this.GenderGroupBox.Controls.Add(this.FemaleBtn);
             this.GenderGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GenderGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.GenderGroupBox.Location = new System.Drawing.Point(307, 10);
             this.GenderGroupBox.Name = "GenderGroupBox";
             this.GenderGroupBox.Padding = new System.Windows.Forms.Padding(40, 3, 40, 3);
@@ -378,6 +379,7 @@
             // 
             this.NameGroupBox.Controls.Add(this.NameText);
             this.NameGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.NameGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.NameGroupBox.Location = new System.Drawing.Point(10, 10);
             this.NameGroupBox.Name = "NameGroupBox";
             this.NameGroupBox.Size = new System.Drawing.Size(278, 50);
@@ -443,6 +445,7 @@
             this.BackBtn.TabIndex = 0;
             this.BackBtn.Text = "< Back";
             this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // Add
             // 
