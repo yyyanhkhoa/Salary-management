@@ -15,9 +15,11 @@ namespace Salary_management.View.Forms.Employee
 {
     public partial class Add : Form
     {
-        public Add()
+        private Management mng;
+        public Add(Management mng)
         {
             InitializeComponent();
+            this.mng = mng;
         }
 
         private void ImagePicture_Click(object sender, EventArgs e)
@@ -27,39 +29,55 @@ namespace Salary_management.View.Forms.Employee
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            var RepoEmployee = new RepositoryEmployee();
-            string name = NameText.Text;
-            Gender gender;
-            if (MaleBtn.Checked) gender = Gender.Male;
-            else gender = Gender.Female;
-            DateOnly dateOfBirth = DateOnly.FromDateTime(DateOfBirth.Value);
-            string ethnic = EthnicText.Text;
-            DateOnly startDate = DateOnly.FromDateTime(StartDate.Value);
-            string address = AddressText.Text;
-            string identity = IdentityText.Text;
-            float coefficientAllowance = float.Parse(CoefficientAllowanceText.Text);
-            //MessageBox.Show(name + " " + gender + " " + dateOfBirth + " " + ethnic + " " + address + " " + startDate + " " + identity + " " + coefficientAllowance);
-            RepoEmployee.InsertEmployee(new EmployeeInput()
+            if (NameText.Text == "") MessageBox.Show("Pls input name");
+            else if ((!MaleBtn.Checked) && (!FemaleBtn.Checked)) MessageBox.Show("Pls select gender");
+            else if (AddressText.Text == "") MessageBox.Show("Hay nhap dia chi");
+            else if (EthnicText.Text == "") MessageBox.Show("Hay nhap dan toc");
+            else if (CoefficientAllowanceText.Text == "") MessageBox.Show("Hay nhap he so phu cap");
+            else if (IdentityText.Text == "") MessageBox.Show("Hay nhap cmnd");
+            else
             {
-                Name = name,
-                Gender = gender,
-                DateOfBirth = dateOfBirth,
-                Ethnic = ethnic,
-                Address = address,
-                StartDate = startDate,
-                IdentityCardNumber = identity,
-                CoefficientAllowance = coefficientAllowance,
-            }) ;
+                var RepoEmployee = new RepositoryEmployee();
+                Gender gender;
+                if (MaleBtn.Checked) gender = Gender.Male;
+                else gender = Gender.Female;
+                DateOnly dateOfBirth = DateOnly.FromDateTime(DateOfBirth.Value);
+                DateOnly startDate = DateOnly.FromDateTime(StartDate.Value);
+                //MessageBox.Show(name + " " + gender + " " + dateOfBirth + " " + ethnic + " " + address + " " + startDate + " " + identity + " " + coefficientAllowance);
+                RepoEmployee.InsertEmployee(new EmployeeInput()
+                {
+                    Name = NameText.Text,
+                    Gender = gender,
+                    DateOfBirth = dateOfBirth,
+                    Ethnic = EthnicText.Text,
+                    Address = AddressText.Text,
+                    StartDate = startDate,
+                    IdentityCardNumber = IdentityText.Text,
+                    CoefficientAllowance = float.Parse(CoefficientAllowanceText.Text),
+                });
+            }
         }
 
         private void MaleBtn_CheckedChanged(object sender, EventArgs e)
         {
-            FemaleBtn.Checked = false;
+            if (FemaleBtn.Checked) {
+                FemaleBtn.Checked = false;
+                MaleBtn.Checked = true;
+            }
         }
 
         private void FemaleBtn_CheckedChanged(object sender, EventArgs e)
         {
-            MaleBtn.Checked = false;
+            if (MaleBtn.Checked) {
+                MaleBtn.Checked = false;
+                FemaleBtn.Checked = true; 
+            }
+
+        }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
         }
     }
 }

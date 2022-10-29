@@ -45,7 +45,7 @@ namespace Salary_management.View.Forms.Employee
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.Add(), sender);
+            mng.OpenChildForm(new View.Forms.Employee.Add(this.mng), sender);
 
         }
     }
