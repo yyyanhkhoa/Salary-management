@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Npgsql;
+using Salary_management.Controller.Infrastructure.Entities.Enums;
 using Salary_management.Infrastructure.Entities;
 using Salary_management.Infrastructure.Entities.Enums;
 using System;
@@ -14,19 +15,22 @@ namespace Salary_management.Infrastructure
 	{
 		public DbSet<RewardOrDiscipline> RewardOrDisciplines { get; set; } = null!;
 		public DbSet<Auth> Auths { get; set; } = null!;
-		public DbSet<Staff> Staffs { get; set; } = null!;
+		public DbSet<Employee> Employees { get; set; } = null!;
+		public DbSet<Unit> Units { get; set; } = null!;
 		public DbSet<UnitHistory> UnitHistories { get; set; } = null!;
+		public DbSet<Union> Unions { get; set; } = null!;
 		public DbSet<Position> Positions { get; set; } = null!;
 		public DbSet<PositionHistory> PositionHistories { get; set; } = null!;
 		public DbSet<Relative> Relatives { get; set; } = null!;
 		public DbSet<Qualification> Qualifications { get; set; } = null!;
-		public DbSet<StaffQualification> StaffQualifications { get; set; } = null!;
+		public DbSet<EmployeeQualification> EmployeeQualifications { get; set; } = null!;
 		public DbSet<QualificationAllowanceHistory> QualificationAllowanceHistories { get; set; } = null!;
 
 
 		static SalaryManContext()
 			=> NpgsqlConnection.GlobalTypeMapper.MapEnum<Gender>()
-												.MapEnum<RelativeType>();
+												.MapEnum<RelativeType>()
+												.MapEnum<Role>();
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -41,22 +45,23 @@ namespace Salary_management.Infrastructure
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.HasPostgresEnum<Gender>()
-						.HasPostgresEnum<RelativeType>();
+						.HasPostgresEnum<RelativeType>()
+						.HasPostgresEnum<Role>();
 
 			// config
 			modelBuilder.Entity<Auth>().HasAlternateKey(e => e.Username);
 
 			modelBuilder.Entity<PositionHistory>()
-						.HasKey(e => new{ e.StaffId, e.PositionId });
+						.HasKey(e => new{ e.EmployeeId, e.PositionId });
 
 			modelBuilder.Entity<UnitHistory>()
-						.HasKey(e => new{ e.StaffId, e.UnitId });
+						.HasKey(e => new{ e.EmployeeId, e.UnitId });
 
 			modelBuilder.Entity<UnionHistory>()
-						.HasKey(e => new { e.StaffId, e.UnionId });
+						.HasKey(e => new { e.EmployeeId, e.UnionId });
 
-			modelBuilder.Entity<StaffQualification>()
-						.HasKey(e => new { e.StaffId, e.QualificationId });
+			modelBuilder.Entity<EmployeeQualification>()
+						.HasKey(e => new { e.EmployeeId, e.QualificationId });
 
 			modelBuilder.Entity<QualificationAllowanceHistory>()
 						.HasKey(e => new { e.QualificationId, e.Year } );
