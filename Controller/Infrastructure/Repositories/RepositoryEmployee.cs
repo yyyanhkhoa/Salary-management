@@ -23,7 +23,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				return new Result<Models.Employee> { Success = false, ErrorMessage = "Employee with this ID card already exists." };
 
 			var employee = Map(input);
-			var newestEmployee = Context.Employees.LastOrDefault();
+			var newestEmployee = Context.Employees.Take(1).FirstOrDefault();
 
 			if (newestEmployee == null)
 			{
