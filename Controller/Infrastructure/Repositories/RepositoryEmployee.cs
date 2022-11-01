@@ -14,16 +14,16 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 {
 	public class RepositoryEmployee : Repository
 	{
-		public bool CheckEmployeeExist(string identityCardNumber)
+		public bool CheckIdCardExist(string identityCardNumber)
 			=> Context.Employees.Any(a => a.IdentityCardNumber == identityCardNumber);
 
 		public Result<Models.Employee> InsertEmployee(EmployeeInput input)
 		{
-			if (CheckEmployeeExist(input.Name))
+			if (CheckIdCardExist(input.IdentityCardNumber))
 				return new Result<Models.Employee> { Success = false, ErrorMessage = "Employee with this ID card already exists." };
 
 			var employee = Map(input);
-			var newestEmployee = Context.Employees.Take(1).FirstOrDefault();
+			var newestEmployee = Context.Employees.OrderByDescending(e => e.DateCreated).FirstOrDefault();
 
 			if (newestEmployee == null)
 			{
