@@ -44,7 +44,7 @@ namespace Salary_management.View.Forms.Employee
                 DateOnly dateOfBirth = DateOnly.FromDateTime(DateOfBirth.Value);
                 DateOnly startDate = DateOnly.FromDateTime(StartDate.Value);
                 //MessageBox.Show(name + " " + gender + " " + dateOfBirth + " " + ethnic + " " + address + " " + startDate + " " + identity + " " + coefficientAllowance);
-                RepoEmployee.InsertEmployee(new EmployeeInput()
+                var result = RepoEmployee.InsertEmployee(new EmployeeInput()
                 {
                     Name = NameText.Text,
                     Gender = gender,
@@ -55,6 +55,16 @@ namespace Salary_management.View.Forms.Employee
                     IdentityCardNumber = IdentityText.Text,
                     CoefficientAllowance = float.Parse(CoefficientAllowanceText.Text),
                 });
+                if (result.Success)
+                {
+                   MessageBox.Show("Insert Employee success");
+                    mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
+                }
+                else
+                {
+                    MessageBox.Show(result.ErrorMessage);
+                }
+
             }
         }
 
