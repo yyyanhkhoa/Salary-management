@@ -24,8 +24,18 @@ namespace Salary_management.View.Forms.Employee
 
         private void ImagePicture_Click(object sender, EventArgs e)
         {
+			using (OpenFileDialog dlg = new OpenFileDialog())
+			{
+				dlg.Title = "Open Image";
+				dlg.Filter = "Image files (*.bmp;*.jpg;*.jpeg;*.png)|*.bmo;*.jpg;*.jpeg;*.png";
 
-        }
+				if (dlg.ShowDialog() == DialogResult.OK)
+				{
+					ImagePicture.Image = Image.FromFile(dlg.FileName);
+					ImagePicture.SizeMode = PictureBoxSizeMode.StretchImage;
+				}
+			}
+		}
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
@@ -43,8 +53,11 @@ namespace Salary_management.View.Forms.Employee
                 else gender = Gender.Female;
                 DateOnly dateOfBirth = DateOnly.FromDateTime(DateOfBirth.Value);
                 DateOnly startDate = DateOnly.FromDateTime(StartDate.Value);
-                //MessageBox.Show(name + " " + gender + " " + dateOfBirth + " " + ethnic + " " + address + " " + startDate + " " + identity + " " + coefficientAllowance);
-                var result = RepoEmployee.InsertEmployee(new EmployeeInput()
+				//MessageBox.Show(name + " " + gender + " " + dateOfBirth + " " + ethnic + " " + address + " " + startDate + " " + identity + " " + coefficientAllowance);
+
+				
+				var imageConverter = new ImageConverter();
+				var result = RepoEmployee.InsertEmployee(new EmployeeInput()
                 {
                     Name = NameText.Text,
                     Gender = gender,
@@ -54,7 +67,9 @@ namespace Salary_management.View.Forms.Employee
                     StartDate = startDate,
                     IdentityCardNumber = IdentityText.Text,
                     CoefficientAllowance = float.Parse(CoefficientAllowanceText.Text),
+					Image = imageConverter.ConvertTo(ImagePicture.Image, typeof(byte[])) as byte[]
                 });
+
                 if (result.Success)
                 {
                    MessageBox.Show("Insert Employee success");
