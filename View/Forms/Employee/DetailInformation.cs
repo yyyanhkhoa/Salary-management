@@ -33,10 +33,18 @@ namespace Salary_management.View.Forms.Employee
         {
 
         }
-
-        private void AddBtn_Click(object sender, EventArgs e)
+        private void FixBtn_Click(object sender, EventArgs e)
         {
-
+            if (FixBtn.Text == "Fix")
+            {
+                AddEmployeeGroupBox.Enabled = true;
+                FixBtn.Text = "Save";
+            }
+            else
+            {
+                AddEmployeeGroupBox.Enabled = false;
+                FixBtn.Text = "Fix";
+            }
         }
 
         private void ImagePicture_Click(object sender, EventArgs e)
@@ -52,6 +60,186 @@ namespace Salary_management.View.Forms.Employee
         private void BackBtn_Click(object sender, EventArgs e)
         {
             mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void NameGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddEmployeeGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddNewBtn_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel12_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CoefficientAllowanceGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CoefficientAllowanceText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void StartDateGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StartDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void IdentityGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IdentityText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void EthnicGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EthnicText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DateOfBirth_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AddressGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddressText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void GenderGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaleBtn_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FemaleBtn_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void NameText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ImagePicture_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListViewEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
