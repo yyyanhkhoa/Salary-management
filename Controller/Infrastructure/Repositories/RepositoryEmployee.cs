@@ -54,8 +54,8 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			else
 			{
 				return Context.Employees.Where(
-					e => EF.Functions.Like(e.Name, $"%{keyword}%") ||
-						 EF.Functions.Like(e.Id, $"%{keyword}%")
+					e => EF.Functions.ILike(e.Name, $"%{keyword}%") ||
+						 EF.Functions.ILike(e.Id, $"%{keyword}%")
 				)
 					.Select(e => Map(e)).ToList();
 			}
