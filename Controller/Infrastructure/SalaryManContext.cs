@@ -22,7 +22,7 @@ namespace Salary_management.Infrastructure
 		public DbSet<Union> Unions { get; set; } = null!;
 		public DbSet<Position> Positions { get; set; } = null!;
 		public DbSet<PositionHistory> PositionHistories { get; set; } = null!;
-		public DbSet<Relative> Relatives { get; set; } = null!;
+		public DbSet<Family> Families { get; set; } = null!;
 		public DbSet<Qualification> Qualifications { get; set; } = null!;
 		public DbSet<EmployeeQualification> EmployeeQualifications { get; set; } = null!;
 		public DbSet<QualificationAllowanceHistory> QualificationAllowanceHistories { get; set; } = null!;

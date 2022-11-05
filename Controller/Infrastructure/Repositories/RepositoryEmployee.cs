@@ -17,12 +17,12 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		public bool CheckIdCardExist(string identityCardNumber)
 			=> Context.Employees.Any(a => a.IdentityCardNumber == identityCardNumber);
 
-		public Result<Models.EmployeeDetail> InsertEmployee(EmployeeInput input)
+		public Result<Models.Employee> InsertEmployee(EmployeeInput input)
 		{
 			if (CheckIdCardExist(input.IdentityCardNumber))
 				return new Result<Models.Employee> { Success = false, ErrorMessage = "Employee with this ID card already exists." };
 
-			var employee = Map(input);
+			var employee = MapToEntity(input);
 			var newestEmployee = Context.Employees.OrderByDescending(e => e.DateCreated).FirstOrDefault();
 
 			if (newestEmployee == null)
@@ -36,7 +36,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 			Context.Employees.Add(employee);
 			Context.SaveChanges();
-			return new Result<Models.EmployeeDetail> { Success = true, Payload = employee };
+			return new Result<Models.Employee> { Success = true, Payload = MapToModel(employee) };
 		}
 
 
@@ -45,11 +45,11 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		/// </summary>
 		/// <param name="searchString"></param>
 		/// <returns></returns>
-		public List<Models.EmployeeDetail> GetEmployees(string keyword)
+		public List<Models.Employee> GetEmployees(string keyword)
 		{
 			if (string.IsNullOrWhiteSpace(keyword))
 			{
-				return Context.Employees.Take(20).Select(e => Map(e)).ToList();
+				return Context.Employees.Take(20).Select(e => MapToModel(e)).ToList();
 			}
 			else
 			{
@@ -57,31 +57,47 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 					e => EF.Functions.ILike(e.Name, $"%{keyword}%") ||
 						 EF.Functions.ILike(e.Id, $"%{keyword}%")
 				)
-					.Select(e => Map(e)).ToList();
+					.Select(e => MapToModel(e)).ToList();
 			}
 		}
 
-		public static Models.EmployeeDetail Map(EmployeeInput input)
+		public Models.EmployeeDetail GetEmployeeDetail(string id)
 		{
-			return new Models.EmployeeDetail
+			return MapToModelEmployeeDetail(Context.Employees.Where(e => e.Id == id).FirstOrDefault()!);
+		}
+
+		public static Models.Employee MapToModel(Employee input)
+		{
+			return new Models.Employee
 			{
+				Id = input.Id,
 				Name = input.Name,
-				Gender = input.Gender,
 				DateOfBirth = input.DateOfBirth,
-				Ethnic = input.Ethnic,
-				StartDate = input.StartDate,
-				Address = input.Address,
 				IdentityCardNumber = input.IdentityCardNumber,
-				Image = input.Image,
 				CoefficientAllowance = input.CoefficientAllowance
 			};
 		}
 
-		public static Models.EmployeeDetail Map(Employee entity)
+		public static Employee MapToEntity(EmployeeInput entity)
+		{
+			return new Employee
+			{
+				Name = entity.Name,
+				Gender = entity.Gender,
+				DateOfBirth = entity.DateOfBirth,
+				Ethnic = entity.Ethnic,
+				StartDate = entity.StartDate,
+				Address = entity.Address,
+				IdentityCardNumber = entity.IdentityCardNumber,
+				Image = entity.Image,
+				CoefficientAllowance = entity.CoefficientAllowance
+			};
+		}
+
+		public static Models.EmployeeDetail MapToModelEmployeeDetail(Employee entity)
 		{
 			return new Models.EmployeeDetail
 			{
-				Id = entity.Id,
 				Name = entity.Name,
 				Gender = entity.Gender,
 				DateOfBirth = entity.DateOfBirth,

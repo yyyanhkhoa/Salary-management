@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Salary_management.Controller.Infrastructure.Entities.Enums;
@@ -13,9 +14,10 @@ using Salary_management.Infrastructure.Entities.Enums;
 namespace Salary_management.Migrations
 {
     [DbContext(typeof(SalaryManContext))]
-    partial class SalaryManContextModelSnapshot : ModelSnapshot
+    [Migration("20221105044957_RenameRelativeToFamily")]
+    partial class RenameRelativeToFamily
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -237,10 +239,6 @@ namespace Salary_management.Migrations
                     b.Property<int>("BaseSalary")
                         .HasColumnType("integer")
                         .HasColumnName("base_salary");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text")
-                        .HasColumnName("description");
 
                     b.Property<string>("Name")
                         .IsRequired()
