@@ -17,7 +17,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		public bool CheckIdCardExist(string identityCardNumber)
 			=> Context.Employees.Any(a => a.IdentityCardNumber == identityCardNumber);
 
-		public Result<Models.EmployeeDetail> InsertEmployee(EmployeeInput input)
+		public Result<Models.Employee> InsertEmployee(EmployeeInput input)
 		{
 			if (CheckIdCardExist(input.IdentityCardNumber))
 				return new Result<Models.Employee> { Success = false, ErrorMessage = "Employee with this ID card already exists." };
@@ -36,7 +36,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 			Context.Employees.Add(employee);
 			Context.SaveChanges();
-			return new Result<Models.EmployeeDetail> { Success = true, Payload = employee };
+			return new Result<Models.Employee> { Success = true, Payload = employee };
 		}
 
 
@@ -45,7 +45,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		/// </summary>
 		/// <param name="searchString"></param>
 		/// <returns></returns>
-		public List<Models.EmployeeDetail> GetEmployees(string keyword)
+		public List<Models.Employee> GetEmployees(string keyword)
 		{
 			if (string.IsNullOrWhiteSpace(keyword))
 			{
@@ -61,10 +61,10 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			}
 		}
 
-		public static Models.EmployeeDetail Map(EmployeeInput input)
+		public static Models.Employee Map(EmployeeInput input)
 		{
-			return new Models.EmployeeDetail
-			{
+			return new Models.Employee
+            {
 				Name = input.Name,
 				Gender = input.Gender,
 				DateOfBirth = input.DateOfBirth,
@@ -77,10 +77,10 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			};
 		}
 
-		public static Models.EmployeeDetail Map(Employee entity)
+		public static Models.Employee Map(Employee entity)
 		{
-			return new Models.EmployeeDetail
-			{
+			return new Models.Employee
+            {
 				Id = entity.Id,
 				Name = entity.Name,
 				Gender = entity.Gender,
