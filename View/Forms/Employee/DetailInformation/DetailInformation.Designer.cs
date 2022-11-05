@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.FixBtn = new System.Windows.Forms.Button();
-            this.BackBtn = new System.Windows.Forms.Button();
-            this.npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
-            this.npgsqlDataAdapter2 = new Npgsql.NpgsqlDataAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.AddEmployeeGroupBox = new System.Windows.Forms.GroupBox();
@@ -66,6 +61,9 @@
             this.NameText = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.ImagePicture = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.FixBtn = new System.Windows.Forms.Button();
+            this.BackBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.FamilyGridView = new System.Windows.Forms.DataGridView();
@@ -73,13 +71,15 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel14 = new System.Windows.Forms.Panel();
             this.RemoveFamilyBtn = new System.Windows.Forms.Button();
             this.FixFamilyBtn = new System.Windows.Forms.Button();
             this.AddFamilyBtn = new System.Windows.Forms.Button();
+            this.npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
+            this.npgsqlDataAdapter2 = new Npgsql.NpgsqlDataAdapter();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.AddEmployeeGroupBox.SuspendLayout();
@@ -97,6 +97,7 @@
             this.GenderGroupBox.SuspendLayout();
             this.NameGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImagePicture)).BeginInit();
+            this.panel3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FamilyGridView)).BeginInit();
@@ -108,7 +109,6 @@
             this.panel1.AutoSize = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.tabControl1);
-            this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -116,52 +116,6 @@
             this.panel1.Size = new System.Drawing.Size(842, 526);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.FixBtn);
-            this.panel3.Controls.Add(this.BackBtn);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(10, 468);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(820, 46);
-            this.panel3.TabIndex = 9;
-            // 
-            // FixBtn
-            // 
-            this.FixBtn.BackColor = System.Drawing.Color.Yellow;
-            this.FixBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FixBtn.Location = new System.Drawing.Point(722, 5);
-            this.FixBtn.Name = "FixBtn";
-            this.FixBtn.Size = new System.Drawing.Size(98, 41);
-            this.FixBtn.TabIndex = 1;
-            this.FixBtn.Text = "Fix";
-            this.FixBtn.UseVisualStyleBackColor = false;
-            // 
-            // BackBtn
-            // 
-            this.BackBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BackBtn.Location = new System.Drawing.Point(0, 5);
-            this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(94, 41);
-            this.BackBtn.TabIndex = 0;
-            this.BackBtn.Text = "< Back";
-            this.BackBtn.UseVisualStyleBackColor = true;
-            // 
-            // npgsqlDataAdapter1
-            // 
-            this.npgsqlDataAdapter1.DeleteCommand = null;
-            this.npgsqlDataAdapter1.InsertCommand = null;
-            this.npgsqlDataAdapter1.SelectCommand = null;
-            this.npgsqlDataAdapter1.UpdateCommand = null;
-            // 
-            // npgsqlDataAdapter2
-            // 
-            this.npgsqlDataAdapter2.DeleteCommand = null;
-            this.npgsqlDataAdapter2.InsertCommand = null;
-            this.npgsqlDataAdapter2.SelectCommand = null;
-            this.npgsqlDataAdapter2.UpdateCommand = null;
             // 
             // tabControl1
             // 
@@ -171,16 +125,17 @@
             this.tabControl1.Location = new System.Drawing.Point(10, 10);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(820, 458);
+            this.tabControl1.Size = new System.Drawing.Size(820, 504);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.AddEmployeeGroupBox);
+            this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(812, 425);
+            this.tabPage1.Size = new System.Drawing.Size(812, 471);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Info";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -200,7 +155,7 @@
             this.AddEmployeeGroupBox.Name = "AddEmployeeGroupBox";
             this.AddEmployeeGroupBox.Padding = new System.Windows.Forms.Padding(5);
             this.AddEmployeeGroupBox.Size = new System.Drawing.Size(806, 419);
-            this.AddEmployeeGroupBox.TabIndex = 6;
+            this.AddEmployeeGroupBox.TabIndex = 11;
             this.AddEmployeeGroupBox.TabStop = false;
             this.AddEmployeeGroupBox.Text = "Detail Employee Form";
             // 
@@ -502,6 +457,40 @@
             this.ImagePicture.TabIndex = 0;
             this.ImagePicture.TabStop = false;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.FixBtn);
+            this.panel3.Controls.Add(this.BackBtn);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(3, 422);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panel3.Size = new System.Drawing.Size(806, 46);
+            this.panel3.TabIndex = 10;
+            // 
+            // FixBtn
+            // 
+            this.FixBtn.BackColor = System.Drawing.Color.Yellow;
+            this.FixBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.FixBtn.Location = new System.Drawing.Point(708, 5);
+            this.FixBtn.Name = "FixBtn";
+            this.FixBtn.Size = new System.Drawing.Size(98, 41);
+            this.FixBtn.TabIndex = 1;
+            this.FixBtn.Text = "Fix";
+            this.FixBtn.UseVisualStyleBackColor = false;
+            this.FixBtn.Click += new System.EventHandler(this.FixBtn_Click_1);
+            // 
+            // BackBtn
+            // 
+            this.BackBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BackBtn.Location = new System.Drawing.Point(0, 5);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(94, 41);
+            this.BackBtn.TabIndex = 0;
+            this.BackBtn.Text = "< Back";
+            this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click_1);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox2);
@@ -537,7 +526,7 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewButtonColumn2});
+            this.dataGridViewTextBoxColumn9});
             this.FamilyGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FamilyGridView.Location = new System.Drawing.Point(5, 106);
             this.FamilyGridView.Name = "FamilyGridView";
@@ -545,6 +534,7 @@
             this.FamilyGridView.RowTemplate.Height = 29;
             this.FamilyGridView.Size = new System.Drawing.Size(796, 354);
             this.FamilyGridView.TabIndex = 17;
+            this.FamilyGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FamilyGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -577,14 +567,16 @@
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 110;
             // 
-            // dataGridViewButtonColumn2
+            // dataGridViewTextBoxColumn9
             // 
-            this.dataGridViewButtonColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewButtonColumn2.FillWeight = 95F;
-            this.dataGridViewButtonColumn2.HeaderText = "Relative Type";
-            this.dataGridViewButtonColumn2.MinimumWidth = 6;
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.Width = 156;
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn9.FillWeight = 95F;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Relative Type";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn9.Width = 156;
             // 
             // panel14
             // 
@@ -621,6 +613,7 @@
             this.FixFamilyBtn.TabIndex = 4;
             this.FixFamilyBtn.Text = "Fix";
             this.FixFamilyBtn.UseVisualStyleBackColor = false;
+            this.FixFamilyBtn.Click += new System.EventHandler(this.FixFamilyBtn_Click);
             // 
             // AddFamilyBtn
             // 
@@ -633,6 +626,21 @@
             this.AddFamilyBtn.TabIndex = 3;
             this.AddFamilyBtn.Text = "Add";
             this.AddFamilyBtn.UseVisualStyleBackColor = false;
+            this.AddFamilyBtn.Click += new System.EventHandler(this.AddFamilyBtn_Click);
+            // 
+            // npgsqlDataAdapter1
+            // 
+            this.npgsqlDataAdapter1.DeleteCommand = null;
+            this.npgsqlDataAdapter1.InsertCommand = null;
+            this.npgsqlDataAdapter1.SelectCommand = null;
+            this.npgsqlDataAdapter1.UpdateCommand = null;
+            // 
+            // npgsqlDataAdapter2
+            // 
+            this.npgsqlDataAdapter2.DeleteCommand = null;
+            this.npgsqlDataAdapter2.InsertCommand = null;
+            this.npgsqlDataAdapter2.SelectCommand = null;
+            this.npgsqlDataAdapter2.UpdateCommand = null;
             // 
             // FormEmployeeDetail
             // 
@@ -644,7 +652,6 @@
             this.Text = "FormEmployeeDetail";
             this.Load += new System.EventHandler(this.FormEmployeeDetail_Load);
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -669,6 +676,7 @@
             this.NameGroupBox.ResumeLayout(false);
             this.NameGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImagePicture)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -684,11 +692,15 @@
         private Panel panel1;
         private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter1;
         private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter2;
-        private Panel panel3;
-        private Button FixBtn;
-        private Button BackBtn;
         private TabControl tabControl1;
         private TabPage tabPage1;
+        private TabPage tabPage2;
+        private GroupBox groupBox2;
+        private DataGridView FamilyGridView;
+        private Panel panel14;
+        private Button RemoveFamilyBtn;
+        private Button FixFamilyBtn;
+        private Button AddFamilyBtn;
         private GroupBox AddEmployeeGroupBox;
         private Panel AddNewBtn;
         private Panel panel12;
@@ -719,17 +731,14 @@
         private TextBox NameText;
         private Panel panel8;
         private PictureBox ImagePicture;
-        private TabPage tabPage2;
-        private GroupBox groupBox2;
-        private DataGridView FamilyGridView;
+        private Panel panel3;
+        private Button FixBtn;
+        private Button BackBtn;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private DataGridViewButtonColumn dataGridViewButtonColumn2;
-        private Panel panel14;
-        private Button RemoveFamilyBtn;
-        private Button FixFamilyBtn;
-        private Button AddFamilyBtn;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

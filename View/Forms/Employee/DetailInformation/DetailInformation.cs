@@ -21,6 +21,9 @@ namespace Salary_management.View.Forms.Employee
             InitializeComponent();
             this.mng = mng;
             AddEmployeeGroupBox.Enabled = false;
+            FamilyGridView.Enabled = false;
+            FamilyGridView.Columns[0].ReadOnly = true;
+         
             BackBtn.Enabled = true;
             FixBtn.Enabled = true;
             
@@ -37,16 +40,7 @@ namespace Salary_management.View.Forms.Employee
         }
         private void FixBtn_Click(object sender, EventArgs e)
         {
-            if (FixBtn.Text == "Fix")
-            {
-                AddEmployeeGroupBox.Enabled = true;
-                FixBtn.Text = "Save";
-            }
-            else
-            {
-                AddEmployeeGroupBox.Enabled = false;
-                FixBtn.Text = "Fix";
-            }
+       
         }
 
         private void ImagePicture_Click(object sender, EventArgs e)
@@ -59,10 +53,7 @@ namespace Salary_management.View.Forms.Employee
 
         }
 
-        private void BackBtn_Click(object sender, EventArgs e)
-        {
-            mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
-        }
+
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -244,19 +235,59 @@ namespace Salary_management.View.Forms.Employee
 
         }
 
-        private void AddFamilyBtn_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void FormEmployeeDetail_Load(object sender, EventArgs e)
         {
         
         }
 
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
+        }
         private void BackBtn_Click_1(object sender, EventArgs e)
         {
             mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
+        }
+
+        private void AddFamilyBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FixBtn_Click_1(object sender, EventArgs e)
+        {
+            if (FixBtn.Text == "Fix")
+            {
+                AddEmployeeGroupBox.Enabled = true;
+                FixBtn.Text = "Save";
+            }
+            else
+            {
+                AddEmployeeGroupBox.Enabled = false;
+                FixBtn.Text = "Fix";
+            }
+        }
+
+        private void FamilyGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FixFamilyBtn_Click(object sender, EventArgs e)
+        {
+            if (FixFamilyBtn.Text == "Fix")
+            {
+               FamilyGridView.Enabled = true;
+                FixFamilyBtn.Text = "Save";
+            }
+            else
+            {
+                FamilyGridView.Enabled = false;
+                FixFamilyBtn.Text = "Fix";
+            }
         }
     }
 }
