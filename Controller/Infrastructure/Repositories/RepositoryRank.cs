@@ -27,28 +27,6 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Result<Models.Rank> { Success = true, Payload = MapToModel(rank) };
 		}
 
-		public Rank MapToEntity(InputRank inputRank)
-		{
-			return new Rank
-			{
-				Name = inputRank.Name,
-				Milestone = inputRank.Milestone,
-				Coefficient = inputRank.Coefficient
-			};
-		}
-
-		public Models.Rank MapToModel(Rank rank)
-		{
-			return new Models.Rank
-			{
-				Id = rank.Id,
-				Name = rank.Name,
-				Milestone = rank.Milestone,
-				Coefficient = rank.Coefficient
-			};
-		}
-
-
         public List<Models.Rank> GetRank(string keyword)
         {
             if (string.IsNullOrWhiteSpace(keyword))
@@ -65,7 +43,30 @@ namespace Salary_management.Controller.Infrastructure.Repositories
             }
         }
 
-        public static Models.Rank Map(Rank input)
+		public Result<Models.Rank> FixRank(int rankId, InputRank inputRank)
+		{
+			if (CheckRankExist(inputRank.Name))
+				return new Result<Models.Rank> { Success = false, ErrorMessage = "Rank with this name already exists." };
+
+			var rank = MapToEntity(inputRank);
+			rank.Id = rankId;
+			Context.Ranks.Update(rank);
+			Context.SaveChanges();
+
+			return new Result<Models.Rank> { Success = true, Payload = MapToModel(rank)};
+		}
+
+		public Result<Models.Rank> DeleteRank(int rankId)
+		{
+			var rank = new Rank { Id = rankId };
+			Context.Ranks.Attach(rank);
+			Context.Ranks.Remove(rank);
+			Context.SaveChanges();
+
+			return new Result<Models.Rank> { Success = true, Payload = null };
+		}
+
+		private static Models.Rank Map(Rank input)
 		{
 			return new Models.Rank
 			{
@@ -73,6 +74,27 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				Name = input.Name,
 				Milestone = input.Milestone,
 				Coefficient = input.Coefficient
+			};
+		}
+
+		private Rank MapToEntity(InputRank inputRank)
+		{
+			return new Rank
+			{
+				Name = inputRank.Name,
+				Milestone = inputRank.Milestone,
+				Coefficient = inputRank.Coefficient
+			};
+		}
+
+		private Models.Rank MapToModel(Rank rank)
+		{
+			return new Models.Rank
+			{
+				Id = rank.Id,
+				Name = rank.Name,
+				Milestone = rank.Milestone,
+				Coefficient = rank.Coefficient
 			};
 		}
 	}
