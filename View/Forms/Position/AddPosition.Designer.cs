@@ -32,10 +32,10 @@
             this.AddEmployeeGroupBox = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.DescriptionText = new System.Windows.Forms.RichTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.RankGroupBox = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.RankComboBox = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BaseSalaryGroupBox = new System.Windows.Forms.GroupBox();
             this.BaseSalaryText = new System.Windows.Forms.TextBox();
@@ -102,7 +102,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.richTextBox1);
+            this.groupBox4.Controls.Add(this.DescriptionText);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(10, 10);
             this.groupBox4.Name = "groupBox4";
@@ -111,14 +111,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Description";
             // 
-            // richTextBox1
+            // DescriptionText
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 23);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(742, 51);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.DescriptionText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DescriptionText.Location = new System.Drawing.Point(3, 23);
+            this.DescriptionText.Name = "DescriptionText";
+            this.DescriptionText.Size = new System.Drawing.Size(742, 51);
+            this.DescriptionText.TabIndex = 0;
+            this.DescriptionText.Text = "";
             // 
             // panel4
             // 
@@ -133,7 +133,7 @@
             // 
             // RankGroupBox
             // 
-            this.RankGroupBox.Controls.Add(this.comboBox1);
+            this.RankGroupBox.Controls.Add(this.RankComboBox);
             this.RankGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RankGroupBox.Location = new System.Drawing.Point(10, 10);
             this.RankGroupBox.Name = "RankGroupBox";
@@ -142,14 +142,15 @@
             this.RankGroupBox.TabStop = false;
             this.RankGroupBox.Text = "Rank";
             // 
-            // comboBox1
+            // RankComboBox
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(742, 28);
-            this.comboBox1.TabIndex = 0;
+            this.RankComboBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.RankComboBox.FormattingEnabled = true;
+            this.RankComboBox.Location = new System.Drawing.Point(3, 37);
+            this.RankComboBox.Name = "RankComboBox";
+            this.RankComboBox.Size = new System.Drawing.Size(742, 28);
+            this.RankComboBox.TabIndex = 0;
+            this.RankComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -252,6 +253,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "AddPosition";
             this.Text = "Add Position";
+            this.Load += new System.EventHandler(this.AddPosition_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.AddEmployeeGroupBox.ResumeLayout(false);
@@ -283,12 +285,12 @@
         private GroupBox groupBox4;
         private Panel panel4;
         private GroupBox RankGroupBox;
-        private ComboBox comboBox1;
+        private ComboBox RankComboBox;
         private Panel panel2;
         private GroupBox BaseSalaryGroupBox;
         private TextBox BaseSalaryText;
         private GroupBox groupBox2;
         private TextBox NameText;
-        private RichTextBox richTextBox1;
+        private RichTextBox DescriptionText;
     }
 }

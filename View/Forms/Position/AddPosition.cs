@@ -62,5 +62,22 @@ namespace Salary_management.View.Forms.Position
 
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddPosition_Load(object sender, EventArgs e)
+        {
+            RepositoryRank repo = new RepositoryRank();
+            List<Model.Rank> list = repo.GetRank("");
+            foreach (Model.Rank rank in list)
+            {
+                RankComboBox.Items.Add(rank.Id + " : " + rank.Name);
+            }
+        }
+
+      
     }
 }

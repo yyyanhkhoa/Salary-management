@@ -69,6 +69,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		{
 			return new Models.Rank
 			{
+				Id = input.Id,
 				Name = input.Name,
 				Milestone = input.Milestone,
 				Coefficient = input.Coefficient
