@@ -45,6 +45,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.AddBtn = new System.Windows.Forms.Button();
             this.BackBtn = new System.Windows.Forms.Button();
+            this.IdGroupBox = new System.Windows.Forms.GroupBox();
+            this.IDText = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.AddEmployeeGroupBox.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -56,6 +58,7 @@
             this.panel7.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.IdGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,10 +97,10 @@
             this.panel5.Controls.Add(this.groupBox4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel5.Location = new System.Drawing.Point(5, 280);
+            this.panel5.Location = new System.Drawing.Point(5, 294);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(10);
-            this.panel5.Size = new System.Drawing.Size(768, 97);
+            this.panel5.Size = new System.Drawing.Size(768, 83);
             this.panel5.TabIndex = 5;
             // 
             // groupBox4
@@ -106,7 +109,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(10, 10);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(748, 77);
+            this.groupBox4.Size = new System.Drawing.Size(748, 63);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Description";
@@ -116,7 +119,7 @@
             this.DescriptionText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DescriptionText.Location = new System.Drawing.Point(3, 23);
             this.DescriptionText.Name = "DescriptionText";
-            this.DescriptionText.Size = new System.Drawing.Size(742, 51);
+            this.DescriptionText.Size = new System.Drawing.Size(742, 37);
             this.DescriptionText.TabIndex = 0;
             this.DescriptionText.Text = "";
             // 
@@ -125,7 +128,7 @@
             this.panel4.Controls.Add(this.RankGroupBox);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel4.Location = new System.Drawing.Point(5, 192);
+            this.panel4.Location = new System.Drawing.Point(5, 206);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(10);
             this.panel4.Size = new System.Drawing.Size(768, 88);
@@ -157,7 +160,7 @@
             this.panel2.Controls.Add(this.BaseSalaryGroupBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel2.Location = new System.Drawing.Point(5, 104);
+            this.panel2.Location = new System.Drawing.Point(5, 118);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
             this.panel2.Size = new System.Drawing.Size(768, 88);
@@ -184,22 +187,23 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.IdGroupBox);
             this.panel7.Controls.Add(this.groupBox2);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel7.Location = new System.Drawing.Point(5, 32);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(10);
-            this.panel7.Size = new System.Drawing.Size(768, 72);
+            this.panel7.Size = new System.Drawing.Size(768, 86);
             this.panel7.TabIndex = 2;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.NameText);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(10, 10);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox2.Location = new System.Drawing.Point(371, 10);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(748, 52);
+            this.groupBox2.Size = new System.Drawing.Size(387, 66);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Name";
@@ -207,9 +211,9 @@
             // NameText
             // 
             this.NameText.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.NameText.Location = new System.Drawing.Point(3, 22);
+            this.NameText.Location = new System.Drawing.Point(3, 36);
             this.NameText.Name = "NameText";
-            this.NameText.Size = new System.Drawing.Size(742, 27);
+            this.NameText.Size = new System.Drawing.Size(381, 27);
             this.NameText.TabIndex = 0;
             // 
             // panel3
@@ -245,6 +249,25 @@
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
+            // IdGroupBox
+            // 
+            this.IdGroupBox.Controls.Add(this.IDText);
+            this.IdGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IdGroupBox.Location = new System.Drawing.Point(10, 10);
+            this.IdGroupBox.Name = "IdGroupBox";
+            this.IdGroupBox.Size = new System.Drawing.Size(361, 66);
+            this.IdGroupBox.TabIndex = 3;
+            this.IdGroupBox.TabStop = false;
+            this.IdGroupBox.Text = "ID";
+            // 
+            // IDText
+            // 
+            this.IDText.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.IDText.Location = new System.Drawing.Point(3, 36);
+            this.IDText.Name = "IDText";
+            this.IDText.Size = new System.Drawing.Size(355, 27);
+            this.IDText.TabIndex = 0;
+            // 
             // AddPosition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -268,6 +291,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.IdGroupBox.ResumeLayout(false);
+            this.IdGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,5 +317,7 @@
         private GroupBox groupBox2;
         private TextBox NameText;
         private RichTextBox DescriptionText;
+        private GroupBox IdGroupBox;
+        private TextBox IDText;
     }
 }

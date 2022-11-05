@@ -16,6 +16,8 @@ namespace Salary_management.Infrastructure.Entities
 
 		public int RankId { get; set; }
 
+		public string? Description { get; set; } 
+
 		public Rank Rank { get; set; } = null!;
 	}
 }
