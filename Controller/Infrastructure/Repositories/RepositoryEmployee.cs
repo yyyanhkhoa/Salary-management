@@ -14,16 +14,16 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 {
 	public class RepositoryEmployee : Repository
 	{
-		public bool CheckEmployeeExist(string identityCardNumber)
+		public bool CheckIdCardExist(string identityCardNumber)
 			=> Context.Employees.Any(a => a.IdentityCardNumber == identityCardNumber);
 
 		public Result<Models.EmployeeDetail> InsertEmployee(EmployeeInput input)
 		{
-			if (CheckEmployeeExist(input.Name))
-				return new Result<Models.EmployeeDetail> { Success = false, ErrorMessage = "Employee with this ID card already exists." };
+			if (CheckIdCardExist(input.IdentityCardNumber))
+				return new Result<Models.Employee> { Success = false, ErrorMessage = "Employee with this ID card already exists." };
 
 			var employee = Map(input);
-			var newestEmployee = Context.Employees.Take(1).FirstOrDefault();
+			var newestEmployee = Context.Employees.OrderByDescending(e => e.DateCreated).FirstOrDefault();
 
 			if (newestEmployee == null)
 			{
@@ -54,8 +54,8 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			else
 			{
 				return Context.Employees.Where(
-					e => EF.Functions.Like(e.Name, $"%{keyword}%") ||
-						 EF.Functions.Like(e.Id, $"%{keyword}%")
+					e => EF.Functions.ILike(e.Name, $"%{keyword}%") ||
+						 EF.Functions.ILike(e.Id, $"%{keyword}%")
 				)
 					.Select(e => Map(e)).ToList();
 			}

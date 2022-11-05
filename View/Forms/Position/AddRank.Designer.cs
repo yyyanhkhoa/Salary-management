@@ -35,10 +35,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.RankGroupBox = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CoefficientText = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.MilestoneGroupBox = new System.Windows.Forms.GroupBox();
-            this.BaseSalaryText = new System.Windows.Forms.TextBox();
+            this.MilestoneComboBox = new System.Windows.Forms.ComboBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.NameText = new System.Windows.Forms.TextBox();
@@ -72,6 +72,7 @@
             this.AddBtn.TabIndex = 1;
             this.AddBtn.Text = "+ Add";
             this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // BackBtn
             // 
@@ -123,23 +124,22 @@
             // 
             // RankGroupBox
             // 
-            this.RankGroupBox.Controls.Add(this.comboBox1);
+            this.RankGroupBox.Controls.Add(this.CoefficientText);
             this.RankGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RankGroupBox.Location = new System.Drawing.Point(10, 10);
             this.RankGroupBox.Name = "RankGroupBox";
             this.RankGroupBox.Size = new System.Drawing.Size(770, 74);
             this.RankGroupBox.TabIndex = 2;
             this.RankGroupBox.TabStop = false;
-            this.RankGroupBox.Text = "Coeffience";
+            this.RankGroupBox.Text = "Coefficient";
             // 
-            // comboBox1
+            // CoefficientText
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(764, 28);
-            this.comboBox1.TabIndex = 0;
+            this.CoefficientText.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CoefficientText.Location = new System.Drawing.Point(3, 44);
+            this.CoefficientText.Name = "CoefficientText";
+            this.CoefficientText.Size = new System.Drawing.Size(764, 27);
+            this.CoefficientText.TabIndex = 0;
             // 
             // panel2
             // 
@@ -154,7 +154,7 @@
             // 
             // MilestoneGroupBox
             // 
-            this.MilestoneGroupBox.Controls.Add(this.BaseSalaryText);
+            this.MilestoneGroupBox.Controls.Add(this.MilestoneComboBox);
             this.MilestoneGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MilestoneGroupBox.Location = new System.Drawing.Point(10, 10);
             this.MilestoneGroupBox.Name = "MilestoneGroupBox";
@@ -163,13 +163,22 @@
             this.MilestoneGroupBox.TabStop = false;
             this.MilestoneGroupBox.Text = "Milestone";
             // 
-            // BaseSalaryText
+            // MilestoneComboBox
             // 
-            this.BaseSalaryText.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BaseSalaryText.Location = new System.Drawing.Point(3, 38);
-            this.BaseSalaryText.Name = "BaseSalaryText";
-            this.BaseSalaryText.Size = new System.Drawing.Size(764, 27);
-            this.BaseSalaryText.TabIndex = 0;
+            this.MilestoneComboBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MilestoneComboBox.FormattingEnabled = true;
+            this.MilestoneComboBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"});
+            this.MilestoneComboBox.Location = new System.Drawing.Point(3, 37);
+            this.MilestoneComboBox.Name = "MilestoneComboBox";
+            this.MilestoneComboBox.Size = new System.Drawing.Size(764, 28);
+            this.MilestoneComboBox.TabIndex = 0;
             // 
             // panel7
             // 
@@ -214,9 +223,9 @@
             this.AddEmployeeGroupBox.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.RankGroupBox.ResumeLayout(false);
+            this.RankGroupBox.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.MilestoneGroupBox.ResumeLayout(false);
-            this.MilestoneGroupBox.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -234,12 +243,12 @@
         private Panel panel1;
         private Panel panel4;
         private GroupBox RankGroupBox;
-        private ComboBox comboBox1;
         private Panel panel2;
         private GroupBox MilestoneGroupBox;
-        private TextBox BaseSalaryText;
         private Panel panel7;
         private GroupBox groupBox2;
         private TextBox NameText;
+        private TextBox CoefficientText;
+        private ComboBox MilestoneComboBox;
     }
 }

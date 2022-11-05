@@ -23,7 +23,7 @@ namespace Salary_management.Controller.Infrastructure.Data.Input
 
 		public string IdentityCardNumber { get; set; } = null!;
 
-		public string Image { get; set; } = null!;
+		public byte[]? Image { get; set; }
 
 		public float CoefficientAllowance { get; set; }
 	}

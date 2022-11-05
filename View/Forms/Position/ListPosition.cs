@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Salary_management.Controller.Infrastructure.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,6 +42,25 @@ namespace Salary_management.View.Forms.Position
         {
             mng.OpenChildForm(new View.Forms.Position.AddPosition(this.mng), sender);
 
+        }
+
+        private void ListPosition_Load(object sender, EventArgs e)
+        {
+            this.RankGridView.Rows.Clear();
+            RepositoryRank repo = new RepositoryRank();
+            List<Model.Rank> list = repo.GetRank("");
+            foreach (Model.Rank rank in list)
+            {
+                RankGridView.Rows.Add(rank.Id, rank.Name, rank.Milestone,rank.Coefficient );
+            }
+            /*
+            this.ListViewEmployee.Rows.Clear();
+            RepositoryEmployee repo = new RepositoryEmployee();
+            List<Model.Employee> list = repo.GetEmployees("");
+            foreach (Model.Employee employee in list)
+            {
+                ListViewEmployee.Rows.Add(employee.Id, employee.Name, employee.DateOfBirth, employee.IdentityCardNumber, employee.CoefficientAllowance);
+            }*/
         }
     }
 }

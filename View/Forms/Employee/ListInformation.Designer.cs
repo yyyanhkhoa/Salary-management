@@ -34,7 +34,7 @@
             this.IdEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CurrentUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Identity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CurrentSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Detail = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,7 +42,7 @@
             this.AddBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.SearchBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.TitleListEmployee = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -82,7 +82,7 @@
             this.IdEmployee,
             this.NameEmployee,
             this.Birth,
-            this.CurrentUnit,
+            this.Identity,
             this.CurrentSalary,
             this.Detail});
             this.ListViewEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -116,16 +116,16 @@
             this.Birth.Name = "Birth";
             this.Birth.Width = 110;
             // 
-            // CurrentUnit
+            // Identity
             // 
-            this.CurrentUnit.HeaderText = "Current Unit";
-            this.CurrentUnit.MinimumWidth = 6;
-            this.CurrentUnit.Name = "CurrentUnit";
-            this.CurrentUnit.Width = 110;
+            this.Identity.HeaderText = "Identity";
+            this.Identity.MinimumWidth = 6;
+            this.Identity.Name = "Identity";
+            this.Identity.Width = 110;
             // 
             // CurrentSalary
             // 
-            this.CurrentSalary.HeaderText = "Current Salary";
+            this.CurrentSalary.HeaderText = "Allowance";
             this.CurrentSalary.MinimumWidth = 6;
             this.CurrentSalary.Name = "CurrentSalary";
             this.CurrentSalary.Width = 125;
@@ -173,7 +173,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.SearchBtn);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.SearchTextBox);
             this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(10, 97);
@@ -194,14 +194,15 @@
             this.SearchBtn.UseVisualStyleBackColor = true;
             this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
-            // textBox1
+            // SearchTextBox
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(107, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(541, 34);
-            this.textBox1.TabIndex = 1;
+            this.SearchTextBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SearchTextBox.Location = new System.Drawing.Point(107, 2);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(541, 34);
+            this.SearchTextBox.TabIndex = 1;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
             // comboBox1
             // 
@@ -236,6 +237,7 @@
             this.Name = "ListInformation";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "ListEmployee";
+            this.Load += new System.EventHandler(this.ListInformation_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ListViewEmployee)).EndInit();
@@ -255,7 +257,7 @@
         private Label TitleListEmployee;
         private Panel panel3;
         private Button SearchBtn;
-        private TextBox textBox1;
+        private TextBox SearchTextBox;
         private ComboBox comboBox1;
         private Panel panel4;
         private DataGridView ListViewEmployee;
@@ -264,7 +266,7 @@
         private DataGridViewTextBoxColumn IdEmployee;
         private DataGridViewTextBoxColumn NameEmployee;
         private DataGridViewTextBoxColumn Birth;
-        private DataGridViewTextBoxColumn CurrentUnit;
+        private DataGridViewTextBoxColumn Identity;
         private DataGridViewTextBoxColumn CurrentSalary;
         private DataGridViewButtonColumn Detail;
     }

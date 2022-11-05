@@ -1,4 +1,5 @@
-﻿using Salary_management.Controller.Infrastructure.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Salary_management.Controller.Infrastructure.Data;
 using Salary_management.Controller.Infrastructure.Data.Input;
 using Salary_management.Infrastructure.Entities;
 using System;
@@ -44,6 +45,34 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				Name = rank.Name,
 				Milestone = rank.Milestone,
 				Coefficient = rank.Coefficient
+			};
+		}
+
+
+        public List<Models.Rank> GetRank(string keyword)
+        {
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                return Context.Ranks.Take(20).Select(e => Map(e)).ToList();
+            }
+            else
+            {
+                return Context.Ranks.Where(
+                    e => EF.Functions.Like(e.Name, $"%{keyword}%") ||
+                         EF.Functions.Like(e.Id.ToString(), $"%{keyword}%")
+                )
+                    .Select(e => Map(e)).ToList();
+            }
+        }
+
+        public static Models.Rank Map(Rank input)
+		{
+			return new Models.Rank
+			{
+				Id = input.Id,
+				Name = input.Name,
+				Milestone = input.Milestone,
+				Coefficient = input.Coefficient
 			};
 		}
 	}

@@ -47,7 +47,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.TitleListEmployee = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.RankGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.AddRankBtn = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,7 +68,7 @@
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RankGridView)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -263,7 +262,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.RankGridView);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
@@ -273,22 +272,22 @@
             this.tabPage2.Text = "Rank";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // RankGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.RankGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.RankGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewButtonColumn1});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 132);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(791, 304);
-            this.dataGridView1.TabIndex = 5;
+            this.RankGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RankGridView.Location = new System.Drawing.Point(3, 132);
+            this.RankGridView.Name = "RankGridView";
+            this.RankGridView.RowHeadersWidth = 51;
+            this.RankGridView.RowTemplate.Height = 29;
+            this.RankGridView.Size = new System.Drawing.Size(791, 304);
+            this.RankGridView.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -362,7 +361,6 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.button2);
             this.panel7.Controls.Add(this.textBox1);
             this.panel7.Controls.Add(this.comboBox2);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -371,17 +369,6 @@
             this.panel7.Padding = new System.Windows.Forms.Padding(2);
             this.panel7.Size = new System.Drawing.Size(769, 39);
             this.panel7.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button2.Location = new System.Drawing.Point(645, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 35);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "search";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -424,6 +411,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ListPosition";
             this.Text = "List Position";
+            this.Load += new System.EventHandler(this.ListPosition_Load);
             this.panel1.ResumeLayout(false);
             this.TabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -434,7 +422,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RankGridView)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -469,11 +457,10 @@
         private Panel panel6;
         private Button AddRankBtn;
         private Panel panel7;
-        private Button button2;
         private TextBox textBox1;
         private ComboBox comboBox2;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView RankGridView;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

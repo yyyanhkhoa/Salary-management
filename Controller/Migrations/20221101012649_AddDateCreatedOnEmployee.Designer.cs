@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Salary_management.Controller.Infrastructure.Entities.Enums;
@@ -13,9 +14,10 @@ using Salary_management.Infrastructure.Entities.Enums;
 namespace Salary_management.Migrations
 {
     [DbContext(typeof(SalaryManContext))]
-    partial class SalaryManContextModelSnapshot : ModelSnapshot
+    [Migration("20221101012649_AddDateCreatedOnEmployee")]
+    partial class AddDateCreatedOnEmployee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -111,8 +113,8 @@ namespace Salary_management.Migrations
                         .HasColumnType("character varying(12)")
                         .HasColumnName("identity_card_number");
 
-                    b.Property<byte[]>("Image")
-                        .HasColumnType("bytea")
+                    b.Property<string>("Image")
+                        .HasColumnType("text")
                         .HasColumnName("image");
 
                     b.Property<string>("Name")

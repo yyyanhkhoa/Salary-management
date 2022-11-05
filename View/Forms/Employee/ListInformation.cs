@@ -1,4 +1,6 @@
-﻿using Salary_management.View.Forms;
+﻿using Salary_management.Controller.Infrastructure.Repositories;
+using Salary_management.Model.EmployeeList;
+using Salary_management.View.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +49,28 @@ namespace Salary_management.View.Forms.Employee
         {
             mng.OpenChildForm(new View.Forms.Employee.Add(this.mng), sender);
 
+        }
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.ListViewEmployee.Rows.Clear();
+            RepositoryEmployee repo = new RepositoryEmployee();
+            List<Model.Employee> list = repo.GetEmployees(SearchTextBox.Text);
+            foreach(Model.Employee employee in list)
+            {
+                ListViewEmployee.Rows.Add(employee.Id, employee.Name, employee.DateOfBirth, employee.IdentityCardNumber, employee.CoefficientAllowance);
+            }
+        }
+
+        private void ListInformation_Load(object sender, EventArgs e)
+        {
+            this.ListViewEmployee.Rows.Clear();
+            RepositoryEmployee repo = new RepositoryEmployee();
+            List<Model.Employee> list = repo.GetEmployees("");
+            foreach (Model.Employee employee in list)
+            {
+                ListViewEmployee.Rows.Add(employee.Id, employee.Name, employee.DateOfBirth, employee.IdentityCardNumber, employee.CoefficientAllowance);
+            }
         }
     }
 }
