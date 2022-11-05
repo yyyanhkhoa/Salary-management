@@ -21,6 +21,8 @@ namespace Salary_management.View.Forms.Employee
             InitializeComponent();
             this.mng = mng;
             AddEmployeeGroupBox.Enabled = false;
+            BackBtn.Enabled = true;
+            FixBtn.Enabled = true;
             
         }
 
@@ -240,6 +242,21 @@ namespace Salary_management.View.Forms.Employee
         private void ListViewEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void AddFamilyBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormEmployeeDetail_Load(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void BackBtn_Click_1(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
         }
     }
 }
