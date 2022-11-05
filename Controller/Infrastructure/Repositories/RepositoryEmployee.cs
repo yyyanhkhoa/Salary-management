@@ -45,7 +45,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		/// </summary>
 		/// <param name="searchString"></param>
 		/// <returns></returns>
-		public List<Models.EmployeeDetail> GetEmployees(string keyword)
+		public List<Models.Employee> GetEmployees(string keyword)
 		{
 			if (string.IsNullOrWhiteSpace(keyword))
 			{
