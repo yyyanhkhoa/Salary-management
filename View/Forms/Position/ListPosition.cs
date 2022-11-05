@@ -46,6 +46,16 @@ namespace Salary_management.View.Forms.Position
 
         private void ListPosition_Load(object sender, EventArgs e)
         {
+            this.PositionGridView.Rows.Clear();
+            RepositoryPosition repo1 = new RepositoryPosition();
+            List<Model.Position> listPosition = repo1.GetPositions("");
+            foreach(Model.Position position in listPosition)
+            {
+                PositionGridView.Rows.Add(position.Id, position.Name, position.BaseSalary, position.Description, position.Rank.Name);
+            }
+
+
+
             this.RankGridView.Rows.Clear();
             RepositoryRank repo = new RepositoryRank();
             List<Model.Rank> list = repo.GetRank("");

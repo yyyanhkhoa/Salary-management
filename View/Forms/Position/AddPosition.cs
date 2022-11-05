@@ -29,8 +29,31 @@ namespace Salary_management.View.Forms.Position
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            var RepoEmployee = new RepositoryEmployee();
-            
+            var RepoPosition = new RepositoryPosition();
+            string ID = IDText.Text;
+            string name = NameText.Text;
+            string baseSalary = BaseSalaryText.Text;
+            string rank = RankComboBox.Text;
+            string[] id = rank.Trim().Split(":");
+            string description = DescriptionText.Text;
+
+            var result = RepoPosition.InsertPosition(new InputPosition()
+            {
+                Id = ID,
+                Name = name,
+                BaseSalary = int.Parse(baseSalary),
+                RankId = int.Parse(id[0]),
+                Description = description,
+            });
+            if (result.Success)
+            {
+                MessageBox.Show("Insert Position success");
+                mng.OpenChildForm(new View.Forms.Position.ListPosition(this.mng), sender);
+            }
+            else
+            {
+                MessageBox.Show(result.ErrorMessage);
+            }
             /*
             var RepoEmployee = new RepositoryEmployee();
             Gender gender;
@@ -74,7 +97,7 @@ namespace Salary_management.View.Forms.Position
             List<Model.Rank> list = repo.GetRank("");
             foreach (Model.Rank rank in list)
             {
-                RankComboBox.Items.Add(rank.Id + " : " + rank.Name);
+                RankComboBox.Items.Add(rank.Id + ":" + rank.Name);
             }
         }
 

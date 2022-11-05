@@ -16,6 +16,8 @@ namespace Salary_management.Model
 
 		public int BaseSalary { get; set; }
 
+		public string? Description { get; set; }
+
 		public Rank Rank { get; set; } = null!;
 	}
 }

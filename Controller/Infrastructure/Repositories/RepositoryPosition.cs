@@ -31,14 +31,15 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			Position position = MapToEntity(inputPosition);
 			Context.Positions.Add(position);
 			Context.SaveChanges();
-			return new Result<Models.Position> { Success = true, Payload = MapToModel(position)};
+			return new Result<Models.Position> { Success = true, Payload = ConnectWithRank(position) };
 		}
 
 		public List<Models.Position> GetPositions(string keyword)
 		{
 			if (string.IsNullOrWhiteSpace(keyword))
 			{
-				return Context.Positions.Take(20).Select(e => MapToModel(e)).ToList();
+				return Context.Positions.Include(p => p.Rank)
+							  .Take(20).Select(e => MapToModel(e)).ToList();
 			}
 			else
 			{
@@ -46,7 +47,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 					e => EF.Functions.ILike(e.Name, $"%{keyword}%") ||
 						 EF.Functions.ILike(e.Id, $"%{keyword}%")
 				)
-				.Select(e => MapToEntity(e)).ToList();
+				.Select(e => MapToModel(e)).ToList();
 			}
 		}
 
@@ -55,19 +56,21 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Position
 			{
 				Id = inputPosition.Id,
-				Name = inputPosition.Name,
+                Name = inputPosition.Name,
 				BaseSalary = inputPosition.BaseSalary,
-				RankId = inputPosition.RankId
+				RankId = inputPosition.RankId,
+				Description = inputPosition.Description,
 			};
 		}
 
-		private static Models.Position MapToEntity(Position inputPosition)
+		private static Models.Position MapToModel(Position inputPosition)
 		{
 			return new Models.Position
 			{
 				Id = inputPosition.Id,
 				Name = inputPosition.Name,
 				BaseSalary = inputPosition.BaseSalary,
+				Description = inputPosition.Description,
 				Rank = new Models.Rank
 				{
 					Id = inputPosition.Rank.Id,
@@ -75,17 +78,6 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 					Milestone = inputPosition.Rank.Milestone,
 					Coefficient = inputPosition.Rank.Coefficient
 				}
-			};
-		}
-
-		private Models.Position MapToModel(Position postion)
-		{
-			return new Models.Position
-			{
-				Id = postion.Id,
-				Name = postion.Name,
-				BaseSalary = postion.BaseSalary,
-				Rank = MapRankToModel(Context.Ranks.Where(r => r.Id == postion.RankId).FirstOrDefault()!)
 			};
 		}
 
@@ -99,5 +91,16 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				Coefficient = rank.Coefficient
 			};
 		}
-	}
+        private Models.Position ConnectWithRank(Position postion)
+        {
+            return new Models.Position
+            {
+                Id = postion.Id,
+                Name = postion.Name,
+                BaseSalary = postion.BaseSalary,
+                Rank = MapRankToModel(Context.Ranks.Where(r => r.Id == postion.RankId).FirstOrDefault()!)
+            };
+        }
+    }
+
 }
