@@ -32,6 +32,26 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return Context.Families.Select(f => MapToModel(f)).ToList();
 		}
 
+		public Result<Models.Family> FixFamily(int FamilyId, InputFamily inputFamily)
+		{
+			var Family = MapToEntity(inputFamily);
+			Family.Id = FamilyId;
+			Context.Families.Update(Family);
+			Context.SaveChanges();
+
+			return new Result<Models.Family> { Success = true, Payload = MapToModel(Family) };
+		}
+
+		public Result<Models.Family> DeleteFamily(int FamilyId)
+		{
+			var Family = new Family { Id = FamilyId };
+			Context.Families.Attach(Family);
+			Context.Families.Remove(Family);
+			Context.SaveChanges();
+
+			return new Result<Models.Family> { Success = true, Payload = null };
+		}
+
 		private static Family MapToEntity(InputFamily inputFamily)
 		{
 			return new Family
