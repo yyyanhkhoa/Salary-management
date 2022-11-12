@@ -8,6 +8,7 @@ namespace Salary_management.Infrastructure.Entities
 {
 	public class QualificationAllowanceHistory
 	{
+		public int Id { get; set; }
 		public int Year { get; set; }
 		public int Allowance { get; set; }
 
