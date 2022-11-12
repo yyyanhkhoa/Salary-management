@@ -10,6 +10,7 @@ namespace Salary_management.Controller.Infrastructure.Data.Input
 {
 	public class InputUnit 
 	{
+
 		public string Name { get; set; } = null!;
 
 		public string Address { get; set; } = null!;

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.ActionsGroupBox = new System.Windows.Forms.GroupBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.IDText = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.DetailBtn = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -38,10 +41,10 @@
             this.DateFoundedText = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.PhoneText = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.AddressText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.NameText = new System.Windows.Forms.TextBox();
@@ -58,6 +61,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.ActionsGroupBox.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -72,6 +76,7 @@
             // 
             // ActionsGroupBox
             // 
+            this.ActionsGroupBox.Controls.Add(this.panel8);
             this.ActionsGroupBox.Controls.Add(this.panel6);
             this.ActionsGroupBox.Controls.Add(this.panel5);
             this.ActionsGroupBox.Controls.Add(this.panel4);
@@ -86,6 +91,34 @@
             this.ActionsGroupBox.TabStop = false;
             this.ActionsGroupBox.Text = "Action";
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.IDText);
+            this.panel8.Controls.Add(this.label1);
+            this.panel8.Location = new System.Drawing.Point(3, 409);
+            this.panel8.Name = "panel8";
+            this.panel8.Padding = new System.Windows.Forms.Padding(10);
+            this.panel8.Size = new System.Drawing.Size(244, 58);
+            this.panel8.TabIndex = 6;
+            // 
+            // IDText
+            // 
+            this.IDText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IDText.Location = new System.Drawing.Point(39, 10);
+            this.IDText.Name = "IDText";
+            this.IDText.Size = new System.Drawing.Size(195, 27);
+            this.IDText.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Id :";
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.DetailBtn);
@@ -93,7 +126,7 @@
             this.panel6.Location = new System.Drawing.Point(3, 347);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(65, 20, 65, 20);
-            this.panel6.Size = new System.Drawing.Size(244, 91);
+            this.panel6.Size = new System.Drawing.Size(244, 62);
             this.panel6.TabIndex = 5;
             // 
             // DetailBtn
@@ -101,7 +134,7 @@
             this.DetailBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DetailBtn.Location = new System.Drawing.Point(65, 20);
             this.DetailBtn.Name = "DetailBtn";
-            this.DetailBtn.Size = new System.Drawing.Size(114, 51);
+            this.DetailBtn.Size = new System.Drawing.Size(114, 22);
             this.DetailBtn.TabIndex = 0;
             this.DetailBtn.Text = "Detail";
             this.DetailBtn.UseVisualStyleBackColor = true;
@@ -171,7 +204,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.PhoneText);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(3, 139);
@@ -180,13 +213,13 @@
             this.panel3.Size = new System.Drawing.Size(244, 58);
             this.panel3.TabIndex = 2;
             // 
-            // textBox3
+            // PhoneText
             // 
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Location = new System.Drawing.Point(67, 10);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(167, 27);
-            this.textBox3.TabIndex = 1;
+            this.PhoneText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PhoneText.Location = new System.Drawing.Point(67, 10);
+            this.PhoneText.Name = "PhoneText";
+            this.PhoneText.Size = new System.Drawing.Size(167, 27);
+            this.PhoneText.TabIndex = 1;
             // 
             // label3
             // 
@@ -200,7 +233,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.AddressText);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 81);
@@ -209,13 +242,13 @@
             this.panel2.Size = new System.Drawing.Size(244, 58);
             this.panel2.TabIndex = 1;
             // 
-            // textBox2
+            // AddressText
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(79, 10);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(155, 27);
-            this.textBox2.TabIndex = 1;
+            this.AddressText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddressText.Location = new System.Drawing.Point(79, 10);
+            this.AddressText.Name = "AddressText";
+            this.AddressText.Size = new System.Drawing.Size(155, 27);
+            this.AddressText.TabIndex = 1;
             // 
             // label2
             // 
@@ -375,6 +408,8 @@
             this.Name = "Unit";
             this.Text = "Unit";
             this.ActionsGroupBox.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -405,10 +440,10 @@
         private Panel panel4;
         private Label label4;
         private Panel panel3;
-        private TextBox textBox3;
+        private TextBox PhoneText;
         private Label label3;
         private Panel panel2;
-        private TextBox textBox2;
+        private TextBox AddressText;
         private Label label2;
         private Panel panel1;
         private TextBox NameText;
@@ -425,5 +460,8 @@
         private GroupBox FiltersGroupBox;
         private TextBox textBox1;
         private Label SearchLabel;
+        private Panel panel8;
+        private TextBox IDText;
+        private Label label1;
     }
 }
