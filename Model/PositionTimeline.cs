@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Salary_management.Model
 {
-	public class UnitTimeline : History
+    public class PositionTimeline : History
 	{
 		public string EmployeeName { get; set; } = null!;
-		public string UnitId { get; set; } = null!;
+
+		public string PositionId { get; set; } = null!;
 	}
 }
