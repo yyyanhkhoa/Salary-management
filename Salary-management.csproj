@@ -48,5 +48,6 @@
 
   <ItemGroup>
     <Folder Include="Model\DetailInformation\" />
+    <Folder Include="View\Forms\Reward\" />
   </ItemGroup>
 </Project>

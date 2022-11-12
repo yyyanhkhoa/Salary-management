@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Management));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.SettingBtn = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.RewardOrNotBtn = new System.Windows.Forms.Button();
+            this.UnitBtn = new System.Windows.Forms.Button();
             this.PositionBtn = new System.Windows.Forms.Button();
             this.ListEmployeeBtn = new System.Windows.Forms.Button();
             this.panelDesktopPanel = new System.Windows.Forms.Panel();
@@ -45,14 +45,14 @@
             this.panelMenu.BackColor = System.Drawing.Color.White;
             this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelMenu.Controls.Add(this.SettingBtn);
-            this.panelMenu.Controls.Add(this.button3);
-            this.panelMenu.Controls.Add(this.button2);
+            this.panelMenu.Controls.Add(this.RewardOrNotBtn);
+            this.panelMenu.Controls.Add(this.UnitBtn);
             this.panelMenu.Controls.Add(this.PositionBtn);
             this.panelMenu.Controls.Add(this.ListEmployeeBtn);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(10, 10);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(184, 596);
+            this.panelMenu.Size = new System.Drawing.Size(237, 596);
             this.panelMenu.TabIndex = 0;
             // 
             // SettingBtn
@@ -66,47 +66,47 @@
             this.SettingBtn.Location = new System.Drawing.Point(0, 264);
             this.SettingBtn.Name = "SettingBtn";
             this.SettingBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.SettingBtn.Size = new System.Drawing.Size(182, 66);
+            this.SettingBtn.Size = new System.Drawing.Size(235, 66);
             this.SettingBtn.TabIndex = 6;
             this.SettingBtn.Text = "    Setting";
             this.SettingBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SettingBtn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // RewardOrNotBtn
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 198);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(182, 66);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "    Option5";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.RewardOrNotBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RewardOrNotBtn.FlatAppearance.BorderSize = 0;
+            this.RewardOrNotBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RewardOrNotBtn.ForeColor = System.Drawing.Color.Black;
+            this.RewardOrNotBtn.Image = ((System.Drawing.Image)(resources.GetObject("RewardOrNotBtn.Image")));
+            this.RewardOrNotBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RewardOrNotBtn.Location = new System.Drawing.Point(0, 198);
+            this.RewardOrNotBtn.Name = "RewardOrNotBtn";
+            this.RewardOrNotBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.RewardOrNotBtn.Size = new System.Drawing.Size(235, 66);
+            this.RewardOrNotBtn.TabIndex = 5;
+            this.RewardOrNotBtn.Text = "RewardOrDiscipline";
+            this.RewardOrNotBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.RewardOrNotBtn.UseVisualStyleBackColor = true;
+            this.RewardOrNotBtn.Click += new System.EventHandler(this.RewardOrNotBtn_Click);
             // 
-            // button2
+            // UnitBtn
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 132);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(182, 66);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "    Option4";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.UnitBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.UnitBtn.FlatAppearance.BorderSize = 0;
+            this.UnitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UnitBtn.ForeColor = System.Drawing.Color.Black;
+            this.UnitBtn.Image = ((System.Drawing.Image)(resources.GetObject("UnitBtn.Image")));
+            this.UnitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.UnitBtn.Location = new System.Drawing.Point(0, 132);
+            this.UnitBtn.Name = "UnitBtn";
+            this.UnitBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.UnitBtn.Size = new System.Drawing.Size(235, 66);
+            this.UnitBtn.TabIndex = 4;
+            this.UnitBtn.Text = "Unit";
+            this.UnitBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.UnitBtn.UseVisualStyleBackColor = true;
+            this.UnitBtn.Click += new System.EventHandler(this.UnitBtn_Click);
             // 
             // PositionBtn
             // 
@@ -119,7 +119,7 @@
             this.PositionBtn.Location = new System.Drawing.Point(0, 66);
             this.PositionBtn.Name = "PositionBtn";
             this.PositionBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.PositionBtn.Size = new System.Drawing.Size(182, 66);
+            this.PositionBtn.Size = new System.Drawing.Size(235, 66);
             this.PositionBtn.TabIndex = 3;
             this.PositionBtn.Text = "Position";
             this.PositionBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -137,7 +137,7 @@
             this.ListEmployeeBtn.Location = new System.Drawing.Point(0, 0);
             this.ListEmployeeBtn.Name = "ListEmployeeBtn";
             this.ListEmployeeBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ListEmployeeBtn.Size = new System.Drawing.Size(182, 66);
+            this.ListEmployeeBtn.Size = new System.Drawing.Size(235, 66);
             this.ListEmployeeBtn.TabIndex = 1;
             this.ListEmployeeBtn.Text = "Employee";
             this.ListEmployeeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -147,9 +147,9 @@
             // panelDesktopPanel
             // 
             this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPanel.Location = new System.Drawing.Point(194, 10);
+            this.panelDesktopPanel.Location = new System.Drawing.Point(247, 10);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(779, 596);
+            this.panelDesktopPanel.Size = new System.Drawing.Size(726, 596);
             this.panelDesktopPanel.TabIndex = 2;
             // 
             // Management
@@ -173,8 +173,8 @@
         private Panel panelMenu;
         private Button ListEmployeeBtn;
         private Panel panelDesktopPanel;
-        private Button button3;
-        private Button button2;
+        private Button RewardOrNotBtn;
+        private Button UnitBtn;
         private Button PositionBtn;
         private Button SettingBtn;
     }

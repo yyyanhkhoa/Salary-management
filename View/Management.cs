@@ -55,13 +55,7 @@ namespace Salary_management
 
    
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-        }
+    
 
 		private void Management_FormClosed(object sender, FormClosedEventArgs e)
 		{
@@ -76,6 +70,16 @@ namespace Salary_management
         private void PositionBtn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new View.Forms.Position.ListPosition(this), sender);
+
+        }
+
+        private void UnitBtn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.Forms.Unit.Unit(this), sender);
+        }
+
+        private void RewardOrNotBtn_Click(object sender, EventArgs e)
+        {
 
         }
     }
