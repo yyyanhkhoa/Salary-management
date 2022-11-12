@@ -62,6 +62,44 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			}
 		}
 
+		public Result<List<Models.PositionTimeline>> GetTimeline(DateOnly? from = null, DateOnly? to = null)
+		{
+			IQueryable<PositionHistory> query;
+
+			if (from != null && to != null)
+			{
+				query = Context.PositionHistories.Where(uh => uh.StartDate >= from && uh.EndDate <= to);
+			}
+			else if (from != null)
+			{
+				query = Context.PositionHistories.Where(uh => uh.StartDate >= from);
+			}
+			else
+			{
+				query = Context.PositionHistories.Where(uh => uh.EndDate <= to);
+			}
+
+			return new()
+			{
+				Success = true,
+				Payload = query.OrderBy(ph => ph.StartDate)
+							   .Select(ph => MapToModel(ph))
+							   .ToList()
+			};
+		}
+
+		private Models.PositionTimeline MapToModel(PositionHistory entity)
+		{
+			return new Models.PositionTimeline
+			{
+				EmployeeName = Context.Employees.Where(e => e.Id == entity.EmployeeId).First().Name,
+				PositionId = entity.PositionId,
+				StartDate = entity.StartDate,
+				EndDate = entity.EndDate,
+				EmployeeId = entity.EmployeeId
+			};
+		}
+
 		private static Position MapToEntity(InputPosition inputPosition)
 		{
 			return new Position
