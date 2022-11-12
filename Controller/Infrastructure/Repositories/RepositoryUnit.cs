@@ -103,7 +103,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		{
 			return new Models.UnitTimeline
 			{
-				EmployeeName = Context.Employees.Where(e => e.Id == entity.EmployeeId).First().Name
+				EmployeeName = Context.Employees.Where(e => e.Id == entity.EmployeeId).First().Name,
 				UnitId = entity.UnitId,
 				StartDate = entity.StartDate,
 				EndDate = entity.EndDate,
