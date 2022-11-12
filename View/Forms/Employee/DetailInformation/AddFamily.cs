@@ -16,6 +16,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         public AddFamily(Management mng)
         {
             InitializeComponent();
+            this.mng = mng;
         }
 
         private void AddFamilyGroupBox_Enter(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng), sender);
         }
 
         private void AddFamily_Load(object sender, EventArgs e)

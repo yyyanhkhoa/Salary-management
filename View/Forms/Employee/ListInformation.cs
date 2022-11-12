@@ -41,7 +41,7 @@ namespace Salary_management.View.Forms.Employee
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-                mng.OpenChildForm(new View.Forms.Employee.FormEmployeeDetail(this.mng), sender);
+                mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng), sender);
             }
         }
 
