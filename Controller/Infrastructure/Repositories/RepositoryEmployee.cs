@@ -17,6 +17,9 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		public bool CheckIdCardExist(string identityCardNumber)
 			=> Context.Employees.Any(a => a.IdentityCardNumber == identityCardNumber);
 
+		public bool CheckEmployeeExists(string id)
+			=> Context.Employees.Any(a => a.Id	== id);
+
 		public Result<Models.Employee> InsertEmployee(EmployeeInput input)
 		{
 			if (CheckIdCardExist(input.IdentityCardNumber))
@@ -38,7 +41,6 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			Context.SaveChanges();
 			return new Result<Models.Employee> { Success = true, Payload = MapToModel(employee) };
 		}
-
 
 		/// <summary>
 		/// Lấy thông tin các nhân viên theo từ khóa, nếu từ khóa trống thì lấy thông tin của 20 nhân viên mới nhất
@@ -66,7 +68,81 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return MapToModelEmployeeDetail(Context.Employees.Where(e => e.Id == id).FirstOrDefault()!);
 		}
 
-		public static Models.Employee MapToModel(Employee input)
+		public Result<Models.UnitHistory> InsertUnitHistory(InputUnitHistory input)
+		{
+			var result = DoCommonHistoryValidation<UnitHistory, Models.UnitHistory>(input, Context.UnitHistories);
+			if (!result.Success)
+			{
+				return result;
+			}
+
+			var unitExists = new RepositoryUnit().CheckUnitExists(input.UnitId);
+			if (!unitExists)
+			{
+				return new() { Success = false, ErrorMessage = "Unit with this id do not exist." };
+			}
+
+			var history = MapToEntity(input);
+			Context.UnitHistories.Add(history);
+			Context.SaveChanges();
+
+			history = Context.UnitHistories.Include(uh => uh.Unit)
+							 .Where(uh => uh.Id == history.Id)
+							 .First();
+
+			return new() { Success = true, Payload = MapToModel(history) };
+		}
+
+		public Result<Models.PositionHistory> InsertPositionHistory(InputPositionHistory input)
+		{
+			var result = DoCommonHistoryValidation<PositionHistory, Models.PositionHistory>(input, Context.PositionHistories);
+			if (!result.Success)
+			{
+				return result;
+			}
+
+			var positionExists = new RepositoryPosition().CheckPositionExist(input.PositionId);
+			if (!positionExists)
+			{
+				return new() { Success = false, ErrorMessage = "Position with this id do not exist." };
+			}
+
+			var history = MapToEntity(input);
+			Context.PositionHistories.Add(history);
+			Context.SaveChanges();
+
+			history = Context.PositionHistories.Include(ph => ph.Position)
+							 .Where(ph => ph.Id == history.Id)
+							 .First();
+
+			return new() { Success = true, Payload = MapToModel(history) };
+		}
+
+		private Result<ModelT> DoCommonHistoryValidation<EntityT, ModelT>(History input, DbSet<EntityT> dbset) where EntityT : History
+		{
+			if (input.EndDate < input.StartDate)
+			{
+				return new() { Success = false, ErrorMessage = "End date can not be smaller than start day." };
+			}
+
+			if (!CheckEmployeeExists(input.EmployeeId))
+			{
+				return new() { Success = false, ErrorMessage = "Employee with this id do not exist." };
+			}
+
+			var invalidStartDate = dbset.Any(
+				uh => input.EmployeeId == uh.EmployeeId
+				   && input.StartDate < uh.EndDate
+			);
+			if (invalidStartDate)
+			{
+				return new() { Success = false, ErrorMessage = "Start date can not be earlier than previous Unit end date." };
+			}
+
+			return new() { Success = true };
+		}
+
+		private static Models.Employee MapToModel(Employee input)
 		{
 			return new Models.Employee
 			{
@@ -78,7 +154,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			};
 		}
 
-		public static Employee MapToEntity(EmployeeInput entity)
+		private static Employee MapToEntity(EmployeeInput entity)
 		{
 			return new Employee
 			{
@@ -94,7 +170,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			};
 		}
 
-		public static Models.EmployeeDetail MapToModelEmployeeDetail(Employee entity)
+		private static Models.EmployeeDetail MapToModelEmployeeDetail(Employee entity)
 		{
 			return new Models.EmployeeDetail
 			{
@@ -107,6 +183,54 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				IdentityCardNumber = entity.IdentityCardNumber,
 				Image = entity.Image,
 				CoefficientAllowance = entity.CoefficientAllowance
+			};
+		}
+	
+		private static UnitHistory MapToEntity (InputUnitHistory input)
+		{
+			return new UnitHistory
+			{
+				StartDate = input.StartDate,
+				EndDate = input.EndDate,
+				EmployeeId = input.EmployeeId,
+				UnitId = input.UnitId
+			};
+		}
+
+		private static Models.UnitHistory MapToModel(UnitHistory entity)
+		{
+			return new Models.UnitHistory
+			{
+				Id = entity.Id,
+				StartDate = entity.StartDate,
+				EndDate = entity.EndDate,
+				EmployeeId = entity.EmployeeId,
+				UnitId = entity.UnitId,
+				UnitName = entity.Unit.Name
+			};
+		}
+
+		private static PositionHistory MapToEntity(InputPositionHistory input)
+		{
+			return new PositionHistory
+			{
+				PositionId = input.PositionId,
+				StartDate = input.StartDate,
+				EndDate = input.EndDate,
+				EmployeeId = input.EmployeeId
+			};
+		}
+
+		private static Models.PositionHistory MapToModel(PositionHistory entity)
+		{
+			return new Models.PositionHistory
+			{
+				Id = entity.Id,
+				PositionId = entity.PositionId,
+				PositionName = entity.Position.Name,
+				StartDate = entity.StartDate,
+				EndDate = entity.EndDate,
+				EmployeeId = entity.EmployeeId
 			};
 		}
 	}

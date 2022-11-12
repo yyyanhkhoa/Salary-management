@@ -8,12 +8,15 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 {
 	internal class RepositoryUnit : Repository
 	{
-		public bool CheckUnitExists(string name)
+		public bool CheckNameExists(string name)
 			=> Context.Units.Any(u => u.Name == name);
+
+		public bool CheckUnitExists(string id)
+			=> Context.Units.Any(u => u.Id == id);
 
 		public Result<Models.Unit> InsertUnit(InputUnit input)
 		{
-			if (CheckUnitExists(input.Name))
+			if (CheckNameExists(input.Name))
 				return new() { Success = false, ErrorMessage = "This unit already exists" };
 
 			var unit = MapToEntity(input);
@@ -21,6 +24,11 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			Context.SaveChanges();
 
 			return new Result<Models.Unit> { Success = true, Payload = MapToModel(unit) };
+		}
+
+		public Result<List<Models.UnitTimeline>> GetTimeline(DateOnly? from = null, DateOnly? to = null)
+		{
+			throw new NotImplementedException();
 		}
 
 		/// <summary>
