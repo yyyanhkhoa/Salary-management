@@ -92,6 +92,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		{
 			return new Unit
 			{
+				Id = input.Id,
 				Name = input.Name,
 				Address = input.Address,
 				PhoneNumber = input.PhoneNumber,
