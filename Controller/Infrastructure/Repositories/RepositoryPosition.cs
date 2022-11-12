@@ -13,8 +13,8 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 {
 	public class RepositoryPosition : Repository
 	{
-		public bool CheckPositionExist(string name)
-			=> Context.Ranks.Any(p => p.Name == name);
+		public bool CheckPositionExist(string id, string name)
+			=> Context.Positions.Any(p => p.Id == id || p.Name == name);
 
 		public bool CheckRankExist(int id)
 			=> Context.Ranks.Any(r => r.Id == id);
@@ -22,7 +22,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 		public Result<Models.Position> InsertPosition(InputPosition inputPosition)
 		{
-			if (CheckPositionExist(inputPosition.Name))
+			if (CheckPositionExist(inputPosition.Id, inputPosition.Name))
 				return new Result<Models.Position> { Success = false, ErrorMessage = "Position with this name already exists." };
 
 			if (!CheckRankExist(inputPosition.RankId))
