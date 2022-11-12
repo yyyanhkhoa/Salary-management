@@ -25,11 +25,13 @@ namespace Salary_management.View.Forms.Unit
         private void AddBtn_Click(object sender, EventArgs e)
         {
             var RepoUnit = new RepositoryUnit();
+            string id = IDText.Text;
             string Name = NameText.Text;
             string Address = AddressText.Text;
             string phone = PhoneText.Text;
             DateOnly dataOfFounded = DateOnly.FromDateTime(DateFoundedText.Value);
             var result = RepoUnit.InsertUnit(new InputUnit(){
+                Id = id,
                 Name = Name,
                 PhoneNumber = phone,
                 Address = Address,
@@ -39,7 +41,8 @@ namespace Salary_management.View.Forms.Unit
             if (result.Success)
             {
                 MessageBox.Show("Insert Unit success");
-                mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
+                mng.OpenChildForm(new View.Forms.Unit.Unit(this.mng), sender);
+
             }
             else
             {
@@ -58,6 +61,16 @@ namespace Salary_management.View.Forms.Unit
 
         }
 
-       
+        private void Unit_Load(object sender, EventArgs e)
+        {
+            this.UnitGridView.Rows.Clear();
+            RepositoryUnit repo = new RepositoryUnit();
+            List<Model.Unit> list = repo.GetUnits("");
+            foreach (Model.Unit unit in list)
+            {
+                UnitGridView.Rows.Add(unit.Id,unit.Name,unit.Address,unit.PhoneNumber,unit.DateFounded);
+            }
+            
+        }
     }
 }

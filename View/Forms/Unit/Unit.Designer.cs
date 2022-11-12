@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.ActionsGroupBox = new System.Windows.Forms.GroupBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.IDText = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.DetailBtn = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -48,7 +51,7 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.UnitGridView = new System.Windows.Forms.DataGridView();
             this.IDGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddressGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +61,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.ActionsGroupBox.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -66,12 +70,13 @@
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitGridView)).BeginInit();
             this.FiltersGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ActionsGroupBox
             // 
+            this.ActionsGroupBox.Controls.Add(this.panel8);
             this.ActionsGroupBox.Controls.Add(this.panel6);
             this.ActionsGroupBox.Controls.Add(this.panel5);
             this.ActionsGroupBox.Controls.Add(this.panel4);
@@ -81,10 +86,39 @@
             this.ActionsGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.ActionsGroupBox.Location = new System.Drawing.Point(0, 0);
             this.ActionsGroupBox.Name = "ActionsGroupBox";
-            this.ActionsGroupBox.Size = new System.Drawing.Size(250, 450);
+            this.ActionsGroupBox.Size = new System.Drawing.Size(250, 481);
             this.ActionsGroupBox.TabIndex = 0;
             this.ActionsGroupBox.TabStop = false;
             this.ActionsGroupBox.Text = "Action";
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.IDText);
+            this.panel8.Controls.Add(this.label1);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(3, 414);
+            this.panel8.Name = "panel8";
+            this.panel8.Padding = new System.Windows.Forms.Padding(10);
+            this.panel8.Size = new System.Drawing.Size(244, 58);
+            this.panel8.TabIndex = 6;
+            // 
+            // IDText
+            // 
+            this.IDText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IDText.Location = new System.Drawing.Point(39, 10);
+            this.IDText.Name = "IDText";
+            this.IDText.Size = new System.Drawing.Size(195, 27);
+            this.IDText.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Id :";
             // 
             // panel6
             // 
@@ -93,7 +127,7 @@
             this.panel6.Location = new System.Drawing.Point(3, 347);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(65, 20, 65, 20);
-            this.panel6.Size = new System.Drawing.Size(244, 97);
+            this.panel6.Size = new System.Drawing.Size(244, 67);
             this.panel6.TabIndex = 5;
             // 
             // DetailBtn
@@ -101,7 +135,7 @@
             this.DetailBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DetailBtn.Location = new System.Drawing.Point(65, 20);
             this.DetailBtn.Name = "DetailBtn";
-            this.DetailBtn.Size = new System.Drawing.Size(114, 57);
+            this.DetailBtn.Size = new System.Drawing.Size(114, 27);
             this.DetailBtn.TabIndex = 0;
             this.DetailBtn.Text = "Detail";
             this.DetailBtn.UseVisualStyleBackColor = true;
@@ -264,36 +298,36 @@
             this.panel7.Location = new System.Drawing.Point(250, 0);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(10);
-            this.panel7.Size = new System.Drawing.Size(550, 450);
+            this.panel7.Size = new System.Drawing.Size(598, 481);
             this.panel7.TabIndex = 1;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.UnitGridView);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(10, 81);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(530, 359);
+            this.groupBox1.Size = new System.Drawing.Size(578, 390);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Information";
             // 
-            // dataGridView1
+            // UnitGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.UnitGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UnitGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDGrid,
             this.NameGrid,
             this.AddressGrid,
             this.PhoneGrid,
             this.FoundedDateGrid});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(524, 333);
-            this.dataGridView1.TabIndex = 0;
+            this.UnitGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UnitGridView.Location = new System.Drawing.Point(3, 23);
+            this.UnitGridView.Name = "UnitGridView";
+            this.UnitGridView.RowHeadersWidth = 51;
+            this.UnitGridView.RowTemplate.Height = 29;
+            this.UnitGridView.Size = new System.Drawing.Size(572, 364);
+            this.UnitGridView.TabIndex = 0;
             // 
             // IDGrid
             // 
@@ -342,7 +376,7 @@
             this.FiltersGroupBox.Location = new System.Drawing.Point(10, 10);
             this.FiltersGroupBox.Name = "FiltersGroupBox";
             this.FiltersGroupBox.Padding = new System.Windows.Forms.Padding(10);
-            this.FiltersGroupBox.Size = new System.Drawing.Size(530, 71);
+            this.FiltersGroupBox.Size = new System.Drawing.Size(578, 71);
             this.FiltersGroupBox.TabIndex = 0;
             this.FiltersGroupBox.TabStop = false;
             this.FiltersGroupBox.Text = "Filter";
@@ -352,7 +386,7 @@
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Location = new System.Drawing.Point(70, 30);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(450, 27);
+            this.textBox1.Size = new System.Drawing.Size(498, 27);
             this.textBox1.TabIndex = 1;
             // 
             // SearchLabel
@@ -369,12 +403,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(848, 481);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.ActionsGroupBox);
             this.Name = "Unit";
             this.Text = "Unit";
+            this.Load += new System.EventHandler(this.Unit_Load);
             this.ActionsGroupBox.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -387,7 +424,7 @@
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitGridView)).EndInit();
             this.FiltersGroupBox.ResumeLayout(false);
             this.FiltersGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -416,7 +453,7 @@
         private DateTimePicker DateFoundedText;
         private Panel panel7;
         private GroupBox groupBox1;
-        private DataGridView dataGridView1;
+        private DataGridView UnitGridView;
         private DataGridViewTextBoxColumn IDGrid;
         private DataGridViewTextBoxColumn NameGrid;
         private DataGridViewTextBoxColumn AddressGrid;
@@ -425,5 +462,8 @@
         private GroupBox FiltersGroupBox;
         private TextBox textBox1;
         private Label SearchLabel;
+        private Panel panel8;
+        private TextBox IDText;
+        private Label label1;
     }
 }
