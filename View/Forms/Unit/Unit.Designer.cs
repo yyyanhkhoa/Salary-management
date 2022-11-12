@@ -33,6 +33,7 @@
             this.IDText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.DeleteBtn = new System.Windows.Forms.Button();
             this.DetailBtn = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.FixBtn = new System.Windows.Forms.Button();
@@ -58,7 +59,7 @@
             this.PhoneGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoundedDateGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FiltersGroupBox = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchText = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.ActionsGroupBox.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -96,7 +97,7 @@
             this.panel8.Controls.Add(this.IDText);
             this.panel8.Controls.Add(this.label1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(3, 414);
+            this.panel8.Location = new System.Drawing.Point(3, 433);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(10);
             this.panel8.Size = new System.Drawing.Size(244, 58);
@@ -122,20 +123,31 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.DeleteBtn);
             this.panel6.Controls.Add(this.DetailBtn);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(3, 347);
             this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(65, 20, 65, 20);
-            this.panel6.Size = new System.Drawing.Size(244, 67);
+            this.panel6.Padding = new System.Windows.Forms.Padding(20);
+            this.panel6.Size = new System.Drawing.Size(244, 86);
             this.panel6.TabIndex = 5;
+            // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.DeleteBtn.Location = new System.Drawing.Point(130, 20);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(94, 46);
+            this.DeleteBtn.TabIndex = 1;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseVisualStyleBackColor = true;
             // 
             // DetailBtn
             // 
-            this.DetailBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DetailBtn.Location = new System.Drawing.Point(65, 20);
+            this.DetailBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.DetailBtn.Location = new System.Drawing.Point(20, 20);
             this.DetailBtn.Name = "DetailBtn";
-            this.DetailBtn.Size = new System.Drawing.Size(114, 27);
+            this.DetailBtn.Size = new System.Drawing.Size(94, 46);
             this.DetailBtn.TabIndex = 0;
             this.DetailBtn.Text = "Detail";
             this.DetailBtn.UseVisualStyleBackColor = true;
@@ -370,7 +382,7 @@
             // 
             // FiltersGroupBox
             // 
-            this.FiltersGroupBox.Controls.Add(this.textBox1);
+            this.FiltersGroupBox.Controls.Add(this.SearchText);
             this.FiltersGroupBox.Controls.Add(this.SearchLabel);
             this.FiltersGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.FiltersGroupBox.Location = new System.Drawing.Point(10, 10);
@@ -381,13 +393,14 @@
             this.FiltersGroupBox.TabStop = false;
             this.FiltersGroupBox.Text = "Filter";
             // 
-            // textBox1
+            // SearchText
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(70, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(498, 27);
-            this.textBox1.TabIndex = 1;
+            this.SearchText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SearchText.Location = new System.Drawing.Point(70, 30);
+            this.SearchText.Name = "SearchText";
+            this.SearchText.Size = new System.Drawing.Size(498, 27);
+            this.SearchText.TabIndex = 1;
+            this.SearchText.TextChanged += new System.EventHandler(this.SearchText_TextChanged);
             // 
             // SearchLabel
             // 
@@ -460,10 +473,11 @@
         private DataGridViewTextBoxColumn PhoneGrid;
         private DataGridViewTextBoxColumn FoundedDateGrid;
         private GroupBox FiltersGroupBox;
-        private TextBox textBox1;
+        private TextBox SearchText;
         private Label SearchLabel;
         private Panel panel8;
         private TextBox IDText;
         private Label label1;
+        private Button DeleteBtn;
     }
 }

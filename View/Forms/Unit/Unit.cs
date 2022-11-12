@@ -29,24 +29,32 @@ namespace Salary_management.View.Forms.Unit
             string Name = NameText.Text;
             string Address = AddressText.Text;
             string phone = PhoneText.Text;
-            DateOnly dataOfFounded = DateOnly.FromDateTime(DateFoundedText.Value);
-            var result = RepoUnit.InsertUnit(new InputUnit(){
-                Id = id,
-                Name = Name,
-                PhoneNumber = phone,
-                Address = Address,
-                DateFounded = dataOfFounded,
-            }) ;
-
-            if (result.Success)
-            {
-                MessageBox.Show("Insert Unit success");
-                mng.OpenChildForm(new View.Forms.Unit.Unit(this.mng), sender);
-
-            }
+            if (id == "") MessageBox.Show("Pls input Id");
+            else if (Name == "") MessageBox.Show("Pls input name");
+            else if (Address == "") MessageBox.Show("Pls input address");
+            else if (phone == "") MessageBox.Show("Pls input phone");
             else
             {
-                MessageBox.Show(result.ErrorMessage);
+                DateOnly dataOfFounded = DateOnly.FromDateTime(DateFoundedText.Value);
+                var result = RepoUnit.InsertUnit(new InputUnit()
+                {
+                    Id = id,
+                    Name = Name,
+                    PhoneNumber = phone,
+                    Address = Address,
+                    DateFounded = dataOfFounded,
+                });
+
+                if (result.Success)
+                {
+                    MessageBox.Show("Insert Unit success");
+                    mng.OpenChildForm(new View.Forms.Unit.Unit(this.mng), sender);
+
+                }
+                else
+                {
+                    MessageBox.Show(result.ErrorMessage);
+                }
             }
            
         }
@@ -58,7 +66,7 @@ namespace Salary_management.View.Forms.Unit
 
         private void DetailBtn_Click(object sender, EventArgs e)
         {
-
+            mng.OpenChildForm(new View.Forms.Unit.UnitDetail(), sender);
         }
 
         private void Unit_Load(object sender, EventArgs e)
@@ -71,6 +79,17 @@ namespace Salary_management.View.Forms.Unit
                 UnitGridView.Rows.Add(unit.Id,unit.Name,unit.Address,unit.PhoneNumber,unit.DateFounded);
             }
             
+        }
+
+        private void SearchText_TextChanged(object sender, EventArgs e)
+        {
+            this.UnitGridView.Rows.Clear();
+            RepositoryUnit repo = new RepositoryUnit();
+            List<Model.Unit> list = repo.GetUnits(SearchText.Text);
+            foreach (Model.Unit unit in list)
+            {
+                UnitGridView.Rows.Add(unit.Id, unit.Name, unit.Address, unit.PhoneNumber, unit.DateFounded);
+            }
         }
     }
 }
