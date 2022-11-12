@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.ActionsGroupBox = new System.Windows.Forms.GroupBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.IDText = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.DetailBtn = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -61,7 +58,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.ActionsGroupBox.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -76,7 +72,6 @@
             // 
             // ActionsGroupBox
             // 
-            this.ActionsGroupBox.Controls.Add(this.panel8);
             this.ActionsGroupBox.Controls.Add(this.panel6);
             this.ActionsGroupBox.Controls.Add(this.panel5);
             this.ActionsGroupBox.Controls.Add(this.panel4);
@@ -91,34 +86,6 @@
             this.ActionsGroupBox.TabStop = false;
             this.ActionsGroupBox.Text = "Action";
             // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.IDText);
-            this.panel8.Controls.Add(this.label1);
-            this.panel8.Location = new System.Drawing.Point(3, 409);
-            this.panel8.Name = "panel8";
-            this.panel8.Padding = new System.Windows.Forms.Padding(10);
-            this.panel8.Size = new System.Drawing.Size(244, 58);
-            this.panel8.TabIndex = 6;
-            // 
-            // IDText
-            // 
-            this.IDText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.IDText.Location = new System.Drawing.Point(39, 10);
-            this.IDText.Name = "IDText";
-            this.IDText.Size = new System.Drawing.Size(195, 27);
-            this.IDText.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Location = new System.Drawing.Point(10, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Id :";
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.DetailBtn);
@@ -126,7 +93,7 @@
             this.panel6.Location = new System.Drawing.Point(3, 347);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(65, 20, 65, 20);
-            this.panel6.Size = new System.Drawing.Size(244, 62);
+            this.panel6.Size = new System.Drawing.Size(244, 97);
             this.panel6.TabIndex = 5;
             // 
             // DetailBtn
@@ -134,7 +101,7 @@
             this.DetailBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DetailBtn.Location = new System.Drawing.Point(65, 20);
             this.DetailBtn.Name = "DetailBtn";
-            this.DetailBtn.Size = new System.Drawing.Size(114, 22);
+            this.DetailBtn.Size = new System.Drawing.Size(114, 57);
             this.DetailBtn.TabIndex = 0;
             this.DetailBtn.Text = "Detail";
             this.DetailBtn.UseVisualStyleBackColor = true;
@@ -408,8 +375,6 @@
             this.Name = "Unit";
             this.Text = "Unit";
             this.ActionsGroupBox.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -460,8 +425,5 @@
         private GroupBox FiltersGroupBox;
         private TextBox textBox1;
         private Label SearchLabel;
-        private Panel panel8;
-        private TextBox IDText;
-        private Label label1;
     }
 }

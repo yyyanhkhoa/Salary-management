@@ -25,13 +25,11 @@ namespace Salary_management.View.Forms.Unit
         private void AddBtn_Click(object sender, EventArgs e)
         {
             var RepoUnit = new RepositoryUnit();
-            string Id = IDText.Text;
             string Name = NameText.Text;
             string Address = AddressText.Text;
             string phone = PhoneText.Text;
             DateOnly dataOfFounded = DateOnly.FromDateTime(DateFoundedText.Value);
             var result = RepoUnit.InsertUnit(new InputUnit(){
-                
                 Name = Name,
                 PhoneNumber = phone,
                 Address = Address,
