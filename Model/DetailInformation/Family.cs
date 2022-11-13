@@ -11,13 +11,10 @@ namespace Salary_management.Model
 {
 	public class Family 
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [MaxLength(255)]
-        public string Id { get; set; } = null!;
+        public int Id { get; set; }
 
         public string EmployeeId { get; set; } = null!;
 
-        [MaxLength(255)]
         public string Name { get; set; } = null!;
 
         public DateOnly DateOfBirth { get; set; }

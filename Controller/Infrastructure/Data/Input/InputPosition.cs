@@ -14,6 +14,8 @@ namespace Salary_management.Controller.Infrastructure.Data.Input
 		public string Name { get; set; } = null!;
 
 		public int BaseSalary { get; set; }
+
+		public string? Description { get; set; }
 		public int RankId { get; set; }
 	}
 }

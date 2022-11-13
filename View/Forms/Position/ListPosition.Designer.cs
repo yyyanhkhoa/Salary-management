@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.ListViewPosition = new System.Windows.Forms.DataGridView();
+            this.PositionGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BaseSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +63,7 @@
             this.panel1.SuspendLayout();
             this.TabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListViewPosition)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PositionGridView)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -99,7 +99,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.ListViewPosition);
+            this.tabPage1.Controls.Add(this.PositionGridView);
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
@@ -109,23 +109,23 @@
             this.tabPage1.Text = "Position";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // ListViewPosition
+            // PositionGridView
             // 
-            this.ListViewPosition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListViewPosition.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PositionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PositionGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.NameEmployee,
             this.BaseSalary,
             this.Description,
             this.NameRank,
             this.Detail});
-            this.ListViewPosition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListViewPosition.Location = new System.Drawing.Point(3, 132);
-            this.ListViewPosition.Name = "ListViewPosition";
-            this.ListViewPosition.RowHeadersWidth = 51;
-            this.ListViewPosition.RowTemplate.Height = 29;
-            this.ListViewPosition.Size = new System.Drawing.Size(791, 304);
-            this.ListViewPosition.TabIndex = 4;
+            this.PositionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PositionGridView.Location = new System.Drawing.Point(3, 132);
+            this.PositionGridView.Name = "PositionGridView";
+            this.PositionGridView.RowHeadersWidth = 51;
+            this.PositionGridView.RowTemplate.Height = 29;
+            this.PositionGridView.Size = new System.Drawing.Size(791, 304);
+            this.PositionGridView.TabIndex = 4;
             // 
             // Id
             // 
@@ -415,7 +415,7 @@
             this.panel1.ResumeLayout(false);
             this.TabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ListViewPosition)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PositionGridView)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -438,7 +438,7 @@
         private TabControl TabControl;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private DataGridView ListViewPosition;
+        private DataGridView PositionGridView;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn NameEmployee;
         private DataGridViewTextBoxColumn BaseSalary;

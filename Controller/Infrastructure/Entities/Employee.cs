@@ -38,5 +38,12 @@ namespace Salary_management.Infrastructure.Entities
 		public float CoefficientAllowance { get; set; }
 
 		public DateTime DateCreated { get; set; }
+
+		List<RewardOrDiscipline> RewardOrDisciplines { get; set; }
+		List<Family> Families { get; set; }
+		List<UnionHistory> UnionHistories { get; set; }
+		List<EmployeeQualification> EmployeeQualifications { get; set; }
+		List<UnitHistory> UnitHistories { get; set; }
+		List<UnitHistory> PositionHistories { get; set; }
 	}
 }

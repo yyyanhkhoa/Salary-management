@@ -5,14 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Salary_management.Infrastructure.Entities
+namespace Salary_management.Model
 {
-	public class UnitHistory : History
+	public class UnitTimeline : History
 	{
-		public int Id { get; set; }
-		public Employee Employee { get; set; } = null!;
-
+		public string EmployeeName { get; set; } = null!;
 		public string UnitId { get; set; } = null!;
-		public Unit Unit { get; set; } = null!;
 	}
 }

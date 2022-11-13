@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Salary_management.Controller.Infrastructure.Entities.Enums;
@@ -13,9 +14,10 @@ using Salary_management.Infrastructure.Entities.Enums;
 namespace Salary_management.Migrations
 {
     [DbContext(typeof(SalaryManContext))]
-    partial class SalaryManContextModelSnapshot : ModelSnapshot
+    [Migration("20221105043048_ahihi")]
+    partial class ahihi
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -184,49 +186,6 @@ namespace Salary_management.Migrations
                     b.ToTable("expertise", (string)null);
                 });
 
-            modelBuilder.Entity("Salary_management.Infrastructure.Entities.Family", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateOnly>("DateOfBirth")
-                        .HasColumnType("date")
-                        .HasColumnName("date_of_birth");
-
-                    b.Property<string>("EmployeeId")
-                        .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasColumnName("employee_id");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("character varying(255)")
-                        .HasColumnName("name");
-
-                    b.Property<string>("Occupation")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("character varying(255)")
-                        .HasColumnName("occupation");
-
-                    b.Property<RelativeType>("RelativeType")
-                        .HasColumnType("relative_type")
-                        .HasColumnName("relative_type");
-
-                    b.HasKey("Id")
-                        .HasName("pk_families");
-
-                    b.HasIndex("EmployeeId")
-                        .HasDatabaseName("ix_families_employee_id");
-
-                    b.ToTable("families", (string)null);
-                });
-
             modelBuilder.Entity("Salary_management.Infrastructure.Entities.Position", b =>
                 {
                     b.Property<string>("Id")
@@ -263,36 +222,24 @@ namespace Salary_management.Migrations
 
             modelBuilder.Entity("Salary_management.Infrastructure.Entities.PositionHistory", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
                     b.Property<string>("EmployeeId")
-                        .IsRequired()
                         .HasColumnType("character varying(255)")
                         .HasColumnName("employee_id");
+
+                    b.Property<string>("PositionId")
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("position_id");
 
                     b.Property<DateOnly>("EndDate")
                         .HasColumnType("date")
                         .HasColumnName("end_date");
 
-                    b.Property<string>("PositionId")
-                        .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasColumnName("position_id");
-
                     b.Property<DateOnly>("StartDate")
                         .HasColumnType("date")
                         .HasColumnName("start_date");
 
-                    b.HasKey("Id")
+                    b.HasKey("EmployeeId", "PositionId")
                         .HasName("pk_position_histories");
-
-                    b.HasIndex("EmployeeId")
-                        .HasDatabaseName("ix_position_histories_employee_id");
 
                     b.HasIndex("PositionId")
                         .HasDatabaseName("ix_position_histories_position_id");
@@ -330,17 +277,6 @@ namespace Salary_management.Migrations
 
             modelBuilder.Entity("Salary_management.Infrastructure.Entities.QualificationAllowanceHistory", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Allowance")
-                        .HasColumnType("integer")
-                        .HasColumnName("allowance");
-
                     b.Property<int>("QualificationId")
                         .HasColumnType("integer")
                         .HasColumnName("qualification_id");
@@ -349,11 +285,12 @@ namespace Salary_management.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("year");
 
-                    b.HasKey("Id")
-                        .HasName("pk_qualification_allowance_histories");
+                    b.Property<int>("Allowance")
+                        .HasColumnType("integer")
+                        .HasColumnName("allowance");
 
-                    b.HasIndex("QualificationId")
-                        .HasDatabaseName("ix_qualification_allowance_histories_qualification_id");
+                    b.HasKey("QualificationId", "Year")
+                        .HasName("pk_qualification_allowance_histories");
 
                     b.ToTable("qualification_allowance_histories", (string)null);
                 });
@@ -384,6 +321,43 @@ namespace Salary_management.Migrations
                         .HasName("pk_ranks");
 
                     b.ToTable("ranks", (string)null);
+                });
+
+            modelBuilder.Entity("Salary_management.Infrastructure.Entities.Relative", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateOnly>("DateOfBirth")
+                        .HasColumnType("date")
+                        .HasColumnName("date_of_birth");
+
+                    b.Property<string>("EmployeeId")
+                        .IsRequired()
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("employee_id");
+
+                    b.Property<string>("Occupation")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("occupation");
+
+                    b.Property<RelativeType>("RelativeType")
+                        .HasColumnType("relative_type")
+                        .HasColumnName("relative_type");
+
+                    b.HasKey("Id")
+                        .HasName("pk_relatives");
+
+                    b.HasIndex("EmployeeId")
+                        .HasDatabaseName("ix_relatives_employee_id");
+
+                    b.ToTable("relatives", (string)null);
                 });
 
             modelBuilder.Entity("Salary_management.Infrastructure.Entities.RewardOrDiscipline", b =>
@@ -449,17 +423,13 @@ namespace Salary_management.Migrations
 
             modelBuilder.Entity("Salary_management.Infrastructure.Entities.UnionHistory", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
                     b.Property<string>("EmployeeId")
-                        .IsRequired()
                         .HasColumnType("character varying(255)")
                         .HasColumnName("employee_id");
+
+                    b.Property<string>("UnionId")
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("union_id");
 
                     b.Property<DateOnly>("EndDate")
                         .HasColumnType("date")
@@ -469,21 +439,13 @@ namespace Salary_management.Migrations
                         .HasColumnType("date")
                         .HasColumnName("start_date");
 
-                    b.Property<string>("UnionId")
-                        .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasColumnName("union_id");
-
-                    b.HasKey("Id")
-                        .HasName("pk_union_histories");
-
-                    b.HasIndex("EmployeeId")
-                        .HasDatabaseName("ix_union_histories_employee_id");
+                    b.HasKey("EmployeeId", "UnionId")
+                        .HasName("pk_union_history");
 
                     b.HasIndex("UnionId")
-                        .HasDatabaseName("ix_union_histories_union_id");
+                        .HasDatabaseName("ix_union_history_union_id");
 
-                    b.ToTable("union_histories", (string)null);
+                    b.ToTable("union_history", (string)null);
                 });
 
             modelBuilder.Entity("Salary_management.Infrastructure.Entities.Unit", b =>
@@ -523,17 +485,13 @@ namespace Salary_management.Migrations
 
             modelBuilder.Entity("Salary_management.Infrastructure.Entities.UnitHistory", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
                     b.Property<string>("EmployeeId")
-                        .IsRequired()
                         .HasColumnType("character varying(255)")
                         .HasColumnName("employee_id");
+
+                    b.Property<string>("UnitId")
+                        .HasColumnType("character varying(255)")
+                        .HasColumnName("unit_id");
 
                     b.Property<DateOnly>("EndDate")
                         .HasColumnType("date")
@@ -543,16 +501,8 @@ namespace Salary_management.Migrations
                         .HasColumnType("date")
                         .HasColumnName("start_date");
 
-                    b.Property<string>("UnitId")
-                        .IsRequired()
-                        .HasColumnType("character varying(255)")
-                        .HasColumnName("unit_id");
-
-                    b.HasKey("Id")
+                    b.HasKey("EmployeeId", "UnitId")
                         .HasName("pk_unit_histories");
-
-                    b.HasIndex("EmployeeId")
-                        .HasDatabaseName("ix_unit_histories_employee_id");
 
                     b.HasIndex("UnitId")
                         .HasDatabaseName("ix_unit_histories_unit_id");
@@ -579,18 +529,6 @@ namespace Salary_management.Migrations
                     b.Navigation("Employee");
 
                     b.Navigation("Qualification");
-                });
-
-            modelBuilder.Entity("Salary_management.Infrastructure.Entities.Family", b =>
-                {
-                    b.HasOne("Salary_management.Infrastructure.Entities.Employee", "Employee")
-                        .WithMany()
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_families_employees_employee_id");
-
-                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("Salary_management.Infrastructure.Entities.Position", b =>
@@ -650,6 +588,18 @@ namespace Salary_management.Migrations
                     b.Navigation("Qualification");
                 });
 
+            modelBuilder.Entity("Salary_management.Infrastructure.Entities.Relative", b =>
+                {
+                    b.HasOne("Salary_management.Infrastructure.Entities.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_relatives_employees_employee_id");
+
+                    b.Navigation("Employee");
+                });
+
             modelBuilder.Entity("Salary_management.Infrastructure.Entities.RewardOrDiscipline", b =>
                 {
                     b.HasOne("Salary_management.Infrastructure.Entities.Employee", "Employee")
@@ -669,14 +619,14 @@ namespace Salary_management.Migrations
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("fk_union_histories_employees_employee_id");
+                        .HasConstraintName("fk_union_history_employees_employee_id");
 
                     b.HasOne("Salary_management.Infrastructure.Entities.Union", "Union")
                         .WithMany()
                         .HasForeignKey("UnionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("fk_union_histories_unions_union_id");
+                        .HasConstraintName("fk_union_history_unions_union_id");
 
                     b.Navigation("Employee");
 
