@@ -22,6 +22,44 @@ namespace Salary_management.View.Forms.Unit
             InitializeComponent();
         }
 
+
+
+        private void FixBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void Unit_Load(object sender, EventArgs e)
+        {
+            this.UnitGridView.Rows.Clear();
+            RepositoryUnit repo = new RepositoryUnit();
+            List<Model.Unit> list = repo.GetUnits("");
+            foreach (Model.Unit unit in list)
+            {
+                UnitGridView.Rows.Add(unit.Id,unit.Name,unit.Address,unit.PhoneNumber,unit.DateFounded);
+            }
+            
+        }
+
+        private void SearchText_TextChanged(object sender, EventArgs e)
+        {
+            this.UnitGridView.Rows.Clear();
+            RepositoryUnit repo = new RepositoryUnit();
+            List<Model.Unit> list = repo.GetUnits(SearchText.Text);
+            foreach (Model.Unit unit in list)
+            {
+                UnitGridView.Rows.Add(unit.Id, unit.Name, unit.Address, unit.PhoneNumber, unit.DateFounded);
+            }
+        }
+
+        private void DetailBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Unit.UnitDetailForm(), sender);
+
+        }
+
         private void AddBtn_Click(object sender, EventArgs e)
         {
             var RepoUnit = new RepositoryUnit();
@@ -55,40 +93,6 @@ namespace Salary_management.View.Forms.Unit
                 {
                     MessageBox.Show(result.ErrorMessage);
                 }
-            }
-           
-        }
-
-        private void FixBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DetailBtn_Click(object sender, EventArgs e)
-        {
-            mng.OpenChildForm(new View.Forms.Unit.UnitDetail(), sender);
-        }
-
-        private void Unit_Load(object sender, EventArgs e)
-        {
-            this.UnitGridView.Rows.Clear();
-            RepositoryUnit repo = new RepositoryUnit();
-            List<Model.Unit> list = repo.GetUnits("");
-            foreach (Model.Unit unit in list)
-            {
-                UnitGridView.Rows.Add(unit.Id,unit.Name,unit.Address,unit.PhoneNumber,unit.DateFounded);
-            }
-            
-        }
-
-        private void SearchText_TextChanged(object sender, EventArgs e)
-        {
-            this.UnitGridView.Rows.Clear();
-            RepositoryUnit repo = new RepositoryUnit();
-            List<Model.Unit> list = repo.GetUnits(SearchText.Text);
-            foreach (Model.Unit unit in list)
-            {
-                UnitGridView.Rows.Add(unit.Id, unit.Name, unit.Address, unit.PhoneNumber, unit.DateFounded);
             }
         }
     }

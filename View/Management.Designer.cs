@@ -52,7 +52,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(10, 10);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(237, 596);
+            this.panelMenu.Size = new System.Drawing.Size(231, 622);
             this.panelMenu.TabIndex = 0;
             // 
             // SettingBtn
@@ -66,7 +66,7 @@
             this.SettingBtn.Location = new System.Drawing.Point(0, 264);
             this.SettingBtn.Name = "SettingBtn";
             this.SettingBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.SettingBtn.Size = new System.Drawing.Size(235, 66);
+            this.SettingBtn.Size = new System.Drawing.Size(229, 66);
             this.SettingBtn.TabIndex = 6;
             this.SettingBtn.Text = "    Setting";
             this.SettingBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -83,7 +83,7 @@
             this.RewardOrNotBtn.Location = new System.Drawing.Point(0, 198);
             this.RewardOrNotBtn.Name = "RewardOrNotBtn";
             this.RewardOrNotBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.RewardOrNotBtn.Size = new System.Drawing.Size(235, 66);
+            this.RewardOrNotBtn.Size = new System.Drawing.Size(229, 66);
             this.RewardOrNotBtn.TabIndex = 5;
             this.RewardOrNotBtn.Text = "RewardOrDiscipline";
             this.RewardOrNotBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -101,7 +101,7 @@
             this.UnitBtn.Location = new System.Drawing.Point(0, 132);
             this.UnitBtn.Name = "UnitBtn";
             this.UnitBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.UnitBtn.Size = new System.Drawing.Size(235, 66);
+            this.UnitBtn.Size = new System.Drawing.Size(229, 66);
             this.UnitBtn.TabIndex = 4;
             this.UnitBtn.Text = "Unit";
             this.UnitBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -119,7 +119,7 @@
             this.PositionBtn.Location = new System.Drawing.Point(0, 66);
             this.PositionBtn.Name = "PositionBtn";
             this.PositionBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.PositionBtn.Size = new System.Drawing.Size(235, 66);
+            this.PositionBtn.Size = new System.Drawing.Size(229, 66);
             this.PositionBtn.TabIndex = 3;
             this.PositionBtn.Text = "Position";
             this.PositionBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -137,7 +137,7 @@
             this.ListEmployeeBtn.Location = new System.Drawing.Point(0, 0);
             this.ListEmployeeBtn.Name = "ListEmployeeBtn";
             this.ListEmployeeBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ListEmployeeBtn.Size = new System.Drawing.Size(235, 66);
+            this.ListEmployeeBtn.Size = new System.Drawing.Size(229, 66);
             this.ListEmployeeBtn.TabIndex = 1;
             this.ListEmployeeBtn.Text = "Employee";
             this.ListEmployeeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -147,16 +147,16 @@
             // panelDesktopPanel
             // 
             this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPanel.Location = new System.Drawing.Point(247, 10);
+            this.panelDesktopPanel.Location = new System.Drawing.Point(241, 10);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(726, 596);
+            this.panelDesktopPanel.Size = new System.Drawing.Size(982, 622);
             this.panelDesktopPanel.TabIndex = 2;
             // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 616);
+            this.ClientSize = new System.Drawing.Size(1233, 642);
             this.Controls.Add(this.panelDesktopPanel);
             this.Controls.Add(this.panelMenu);
             this.Name = "Management";
