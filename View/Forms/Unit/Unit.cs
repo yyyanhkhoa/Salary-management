@@ -1,4 +1,5 @@
-﻿using Salary_management.Controller.Infrastructure.Data.Input;
+﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
+using Salary_management.Controller.Infrastructure.Data.Input;
 using Salary_management.Controller.Infrastructure.Repositories;
 using Salary_management.Infrastructure.Entities.Enums;
 using System;
@@ -56,7 +57,8 @@ namespace Salary_management.View.Forms.Unit
 
         private void DetailBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Unit.UnitDetailForm(), sender);
+            string id = (UnitGridView.Rows[UnitGridView.CurrentRow.Index].Cells[0].Value).ToString();
+            mng.OpenChildForm(new View.Forms.Unit.UnitDetailForm(this.mng,id), sender);
 
         }
 

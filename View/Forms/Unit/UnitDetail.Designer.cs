@@ -34,7 +34,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.FixBtn = new System.Windows.Forms.Button();
             this.AddBtn = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.EndDatePanel = new System.Windows.Forms.Panel();
             this.EndDateInput = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -66,7 +66,7 @@
             this.panel6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.EndDatePanel.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -102,7 +102,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.panel4);
-            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.Controls.Add(this.EndDatePanel);
             this.groupBox1.Controls.Add(this.panel5);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.panel1);
@@ -146,17 +146,18 @@
             this.AddBtn.TabIndex = 0;
             this.AddBtn.Text = "Add";
             this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // panel3
+            // EndDatePanel
             // 
-            this.panel3.Controls.Add(this.EndDateInput);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(10, 243);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
-            this.panel3.Size = new System.Drawing.Size(322, 69);
-            this.panel3.TabIndex = 6;
+            this.EndDatePanel.Controls.Add(this.EndDateInput);
+            this.EndDatePanel.Controls.Add(this.label3);
+            this.EndDatePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.EndDatePanel.Location = new System.Drawing.Point(10, 243);
+            this.EndDatePanel.Name = "EndDatePanel";
+            this.EndDatePanel.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
+            this.EndDatePanel.Size = new System.Drawing.Size(322, 69);
+            this.EndDatePanel.TabIndex = 6;
             // 
             // EndDateInput
             // 
@@ -196,6 +197,7 @@
             this.WorkRecentlyCheckBox.TabIndex = 0;
             this.WorkRecentlyCheckBox.Text = "Work recently";
             this.WorkRecentlyCheckBox.UseVisualStyleBackColor = true;
+            this.WorkRecentlyCheckBox.CheckedChanged += new System.EventHandler(this.WorkRecentlyCheckBox_CheckedChanged);
             // 
             // panel2
             // 
@@ -348,6 +350,7 @@
             this.DateText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DateText.Location = new System.Drawing.Point(3, 23);
             this.DateText.Name = "DateText";
+            this.DateText.ReadOnly = true;
             this.DateText.Size = new System.Drawing.Size(124, 27);
             this.DateText.TabIndex = 0;
             // 
@@ -375,6 +378,7 @@
             this.PhoneText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PhoneText.Location = new System.Drawing.Point(3, 23);
             this.PhoneText.Name = "PhoneText";
+            this.PhoneText.ReadOnly = true;
             this.PhoneText.Size = new System.Drawing.Size(104, 27);
             this.PhoneText.TabIndex = 0;
             // 
@@ -402,6 +406,7 @@
             this.AddressText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddressText.Location = new System.Drawing.Point(3, 23);
             this.AddressText.Name = "AddressText";
+            this.AddressText.ReadOnly = true;
             this.AddressText.Size = new System.Drawing.Size(105, 27);
             this.AddressText.TabIndex = 0;
             // 
@@ -429,6 +434,7 @@
             this.NameText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NameText.Location = new System.Drawing.Point(3, 23);
             this.NameText.Name = "NameText";
+            this.NameText.ReadOnly = true;
             this.NameText.Size = new System.Drawing.Size(126, 27);
             this.NameText.TabIndex = 0;
             // 
@@ -442,11 +448,13 @@
             this.Controls.Add(this.panel6);
             this.Name = "UnitDetailForm";
             this.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.Text = "Unit Detail";
+            this.Load += new System.EventHandler(this.UnitDetailForm_Load);
             this.panel6.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.EndDatePanel.ResumeLayout(false);
+            this.EndDatePanel.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -476,7 +484,7 @@
         private Panel panel4;
         private Button FixBtn;
         private Button AddBtn;
-        private Panel panel3;
+        private Panel EndDatePanel;
         private DateTimePicker EndDateInput;
         private Label label3;
         private Panel panel5;
