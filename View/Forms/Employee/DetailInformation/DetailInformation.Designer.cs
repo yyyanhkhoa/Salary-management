@@ -1,6 +1,6 @@
-﻿namespace Salary_management.View.Forms.Employee
+﻿namespace Salary_management.View.Forms.Employee.DetailInformation
 {
-    partial class FormEmployeeDetail
+    partial class DetailInformation
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.GenderGroupBox = new System.Windows.Forms.GroupBox();
+            this.MaleBtn = new System.Windows.Forms.RadioButton();
+            this.FemaleBtn = new System.Windows.Forms.RadioButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.NameGroupBox = new System.Windows.Forms.GroupBox();
+            this.NameText = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.ImagePicture = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.FixBtn = new System.Windows.Forms.Button();
+            this.BackBtn = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.FamilyGridView = new System.Windows.Forms.DataGridView();
+            this.IdFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BirthFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OcupationFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RelativeFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.RemoveFamilyBtn = new System.Windows.Forms.Button();
+            this.FixFamilyBtn = new System.Windows.Forms.Button();
+            this.AddFamilyBtn = new System.Windows.Forms.Button();
+            this.npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
+            this.npgsqlDataAdapter2 = new Npgsql.NpgsqlDataAdapter();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.AddEmployeeGroupBox = new System.Windows.Forms.GroupBox();
@@ -52,34 +84,59 @@
             this.AddressGroupBox = new System.Windows.Forms.GroupBox();
             this.AddressText = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.GenderGroupBox = new System.Windows.Forms.GroupBox();
-            this.MaleBtn = new System.Windows.Forms.RadioButton();
-            this.FemaleBtn = new System.Windows.Forms.RadioButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.NameGroupBox = new System.Windows.Forms.GroupBox();
-            this.NameText = new System.Windows.Forms.TextBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.ImagePicture = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.FixBtn = new System.Windows.Forms.Button();
-            this.BackBtn = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.FamilyGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.RemoveFamilyBtn = new System.Windows.Forms.Button();
-            this.FixFamilyBtn = new System.Windows.Forms.Button();
-            this.AddFamilyBtn = new System.Windows.Forms.Button();
-            this.npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
-            this.npgsqlDataAdapter2 = new Npgsql.NpgsqlDataAdapter();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.panel1.SuspendLayout();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.ListViewEmployee = new System.Windows.Forms.DataGridView();
+            this.IdQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameCallQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IssueDateQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlaceOfIssueQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TitleListEmployee = new System.Windows.Forms.Label();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.IDUnion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameUnion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SartDateUnion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDateUnion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.panel2.SuspendLayout();
+            this.GenderGroupBox.SuspendLayout();
+            this.NameGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagePicture)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FamilyGridView)).BeginInit();
+            this.panel14.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.AddEmployeeGroupBox.SuspendLayout();
@@ -93,39 +150,361 @@
             this.groupBox1.SuspendLayout();
             this.AddressGroupBox.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.GenderGroupBox.SuspendLayout();
-            this.NameGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ImagePicture)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FamilyGridView)).BeginInit();
-            this.panel14.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ListViewEmployee)).BeginInit();
+            this.panel13.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel15.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel22.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.AutoSize = true;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.tabControl1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(842, 526);
-            this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel2.Controls.Add(this.GenderGroupBox);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.NameGroupBox);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel2.Location = new System.Drawing.Point(144, 49);
+            this.panel2.Margin = new System.Windows.Forms.Padding(10);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(10);
+            this.panel2.Size = new System.Drawing.Size(580, 70);
+            this.panel2.TabIndex = 2;
+            // 
+            // GenderGroupBox
+            // 
+            this.GenderGroupBox.Controls.Add(this.MaleBtn);
+            this.GenderGroupBox.Controls.Add(this.FemaleBtn);
+            this.GenderGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GenderGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.GenderGroupBox.Location = new System.Drawing.Point(307, 10);
+            this.GenderGroupBox.Name = "GenderGroupBox";
+            this.GenderGroupBox.Padding = new System.Windows.Forms.Padding(40, 3, 40, 3);
+            this.GenderGroupBox.Size = new System.Drawing.Size(263, 50);
+            this.GenderGroupBox.TabIndex = 3;
+            this.GenderGroupBox.TabStop = false;
+            this.GenderGroupBox.Text = "Gender";
+            // 
+            // MaleBtn
+            // 
+            this.MaleBtn.AutoSize = true;
+            this.MaleBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MaleBtn.Location = new System.Drawing.Point(40, 23);
+            this.MaleBtn.Name = "MaleBtn";
+            this.MaleBtn.Size = new System.Drawing.Size(105, 24);
+            this.MaleBtn.TabIndex = 2;
+            this.MaleBtn.TabStop = true;
+            this.MaleBtn.Text = "Male";
+            this.MaleBtn.UseVisualStyleBackColor = true;
+            // 
+            // FemaleBtn
+            // 
+            this.FemaleBtn.AutoSize = true;
+            this.FemaleBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.FemaleBtn.Location = new System.Drawing.Point(145, 23);
+            this.FemaleBtn.Name = "FemaleBtn";
+            this.FemaleBtn.Size = new System.Drawing.Size(78, 24);
+            this.FemaleBtn.TabIndex = 1;
+            this.FemaleBtn.TabStop = true;
+            this.FemaleBtn.Text = "Female";
+            this.FemaleBtn.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(288, 10);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(19, 50);
+            this.panel4.TabIndex = 2;
+            // 
+            // NameGroupBox
+            // 
+            this.NameGroupBox.Controls.Add(this.NameText);
+            this.NameGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.NameGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.NameGroupBox.Location = new System.Drawing.Point(10, 10);
+            this.NameGroupBox.Name = "NameGroupBox";
+            this.NameGroupBox.Size = new System.Drawing.Size(278, 50);
+            this.NameGroupBox.TabIndex = 0;
+            this.NameGroupBox.TabStop = false;
+            this.NameGroupBox.Text = "Name";
+            // 
+            // NameText
+            // 
+            this.NameText.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.NameText.Location = new System.Drawing.Point(3, 20);
+            this.NameText.Name = "NameText";
+            this.NameText.Size = new System.Drawing.Size(272, 27);
+            this.NameText.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(123, 10);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(21, 109);
+            this.panel8.TabIndex = 1;
+            // 
+            // ImagePicture
+            // 
+            this.ImagePicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ImagePicture.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ImagePicture.Location = new System.Drawing.Point(10, 10);
+            this.ImagePicture.Name = "ImagePicture";
+            this.ImagePicture.Size = new System.Drawing.Size(113, 109);
+            this.ImagePicture.TabIndex = 0;
+            this.ImagePicture.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.FixBtn);
+            this.panel3.Controls.Add(this.BackBtn);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(3, 455);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panel3.Size = new System.Drawing.Size(744, 46);
+            this.panel3.TabIndex = 10;
+            // 
+            // FixBtn
+            // 
+            this.FixBtn.BackColor = System.Drawing.Color.Yellow;
+            this.FixBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.FixBtn.Location = new System.Drawing.Point(646, 5);
+            this.FixBtn.Name = "FixBtn";
+            this.FixBtn.Size = new System.Drawing.Size(98, 41);
+            this.FixBtn.TabIndex = 1;
+            this.FixBtn.Text = "Fix";
+            this.FixBtn.UseVisualStyleBackColor = false;
+            this.FixBtn.Click += new System.EventHandler(this.FixBtn_Click);
+            // 
+            // BackBtn
+            // 
+            this.BackBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BackBtn.Location = new System.Drawing.Point(0, 5);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(94, 41);
+            this.BackBtn.TabIndex = 0;
+            this.BackBtn.Text = "< Back";
+            this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(750, 504);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Family";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.AutoSize = true;
+            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.panel17);
+            this.groupBox2.Controls.Add(this.FamilyGridView);
+            this.groupBox2.Controls.Add(this.panel14);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox2.Size = new System.Drawing.Size(744, 498);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Family Form";
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.button6);
+            this.panel17.Controls.Add(this.button7);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel17.Location = new System.Drawing.Point(5, 447);
+            this.panel17.Name = "panel17";
+            this.panel17.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panel17.Size = new System.Drawing.Size(734, 46);
+            this.panel17.TabIndex = 18;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Yellow;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button6.Location = new System.Drawing.Point(636, 5);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(98, 41);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "Fix";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button7.Location = new System.Drawing.Point(0, 5);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(94, 41);
+            this.button7.TabIndex = 0;
+            this.button7.Text = "< Back";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // FamilyGridView
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FamilyGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.FamilyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FamilyGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdFamily,
+            this.NameFamily,
+            this.BirthFamily,
+            this.OcupationFamily,
+            this.RelativeFamily});
+            this.FamilyGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FamilyGridView.Location = new System.Drawing.Point(5, 106);
+            this.FamilyGridView.Name = "FamilyGridView";
+            this.FamilyGridView.RowHeadersWidth = 51;
+            this.FamilyGridView.RowTemplate.Height = 29;
+            this.FamilyGridView.Size = new System.Drawing.Size(734, 387);
+            this.FamilyGridView.TabIndex = 17;
+            // 
+            // IdFamily
+            // 
+            this.IdFamily.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.IdFamily.FillWeight = 50F;
+            this.IdFamily.HeaderText = "Id";
+            this.IdFamily.MinimumWidth = 6;
+            this.IdFamily.Name = "IdFamily";
+            // 
+            // NameFamily
+            // 
+            this.NameFamily.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameFamily.FillWeight = 180F;
+            this.NameFamily.HeaderText = "Name";
+            this.NameFamily.MinimumWidth = 6;
+            this.NameFamily.Name = "NameFamily";
+            // 
+            // BirthFamily
+            // 
+            this.BirthFamily.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BirthFamily.HeaderText = "Birth";
+            this.BirthFamily.MinimumWidth = 6;
+            this.BirthFamily.Name = "BirthFamily";
+            // 
+            // OcupationFamily
+            // 
+            this.OcupationFamily.FillWeight = 80F;
+            this.OcupationFamily.HeaderText = "Ocupation";
+            this.OcupationFamily.MinimumWidth = 6;
+            this.OcupationFamily.Name = "OcupationFamily";
+            this.OcupationFamily.Width = 110;
+            // 
+            // RelativeFamily
+            // 
+            this.RelativeFamily.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.RelativeFamily.FillWeight = 95F;
+            this.RelativeFamily.HeaderText = "Relative Type";
+            this.RelativeFamily.MinimumWidth = 6;
+            this.RelativeFamily.Name = "RelativeFamily";
+            this.RelativeFamily.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.RelativeFamily.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.RelativeFamily.Width = 156;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.RemoveFamilyBtn);
+            this.panel14.Controls.Add(this.FixFamilyBtn);
+            this.panel14.Controls.Add(this.AddFamilyBtn);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel14.Location = new System.Drawing.Point(5, 32);
+            this.panel14.Name = "panel14";
+            this.panel14.Padding = new System.Windows.Forms.Padding(10);
+            this.panel14.Size = new System.Drawing.Size(734, 74);
+            this.panel14.TabIndex = 16;
+            // 
+            // RemoveFamilyBtn
+            // 
+            this.RemoveFamilyBtn.AutoSize = true;
+            this.RemoveFamilyBtn.BackColor = System.Drawing.Color.Transparent;
+            this.RemoveFamilyBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RemoveFamilyBtn.Location = new System.Drawing.Point(268, 10);
+            this.RemoveFamilyBtn.Name = "RemoveFamilyBtn";
+            this.RemoveFamilyBtn.Size = new System.Drawing.Size(198, 54);
+            this.RemoveFamilyBtn.TabIndex = 5;
+            this.RemoveFamilyBtn.Text = "Remove";
+            this.RemoveFamilyBtn.UseVisualStyleBackColor = false;
+            // 
+            // FixFamilyBtn
+            // 
+            this.FixFamilyBtn.AutoSize = true;
+            this.FixFamilyBtn.BackColor = System.Drawing.Color.Transparent;
+            this.FixFamilyBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.FixFamilyBtn.Location = new System.Drawing.Point(466, 10);
+            this.FixFamilyBtn.Name = "FixFamilyBtn";
+            this.FixFamilyBtn.Size = new System.Drawing.Size(258, 54);
+            this.FixFamilyBtn.TabIndex = 4;
+            this.FixFamilyBtn.Text = "Fix";
+            this.FixFamilyBtn.UseVisualStyleBackColor = false;
+            // 
+            // AddFamilyBtn
+            // 
+            this.AddFamilyBtn.AutoSize = true;
+            this.AddFamilyBtn.BackColor = System.Drawing.Color.Transparent;
+            this.AddFamilyBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.AddFamilyBtn.Location = new System.Drawing.Point(10, 10);
+            this.AddFamilyBtn.Name = "AddFamilyBtn";
+            this.AddFamilyBtn.Size = new System.Drawing.Size(258, 54);
+            this.AddFamilyBtn.TabIndex = 3;
+            this.AddFamilyBtn.Text = "Add";
+            this.AddFamilyBtn.UseVisualStyleBackColor = false;
+            this.AddFamilyBtn.Click += new System.EventHandler(this.AddFamilyBtn_Click);
+            // 
+            // npgsqlDataAdapter1
+            // 
+            this.npgsqlDataAdapter1.DeleteCommand = null;
+            this.npgsqlDataAdapter1.InsertCommand = null;
+            this.npgsqlDataAdapter1.SelectCommand = null;
+            this.npgsqlDataAdapter1.UpdateCommand = null;
+            // 
+            // npgsqlDataAdapter2
+            // 
+            this.npgsqlDataAdapter2.DeleteCommand = null;
+            this.npgsqlDataAdapter2.InsertCommand = null;
+            this.npgsqlDataAdapter2.SelectCommand = null;
+            this.npgsqlDataAdapter2.UpdateCommand = null;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(10, 10);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(820, 504);
+            this.tabControl1.Size = new System.Drawing.Size(723, 537);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
@@ -135,7 +514,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(812, 471);
+            this.tabPage1.Size = new System.Drawing.Size(750, 504);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Info";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -154,7 +533,7 @@
             this.AddEmployeeGroupBox.Location = new System.Drawing.Point(3, 3);
             this.AddEmployeeGroupBox.Name = "AddEmployeeGroupBox";
             this.AddEmployeeGroupBox.Padding = new System.Windows.Forms.Padding(5);
-            this.AddEmployeeGroupBox.Size = new System.Drawing.Size(806, 419);
+            this.AddEmployeeGroupBox.Size = new System.Drawing.Size(744, 452);
             this.AddEmployeeGroupBox.TabIndex = 11;
             this.AddEmployeeGroupBox.TabStop = false;
             this.AddEmployeeGroupBox.Text = "Detail Employee Form";
@@ -164,7 +543,7 @@
             this.AddNewBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddNewBtn.Location = new System.Drawing.Point(5, 404);
             this.AddNewBtn.Name = "AddNewBtn";
-            this.AddNewBtn.Size = new System.Drawing.Size(796, 10);
+            this.AddNewBtn.Size = new System.Drawing.Size(734, 43);
             this.AddNewBtn.TabIndex = 6;
             // 
             // panel12
@@ -175,7 +554,7 @@
             this.panel12.Location = new System.Drawing.Point(5, 324);
             this.panel12.Name = "panel12";
             this.panel12.Padding = new System.Windows.Forms.Padding(10);
-            this.panel12.Size = new System.Drawing.Size(796, 80);
+            this.panel12.Size = new System.Drawing.Size(734, 80);
             this.panel12.TabIndex = 5;
             // 
             // CoefficientAllowanceGroupBox
@@ -184,7 +563,7 @@
             this.CoefficientAllowanceGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CoefficientAllowanceGroupBox.Location = new System.Drawing.Point(10, 10);
             this.CoefficientAllowanceGroupBox.Name = "CoefficientAllowanceGroupBox";
-            this.CoefficientAllowanceGroupBox.Size = new System.Drawing.Size(776, 60);
+            this.CoefficientAllowanceGroupBox.Size = new System.Drawing.Size(714, 60);
             this.CoefficientAllowanceGroupBox.TabIndex = 1;
             this.CoefficientAllowanceGroupBox.TabStop = false;
             this.CoefficientAllowanceGroupBox.Text = "Coefficient Allowance";
@@ -194,7 +573,7 @@
             this.CoefficientAllowanceText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CoefficientAllowanceText.Location = new System.Drawing.Point(3, 23);
             this.CoefficientAllowanceText.Name = "CoefficientAllowanceText";
-            this.CoefficientAllowanceText.Size = new System.Drawing.Size(770, 27);
+            this.CoefficientAllowanceText.Size = new System.Drawing.Size(708, 27);
             this.CoefficientAllowanceText.TabIndex = 0;
             // 
             // panel9
@@ -209,7 +588,7 @@
             this.panel9.Location = new System.Drawing.Point(5, 243);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(10);
-            this.panel9.Size = new System.Drawing.Size(796, 81);
+            this.panel9.Size = new System.Drawing.Size(734, 81);
             this.panel9.TabIndex = 4;
             // 
             // StartDateGroupBox
@@ -218,7 +597,7 @@
             this.StartDateGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StartDateGroupBox.Location = new System.Drawing.Point(489, 10);
             this.StartDateGroupBox.Name = "StartDateGroupBox";
-            this.StartDateGroupBox.Size = new System.Drawing.Size(297, 61);
+            this.StartDateGroupBox.Size = new System.Drawing.Size(235, 61);
             this.StartDateGroupBox.TabIndex = 4;
             this.StartDateGroupBox.TabStop = false;
             this.StartDateGroupBox.Text = "Start Date At School";
@@ -229,7 +608,7 @@
             this.StartDate.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.StartDate.Location = new System.Drawing.Point(3, 31);
             this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(291, 27);
+            this.StartDate.Size = new System.Drawing.Size(229, 27);
             this.StartDate.TabIndex = 0;
             // 
             // panel11
@@ -296,7 +675,7 @@
             this.panel5.Location = new System.Drawing.Point(5, 161);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(10);
-            this.panel5.Size = new System.Drawing.Size(796, 82);
+            this.panel5.Size = new System.Drawing.Size(734, 82);
             this.panel5.TabIndex = 3;
             // 
             // groupBox1
@@ -305,7 +684,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(466, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(320, 62);
+            this.groupBox1.Size = new System.Drawing.Size(258, 62);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Date of Birth";
@@ -316,7 +695,7 @@
             this.DateOfBirth.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DateOfBirth.Location = new System.Drawing.Point(3, 32);
             this.DateOfBirth.Name = "DateOfBirth";
-            this.DateOfBirth.Size = new System.Drawing.Size(314, 27);
+            this.DateOfBirth.Size = new System.Drawing.Size(252, 27);
             this.DateOfBirth.TabIndex = 0;
             // 
             // panel6
@@ -356,302 +735,504 @@
             this.panel7.Location = new System.Drawing.Point(5, 32);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(10);
-            this.panel7.Size = new System.Drawing.Size(796, 129);
+            this.panel7.Size = new System.Drawing.Size(734, 129);
             this.panel7.TabIndex = 2;
             // 
-            // panel2
+            // tabPage3
             // 
-            this.panel2.Controls.Add(this.GenderGroupBox);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.NameGroupBox);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel2.Location = new System.Drawing.Point(144, 49);
-            this.panel2.Margin = new System.Windows.Forms.Padding(10);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(642, 70);
-            this.panel2.TabIndex = 2;
+            this.tabPage3.Controls.Add(this.panel16);
+            this.tabPage3.Controls.Add(this.ListViewEmployee);
+            this.tabPage3.Controls.Add(this.panel13);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(715, 504);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Employee Qualification";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // GenderGroupBox
+            // panel16
             // 
-            this.GenderGroupBox.Controls.Add(this.MaleBtn);
-            this.GenderGroupBox.Controls.Add(this.FemaleBtn);
-            this.GenderGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GenderGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.GenderGroupBox.Location = new System.Drawing.Point(307, 10);
-            this.GenderGroupBox.Name = "GenderGroupBox";
-            this.GenderGroupBox.Padding = new System.Windows.Forms.Padding(40, 3, 40, 3);
-            this.GenderGroupBox.Size = new System.Drawing.Size(325, 50);
-            this.GenderGroupBox.TabIndex = 3;
-            this.GenderGroupBox.TabStop = false;
-            this.GenderGroupBox.Text = "Gender";
+            this.panel16.Controls.Add(this.button10);
+            this.panel16.Controls.Add(this.button4);
+            this.panel16.Controls.Add(this.button5);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel16.Location = new System.Drawing.Point(3, 455);
+            this.panel16.Name = "panel16";
+            this.panel16.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panel16.Size = new System.Drawing.Size(709, 46);
+            this.panel16.TabIndex = 11;
             // 
-            // MaleBtn
+            // button10
             // 
-            this.MaleBtn.AutoSize = true;
-            this.MaleBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MaleBtn.Location = new System.Drawing.Point(40, 23);
-            this.MaleBtn.Name = "MaleBtn";
-            this.MaleBtn.Size = new System.Drawing.Size(167, 24);
-            this.MaleBtn.TabIndex = 2;
-            this.MaleBtn.TabStop = true;
-            this.MaleBtn.Text = "Male";
-            this.MaleBtn.UseVisualStyleBackColor = true;
+            this.button10.BackColor = System.Drawing.Color.Yellow;
+            this.button10.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button10.Location = new System.Drawing.Point(450, 5);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(91, 41);
+            this.button10.TabIndex = 2;
+            this.button10.Text = "Fix";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Visible = false;
             // 
-            // FemaleBtn
+            // button4
             // 
-            this.FemaleBtn.AutoSize = true;
-            this.FemaleBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FemaleBtn.Location = new System.Drawing.Point(207, 23);
-            this.FemaleBtn.Name = "FemaleBtn";
-            this.FemaleBtn.Size = new System.Drawing.Size(78, 24);
-            this.FemaleBtn.TabIndex = 1;
-            this.FemaleBtn.TabStop = true;
-            this.FemaleBtn.Text = "Female";
-            this.FemaleBtn.UseVisualStyleBackColor = true;
+            this.button4.BackColor = System.Drawing.Color.Yellow;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button4.Location = new System.Drawing.Point(541, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(168, 41);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Add new qualification";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // panel4
+            // button5
             // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(288, 10);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(19, 50);
-            this.panel4.TabIndex = 2;
+            this.button5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button5.Location = new System.Drawing.Point(0, 5);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(94, 41);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "< Back";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // NameGroupBox
+            // ListViewEmployee
             // 
-            this.NameGroupBox.Controls.Add(this.NameText);
-            this.NameGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.NameGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.NameGroupBox.Location = new System.Drawing.Point(10, 10);
-            this.NameGroupBox.Name = "NameGroupBox";
-            this.NameGroupBox.Size = new System.Drawing.Size(278, 50);
-            this.NameGroupBox.TabIndex = 0;
-            this.NameGroupBox.TabStop = false;
-            this.NameGroupBox.Text = "Name";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ListViewEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.ListViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListViewEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdQualification,
+            this.NameQualification,
+            this.NameCallQualification,
+            this.IssueDateQualification,
+            this.PlaceOfIssueQualification});
+            this.ListViewEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListViewEmployee.Location = new System.Drawing.Point(3, 284);
+            this.ListViewEmployee.Name = "ListViewEmployee";
+            this.ListViewEmployee.RowHeadersWidth = 51;
+            this.ListViewEmployee.RowTemplate.Height = 29;
+            this.ListViewEmployee.Size = new System.Drawing.Size(709, 217);
+            this.ListViewEmployee.TabIndex = 3;
             // 
-            // NameText
+            // IdQualification
             // 
-            this.NameText.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.NameText.Location = new System.Drawing.Point(3, 20);
-            this.NameText.Name = "NameText";
-            this.NameText.Size = new System.Drawing.Size(272, 27);
-            this.NameText.TabIndex = 0;
+            this.IdQualification.FillWeight = 50F;
+            this.IdQualification.HeaderText = "Id";
+            this.IdQualification.MinimumWidth = 6;
+            this.IdQualification.Name = "IdQualification";
+            this.IdQualification.ReadOnly = true;
+            this.IdQualification.Width = 80;
             // 
-            // panel8
+            // NameQualification
             // 
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(123, 10);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(21, 109);
-            this.panel8.TabIndex = 1;
+            this.NameQualification.HeaderText = "Name";
+            this.NameQualification.MinimumWidth = 6;
+            this.NameQualification.Name = "NameQualification";
+            this.NameQualification.Width = 125;
             // 
-            // ImagePicture
+            // NameCallQualification
             // 
-            this.ImagePicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ImagePicture.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ImagePicture.Location = new System.Drawing.Point(10, 10);
-            this.ImagePicture.Name = "ImagePicture";
-            this.ImagePicture.Size = new System.Drawing.Size(113, 109);
-            this.ImagePicture.TabIndex = 0;
-            this.ImagePicture.TabStop = false;
+            this.NameCallQualification.HeaderText = "Name call";
+            this.NameCallQualification.MinimumWidth = 6;
+            this.NameCallQualification.Name = "NameCallQualification";
+            this.NameCallQualification.Width = 130;
             // 
-            // panel3
+            // IssueDateQualification
             // 
-            this.panel3.Controls.Add(this.FixBtn);
-            this.panel3.Controls.Add(this.BackBtn);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 422);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(806, 46);
-            this.panel3.TabIndex = 10;
+            this.IssueDateQualification.HeaderText = "Issue Date";
+            this.IssueDateQualification.MinimumWidth = 6;
+            this.IssueDateQualification.Name = "IssueDateQualification";
+            this.IssueDateQualification.Width = 140;
             // 
-            // FixBtn
+            // PlaceOfIssueQualification
             // 
-            this.FixBtn.BackColor = System.Drawing.Color.Yellow;
-            this.FixBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FixBtn.Location = new System.Drawing.Point(708, 5);
-            this.FixBtn.Name = "FixBtn";
-            this.FixBtn.Size = new System.Drawing.Size(98, 41);
-            this.FixBtn.TabIndex = 1;
-            this.FixBtn.Text = "Fix";
-            this.FixBtn.UseVisualStyleBackColor = false;
-            this.FixBtn.Click += new System.EventHandler(this.FixBtn_Click_1);
+            this.PlaceOfIssueQualification.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PlaceOfIssueQualification.HeaderText = "Place of issue";
+            this.PlaceOfIssueQualification.MinimumWidth = 6;
+            this.PlaceOfIssueQualification.Name = "PlaceOfIssueQualification";
             // 
-            // BackBtn
+            // panel13
             // 
-            this.BackBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BackBtn.Location = new System.Drawing.Point(0, 5);
-            this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(94, 41);
-            this.BackBtn.TabIndex = 0;
-            this.BackBtn.Text = "< Back";
-            this.BackBtn.UseVisualStyleBackColor = true;
-            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click_1);
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel13.Controls.Add(this.panel22);
+            this.panel13.Controls.Add(this.panel21);
+            this.panel13.Controls.Add(this.panel20);
+            this.panel13.Controls.Add(this.panel19);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel13.Enabled = false;
+            this.panel13.Location = new System.Drawing.Point(3, 3);
+            this.panel13.Name = "panel13";
+            this.panel13.Padding = new System.Windows.Forms.Padding(10);
+            this.panel13.Size = new System.Drawing.Size(709, 281);
+            this.panel13.TabIndex = 2;
             // 
-            // tabPage2
+            // panel20
             // 
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(812, 471);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Family";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.panel20.Controls.Add(this.groupBox4);
+            this.panel20.Controls.Add(this.groupBox3);
+            this.panel20.Controls.Add(this.groupBox8);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel20.Location = new System.Drawing.Point(10, 60);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(685, 61);
+            this.panel20.TabIndex = 7;
             // 
-            // groupBox2
+            // groupBox3
             // 
-            this.groupBox2.AutoSize = true;
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.FamilyGridView);
-            this.groupBox2.Controls.Add(this.panel14);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox2.Size = new System.Drawing.Size(806, 465);
-            this.groupBox2.TabIndex = 16;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Family Form";
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(171, 61);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Name";
             // 
-            // FamilyGridView
+            // textBox1
             // 
-            this.FamilyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FamilyGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
-            this.FamilyGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FamilyGridView.Location = new System.Drawing.Point(5, 106);
-            this.FamilyGridView.Name = "FamilyGridView";
-            this.FamilyGridView.RowHeadersWidth = 51;
-            this.FamilyGridView.RowTemplate.Height = 29;
-            this.FamilyGridView.Size = new System.Drawing.Size(796, 354);
-            this.FamilyGridView.TabIndex = 17;
-            this.FamilyGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FamilyGridView_CellContentClick);
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textBox1.Location = new System.Drawing.Point(3, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(165, 27);
+            this.textBox1.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn5
+            // groupBox4
             // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox4.Location = new System.Drawing.Point(171, 0);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(248, 61);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Name Call";
             // 
-            // dataGridViewTextBoxColumn6
+            // textBox2
             // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn6.FillWeight = 180F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textBox2.Location = new System.Drawing.Point(3, 31);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(242, 27);
+            this.textBox2.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn7
+            // groupBox8
             // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Birth";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.groupBox8.Controls.Add(this.dateTimePicker1);
+            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox8.Location = new System.Drawing.Point(419, 0);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(266, 61);
+            this.groupBox8.TabIndex = 5;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Issue Date";
             // 
-            // dataGridViewTextBoxColumn8
+            // dateTimePicker1
             // 
-            this.dataGridViewTextBoxColumn8.FillWeight = 80F;
-            this.dataGridViewTextBoxColumn8.HeaderText = "Ocupation";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 110;
+            this.dateTimePicker1.CustomFormat = "";
+            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(3, 31);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(260, 27);
+            this.dateTimePicker1.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn9
+            // panel19
             // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn9.FillWeight = 95F;
-            this.dataGridViewTextBoxColumn9.HeaderText = "Relative Type";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn9.Width = 156;
+            this.panel19.Controls.Add(this.groupBox5);
+            this.panel19.Controls.Add(this.TitleListEmployee);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel19.Location = new System.Drawing.Point(10, 10);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(685, 50);
+            this.panel19.TabIndex = 6;
             // 
-            // panel14
+            // groupBox5
             // 
-            this.panel14.Controls.Add(this.RemoveFamilyBtn);
-            this.panel14.Controls.Add(this.FixFamilyBtn);
-            this.panel14.Controls.Add(this.AddFamilyBtn);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(5, 32);
-            this.panel14.Name = "panel14";
-            this.panel14.Padding = new System.Windows.Forms.Padding(10);
-            this.panel14.Size = new System.Drawing.Size(796, 74);
-            this.panel14.TabIndex = 16;
+            this.groupBox5.Controls.Add(this.textBox3);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox5.Location = new System.Drawing.Point(598, 0);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(87, 50);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "ID";
             // 
-            // RemoveFamilyBtn
+            // textBox3
             // 
-            this.RemoveFamilyBtn.AutoSize = true;
-            this.RemoveFamilyBtn.BackColor = System.Drawing.Color.Transparent;
-            this.RemoveFamilyBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RemoveFamilyBtn.Location = new System.Drawing.Point(268, 10);
-            this.RemoveFamilyBtn.Name = "RemoveFamilyBtn";
-            this.RemoveFamilyBtn.Size = new System.Drawing.Size(260, 54);
-            this.RemoveFamilyBtn.TabIndex = 5;
-            this.RemoveFamilyBtn.Text = "Remove";
-            this.RemoveFamilyBtn.UseVisualStyleBackColor = false;
+            this.textBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textBox3.Location = new System.Drawing.Point(3, 20);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(81, 27);
+            this.textBox3.TabIndex = 0;
             // 
-            // FixFamilyBtn
+            // TitleListEmployee
             // 
-            this.FixFamilyBtn.AutoSize = true;
-            this.FixFamilyBtn.BackColor = System.Drawing.Color.Transparent;
-            this.FixFamilyBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FixFamilyBtn.Location = new System.Drawing.Point(528, 10);
-            this.FixFamilyBtn.Name = "FixFamilyBtn";
-            this.FixFamilyBtn.Size = new System.Drawing.Size(258, 54);
-            this.FixFamilyBtn.TabIndex = 4;
-            this.FixFamilyBtn.Text = "Fix";
-            this.FixFamilyBtn.UseVisualStyleBackColor = false;
-            this.FixFamilyBtn.Click += new System.EventHandler(this.FixFamilyBtn_Click);
+            this.TitleListEmployee.AutoSize = true;
+            this.TitleListEmployee.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TitleListEmployee.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TitleListEmployee.Location = new System.Drawing.Point(0, 0);
+            this.TitleListEmployee.Name = "TitleListEmployee";
+            this.TitleListEmployee.Size = new System.Drawing.Size(296, 32);
+            this.TitleListEmployee.TabIndex = 0;
+            this.TitleListEmployee.Text = "Employee Qualification";
             // 
-            // AddFamilyBtn
+            // groupBox10
             // 
-            this.AddFamilyBtn.AutoSize = true;
-            this.AddFamilyBtn.BackColor = System.Drawing.Color.Transparent;
-            this.AddFamilyBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.AddFamilyBtn.Location = new System.Drawing.Point(10, 10);
-            this.AddFamilyBtn.Name = "AddFamilyBtn";
-            this.AddFamilyBtn.Size = new System.Drawing.Size(258, 54);
-            this.AddFamilyBtn.TabIndex = 3;
-            this.AddFamilyBtn.Text = "Add";
-            this.AddFamilyBtn.UseVisualStyleBackColor = false;
-            this.AddFamilyBtn.Click += new System.EventHandler(this.AddFamilyBtn_Click);
+            this.groupBox10.Controls.Add(this.textBox6);
+            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox10.Location = new System.Drawing.Point(0, 0);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(685, 50);
+            this.groupBox10.TabIndex = 4;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Expertise name";
             // 
-            // npgsqlDataAdapter1
+            // textBox6
             // 
-            this.npgsqlDataAdapter1.DeleteCommand = null;
-            this.npgsqlDataAdapter1.InsertCommand = null;
-            this.npgsqlDataAdapter1.SelectCommand = null;
-            this.npgsqlDataAdapter1.UpdateCommand = null;
+            this.textBox6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textBox6.Location = new System.Drawing.Point(3, 20);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(679, 27);
+            this.textBox6.TabIndex = 0;
             // 
-            // npgsqlDataAdapter2
+            // groupBox7
             // 
-            this.npgsqlDataAdapter2.DeleteCommand = null;
-            this.npgsqlDataAdapter2.InsertCommand = null;
-            this.npgsqlDataAdapter2.SelectCommand = null;
-            this.npgsqlDataAdapter2.UpdateCommand = null;
+            this.groupBox7.Controls.Add(this.textBox5);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox7.Location = new System.Drawing.Point(0, 0);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(685, 54);
+            this.groupBox7.TabIndex = 4;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Place of issue";
             // 
-            // FormEmployeeDetail
+            // textBox5
+            // 
+            this.textBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textBox5.Location = new System.Drawing.Point(3, 24);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(679, 27);
+            this.textBox5.TabIndex = 0;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.groupBox6);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(715, 504);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Union";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.AutoSize = true;
+            this.groupBox6.BackColor = System.Drawing.Color.White;
+            this.groupBox6.Controls.Add(this.panel18);
+            this.groupBox6.Controls.Add(this.dataGridView1);
+            this.groupBox6.Controls.Add(this.panel15);
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox6.Location = new System.Drawing.Point(3, 3);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox6.Size = new System.Drawing.Size(709, 498);
+            this.groupBox6.TabIndex = 17;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Union form";
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.button9);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel18.Location = new System.Drawing.Point(5, 447);
+            this.panel18.Name = "panel18";
+            this.panel18.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panel18.Size = new System.Drawing.Size(699, 46);
+            this.panel18.TabIndex = 18;
+            // 
+            // button9
+            // 
+            this.button9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button9.Location = new System.Drawing.Point(0, 5);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(94, 41);
+            this.button9.TabIndex = 0;
+            this.button9.Text = "< Back";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDUnion,
+            this.NameUnion,
+            this.SartDateUnion,
+            this.EndDateUnion});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(5, 106);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(699, 387);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // IDUnion
+            // 
+            this.IDUnion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.IDUnion.FillWeight = 50F;
+            this.IDUnion.HeaderText = "Id";
+            this.IDUnion.MaxInputLength = 100;
+            this.IDUnion.MinimumWidth = 6;
+            this.IDUnion.Name = "IDUnion";
+            // 
+            // NameUnion
+            // 
+            this.NameUnion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameUnion.FillWeight = 180F;
+            this.NameUnion.HeaderText = "Name";
+            this.NameUnion.MinimumWidth = 6;
+            this.NameUnion.Name = "NameUnion";
+            // 
+            // SartDateUnion
+            // 
+            this.SartDateUnion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SartDateUnion.HeaderText = "Start date";
+            this.SartDateUnion.MinimumWidth = 6;
+            this.SartDateUnion.Name = "SartDateUnion";
+            // 
+            // EndDateUnion
+            // 
+            this.EndDateUnion.HeaderText = "End date";
+            this.EndDateUnion.MinimumWidth = 6;
+            this.EndDateUnion.Name = "EndDateUnion";
+            this.EndDateUnion.Width = 110;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.button1);
+            this.panel15.Controls.Add(this.button2);
+            this.panel15.Controls.Add(this.button3);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(5, 32);
+            this.panel15.Name = "panel15";
+            this.panel15.Padding = new System.Windows.Forms.Padding(10);
+            this.panel15.Size = new System.Drawing.Size(699, 74);
+            this.panel15.TabIndex = 16;
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Location = new System.Drawing.Point(268, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(163, 54);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Remove";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.Location = new System.Drawing.Point(431, 10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(258, 54);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Fix";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.AutoSize = true;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button3.Location = new System.Drawing.Point(10, 10);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(258, 54);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Add";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.tabControl1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(10, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.panel1.Size = new System.Drawing.Size(745, 559);
+            this.panel1.TabIndex = 3;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.groupBox7);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel21.Location = new System.Drawing.Point(10, 121);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(685, 54);
+            this.panel21.TabIndex = 8;
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.groupBox10);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel22.Location = new System.Drawing.Point(10, 175);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(685, 59);
+            this.panel22.TabIndex = 9;
+            // 
+            // DetailInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 526);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(765, 579);
             this.Controls.Add(this.panel1);
-            this.Name = "FormEmployeeDetail";
-            this.Text = "FormEmployeeDetail";
-            this.Load += new System.EventHandler(this.FormEmployeeDetail_Load);
-            this.panel1.ResumeLayout(false);
+            this.Name = "DetailInformation";
+            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Text = "Detail Information";
+            this.Load += new System.EventHandler(this.DetailInformation_Load);
+            this.panel2.ResumeLayout(false);
+            this.GenderGroupBox.ResumeLayout(false);
+            this.GenderGroupBox.PerformLayout();
+            this.NameGroupBox.ResumeLayout(false);
+            this.NameGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagePicture)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.FamilyGridView)).EndInit();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -670,30 +1251,53 @@
             this.AddressGroupBox.ResumeLayout(false);
             this.AddressGroupBox.PerformLayout();
             this.panel7.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.GenderGroupBox.ResumeLayout(false);
-            this.GenderGroupBox.PerformLayout();
-            this.NameGroupBox.ResumeLayout(false);
-            this.NameGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ImagePicture)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.FamilyGridView)).EndInit();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ListViewEmployee)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.panel22.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private Panel panel1;
-        private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter1;
-        private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter2;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
+
+        private Panel panel2;
+        private GroupBox GenderGroupBox;
+        private RadioButton MaleBtn;
+        private RadioButton FemaleBtn;
+        private Panel panel4;
+        private GroupBox NameGroupBox;
+        private TextBox NameText;
+        private Panel panel8;
+        private PictureBox ImagePicture;
+        private Panel panel3;
+        private Button FixBtn;
+        private Button BackBtn;
         private TabPage tabPage2;
         private GroupBox groupBox2;
         private DataGridView FamilyGridView;
@@ -701,6 +1305,11 @@
         private Button RemoveFamilyBtn;
         private Button FixFamilyBtn;
         private Button AddFamilyBtn;
+        private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter1;
+        private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
         private GroupBox AddEmployeeGroupBox;
         private Panel AddNewBtn;
         private Panel panel12;
@@ -722,23 +1331,56 @@
         private GroupBox AddressGroupBox;
         private TextBox AddressText;
         private Panel panel7;
-        private Panel panel2;
-        private GroupBox GenderGroupBox;
-        private RadioButton MaleBtn;
-        private RadioButton FemaleBtn;
-        private Panel panel4;
-        private GroupBox NameGroupBox;
-        private TextBox NameText;
-        private Panel panel8;
-        private PictureBox ImagePicture;
-        private Panel panel3;
-        private Button FixBtn;
-        private Button BackBtn;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Panel panel1;
+        private TabPage tabPage3;
+        private Panel panel13;
+        private Label TitleListEmployee;
+        private DataGridView ListViewEmployee;
+        private GroupBox groupBox3;
+        private TextBox textBox1;
+        private GroupBox groupBox5;
+        private TextBox textBox3;
+        private GroupBox groupBox4;
+        private TextBox textBox2;
+        private GroupBox groupBox7;
+        private TextBox textBox5;
+        private GroupBox groupBox8;
+        private DateTimePicker dateTimePicker1;
+        private TabPage tabPage4;
+        private GroupBox groupBox6;
+        private Panel panel15;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private DataGridView dataGridView1;
+        private Panel panel16;
+        private Button button4;
+        private Button button5;
+        private GroupBox groupBox10;
+        private TextBox textBox6;
+        private Panel panel17;
+        private Button button6;
+        private Button button7;
+        private Panel panel18;
+        private Button button9;
+        private Button button10;
+        private Panel panel19;
+        private DataGridViewTextBoxColumn IdFamily;
+        private DataGridViewTextBoxColumn NameFamily;
+        private DataGridViewTextBoxColumn BirthFamily;
+        private DataGridViewTextBoxColumn OcupationFamily;
+        private DataGridViewTextBoxColumn RelativeFamily;
+        private DataGridViewTextBoxColumn IdQualification;
+        private DataGridViewTextBoxColumn NameQualification;
+        private DataGridViewTextBoxColumn NameCallQualification;
+        private DataGridViewTextBoxColumn IssueDateQualification;
+        private DataGridViewTextBoxColumn PlaceOfIssueQualification;
+        private DataGridViewTextBoxColumn IDUnion;
+        private DataGridViewTextBoxColumn NameUnion;
+        private DataGridViewTextBoxColumn SartDateUnion;
+        private DataGridViewTextBoxColumn EndDateUnion;
+        private Panel panel20;
+        private Panel panel22;
+        private Panel panel21;
     }
 }

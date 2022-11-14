@@ -17,8 +17,10 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		public bool CheckIdCardExist(string identityCardNumber)
 			=> Context.Employees.Any(a => a.IdentityCardNumber == identityCardNumber);
 
+
 		public bool CheckEmployeeExists(string id)
 			=> Context.Employees.Any(a => a.Id	== id);
+
 
 		public Result<Models.Employee> InsertEmployee(EmployeeInput input)
 		{
@@ -39,7 +41,9 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 			Context.Employees.Add(employee);
 			Context.SaveChanges();
+
 			return new Result<Models.Employee> { Success = true, Payload = MapToModel(employee) };
+
 		}
 
 		/// <summary>
@@ -63,9 +67,10 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			}
 		}
 
+
 		public Models.EmployeeDetail GetEmployeeDetail(string id)
 		{
-			return MapToModelEmployeeDetail(Context.Employees.Where(e => e.Id == id).FirstOrDefault()!);
+			return MapToModelEmployeeDetail(Context.Employees.Where(e => e.Id == id).First()!);
 		}
 
 		public Result<Models.UnitHistory> InsertUnitHistory(InputUnitHistory input)
@@ -154,10 +159,12 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			};
 		}
 
+
 		private static Employee MapToEntity(EmployeeInput entity)
 		{
 			return new Employee
 			{
+
 				Name = entity.Name,
 				Gender = entity.Gender,
 				DateOfBirth = entity.DateOfBirth,

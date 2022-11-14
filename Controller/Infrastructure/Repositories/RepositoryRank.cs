@@ -43,6 +43,11 @@ namespace Salary_management.Controller.Infrastructure.Repositories
             }
         }
 
+		public Models.Rank GetRankDetail(int rankId)
+		{
+			return MapToModel(Context.Ranks.Where(r => r.Id == rankId).First());
+		}
+
 		public Result<Models.Rank> FixRank(int rankId, InputRank inputRank)
 		{
 			if (CheckRankExist(inputRank.Name))

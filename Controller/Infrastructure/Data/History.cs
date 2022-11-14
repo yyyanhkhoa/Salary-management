@@ -9,7 +9,7 @@ namespace Salary_management.Controller.Infrastructure.Data
     public abstract class History
     {
         public DateOnly StartDate { get; set; }
-        public DateOnly EndDate { get; set; }
+        public DateOnly? EndDate { get; set; }
 
         public string EmployeeId { get; set; } = null!;
     }
