@@ -70,7 +70,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 		public Models.EmployeeDetail GetEmployeeDetail(string id)
 		{
-			return MapToModelEmployeeDetail(Context.Employees.Where(e => e.Id == id).FirstOrDefault()!);
+			return MapToModelEmployeeDetail(Context.Employees.Where(e => e.Id == id).First()!);
 		}
 
 		public Result<Models.UnitHistory> InsertUnitHistory(InputUnitHistory input)

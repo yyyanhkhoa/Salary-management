@@ -28,6 +28,11 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Result<Models.Unit> { Success = true, Payload = MapToModel(unit) };
 		}
 
+		public Models.Unit GetUnitDetail(string unitId)
+		{
+			return MapToModel(Context.Units.Where(u => u.Id == unitId).First());
+		}
+
 		public Result<List<Models.UnitTimeline>> GetTimeline(DateOnly? from = null, DateOnly? to = null)
 		{
 			IQueryable<UnitHistory> query;
