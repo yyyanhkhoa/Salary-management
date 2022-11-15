@@ -16,7 +16,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			var rod = MapToEntity(input);
 			Context.RewardOrDisciplines.Add(rod);
 			Context.SaveChanges();
-			return new Result<Models.RewardOrDiscipline> { Success = true, Payload = MapToModel(rod) };
+			return new Result<Models.RewardOrDiscipline> { Success = true, Payload = MapToModelWithoutEagerLoading(rod) };
 		}
 
 
@@ -127,7 +127,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			};
 		}
 
-		public static Models.RewardOrDiscipline MapToModel(RewardOrDiscipline entity)
+		private static Models.RewardOrDiscipline MapToModel(RewardOrDiscipline entity)
 		{
 			return new Models.RewardOrDiscipline
 			{
@@ -137,6 +137,19 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				Content = entity.Content,
 				EmployeeId = entity.EmployeeId,
 				EmployeeName = entity.Employee.Name
+			};
+		}
+
+		private Models.RewardOrDiscipline MapToModelWithoutEagerLoading(RewardOrDiscipline entity)
+		{
+			return new Models.RewardOrDiscipline
+			{
+				Id = entity.Id,
+				Level = entity.Level,
+				Date = entity.Date,
+				Content = entity.Content,
+				EmployeeId = entity.EmployeeId,
+				EmployeeName = Context.Employees.Where(e => e.Id == entity.EmployeeId).First().Name
 			};
 		}
 	}
