@@ -11,7 +11,7 @@ namespace Salary_management
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Management());
+            Application.Run(new Management(Controller.Infrastructure.Entities.Enums.Role.Accountant));
             
         }
     }

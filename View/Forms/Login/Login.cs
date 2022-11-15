@@ -27,7 +27,9 @@ namespace Salary_management
             
 			else
             {
-                Management mng = new Management();
+                var result = authRepo.Login(username, password);
+                var user = result.Payload;
+                Management mng = new Management(user.Role);
                 this.Hide();
                 mng.Show();
             }

@@ -32,7 +32,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.DetailBtn = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.AddAndFixPanel = new System.Windows.Forms.Panel();
             this.FixBtn = new System.Windows.Forms.Button();
             this.AddBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -63,7 +63,7 @@
             this.SearchLabel = new System.Windows.Forms.Label();
             this.ActionsGroupBox.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.AddAndFixPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,7 +78,7 @@
             // ActionsGroupBox
             // 
             this.ActionsGroupBox.Controls.Add(this.panel6);
-            this.ActionsGroupBox.Controls.Add(this.panel5);
+            this.ActionsGroupBox.Controls.Add(this.AddAndFixPanel);
             this.ActionsGroupBox.Controls.Add(this.panel4);
             this.ActionsGroupBox.Controls.Add(this.panel3);
             this.ActionsGroupBox.Controls.Add(this.panel2);
@@ -124,16 +124,16 @@
             this.DetailBtn.UseVisualStyleBackColor = true;
             this.DetailBtn.Click += new System.EventHandler(this.DetailBtn_Click);
             // 
-            // panel5
+            // AddAndFixPanel
             // 
-            this.panel5.Controls.Add(this.FixBtn);
-            this.panel5.Controls.Add(this.AddBtn);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(3, 307);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(20);
-            this.panel5.Size = new System.Drawing.Size(244, 92);
-            this.panel5.TabIndex = 18;
+            this.AddAndFixPanel.Controls.Add(this.FixBtn);
+            this.AddAndFixPanel.Controls.Add(this.AddBtn);
+            this.AddAndFixPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AddAndFixPanel.Location = new System.Drawing.Point(3, 307);
+            this.AddAndFixPanel.Name = "AddAndFixPanel";
+            this.AddAndFixPanel.Padding = new System.Windows.Forms.Padding(20);
+            this.AddAndFixPanel.Size = new System.Drawing.Size(244, 92);
+            this.AddAndFixPanel.TabIndex = 18;
             // 
             // FixBtn
             // 
@@ -423,7 +423,7 @@
             this.Load += new System.EventHandler(this.Unit_Load);
             this.ActionsGroupBox.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
+            this.AddAndFixPanel.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -463,7 +463,7 @@
         private Panel panel6;
         private Button DeleteBtn;
         private Button DetailBtn;
-        private Panel panel5;
+        private Panel AddAndFixPanel;
         private Button FixBtn;
         private Button AddBtn;
         private Panel panel4;

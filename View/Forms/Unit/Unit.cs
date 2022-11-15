@@ -1,5 +1,6 @@
 ﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Salary_management.Controller.Infrastructure.Data.Input;
+using Salary_management.Controller.Infrastructure.Entities.Enums;
 using Salary_management.Controller.Infrastructure.Repositories;
 using Salary_management.Infrastructure.Entities.Enums;
 using System;
@@ -17,10 +18,10 @@ namespace Salary_management.View.Forms.Unit
     public partial class Unit : Form
     {
         Management mng;
-        public Unit(Management mng)
+        public Unit(Management mng) 
         {
-            this.mng = mng;
             InitializeComponent();
+            this.mng = mng;
         }
 
 
@@ -41,6 +42,8 @@ namespace Salary_management.View.Forms.Unit
             {
                 UnitGridView.Rows.Add(unit.Id,unit.Name,unit.Address,unit.PhoneNumber,unit.DateFounded);
             }
+
+            AdjustUIFromRole(mng.Role);
             
         }
 
@@ -95,6 +98,22 @@ namespace Salary_management.View.Forms.Unit
                 {
                     MessageBox.Show(result.ErrorMessage);
                 }
+            }
+        }
+
+        public void AdjustUIFromRole(Role role)
+        {
+            switch(role){
+                case Role.Viewer:
+                    AddAndFixPanel.Visible = false;
+                    DeleteBtn.Enabled = false;
+                    break;
+                case Role.Accountant:
+                    DeleteBtn.Enabled = false;
+                    AddBtn.Enabled = false;
+                    break;
+                default:
+                    break;
             }
         }
     }

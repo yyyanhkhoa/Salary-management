@@ -14,16 +14,12 @@ namespace Salary_management
     public partial class Management : Form
     {
         private Form activeForm;
-        string role;
-        public Management()
-        {
-            role = "ADMIN";
-            InitializeComponent();
-        }
+        public Role Role { get; set; }
 
-        public Management(string role)
+
+        public Management(Role role)
         {
-            this.role = role;
+            this.Role = role;
             InitializeComponent();
         }
 
@@ -65,6 +61,10 @@ namespace Salary_management
         private void PositionBtn_Click(object sender, EventArgs e) { OpenChildForm(new View.Forms.Position.ListPosition(this), sender); }
         private void UnitBtn_Click(object sender, EventArgs e) { OpenChildForm(new View.Forms.Unit.Unit(this), sender); }
         private void RewardOrNotBtn_Click(object sender, EventArgs e) { OpenChildForm(new View.Forms.RewardOrDiscipline.RewardOrNot(this), sender); }
-        
+
+        private void Management_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
