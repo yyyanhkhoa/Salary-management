@@ -33,21 +33,21 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return MapToModel(Context.Units.Where(u => u.Id == unitId).First());
 		}
 
-		public Result<List<Models.UnitTimeline>> GetTimeline(DateOnly? from = null, DateOnly? to = null)
+		public Result<List<Models.UnitTimeline>> GetTimeline(string unitId, DateOnly? from = null, DateOnly? to = null)
 		{
 			IQueryable<UnitHistory> query;
 
 			if (from != null && to != null)
 			{
-				query = Context.UnitHistories.Where(uh => uh.StartDate >= from && uh.EndDate <= to);
+				query = Context.UnitHistories.Where(uh => uh.UnitId == unitId && uh.StartDate >= from && uh.EndDate <= to);
 			}
 			else if (from != null)
 			{
-				query = Context.UnitHistories.Where(uh => uh.StartDate >= from);
+				query = Context.UnitHistories.Where(uh => uh.UnitId == unitId  && uh.StartDate >= from);
 			}
 			else
 			{
-				query = Context.UnitHistories.Where(uh => uh.EndDate <= to);
+				query = Context.UnitHistories.Where(uh => uh.UnitId == unitId  && uh.EndDate <= to);
 			}
 
 			return new()
