@@ -67,21 +67,25 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			}
 		}
 
-		public Result<List<Models.PositionTimeline>> GetTimeline(DateOnly? from = null, DateOnly? to = null)
+		public Result<List<Models.PositionTimeline>> GetTimeline(string positionId, DateOnly? from = null, DateOnly? to = null)
 		{
 			IQueryable<PositionHistory> query;
 
 			if (from != null && to != null)
 			{
-				query = Context.PositionHistories.Where(uh => uh.StartDate >= from && uh.EndDate <= to);
+				query = Context.PositionHistories.Where(uh => uh.PositionId == positionId && uh.StartDate >= from && uh.EndDate <= to);
 			}
 			else if (from != null)
 			{
-				query = Context.PositionHistories.Where(uh => uh.StartDate >= from);
+				query = Context.PositionHistories.Where(uh => uh.PositionId == positionId && uh.StartDate >= from);
+			}
+			else if (to != null)
+			{ 
+				query = Context.PositionHistories.Where(uh => uh.PositionId == positionId && uh.EndDate <= to);
 			}
 			else
 			{
-				query = Context.PositionHistories.Where(uh => uh.EndDate <= to);
+				query = Context.PositionHistories.Where(uh => uh.PositionId == positionId);
 			}
 
 			return new()
