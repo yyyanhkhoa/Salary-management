@@ -31,6 +31,16 @@ namespace Salary_management.View.Forms.RewardOrDiscipline
             {
                 EmployeeComboBox.Items.Add(employee.Id + ":" + employee.Name);
             }
+
+
+
+
+            //Table
+            var repoReward = new RepositoryRewardOrDiscipline();
+            var listEmployeeInReward = repoReward.GetRewardOrDisciplines("");
+            foreach (var employeeInReward in listEmployeeInReward)
+            {
+            }
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
