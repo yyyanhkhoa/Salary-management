@@ -21,16 +21,18 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 
 		/// <summary>
-		/// Lấy thông tin các khen thưởng theo từ khóa, nếu từ khóa trống thì lấy thông tin của 20 khen thưởng mới nhất
+		/// Lấy thông tin các khen thưởng theo từ khóa, nếu từ khóa trống thì lấy thông tin của tất cả khen thưởng
 		/// </summary>
 		/// <param name="id"></param>
 		/// <param name="searchString">dùng để tìm kiếm nội dung khen thưởng hoặc mã nhân viên</param>
 		/// <returns></returns>
-		public List<Models.RewardOrDiscipline> GetRewardOrDisciplines(string keyword)
+		public List<Models.RewardOrDiscipline> GetRewardsByKeyword(string keyword)
 		{
 			if (string.IsNullOrWhiteSpace(keyword))
 			{
-				return Context.RewardOrDisciplines.Take(20).Select(e => MapToModel(e)).ToList();
+				return Context.RewardOrDisciplines.Where(r => r.IsReward)
+							  .Include(e => e.Employee)
+							  .Select(e => MapToModel(e)).ToList();
 			}
 			else
 			{
@@ -38,7 +40,78 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 					e => EF.Functions.ILike(e.Content, $"%{keyword}%") ||
 						 EF.Functions.ILike(e.EmployeeId, $"%{keyword}%")
 					)
+					.Include(e => e.Employee)
 					.Select(e => MapToModel(e)).ToList();
+			}
+		}
+
+		/// <summary>
+		/// Lấy thông tin các kỷ luật theo từ khóa, nếu từ khóa trống thì lấy thông tin của tất cả kỷ luật
+		/// </summary>
+		/// <param name="year"></param>
+		/// <param name="searchString">dùng để tìm kiếm nội dung kỷ luật hoặc mã nhân viên</param>
+		/// <returns></returns>
+		public List<Models.RewardOrDiscipline> GetDisciplinesByKeyword(string keyword)
+		{
+			if (string.IsNullOrWhiteSpace(keyword))
+			{
+				return Context.RewardOrDisciplines.Where(r => !r.IsReward)
+							.Include(e => e.Employee)
+							.Select(e => MapToModel(e)).ToList();
+			}
+			else
+			{
+				return Context.RewardOrDisciplines.Where(
+					e => EF.Functions.ILike(e.Content, $"%{keyword}%") ||
+						 EF.Functions.ILike(e.EmployeeId, $"%{keyword}%")
+					)
+					.Include(e => e.Employee)
+					.Select(e => MapToModel(e)).ToList();
+			}
+		}
+
+
+		/// <summary>
+		/// Lấy thông tin các kỷ luật theo năm, nếu năm trống thì lấy thông tin của tất cả kỷ luật
+		/// </summary>
+		/// <param name="year"></param>
+		/// <param name="searchString">dùng để tìm kiếm nội dung khen thưởng hoặc mã nhân viên</param>
+		/// <returns></returns>
+		public List<Models.RewardOrDiscipline> GetRewards(int? year)
+		{
+			if (year == null)
+			{
+				return Context.RewardOrDisciplines.Where(r => r.IsReward)
+							  .Include(e => e.Employee)
+							  .Select(e => MapToModel(e)).ToList();
+			}
+			else
+			{
+				return Context.RewardOrDisciplines.Where(r => r.IsReward && r.Date.Year == year)
+							  .Include(e => e.Employee)
+							  .Select(e => MapToModel(e)).ToList();
+			}
+		}
+
+		/// <summary>
+		/// Lấy thông tin các kỷ luật theo năm, nếu năm trống thì lấy thông tin của tất cả kỷ luật
+		/// </summary>
+		/// <param name="id"></param>
+		/// <param name="searchString">dùng để tìm kiếm nội dung khen thưởng hoặc mã nhân viên</param>
+		/// <returns></returns>
+		public List<Models.RewardOrDiscipline> GetDisciplines(int? year)
+		{
+			if (year == null)
+			{
+				return Context.RewardOrDisciplines.Where(r => !r.IsReward)
+						      .Include(e => e.Employee)
+							  .Select(e => MapToModel(e)).ToList();
+			}
+			else
+			{
+				return Context.RewardOrDisciplines.Where(r => !r.IsReward && r.Date.Year == year)
+							  .Include(e => e.Employee)
+							  .Select(e => MapToModel(e)).ToList();
 			}
 		}
 
@@ -59,11 +132,11 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Models.RewardOrDiscipline
 			{
 				Id = entity.Id,
-				IsReward = entity.IsReward,
 				Level = entity.Level,
 				Date = entity.Date,
 				Content = entity.Content,
-				EmployeeId = entity.EmployeeId
+				EmployeeId = entity.EmployeeId,
+				EmployeeName = entity.Employee.Name
 			};
 		}
 	}
