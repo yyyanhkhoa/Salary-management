@@ -1,6 +1,7 @@
 ﻿using Salary_management.Controller.Infrastructure.Data.Input;
 using Salary_management.Controller.Infrastructure.Repositories;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,7 +47,15 @@ namespace Salary_management.View.Forms.Unit
 
 
             //Table
-            
+            /*
+            var ahihi1 = DateOnly.FromDateTime(StartDateInput.Value);
+            var ahihi2 = DateOnly.FromDateTime(EndDateInput.Value);
+            var repoTable = new RepositoryUnit();
+            var table = repoTable.GetTimeline(ahihi1,ahihi2);
+            foreach (var employee in table)
+            {
+                ListEmployeeTable.Rows.Add(employee.EmployeeId, employee.EmployeeName,"","");
+            }*/
         }
 
         private void WorkRecentlyCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -62,8 +71,9 @@ namespace Salary_management.View.Forms.Unit
             string id = NameAndId.Trim().Split(":")[0];
             DateOnly startDay = DateOnly.FromDateTime(StartDateInput.Value);
             DateOnly endDate ;
+            
             if (!WorkRecentlyCheckBox.Checked) endDate = DateOnly.FromDateTime(EndDateInput.Value);
-            MessageBox.Show(id);
+            MessageBox.Show(endDate.ToString());
             var result = repo.InsertUnitHistory(new InputUnitHistory()
             {
                 EmployeeId = id,

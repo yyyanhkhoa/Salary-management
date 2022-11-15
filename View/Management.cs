@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Salary_management.Controller.Infrastructure.Entities.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +14,20 @@ namespace Salary_management
     public partial class Management : Form
     {
         private Form activeForm;
-
+        string role;
         public Management()
         {
+            role = "ADMIN";
             InitializeComponent();
         }
 
- 
+        public Management(string role)
+        {
+            this.role = role;
+            InitializeComponent();
+        }
+
+
 
         private void DisableButton()
         {
@@ -52,35 +60,11 @@ namespace Salary_management
             OpenChildForm(new Forms.FormSetting(), sender);
 
         }
-
-   
-
-    
-
-		private void Management_FormClosed(object sender, FormClosedEventArgs e)
-		{
-			Application.Exit();
-		}
-
-        private void ListEmployeeBtn_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new View.Forms.Employee.ListInformation(this), sender);
-        }
-
-        private void PositionBtn_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new View.Forms.Position.ListPosition(this), sender);
-
-        }
-
-        private void UnitBtn_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new View.Forms.Unit.Unit(this), sender);
-        }
-
-        private void RewardOrNotBtn_Click(object sender, EventArgs e)
-        {
-
-        }
+		private void Management_FormClosed(object sender, FormClosedEventArgs e){ Application.Exit(); }
+        private void ListEmployeeBtn_Click(object sender, EventArgs e){ OpenChildForm(new View.Forms.Employee.ListInformation(this), sender); }
+        private void PositionBtn_Click(object sender, EventArgs e) { OpenChildForm(new View.Forms.Position.ListPosition(this), sender); }
+        private void UnitBtn_Click(object sender, EventArgs e) { OpenChildForm(new View.Forms.Unit.Unit(this), sender); }
+        private void RewardOrNotBtn_Click(object sender, EventArgs e) { OpenChildForm(new View.Forms.RewardOrDiscipline.RewardOrNot(this), sender); }
+        
     }
 }
