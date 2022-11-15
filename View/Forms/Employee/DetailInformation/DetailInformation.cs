@@ -18,14 +18,61 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             InitializeComponent();
             this.mng = mng;    
         }
+        void enableInfo (bool check)
+        {
+            if (check == true)
+            {
+                NameText.Enabled = true;
+                AddressText.Enabled = true;
+                DateOfBirth.Enabled = true;
+                EthnicText.Enabled = true;  
+                IdentityText.Enabled = true;
+                CoefficientAllowanceText.Enabled = true;
+                StartDate.Enabled = true;
+                MaleBtn.Enabled = true;
+                FemaleBtn.Enabled =true;
+            } else
+            {
+                NameText.Enabled = false;
+                AddressText.Enabled = false;
+                DateOfBirth.Enabled = false;
+                EthnicText.Enabled = false;
+                IdentityText.Enabled = false;
+                CoefficientAllowanceText.Enabled = false;
+                StartDate.Enabled = false;
+                MaleBtn.Enabled = false;
+                FemaleBtn.Enabled = false;
+            }           
+                
+        }
+        void enableQualification(bool check)
+        {
+            if (check == true)
+            {
+                namecallQualificationTB.Enabled = true;
+                nameQualificationTB.Enabled = true;
+                dateQualification.Enabled = true;
+                placeQualificationTB.Enabled = true;
+                exQualificationTB.Enabled = true;                  
+            }
+            else
+            {
+                namecallQualificationTB.Enabled = false;
+                nameQualificationTB.Enabled = false;
+                dateQualification.Enabled = false;
+                placeQualificationTB.Enabled = false;
+                exQualificationTB.Enabled = false;
+
+            }
+        }
         private void DetailInformation_Load(object sender, EventArgs e)
         {
-            AddEmployeeGroupBox.Enabled = false;
+            enableInfo(false);
+            IDQualificationTB.Enabled = false;
+            enableQualification(false);
+            EmployeeGroupBox.Enabled = false;
             FamilyGridView.Enabled = false;
             FamilyGridView.Columns[0].ReadOnly = true;
-
-            BackBtn.Enabled = true;
-            FixBtn.Enabled = true;
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -37,12 +84,12 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
             if (FixBtn.Text == "Fix")
             {
-                AddEmployeeGroupBox.Enabled = true;
+                enableInfo(true);              
                 FixBtn.Text = "Save";
             }
             else
             {
-                AddEmployeeGroupBox.Enabled = false;
+                enableInfo(false);               
                 FixBtn.Text = "Fix";
             }
         }
@@ -61,6 +108,40 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
             mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng), sender);
 
+        }
+
+        private void panel13_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (fixQualificationBtn.Text == "Fix")
+            {
+                fixQualificationBtn.Text = "Save";
+                enableQualification(true);
+            }
+            else
+            {
+                fixQualificationBtn.Text = "Fix";
+                enableQualification(false);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
         }
     }
 }
