@@ -29,5 +29,19 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
 
         }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng), sender);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!checkBox1.Checked)
+            {
+                panel6.Visible = false;
+            }
+            else panel6.Visible = true;
+        }
     }
 }

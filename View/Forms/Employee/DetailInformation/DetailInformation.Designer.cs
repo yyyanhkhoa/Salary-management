@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GenderGroupBox = new System.Windows.Forms.GroupBox();
             this.MaleBtn = new System.Windows.Forms.RadioButton();
@@ -46,7 +46,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.FamilyGridView = new System.Windows.Forms.DataGridView();
             this.IdFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +62,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.AddEmployeeGroupBox = new System.Windows.Forms.GroupBox();
+            this.EmployeeGroupBox = new System.Windows.Forms.GroupBox();
             this.AddNewBtn = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.CoefficientAllowanceGroupBox = new System.Windows.Forms.GroupBox();
@@ -85,32 +84,34 @@
             this.AddressText = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.ListViewEmployee = new System.Windows.Forms.DataGridView();
+            this.QualificationListView = new System.Windows.Forms.DataGridView();
             this.IdQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameCallQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IssueDateQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlaceOfIssueQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel13 = new System.Windows.Forms.Panel();
+            this.qualificationGroupBox = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.exQualificationTB = new System.Windows.Forms.TextBox();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.placeQualificationTB = new System.Windows.Forms.TextBox();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.namecallQualificationTB = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.nameQualificationTB = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateQualification = new System.Windows.Forms.DateTimePicker();
             this.panel19 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.IDQualificationTB = new System.Windows.Forms.TextBox();
             this.TitleListEmployee = new System.Windows.Forms.Label();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.fixQualificationBtn = new System.Windows.Forms.Button();
+            this.addQualificationBtn = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -125,8 +126,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.panel22 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.GenderGroupBox.SuspendLayout();
             this.NameGroupBox.SuspendLayout();
@@ -139,7 +138,7 @@
             this.panel14.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.AddEmployeeGroupBox.SuspendLayout();
+            this.EmployeeGroupBox.SuspendLayout();
             this.panel12.SuspendLayout();
             this.CoefficientAllowanceGroupBox.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -151,25 +150,25 @@
             this.AddressGroupBox.SuspendLayout();
             this.panel7.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListViewEmployee)).BeginInit();
-            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.QualificationListView)).BeginInit();
+            this.qualificationGroupBox.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.panel20.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.panel19.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel15.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel21.SuspendLayout();
-            this.panel22.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -183,7 +182,7 @@
             this.panel2.Margin = new System.Windows.Forms.Padding(10);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(580, 70);
+            this.panel2.Size = new System.Drawing.Size(545, 70);
             this.panel2.TabIndex = 2;
             // 
             // GenderGroupBox
@@ -195,7 +194,7 @@
             this.GenderGroupBox.Location = new System.Drawing.Point(307, 10);
             this.GenderGroupBox.Name = "GenderGroupBox";
             this.GenderGroupBox.Padding = new System.Windows.Forms.Padding(40, 3, 40, 3);
-            this.GenderGroupBox.Size = new System.Drawing.Size(263, 50);
+            this.GenderGroupBox.Size = new System.Drawing.Size(228, 50);
             this.GenderGroupBox.TabIndex = 3;
             this.GenderGroupBox.TabStop = false;
             this.GenderGroupBox.Text = "Gender";
@@ -206,7 +205,7 @@
             this.MaleBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MaleBtn.Location = new System.Drawing.Point(40, 23);
             this.MaleBtn.Name = "MaleBtn";
-            this.MaleBtn.Size = new System.Drawing.Size(105, 24);
+            this.MaleBtn.Size = new System.Drawing.Size(70, 24);
             this.MaleBtn.TabIndex = 2;
             this.MaleBtn.TabStop = true;
             this.MaleBtn.Text = "Male";
@@ -216,7 +215,7 @@
             // 
             this.FemaleBtn.AutoSize = true;
             this.FemaleBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FemaleBtn.Location = new System.Drawing.Point(145, 23);
+            this.FemaleBtn.Location = new System.Drawing.Point(110, 23);
             this.FemaleBtn.Name = "FemaleBtn";
             this.FemaleBtn.Size = new System.Drawing.Size(78, 24);
             this.FemaleBtn.TabIndex = 1;
@@ -278,14 +277,14 @@
             this.panel3.Location = new System.Drawing.Point(3, 455);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(744, 46);
+            this.panel3.Size = new System.Drawing.Size(709, 46);
             this.panel3.TabIndex = 10;
             // 
             // FixBtn
             // 
             this.FixBtn.BackColor = System.Drawing.Color.Yellow;
             this.FixBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FixBtn.Location = new System.Drawing.Point(646, 5);
+            this.FixBtn.Location = new System.Drawing.Point(611, 5);
             this.FixBtn.Name = "FixBtn";
             this.FixBtn.Size = new System.Drawing.Size(98, 41);
             this.FixBtn.TabIndex = 1;
@@ -310,7 +309,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(750, 504);
+            this.tabPage2.Size = new System.Drawing.Size(715, 504);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Family";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -327,32 +326,20 @@
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox2.Size = new System.Drawing.Size(744, 498);
+            this.groupBox2.Size = new System.Drawing.Size(709, 498);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Family Form";
             // 
             // panel17
             // 
-            this.panel17.Controls.Add(this.button6);
             this.panel17.Controls.Add(this.button7);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel17.Location = new System.Drawing.Point(5, 447);
             this.panel17.Name = "panel17";
             this.panel17.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel17.Size = new System.Drawing.Size(734, 46);
+            this.panel17.Size = new System.Drawing.Size(699, 46);
             this.panel17.TabIndex = 18;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Yellow;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button6.Location = new System.Drawing.Point(636, 5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(98, 41);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Fix";
-            this.button6.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
@@ -363,17 +350,18 @@
             this.button7.TabIndex = 0;
             this.button7.Text = "< Back";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // FamilyGridView
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FamilyGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FamilyGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.FamilyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FamilyGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdFamily,
@@ -386,7 +374,7 @@
             this.FamilyGridView.Name = "FamilyGridView";
             this.FamilyGridView.RowHeadersWidth = 51;
             this.FamilyGridView.RowTemplate.Height = 29;
-            this.FamilyGridView.Size = new System.Drawing.Size(734, 387);
+            this.FamilyGridView.Size = new System.Drawing.Size(699, 387);
             this.FamilyGridView.TabIndex = 17;
             // 
             // IdFamily
@@ -440,7 +428,7 @@
             this.panel14.Location = new System.Drawing.Point(5, 32);
             this.panel14.Name = "panel14";
             this.panel14.Padding = new System.Windows.Forms.Padding(10);
-            this.panel14.Size = new System.Drawing.Size(734, 74);
+            this.panel14.Size = new System.Drawing.Size(699, 74);
             this.panel14.TabIndex = 16;
             // 
             // RemoveFamilyBtn
@@ -450,7 +438,7 @@
             this.RemoveFamilyBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RemoveFamilyBtn.Location = new System.Drawing.Point(268, 10);
             this.RemoveFamilyBtn.Name = "RemoveFamilyBtn";
-            this.RemoveFamilyBtn.Size = new System.Drawing.Size(198, 54);
+            this.RemoveFamilyBtn.Size = new System.Drawing.Size(163, 54);
             this.RemoveFamilyBtn.TabIndex = 5;
             this.RemoveFamilyBtn.Text = "Remove";
             this.RemoveFamilyBtn.UseVisualStyleBackColor = false;
@@ -460,7 +448,7 @@
             this.FixFamilyBtn.AutoSize = true;
             this.FixFamilyBtn.BackColor = System.Drawing.Color.Transparent;
             this.FixFamilyBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FixFamilyBtn.Location = new System.Drawing.Point(466, 10);
+            this.FixFamilyBtn.Location = new System.Drawing.Point(431, 10);
             this.FixFamilyBtn.Name = "FixFamilyBtn";
             this.FixFamilyBtn.Size = new System.Drawing.Size(258, 54);
             this.FixFamilyBtn.TabIndex = 4;
@@ -509,41 +497,41 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.AddEmployeeGroupBox);
+            this.tabPage1.Controls.Add(this.EmployeeGroupBox);
             this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(750, 504);
+            this.tabPage1.Size = new System.Drawing.Size(715, 504);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Info";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // AddEmployeeGroupBox
+            // EmployeeGroupBox
             // 
-            this.AddEmployeeGroupBox.AutoSize = true;
-            this.AddEmployeeGroupBox.BackColor = System.Drawing.Color.White;
-            this.AddEmployeeGroupBox.Controls.Add(this.AddNewBtn);
-            this.AddEmployeeGroupBox.Controls.Add(this.panel12);
-            this.AddEmployeeGroupBox.Controls.Add(this.panel9);
-            this.AddEmployeeGroupBox.Controls.Add(this.panel5);
-            this.AddEmployeeGroupBox.Controls.Add(this.panel7);
-            this.AddEmployeeGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddEmployeeGroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AddEmployeeGroupBox.Location = new System.Drawing.Point(3, 3);
-            this.AddEmployeeGroupBox.Name = "AddEmployeeGroupBox";
-            this.AddEmployeeGroupBox.Padding = new System.Windows.Forms.Padding(5);
-            this.AddEmployeeGroupBox.Size = new System.Drawing.Size(744, 452);
-            this.AddEmployeeGroupBox.TabIndex = 11;
-            this.AddEmployeeGroupBox.TabStop = false;
-            this.AddEmployeeGroupBox.Text = "Detail Employee Form";
+            this.EmployeeGroupBox.AutoSize = true;
+            this.EmployeeGroupBox.BackColor = System.Drawing.Color.White;
+            this.EmployeeGroupBox.Controls.Add(this.AddNewBtn);
+            this.EmployeeGroupBox.Controls.Add(this.panel12);
+            this.EmployeeGroupBox.Controls.Add(this.panel9);
+            this.EmployeeGroupBox.Controls.Add(this.panel5);
+            this.EmployeeGroupBox.Controls.Add(this.panel7);
+            this.EmployeeGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmployeeGroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EmployeeGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.EmployeeGroupBox.Name = "EmployeeGroupBox";
+            this.EmployeeGroupBox.Padding = new System.Windows.Forms.Padding(5);
+            this.EmployeeGroupBox.Size = new System.Drawing.Size(709, 452);
+            this.EmployeeGroupBox.TabIndex = 11;
+            this.EmployeeGroupBox.TabStop = false;
+            this.EmployeeGroupBox.Text = "Detail Employee Form";
             // 
             // AddNewBtn
             // 
             this.AddNewBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddNewBtn.Location = new System.Drawing.Point(5, 404);
             this.AddNewBtn.Name = "AddNewBtn";
-            this.AddNewBtn.Size = new System.Drawing.Size(734, 43);
+            this.AddNewBtn.Size = new System.Drawing.Size(699, 43);
             this.AddNewBtn.TabIndex = 6;
             // 
             // panel12
@@ -554,7 +542,7 @@
             this.panel12.Location = new System.Drawing.Point(5, 324);
             this.panel12.Name = "panel12";
             this.panel12.Padding = new System.Windows.Forms.Padding(10);
-            this.panel12.Size = new System.Drawing.Size(734, 80);
+            this.panel12.Size = new System.Drawing.Size(699, 80);
             this.panel12.TabIndex = 5;
             // 
             // CoefficientAllowanceGroupBox
@@ -563,7 +551,7 @@
             this.CoefficientAllowanceGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CoefficientAllowanceGroupBox.Location = new System.Drawing.Point(10, 10);
             this.CoefficientAllowanceGroupBox.Name = "CoefficientAllowanceGroupBox";
-            this.CoefficientAllowanceGroupBox.Size = new System.Drawing.Size(714, 60);
+            this.CoefficientAllowanceGroupBox.Size = new System.Drawing.Size(679, 60);
             this.CoefficientAllowanceGroupBox.TabIndex = 1;
             this.CoefficientAllowanceGroupBox.TabStop = false;
             this.CoefficientAllowanceGroupBox.Text = "Coefficient Allowance";
@@ -573,7 +561,7 @@
             this.CoefficientAllowanceText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CoefficientAllowanceText.Location = new System.Drawing.Point(3, 23);
             this.CoefficientAllowanceText.Name = "CoefficientAllowanceText";
-            this.CoefficientAllowanceText.Size = new System.Drawing.Size(708, 27);
+            this.CoefficientAllowanceText.Size = new System.Drawing.Size(673, 27);
             this.CoefficientAllowanceText.TabIndex = 0;
             // 
             // panel9
@@ -588,7 +576,7 @@
             this.panel9.Location = new System.Drawing.Point(5, 243);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(10);
-            this.panel9.Size = new System.Drawing.Size(734, 81);
+            this.panel9.Size = new System.Drawing.Size(699, 81);
             this.panel9.TabIndex = 4;
             // 
             // StartDateGroupBox
@@ -597,7 +585,7 @@
             this.StartDateGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StartDateGroupBox.Location = new System.Drawing.Point(489, 10);
             this.StartDateGroupBox.Name = "StartDateGroupBox";
-            this.StartDateGroupBox.Size = new System.Drawing.Size(235, 61);
+            this.StartDateGroupBox.Size = new System.Drawing.Size(200, 61);
             this.StartDateGroupBox.TabIndex = 4;
             this.StartDateGroupBox.TabStop = false;
             this.StartDateGroupBox.Text = "Start Date At School";
@@ -608,7 +596,7 @@
             this.StartDate.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.StartDate.Location = new System.Drawing.Point(3, 31);
             this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(229, 27);
+            this.StartDate.Size = new System.Drawing.Size(194, 27);
             this.StartDate.TabIndex = 0;
             // 
             // panel11
@@ -675,7 +663,7 @@
             this.panel5.Location = new System.Drawing.Point(5, 161);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(10);
-            this.panel5.Size = new System.Drawing.Size(734, 82);
+            this.panel5.Size = new System.Drawing.Size(699, 82);
             this.panel5.TabIndex = 3;
             // 
             // groupBox1
@@ -684,7 +672,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(466, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(258, 62);
+            this.groupBox1.Size = new System.Drawing.Size(223, 62);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Date of Birth";
@@ -695,7 +683,7 @@
             this.DateOfBirth.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DateOfBirth.Location = new System.Drawing.Point(3, 32);
             this.DateOfBirth.Name = "DateOfBirth";
-            this.DateOfBirth.Size = new System.Drawing.Size(252, 27);
+            this.DateOfBirth.Size = new System.Drawing.Size(217, 27);
             this.DateOfBirth.TabIndex = 0;
             // 
             // panel6
@@ -735,14 +723,14 @@
             this.panel7.Location = new System.Drawing.Point(5, 32);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(10);
-            this.panel7.Size = new System.Drawing.Size(734, 129);
+            this.panel7.Size = new System.Drawing.Size(699, 129);
             this.panel7.TabIndex = 2;
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.QualificationListView);
+            this.tabPage3.Controls.Add(this.qualificationGroupBox);
             this.tabPage3.Controls.Add(this.panel16);
-            this.tabPage3.Controls.Add(this.ListViewEmployee);
-            this.tabPage3.Controls.Add(this.panel13);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -751,76 +739,30 @@
             this.tabPage3.Text = "Employee Qualification";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // panel16
+            // QualificationListView
             // 
-            this.panel16.Controls.Add(this.button10);
-            this.panel16.Controls.Add(this.button4);
-            this.panel16.Controls.Add(this.button5);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel16.Location = new System.Drawing.Point(3, 455);
-            this.panel16.Name = "panel16";
-            this.panel16.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel16.Size = new System.Drawing.Size(709, 46);
-            this.panel16.TabIndex = 11;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.Yellow;
-            this.button10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button10.Location = new System.Drawing.Point(450, 5);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(91, 41);
-            this.button10.TabIndex = 2;
-            this.button10.Text = "Fix";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Visible = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Yellow;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button4.Location = new System.Drawing.Point(541, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(168, 41);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Add new qualification";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button5.Location = new System.Drawing.Point(0, 5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 41);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "< Back";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // ListViewEmployee
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ListViewEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.ListViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListViewEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.QualificationListView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.QualificationListView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.QualificationListView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdQualification,
             this.NameQualification,
             this.NameCallQualification,
             this.IssueDateQualification,
             this.PlaceOfIssueQualification});
-            this.ListViewEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListViewEmployee.Location = new System.Drawing.Point(3, 284);
-            this.ListViewEmployee.Name = "ListViewEmployee";
-            this.ListViewEmployee.RowHeadersWidth = 51;
-            this.ListViewEmployee.RowTemplate.Height = 29;
-            this.ListViewEmployee.Size = new System.Drawing.Size(709, 217);
-            this.ListViewEmployee.TabIndex = 3;
+            this.QualificationListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.QualificationListView.Location = new System.Drawing.Point(3, 284);
+            this.QualificationListView.Name = "QualificationListView";
+            this.QualificationListView.RowHeadersWidth = 51;
+            this.QualificationListView.RowTemplate.Height = 29;
+            this.QualificationListView.Size = new System.Drawing.Size(709, 171);
+            this.QualificationListView.TabIndex = 3;
             // 
             // IdQualification
             // 
@@ -859,20 +801,77 @@
             this.PlaceOfIssueQualification.MinimumWidth = 6;
             this.PlaceOfIssueQualification.Name = "PlaceOfIssueQualification";
             // 
-            // panel13
+            // qualificationGroupBox
             // 
-            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel13.Controls.Add(this.panel22);
-            this.panel13.Controls.Add(this.panel21);
-            this.panel13.Controls.Add(this.panel20);
-            this.panel13.Controls.Add(this.panel19);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Enabled = false;
-            this.panel13.Location = new System.Drawing.Point(3, 3);
-            this.panel13.Name = "panel13";
-            this.panel13.Padding = new System.Windows.Forms.Padding(10);
-            this.panel13.Size = new System.Drawing.Size(709, 281);
-            this.panel13.TabIndex = 2;
+            this.qualificationGroupBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.qualificationGroupBox.Controls.Add(this.panel22);
+            this.qualificationGroupBox.Controls.Add(this.panel21);
+            this.qualificationGroupBox.Controls.Add(this.panel20);
+            this.qualificationGroupBox.Controls.Add(this.panel19);
+            this.qualificationGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.qualificationGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.qualificationGroupBox.Name = "qualificationGroupBox";
+            this.qualificationGroupBox.Padding = new System.Windows.Forms.Padding(10);
+            this.qualificationGroupBox.Size = new System.Drawing.Size(709, 281);
+            this.qualificationGroupBox.TabIndex = 12;
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.groupBox10);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel22.Location = new System.Drawing.Point(10, 175);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(685, 59);
+            this.panel22.TabIndex = 9;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.exQualificationTB);
+            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox10.Location = new System.Drawing.Point(0, 0);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(685, 50);
+            this.groupBox10.TabIndex = 4;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Expertise name";
+            // 
+            // exQualificationTB
+            // 
+            this.exQualificationTB.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.exQualificationTB.Location = new System.Drawing.Point(3, 20);
+            this.exQualificationTB.Name = "exQualificationTB";
+            this.exQualificationTB.Size = new System.Drawing.Size(679, 27);
+            this.exQualificationTB.TabIndex = 0;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.groupBox7);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel21.Location = new System.Drawing.Point(10, 121);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(685, 54);
+            this.panel21.TabIndex = 8;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.placeQualificationTB);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox7.Location = new System.Drawing.Point(0, 0);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(685, 54);
+            this.groupBox7.TabIndex = 4;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Place of issue";
+            // 
+            // placeQualificationTB
+            // 
+            this.placeQualificationTB.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.placeQualificationTB.Location = new System.Drawing.Point(3, 24);
+            this.placeQualificationTB.Name = "placeQualificationTB";
+            this.placeQualificationTB.Size = new System.Drawing.Size(679, 27);
+            this.placeQualificationTB.TabIndex = 0;
             // 
             // panel20
             // 
@@ -885,29 +884,9 @@
             this.panel20.Size = new System.Drawing.Size(685, 61);
             this.panel20.TabIndex = 7;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox3.Location = new System.Drawing.Point(0, 0);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(171, 61);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Name";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox1.Location = new System.Drawing.Point(3, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 27);
-            this.textBox1.TabIndex = 0;
-            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.namecallQualificationTB);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox4.Location = new System.Drawing.Point(171, 0);
@@ -917,17 +896,37 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Name Call";
             // 
-            // textBox2
+            // namecallQualificationTB
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox2.Location = new System.Drawing.Point(3, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(242, 27);
-            this.textBox2.TabIndex = 0;
+            this.namecallQualificationTB.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.namecallQualificationTB.Location = new System.Drawing.Point(3, 31);
+            this.namecallQualificationTB.Name = "namecallQualificationTB";
+            this.namecallQualificationTB.Size = new System.Drawing.Size(242, 27);
+            this.namecallQualificationTB.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.nameQualificationTB);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(171, 61);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Name";
+            // 
+            // nameQualificationTB
+            // 
+            this.nameQualificationTB.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.nameQualificationTB.Location = new System.Drawing.Point(3, 31);
+            this.nameQualificationTB.Name = "nameQualificationTB";
+            this.nameQualificationTB.Size = new System.Drawing.Size(165, 27);
+            this.nameQualificationTB.TabIndex = 0;
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.dateTimePicker1);
+            this.groupBox8.Controls.Add(this.dateQualification);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox8.Location = new System.Drawing.Point(419, 0);
             this.groupBox8.Name = "groupBox8";
@@ -936,14 +935,14 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Issue Date";
             // 
-            // dateTimePicker1
+            // dateQualification
             // 
-            this.dateTimePicker1.CustomFormat = "";
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(3, 31);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(260, 27);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dateQualification.CustomFormat = "";
+            this.dateQualification.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dateQualification.Location = new System.Drawing.Point(3, 31);
+            this.dateQualification.Name = "dateQualification";
+            this.dateQualification.Size = new System.Drawing.Size(260, 27);
+            this.dateQualification.TabIndex = 0;
             // 
             // panel19
             // 
@@ -957,7 +956,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox3);
+            this.groupBox5.Controls.Add(this.IDQualificationTB);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox5.Location = new System.Drawing.Point(598, 0);
@@ -967,13 +966,13 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "ID";
             // 
-            // textBox3
+            // IDQualificationTB
             // 
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox3.Location = new System.Drawing.Point(3, 20);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(81, 27);
-            this.textBox3.TabIndex = 0;
+            this.IDQualificationTB.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.IDQualificationTB.Location = new System.Drawing.Point(3, 20);
+            this.IDQualificationTB.Name = "IDQualificationTB";
+            this.IDQualificationTB.Size = new System.Drawing.Size(81, 27);
+            this.IDQualificationTB.TabIndex = 0;
             // 
             // TitleListEmployee
             // 
@@ -986,45 +985,52 @@
             this.TitleListEmployee.TabIndex = 0;
             this.TitleListEmployee.Text = "Employee Qualification";
             // 
-            // groupBox10
+            // panel16
             // 
-            this.groupBox10.Controls.Add(this.textBox6);
-            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox10.Location = new System.Drawing.Point(0, 0);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(685, 50);
-            this.groupBox10.TabIndex = 4;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Expertise name";
+            this.panel16.Controls.Add(this.fixQualificationBtn);
+            this.panel16.Controls.Add(this.addQualificationBtn);
+            this.panel16.Controls.Add(this.button5);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel16.Location = new System.Drawing.Point(3, 455);
+            this.panel16.Name = "panel16";
+            this.panel16.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panel16.Size = new System.Drawing.Size(709, 46);
+            this.panel16.TabIndex = 11;
             // 
-            // textBox6
+            // fixQualificationBtn
             // 
-            this.textBox6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox6.Location = new System.Drawing.Point(3, 20);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(679, 27);
-            this.textBox6.TabIndex = 0;
+            this.fixQualificationBtn.BackColor = System.Drawing.Color.Yellow;
+            this.fixQualificationBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.fixQualificationBtn.Location = new System.Drawing.Point(450, 5);
+            this.fixQualificationBtn.Name = "fixQualificationBtn";
+            this.fixQualificationBtn.Size = new System.Drawing.Size(91, 41);
+            this.fixQualificationBtn.TabIndex = 2;
+            this.fixQualificationBtn.Text = "Fix";
+            this.fixQualificationBtn.UseVisualStyleBackColor = false;
+            this.fixQualificationBtn.Click += new System.EventHandler(this.button10_Click);
             // 
-            // groupBox7
+            // addQualificationBtn
             // 
-            this.groupBox7.Controls.Add(this.textBox5);
-            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox7.Location = new System.Drawing.Point(0, 0);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(685, 54);
-            this.groupBox7.TabIndex = 4;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Place of issue";
+            this.addQualificationBtn.BackColor = System.Drawing.Color.Yellow;
+            this.addQualificationBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.addQualificationBtn.Location = new System.Drawing.Point(541, 5);
+            this.addQualificationBtn.Name = "addQualificationBtn";
+            this.addQualificationBtn.Size = new System.Drawing.Size(168, 41);
+            this.addQualificationBtn.TabIndex = 1;
+            this.addQualificationBtn.Text = "Add new qualification";
+            this.addQualificationBtn.UseVisualStyleBackColor = false;
+            this.addQualificationBtn.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBox5
+            // button5
             // 
-            this.textBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox5.Location = new System.Drawing.Point(3, 24);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(679, 27);
-            this.textBox5.TabIndex = 0;
+            this.button5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button5.Location = new System.Drawing.Point(0, 5);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(94, 41);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "< Back";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // tabPage4
             // 
@@ -1073,17 +1079,18 @@
             this.button9.TabIndex = 0;
             this.button9.Text = "< Back";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDUnion,
@@ -1190,24 +1197,6 @@
             this.panel1.Size = new System.Drawing.Size(745, 559);
             this.panel1.TabIndex = 3;
             // 
-            // panel21
-            // 
-            this.panel21.Controls.Add(this.groupBox7);
-            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(10, 121);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(685, 54);
-            this.panel21.TabIndex = 8;
-            // 
-            // panel22
-            // 
-            this.panel22.Controls.Add(this.groupBox10);
-            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel22.Location = new System.Drawing.Point(10, 175);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(685, 59);
-            this.panel22.TabIndex = 9;
-            // 
             // DetailInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1236,7 +1225,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.AddEmployeeGroupBox.ResumeLayout(false);
+            this.EmployeeGroupBox.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.CoefficientAllowanceGroupBox.ResumeLayout(false);
             this.CoefficientAllowanceGroupBox.PerformLayout();
@@ -1252,23 +1241,25 @@
             this.AddressGroupBox.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ListViewEmployee)).EndInit();
-            this.panel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.QualificationListView)).EndInit();
+            this.qualificationGroupBox.ResumeLayout(false);
+            this.panel22.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.panel20.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.panel16.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -1277,8 +1268,6 @@
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel21.ResumeLayout(false);
-            this.panel22.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1310,7 +1299,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private TabControl tabControl1;
         private TabPage tabPage1;
-        private GroupBox AddEmployeeGroupBox;
+        private GroupBox EmployeeGroupBox;
         private Panel AddNewBtn;
         private Panel panel12;
         private GroupBox CoefficientAllowanceGroupBox;
@@ -1333,18 +1322,11 @@
         private Panel panel7;
         private Panel panel1;
         private TabPage tabPage3;
-        private Panel panel13;
-        private Label TitleListEmployee;
-        private DataGridView ListViewEmployee;
-        private GroupBox groupBox3;
+        private DataGridView QualificationListView;
         private TextBox textBox1;
-        private GroupBox groupBox5;
         private TextBox textBox3;
-        private GroupBox groupBox4;
         private TextBox textBox2;
-        private GroupBox groupBox7;
         private TextBox textBox5;
-        private GroupBox groupBox8;
         private DateTimePicker dateTimePicker1;
         private TabPage tabPage4;
         private GroupBox groupBox6;
@@ -1356,15 +1338,12 @@
         private Panel panel16;
         private Button button4;
         private Button button5;
-        private GroupBox groupBox10;
         private TextBox textBox6;
         private Panel panel17;
-        private Button button6;
         private Button button7;
         private Panel panel18;
         private Button button9;
         private Button button10;
-        private Panel panel19;
         private DataGridViewTextBoxColumn IdFamily;
         private DataGridViewTextBoxColumn NameFamily;
         private DataGridViewTextBoxColumn BirthFamily;
@@ -1379,8 +1358,25 @@
         private DataGridViewTextBoxColumn NameUnion;
         private DataGridViewTextBoxColumn SartDateUnion;
         private DataGridViewTextBoxColumn EndDateUnion;
-        private Panel panel20;
+        private Button fixQualificationBtn;
+        private Button addQualificationBtn;
+        private Panel qualificationGroupBox;
         private Panel panel22;
+        private GroupBox groupBox10;
+        private TextBox exQualificationTB;
         private Panel panel21;
+        private GroupBox groupBox7;
+        private TextBox placeQualificationTB;
+        private Panel panel20;
+        private GroupBox groupBox4;
+        private TextBox namecallQualificationTB;
+        private GroupBox groupBox3;
+        private TextBox nameQualificationTB;
+        private GroupBox groupBox8;
+        private DateTimePicker dateQualification;
+        private Panel panel19;
+        private GroupBox groupBox5;
+        private TextBox IDQualificationTB;
+        private Label TitleListEmployee;
     }
 }
