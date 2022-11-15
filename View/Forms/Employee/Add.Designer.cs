@@ -457,6 +457,7 @@
             this.Name = "Add";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Add Employee";
+            this.Load += new System.EventHandler(this.Add_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.AddEmployeeGroupBox.ResumeLayout(false);

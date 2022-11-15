@@ -163,6 +163,7 @@
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Management";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Management_FormClosed);
+            this.Load += new System.EventHandler(this.Management_Load);
             this.panelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 

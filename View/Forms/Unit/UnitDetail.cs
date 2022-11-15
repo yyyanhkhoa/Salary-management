@@ -30,7 +30,8 @@ namespace Salary_management.View.Forms.Unit
 
             //Unit detail
             var repo = new RepositoryUnit();
-            Model.Unit unit =  repo.GetUnitDetail(idUnit);
+            var unit = repo.GetUnitDetail(idUnit);
+   
             NameText.Text = unit.Name;
             AddressText.Text = unit.Address;
             PhoneText.Text = unit.PhoneNumber;
@@ -93,6 +94,11 @@ namespace Salary_management.View.Forms.Unit
             }
             
 
+        }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Unit.Unit(this.mng), sender);
         }
     }
 }

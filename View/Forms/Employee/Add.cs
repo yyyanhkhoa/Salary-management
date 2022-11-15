@@ -104,5 +104,10 @@ namespace Salary_management.View.Forms.Employee
         {
             mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
         }
+
+        private void Add_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
