@@ -37,11 +37,13 @@ namespace Salary_management.View.Forms.Employee
         private void ListViewEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
+            string id = (ListViewEmployee.Rows[ListViewEmployee.CurrentRow.Index].Cells[0].Value).ToString();
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-                mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng), sender);
+                
+                mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng,id), sender);
             }
         }
 
