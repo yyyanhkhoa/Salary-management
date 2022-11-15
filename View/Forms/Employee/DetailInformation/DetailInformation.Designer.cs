@@ -46,7 +46,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.FamilyGridView = new System.Windows.Forms.DataGridView();
             this.IdFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,17 +84,13 @@
             this.AddressText = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.fixQualificationBtn = new System.Windows.Forms.Button();
-            this.addQualificationBtn = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.ListViewEmployee = new System.Windows.Forms.DataGridView();
+            this.QualificationListView = new System.Windows.Forms.DataGridView();
             this.IdQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameCallQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IssueDateQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlaceOfIssueQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel13 = new System.Windows.Forms.Panel();
+            this.qualificationGroupBox = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.exQualificationTB = new System.Windows.Forms.TextBox();
@@ -113,6 +108,10 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.IDQualificationTB = new System.Windows.Forms.TextBox();
             this.TitleListEmployee = new System.Windows.Forms.Label();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.fixQualificationBtn = new System.Windows.Forms.Button();
+            this.addQualificationBtn = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -151,9 +150,8 @@
             this.AddressGroupBox.SuspendLayout();
             this.panel7.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListViewEmployee)).BeginInit();
-            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.QualificationListView)).BeginInit();
+            this.qualificationGroupBox.SuspendLayout();
             this.panel22.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.panel21.SuspendLayout();
@@ -164,6 +162,7 @@
             this.groupBox8.SuspendLayout();
             this.panel19.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.panel18.SuspendLayout();
@@ -334,7 +333,6 @@
             // 
             // panel17
             // 
-            this.panel17.Controls.Add(this.button6);
             this.panel17.Controls.Add(this.button7);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel17.Location = new System.Drawing.Point(5, 447);
@@ -342,17 +340,6 @@
             this.panel17.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.panel17.Size = new System.Drawing.Size(699, 46);
             this.panel17.TabIndex = 18;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Yellow;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button6.Location = new System.Drawing.Point(601, 5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(98, 41);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Fix";
-            this.button6.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
@@ -363,6 +350,7 @@
             this.button7.TabIndex = 0;
             this.button7.Text = "< Back";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // FamilyGridView
             // 
@@ -740,9 +728,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.QualificationListView);
+            this.tabPage3.Controls.Add(this.qualificationGroupBox);
             this.tabPage3.Controls.Add(this.panel16);
-            this.tabPage3.Controls.Add(this.ListViewEmployee);
-            this.tabPage3.Controls.Add(this.panel13);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -751,53 +739,7 @@
             this.tabPage3.Text = "Employee Qualification";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.fixQualificationBtn);
-            this.panel16.Controls.Add(this.addQualificationBtn);
-            this.panel16.Controls.Add(this.button5);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel16.Location = new System.Drawing.Point(3, 455);
-            this.panel16.Name = "panel16";
-            this.panel16.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel16.Size = new System.Drawing.Size(709, 46);
-            this.panel16.TabIndex = 11;
-            // 
-            // fixQualificationBtn
-            // 
-            this.fixQualificationBtn.BackColor = System.Drawing.Color.Yellow;
-            this.fixQualificationBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.fixQualificationBtn.Location = new System.Drawing.Point(450, 5);
-            this.fixQualificationBtn.Name = "fixQualificationBtn";
-            this.fixQualificationBtn.Size = new System.Drawing.Size(91, 41);
-            this.fixQualificationBtn.TabIndex = 2;
-            this.fixQualificationBtn.Text = "Fix";
-            this.fixQualificationBtn.UseVisualStyleBackColor = false;
-            this.fixQualificationBtn.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // addQualificationBtn
-            // 
-            this.addQualificationBtn.BackColor = System.Drawing.Color.Yellow;
-            this.addQualificationBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.addQualificationBtn.Location = new System.Drawing.Point(541, 5);
-            this.addQualificationBtn.Name = "addQualificationBtn";
-            this.addQualificationBtn.Size = new System.Drawing.Size(168, 41);
-            this.addQualificationBtn.TabIndex = 1;
-            this.addQualificationBtn.Text = "Add new qualification";
-            this.addQualificationBtn.UseVisualStyleBackColor = false;
-            this.addQualificationBtn.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button5.Location = new System.Drawing.Point(0, 5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 41);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "< Back";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // ListViewEmployee
+            // QualificationListView
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -806,21 +748,21 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ListViewEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.ListViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListViewEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.QualificationListView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.QualificationListView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.QualificationListView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdQualification,
             this.NameQualification,
             this.NameCallQualification,
             this.IssueDateQualification,
             this.PlaceOfIssueQualification});
-            this.ListViewEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListViewEmployee.Location = new System.Drawing.Point(3, 284);
-            this.ListViewEmployee.Name = "ListViewEmployee";
-            this.ListViewEmployee.RowHeadersWidth = 51;
-            this.ListViewEmployee.RowTemplate.Height = 29;
-            this.ListViewEmployee.Size = new System.Drawing.Size(709, 217);
-            this.ListViewEmployee.TabIndex = 3;
+            this.QualificationListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.QualificationListView.Location = new System.Drawing.Point(3, 284);
+            this.QualificationListView.Name = "QualificationListView";
+            this.QualificationListView.RowHeadersWidth = 51;
+            this.QualificationListView.RowTemplate.Height = 29;
+            this.QualificationListView.Size = new System.Drawing.Size(709, 171);
+            this.QualificationListView.TabIndex = 3;
             // 
             // IdQualification
             // 
@@ -859,21 +801,19 @@
             this.PlaceOfIssueQualification.MinimumWidth = 6;
             this.PlaceOfIssueQualification.Name = "PlaceOfIssueQualification";
             // 
-            // panel13
+            // qualificationGroupBox
             // 
-            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel13.Controls.Add(this.panel22);
-            this.panel13.Controls.Add(this.panel21);
-            this.panel13.Controls.Add(this.panel20);
-            this.panel13.Controls.Add(this.panel19);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Enabled = false;
-            this.panel13.Location = new System.Drawing.Point(3, 3);
-            this.panel13.Name = "panel13";
-            this.panel13.Padding = new System.Windows.Forms.Padding(10);
-            this.panel13.Size = new System.Drawing.Size(709, 281);
-            this.panel13.TabIndex = 2;
-            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
+            this.qualificationGroupBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.qualificationGroupBox.Controls.Add(this.panel22);
+            this.qualificationGroupBox.Controls.Add(this.panel21);
+            this.qualificationGroupBox.Controls.Add(this.panel20);
+            this.qualificationGroupBox.Controls.Add(this.panel19);
+            this.qualificationGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.qualificationGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.qualificationGroupBox.Name = "qualificationGroupBox";
+            this.qualificationGroupBox.Padding = new System.Windows.Forms.Padding(10);
+            this.qualificationGroupBox.Size = new System.Drawing.Size(709, 281);
+            this.qualificationGroupBox.TabIndex = 12;
             // 
             // panel22
             // 
@@ -1045,6 +985,53 @@
             this.TitleListEmployee.TabIndex = 0;
             this.TitleListEmployee.Text = "Employee Qualification";
             // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.fixQualificationBtn);
+            this.panel16.Controls.Add(this.addQualificationBtn);
+            this.panel16.Controls.Add(this.button5);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel16.Location = new System.Drawing.Point(3, 455);
+            this.panel16.Name = "panel16";
+            this.panel16.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panel16.Size = new System.Drawing.Size(709, 46);
+            this.panel16.TabIndex = 11;
+            // 
+            // fixQualificationBtn
+            // 
+            this.fixQualificationBtn.BackColor = System.Drawing.Color.Yellow;
+            this.fixQualificationBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.fixQualificationBtn.Location = new System.Drawing.Point(450, 5);
+            this.fixQualificationBtn.Name = "fixQualificationBtn";
+            this.fixQualificationBtn.Size = new System.Drawing.Size(91, 41);
+            this.fixQualificationBtn.TabIndex = 2;
+            this.fixQualificationBtn.Text = "Fix";
+            this.fixQualificationBtn.UseVisualStyleBackColor = false;
+            this.fixQualificationBtn.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // addQualificationBtn
+            // 
+            this.addQualificationBtn.BackColor = System.Drawing.Color.Yellow;
+            this.addQualificationBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.addQualificationBtn.Location = new System.Drawing.Point(541, 5);
+            this.addQualificationBtn.Name = "addQualificationBtn";
+            this.addQualificationBtn.Size = new System.Drawing.Size(168, 41);
+            this.addQualificationBtn.TabIndex = 1;
+            this.addQualificationBtn.Text = "Add new qualification";
+            this.addQualificationBtn.UseVisualStyleBackColor = false;
+            this.addQualificationBtn.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button5.Location = new System.Drawing.Point(0, 5);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(94, 41);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "< Back";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.groupBox6);
@@ -1092,6 +1079,7 @@
             this.button9.TabIndex = 0;
             this.button9.Text = "< Back";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // dataGridView1
             // 
@@ -1253,9 +1241,8 @@
             this.AddressGroupBox.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ListViewEmployee)).EndInit();
-            this.panel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.QualificationListView)).EndInit();
+            this.qualificationGroupBox.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
@@ -1272,6 +1259,7 @@
             this.panel19.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.panel16.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -1334,18 +1322,11 @@
         private Panel panel7;
         private Panel panel1;
         private TabPage tabPage3;
-        private Panel panel13;
-        private Label TitleListEmployee;
-        private DataGridView ListViewEmployee;
-        private GroupBox groupBox3;
+        private DataGridView QualificationListView;
         private TextBox textBox1;
-        private GroupBox groupBox5;
         private TextBox textBox3;
-        private GroupBox groupBox4;
         private TextBox textBox2;
-        private GroupBox groupBox7;
         private TextBox textBox5;
-        private GroupBox groupBox8;
         private DateTimePicker dateTimePicker1;
         private TabPage tabPage4;
         private GroupBox groupBox6;
@@ -1357,15 +1338,12 @@
         private Panel panel16;
         private Button button4;
         private Button button5;
-        private GroupBox groupBox10;
         private TextBox textBox6;
         private Panel panel17;
-        private Button button6;
         private Button button7;
         private Panel panel18;
         private Button button9;
         private Button button10;
-        private Panel panel19;
         private DataGridViewTextBoxColumn IdFamily;
         private DataGridViewTextBoxColumn NameFamily;
         private DataGridViewTextBoxColumn BirthFamily;
@@ -1380,16 +1358,25 @@
         private DataGridViewTextBoxColumn NameUnion;
         private DataGridViewTextBoxColumn SartDateUnion;
         private DataGridViewTextBoxColumn EndDateUnion;
-        private Panel panel20;
-        private Panel panel22;
-        private Panel panel21;
         private Button fixQualificationBtn;
         private Button addQualificationBtn;
+        private Panel qualificationGroupBox;
+        private Panel panel22;
+        private GroupBox groupBox10;
         private TextBox exQualificationTB;
+        private Panel panel21;
+        private GroupBox groupBox7;
         private TextBox placeQualificationTB;
+        private Panel panel20;
+        private GroupBox groupBox4;
         private TextBox namecallQualificationTB;
+        private GroupBox groupBox3;
         private TextBox nameQualificationTB;
+        private GroupBox groupBox8;
         private DateTimePicker dateQualification;
+        private Panel panel19;
+        private GroupBox groupBox5;
         private TextBox IDQualificationTB;
+        private Label TitleListEmployee;
     }
 }

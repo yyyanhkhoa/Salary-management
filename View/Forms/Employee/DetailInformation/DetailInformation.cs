@@ -67,16 +67,12 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         }
         private void DetailInformation_Load(object sender, EventArgs e)
         {
-            panel13.Enabled = false;
             enableInfo(false);
             IDQualificationTB.Enabled = false;
             enableQualification(false);
-           // EmployeeGroupBox.Enabled = false;
+            EmployeeGroupBox.Enabled = false;
             FamilyGridView.Enabled = false;
             FamilyGridView.Columns[0].ReadOnly = true;
-
-            BackBtn.Enabled = true;
-            FixBtn.Enabled = true;
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -88,14 +84,12 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
             if (FixBtn.Text == "Fix")
             {
-                enableInfo(true);
-                //EmployeeGroupBox.Enabled = true;
+                enableInfo(true);              
                 FixBtn.Text = "Save";
             }
             else
             {
-                enableInfo(false);
-                //EmployeeGroupBox.Enabled = false;
+                enableInfo(false);               
                 FixBtn.Text = "Fix";
             }
         }
@@ -130,9 +124,24 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             }
             else
             {
-                enableQualification(false);
                 fixQualificationBtn.Text = "Fix";
+                enableQualification(false);
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
         }
     }
 }
