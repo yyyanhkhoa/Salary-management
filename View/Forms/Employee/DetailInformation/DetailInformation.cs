@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Salary_management.Controller.Infrastructure.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,12 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
     public partial class DetailInformation : Form
     {
         private Management mng;
-        public DetailInformation(Management mng)
+        private string idEmployee;
+        public DetailInformation(Management mng,string idEmployee)
         {
             InitializeComponent();
-            this.mng = mng;    
+            this.mng = mng;
+            this.idEmployee = idEmployee;
         }
         void enableInfo (bool check)
         {
@@ -67,12 +70,12 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         }
         private void DetailInformation_Load(object sender, EventArgs e)
         {
-            enableInfo(false);
-            IDQualificationTB.Enabled = false;
-            enableQualification(false);
-            EmployeeGroupBox.Enabled = false;
-            FamilyGridView.Enabled = false;
-            FamilyGridView.Columns[0].ReadOnly = true;
+
+            var repo = new RepositoryEmployee();
+
+            var employee = repo.GetEmployeeDetail(idEmployee);
+
+            MessageBox.Show(employee.Name);
         }
 
         private void BackBtn_Click(object sender, EventArgs e)

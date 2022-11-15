@@ -31,7 +31,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng), sender);
         }
     }
 }
