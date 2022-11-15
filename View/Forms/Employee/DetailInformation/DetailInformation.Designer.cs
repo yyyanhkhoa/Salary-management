@@ -1323,11 +1323,7 @@
         private Panel panel1;
         private TabPage tabPage3;
         private DataGridView QualificationListView;
-        private TextBox textBox1;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox5;
-        private DateTimePicker dateTimePicker1;
+
         private TabPage tabPage4;
         private GroupBox groupBox6;
         private Panel panel15;
@@ -1336,14 +1332,11 @@
         private Button button3;
         private DataGridView dataGridView1;
         private Panel panel16;
-        private Button button4;
         private Button button5;
-        private TextBox textBox6;
         private Panel panel17;
         private Button button7;
         private Panel panel18;
         private Button button9;
-        private Button button10;
         private DataGridViewTextBoxColumn IdFamily;
         private DataGridViewTextBoxColumn NameFamily;
         private DataGridViewTextBoxColumn BirthFamily;

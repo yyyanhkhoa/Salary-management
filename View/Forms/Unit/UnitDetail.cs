@@ -50,15 +50,14 @@ namespace Salary_management.View.Forms.Unit
 
 
             //Table
-            /*
-            var ahihi1 = DateOnly.FromDateTime(StartDateInput.Value);
-            var ahihi2 = DateOnly.FromDateTime(EndDateInput.Value);
+            
+  
             var repoTable = new RepositoryUnit();
-            var table = repoTable.GetTimeline(ahihi1,ahihi2);
+            var table = repoTable.GetTimeline(idUnit).Payload;
             foreach (var employee in table)
             {
-                ListEmployeeTable.Rows.Add(employee.EmployeeId, employee.EmployeeName,"","");
-            }*/
+                ListEmployeeTable.Rows.Add(employee.EmployeeId, employee.EmployeeName,employee.StartDate.ToString(),employee.EndDate.ToString());
+            }
         }
 
         private void WorkRecentlyCheckBox_CheckedChanged(object sender, EventArgs e)
