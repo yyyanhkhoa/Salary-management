@@ -54,36 +54,6 @@ namespace Salary_management.View.Forms.Position
             {
                 MessageBox.Show(result.ErrorMessage);
             }
-            /*
-            var RepoEmployee = new RepositoryEmployee();
-            Gender gender;
-            if (MaleBtn.Checked) gender = Gender.Male;
-            else gender = Gender.Female;
-            DateOnly dateOfBirth = DateOnly.FromDateTime(DateOfBirth.Value);
-            DateOnly startDate = DateOnly.FromDateTime(StartDate.Value);
-            //MessageBox.Show(name + " " + gender + " " + dateOfBirth + " " + ethnic + " " + address + " " + startDate + " " + identity + " " + coefficientAllowance);
-            var result = RepoEmployee.InsertEmployee(new EmployeeInput()
-            {
-                Name = NameText.Text,
-                Gender = gender,
-                DateOfBirth = dateOfBirth,
-                Ethnic = EthnicText.Text,
-                Address = AddressText.Text,
-                StartDate = startDate,
-                IdentityCardNumber = IdentityText.Text,
-                CoefficientAllowance = float.Parse(CoefficientAllowanceText.Text),
-            });
-            if (result.Success)
-            {
-                MessageBox.Show("Insert Employee success");
-                mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
-            }
-            else
-            {
-                MessageBox.Show(result.ErrorMessage);
-            }*/
-
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

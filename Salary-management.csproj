@@ -11,6 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="View\Forms\Reward\**" />
+    <EmbeddedResource Remove="View\Forms\Reward\**" />
+    <None Remove="View\Forms\Reward\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EFCore.NamingConventions" Version="6.0.0" />
     <PackageReference Include="MappingGenerator" Version="2022.9.49" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.9">
