@@ -1,4 +1,5 @@
 ﻿using Salary_management.Controller.Infrastructure.Data;
+using Salary_management.Controller.Infrastructure.Entities.Enums;
 using Salary_management.Model;
 using Models = Salary_management.Model;
 
@@ -12,12 +13,12 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		public bool CheckUsernameExists(string username)
 			=> Context.Auths.Any(a => a.Username == username);
 
-		public Result<Auth> InsertUser(string username, string password)
+		public Result<Auth> InsertUser(string username, string password, Role role)
 		{
 			if (CheckUsernameExists(username))
 				return new Result<Auth> { Success = false, ErrorMessage = "Username already exists." };
 
-			var userAuth = new Models.Auth { Username = username, Password = password };
+			var userAuth = new Models.Auth { Username = username, Password = password, Role = role};
 			Context.Auths.Add(userAuth);
 			Context.SaveChanges(); 
 			return new Result<Auth> { Success = true, Payload = userAuth };

@@ -79,9 +79,13 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			{
 				query = Context.PositionHistories.Where(uh => uh.PositionId == positionId && uh.StartDate >= from);
 			}
+			else if (to != null)
+			{ 
+				query = Context.PositionHistories.Where(uh => uh.PositionId == positionId && uh.EndDate <= to);
+			}
 			else
 			{
-				query = Context.PositionHistories.Where(uh => uh.PositionId == positionId && uh.EndDate <= to);
+				query = Context.PositionHistories.Where(uh => uh.PositionId == positionId);
 			}
 
 			return new()

@@ -10,7 +10,6 @@ namespace Salary_management.Controller.Infrastructure.Data
     {
         public DateOnly StartDate { get; set; }
         public DateOnly? EndDate { get; set; }
-
         public string EmployeeId { get; set; } = null!;
-    }
+	}
 }

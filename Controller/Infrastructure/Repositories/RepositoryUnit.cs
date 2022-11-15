@@ -28,9 +28,11 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Result<Models.Unit> { Success = true, Payload = MapToModel(unit) };
 		}
 
-		public Models.Unit GetUnitDetail(string unitId)
+		public Models.UnitDetail GetUnitDetail(string unitId)
 		{
-			return MapToModel(Context.Units.Where(u => u.Id == unitId).First());
+			var detail = MapToUnitDetailModel(Context.Units.Where(u => u.Id == unitId).First());
+			detail.Timeline = GetTimeline(unitId).Payload!;
+			return detail;
 		}
 
 		public Result<List<Models.UnitTimeline>> GetTimeline(string unitId, DateOnly? from = null, DateOnly? to = null)
@@ -45,16 +47,20 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			{
 				query = Context.UnitHistories.Where(uh => uh.UnitId == unitId  && uh.StartDate >= from);
 			}
-			else
+			else if (to != null)
 			{
 				query = Context.UnitHistories.Where(uh => uh.UnitId == unitId  && uh.EndDate <= to);
+			}
+			else
+			{
+				query = Context.UnitHistories.Where(uh => uh.UnitId == unitId);
 			}
 
 			return new()
 			{
 				Success = true,
 				Payload = query.OrderBy(uh => uh.StartDate)
-							   .Select(uh => MapToModel(uh))
+							   .Select(uh => MapToTimelineModel(uh))
 							   .ToList()
 			};
 		}
@@ -92,6 +98,17 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				DateFounded = entity.DateFounded
 			};
 		}
+		private static Models.UnitDetail MapToUnitDetailModel(Unit entity)
+		{
+			return new Models.UnitDetail
+			{
+				Id = entity.Id,
+				Name = entity.Name,
+				Address = entity.Address,
+				PhoneNumber = entity.PhoneNumber,
+				DateFounded = entity.DateFounded
+			};
+		}
 
 		private static Unit MapToEntity(InputUnit input)
 		{
@@ -105,7 +122,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			};
 		}
 	
-		private Models.UnitTimeline MapToModel(UnitHistory entity)
+		private Models.UnitTimeline MapToTimelineModel(UnitHistory entity)
 		{
 			return new Models.UnitTimeline
 			{
