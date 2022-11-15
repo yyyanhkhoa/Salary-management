@@ -26,7 +26,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		/// <param name="id"></param>
 		/// <param name="searchString">dùng để tìm kiếm nội dung khen thưởng hoặc mã nhân viên</param>
 		/// <returns></returns>
-		public List<Models.RewardOrDiscipline> GetRewards(string keyword)
+		public List<Models.RewardOrDiscipline> GetRewardsByKeyword(string keyword)
 		{
 			if (string.IsNullOrWhiteSpace(keyword))
 			{
@@ -48,10 +48,10 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		/// <summary>
 		/// Lấy thông tin các kỷ luật theo từ khóa, nếu từ khóa trống thì lấy thông tin của tất cả kỷ luật
 		/// </summary>
-		/// <param name="id"></param>
+		/// <param name="year"></param>
 		/// <param name="searchString">dùng để tìm kiếm nội dung kỷ luật hoặc mã nhân viên</param>
 		/// <returns></returns>
-		public List<Models.RewardOrDiscipline> GetDisciplines(string keyword)
+		public List<Models.RewardOrDiscipline> GetDisciplinesByKeyword(string keyword)
 		{
 			if (string.IsNullOrWhiteSpace(keyword))
 			{
@@ -74,7 +74,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		/// <summary>
 		/// Lấy thông tin các kỷ luật theo năm, nếu năm trống thì lấy thông tin của tất cả kỷ luật
 		/// </summary>
-		/// <param name="id"></param>
+		/// <param name="year"></param>
 		/// <param name="searchString">dùng để tìm kiếm nội dung khen thưởng hoặc mã nhân viên</param>
 		/// <returns></returns>
 		public List<Models.RewardOrDiscipline> GetRewards(int? year)
