@@ -64,13 +64,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DisciplineTable = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.SearchDisciplineText = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.ActionsGroupBox.SuspendLayout();
             this.panel6.SuspendLayout();
             this.AddAndFixPanel.SuspendLayout();
@@ -87,7 +89,8 @@
             this.FiltersGroupBox.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DisciplineTable)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ActionsGroupBox
@@ -456,7 +459,7 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.dataGridView1);
+            this.panel8.Controls.Add(this.DisciplineTable);
             this.panel8.Controls.Add(this.groupBox2);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(3, 3);
@@ -465,23 +468,23 @@
             this.panel8.Size = new System.Drawing.Size(721, 562);
             this.panel8.TabIndex = 1;
             // 
-            // dataGridView1
+            // DisciplineTable
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DisciplineTable.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.DisciplineTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DisciplineTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 137);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(701, 415);
-            this.dataGridView1.TabIndex = 1;
+            this.DisciplineTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DisciplineTable.Location = new System.Drawing.Point(10, 107);
+            this.DisciplineTable.Name = "DisciplineTable";
+            this.DisciplineTable.RowHeadersWidth = 51;
+            this.DisciplineTable.RowTemplate.Height = 29;
+            this.DisciplineTable.Size = new System.Drawing.Size(701, 445);
+            this.DisciplineTable.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -525,13 +528,34 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.SearchDisciplineText);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(10, 10);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(701, 127);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(20);
+            this.groupBox2.Size = new System.Drawing.Size(701, 97);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filters";
+            // 
+            // SearchDisciplineText
+            // 
+            this.SearchDisciplineText.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SearchDisciplineText.Location = new System.Drawing.Point(180, 40);
+            this.SearchDisciplineText.Name = "SearchDisciplineText";
+            this.SearchDisciplineText.Size = new System.Drawing.Size(125, 27);
+            this.SearchDisciplineText.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label5.Location = new System.Drawing.Point(20, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(160, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Select Year of Reward :";
             // 
             // RewardOrNot
             // 
@@ -564,7 +588,9 @@
             this.FiltersGroupBox.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DisciplineTable)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -604,7 +630,7 @@
         private GroupBox FiltersGroupBox;
         private TabPage tabPage2;
         private Panel panel8;
-        private DataGridView dataGridView1;
+        private DataGridView DisciplineTable;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -614,5 +640,7 @@
         private ComboBox TypeComboBox;
         private TextBox textBox1;
         private Label label3;
+        private TextBox SearchDisciplineText;
+        private Label label5;
     }
 }

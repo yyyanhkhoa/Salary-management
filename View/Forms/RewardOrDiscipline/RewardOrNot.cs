@@ -35,12 +35,22 @@ namespace Salary_management.View.Forms.RewardOrDiscipline
 
 
 
-            //Table
+            //TableReward
             var repoReward = new RepositoryRewardOrDiscipline();
-            var listEmployeeInReward = repoReward.GetRewardOrDisciplines("");
+            var listEmployeeInReward = repoReward.GetRewardsByKeyword("");
             foreach (var employeeInReward in listEmployeeInReward)
             {
+                RewardTable.Rows.Add(employeeInReward.EmployeeId, employeeInReward.EmployeeName, employeeInReward.Level, employeeInReward.Date, employeeInReward.Content);
             }
+
+            //TableDiscipLine
+            var repoReward2 = new RepositoryRewardOrDiscipline();
+            var listEmployeeInDiscipline = repoReward2.GetDisciplinesByKeyword("");
+            foreach (var employeeDiscipLine in listEmployeeInDiscipline)
+            {
+                DisciplineTable.Rows.Add(employeeDiscipLine.EmployeeId, employeeDiscipLine.EmployeeName, employeeDiscipLine.Level, employeeDiscipLine.Date, employeeDiscipLine.Content);
+            }
+
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
