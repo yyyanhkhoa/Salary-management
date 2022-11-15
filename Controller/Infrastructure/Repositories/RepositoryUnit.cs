@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore.Query;
 using Salary_management.Controller.Infrastructure.Data;
 using Salary_management.Controller.Infrastructure.Data.Input;
 using Salary_management.Infrastructure.Entities;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using Models = Salary_management.Model;
 
 namespace Salary_management.Controller.Infrastructure.Repositories
@@ -38,18 +37,19 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		public Result<List<Models.UnitTimeline>> GetTimeline(string unitId, DateOnly? from = null, DateOnly? to = null)
 		{
 			IQueryable<UnitHistory> query;
-
+			var dbSet = Context.UnitHistories;
+			
 			if (from != null && to != null)
 			{
-				query = Context.UnitHistories.Where(uh => uh.UnitId == unitId && uh.StartDate >= from && uh.EndDate <= to);
+				query = dbSet.Where(uh => uh.UnitId == unitId && uh.StartDate >= from && uh.EndDate <= to);
 			}
 			else if (from != null)
 			{
-				query = Context.UnitHistories.Where(uh => uh.UnitId == unitId  && uh.StartDate >= from);
+				query = dbSet.Where(uh => uh.UnitId == unitId  && uh.StartDate >= from);
 			}
 			else if (to != null)
 			{
-				query = Context.UnitHistories.Where(uh => uh.UnitId == unitId  && uh.EndDate <= to);
+				query = dbSet.Where(uh => uh.UnitId == unitId  && uh.EndDate <= to);
 			}
 			else
 			{
@@ -60,6 +60,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			{
 				Success = true,
 				Payload = query.OrderBy(uh => uh.StartDate)
+							   .Include(uh => uh.Employee)
 							   .Select(uh => MapToTimelineModel(uh))
 							   .ToList()
 			};
@@ -121,12 +122,12 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				DateFounded = input.DateFounded
 			};
 		}
-	
-		private Models.UnitTimeline MapToTimelineModel(UnitHistory entity)
+
+		private static Models.UnitTimeline MapToTimelineModel(UnitHistory entity)
 		{
 			return new Models.UnitTimeline
 			{
-				EmployeeName = Context.Employees.Where(e => e.Id == entity.EmployeeId).First().Name,
+				EmployeeName = entity.Employee.Name,
 				UnitId = entity.UnitId,
 				StartDate = entity.StartDate,
 				EndDate = entity.EndDate,
