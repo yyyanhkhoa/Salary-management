@@ -43,38 +43,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            var RepoUnit = new RepositoryUnit();
-            //string id = IDText.Text;
-            string Name = NameText.Text;
-            string Occupation = CoefficientAllowanceText.Text;
-            string relative = PhoneText.Text;
-            if (id == "") MessageBox.Show("Pls input Id");
-            else if (Name == "") MessageBox.Show("Pls input name");
-            else if (Address == "") MessageBox.Show("Pls input address");
-            else if (phone == "") MessageBox.Show("Pls input phone");
-            else
-            {
-                DateOnly dataOfFounded = DateOnly.FromDateTime(DateFoundedText.Value);
-                var result = RepoUnit.InsertUnit(new InputUnit()
-                {
-                    Id = id,
-                    Name = Name,
-                    PhoneNumber = phone,
-                    Address = Address,
-                    DateFounded = dataOfFounded,
-                });
-
-                if (result.Success)
-                {
-                    MessageBox.Show("Insert Unit success");
-                    mng.OpenChildForm(new View.Forms.Unit.Unit(this.mng), sender);
-
-                }
-                else
-                {
-                    MessageBox.Show(result.ErrorMessage);
-                }
-            }
+            
         }
     }
 }
