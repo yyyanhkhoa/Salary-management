@@ -31,8 +31,13 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		{
 			return Context.Families.Select(f => MapToModel(f)).ToList();
 		}
+   
+        public Models.Family GetFamilyDetail(string id)
+        {
+            return MapToModel(Context.Families.Where(e => e.Id == id).First()!);
+        }
 
-		public Result<Models.Family> FixFamily(int FamilyId, InputFamily inputFamily)
+        public Result<Models.Family> FixFamily(string FamilyId, InputFamily inputFamily)
 		{
 			var Family = MapToEntity(inputFamily);
 			Family.Id = FamilyId;
@@ -42,7 +47,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Result<Models.Family> { Success = true, Payload = MapToModel(Family) };
 		}
 
-		public Result<Models.Family> DeleteFamily(int FamilyId)
+		public Result<Models.Family> DeleteFamily(string FamilyId)
 		{
 			var Family = new Family { Id = FamilyId };
 			Context.Families.Attach(Family);
@@ -76,6 +81,5 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				RelativeType = family.RelativeType
 			};
 		}
-
-	}
+    }
 }

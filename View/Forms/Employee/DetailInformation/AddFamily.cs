@@ -1,5 +1,6 @@
 ﻿using Salary_management.Controller.Infrastructure.Data.Input;
 using Salary_management.Controller.Infrastructure.Repositories;
+using Salary_management.Infrastructure.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,8 +34,25 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             else
             {
                 // fix
-                var repo = new RepositoryEmployee();
-                var employee = repo.GetEmployeeDetail(idFamily);
+                AddBtn.Text = "Save";
+                var repo = new RepositoryFamily();
+                var family = repo.GetFamilyDetail(idFamily);
+                NameText.Text = family.Name;
+                if (family.RelativeType == RelativeType.Husband)
+                {
+                    HusbanBtn.Checked = true;
+                }
+                if (family.RelativeType == RelativeType.Wife)
+                {
+                    WifeBtn.Checked = true;
+                }
+                if (family.RelativeType == RelativeType.Child)
+                {
+                    ChildBtn.Checked = true;
+                }
+                DateOfBirth.Value = new DateTime(family.DateOfBirth.Year, family.DateOfBirth.Month, family.DateOfBirth.Day);
+                occupationText.Text = family.Occupation;
+               
             }
         }
 

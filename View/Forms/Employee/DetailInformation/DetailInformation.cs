@@ -1,4 +1,5 @@
-﻿using Salary_management.Controller.Infrastructure.Repositories;
+﻿using Salary_management.Controller.Infrastructure.Data.Input;
+using Salary_management.Controller.Infrastructure.Repositories;
 using Salary_management.Infrastructure.Entities.Enums;
 using System;
 using System.Collections.Generic;
@@ -79,13 +80,13 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             enableInfo(false);
             enableQualification(false);
 
-            MessageBox.Show(employee.Name);
+            MessageBox.Show(employee.DateOfBirth.ToString());
 
             //get Infomation detail
             NameText.Text = employee.Name;
             AddressText.Text = employee.Address;
-            //DateOfBirth.Value = employee.DateOfBirth.ToString();
-            // StartDate.Value = employee.StartDate;
+            DateOfBirth.Value = new DateTime(employee.DateOfBirth.Year, employee.DateOfBirth.Month, employee.DateOfBirth.Day);
+            StartDate.Value =new DateTime(employee.StartDate.Year, employee.StartDate.Month, employee.StartDate.Day);
             EthnicText.Text = employee.Ethnic;
             IdentityText.Text = employee.IdentityCardNumber;
             CoefficientAllowanceText.Text = employee.CoefficientAllowance.ToString();
@@ -117,8 +118,53 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             }
             else
             {
-                enableInfo(false);               
-                FixBtn.Text = "Fix";
+                //update infomation
+                if (NameText.Text == "") MessageBox.Show("Pls input name");
+                else if ((!MaleBtn.Checked) && (!FemaleBtn.Checked)) MessageBox.Show("Pls select gender");
+                else if (AddressText.Text == "") MessageBox.Show("Hay nhap dia chi");
+                else if (EthnicText.Text == "") MessageBox.Show("Hay nhap dan toc");
+                else if (CoefficientAllowanceText.Text == "") MessageBox.Show("Hay nhap he so phu cap");
+                else if (IdentityText.Text == "") MessageBox.Show("Hay nhap cmnd");
+                else
+                {
+                    var RepoEmployee = new RepositoryEmployee();
+                    Gender gender;
+                    if (MaleBtn.Checked) gender = Gender.Male;
+                    else gender = Gender.Female;
+                    DateOnly dateOfBirth = DateOnly.FromDateTime(DateOfBirth.Value);
+                    DateOnly startDate = DateOnly.FromDateTime(StartDate.Value);
+                    //MessageBox.Show(name + " " + gender + " " + dateOfBirth + " " + ethnic + " " + address + " " + startDate + " " + identity + " " + coefficientAllowance);
+
+
+                    var imageConverter = new ImageConverter();
+                    // cap nhat employee
+                    var result = RepoEmployee.InsertEmployee(new EmployeeInput()
+                    {
+                        Name = NameText.Text,
+                        Gender = gender,
+                        DateOfBirth = dateOfBirth,
+                        Ethnic = EthnicText.Text,
+                        Address = AddressText.Text,
+                        StartDate = startDate,
+                        IdentityCardNumber = IdentityText.Text,
+                        CoefficientAllowance = float.Parse(CoefficientAllowanceText.Text),
+                        Image = imageConverter.ConvertTo(ImagePicture.Image, typeof(byte[])) as byte[]
+                    });
+
+                    if (result.Success)
+                    {
+                        MessageBox.Show("Insert Employee success");
+                        enableInfo(false);
+                        FixBtn.Text = "Fix";
+                    }
+                    else
+                    {
+                        MessageBox.Show(result.ErrorMessage);
+                    }
+
+                }
+               
+
             }
         }
 
@@ -131,7 +177,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
             var senderGrid = (DataGridView)sender;
             string idFamily = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();      
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, idFamily), sender);
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, idFamily), sender);
         }
 
         private void RemoveFamilyBtn_Click(object sender, EventArgs e)
@@ -148,7 +194,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void addUnion_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng,"0"), sender);
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng, "0"), sender);
 
         }
 
