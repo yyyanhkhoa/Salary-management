@@ -36,7 +36,7 @@
             this.WifeBtn = new System.Windows.Forms.RadioButton();
             this.panel12 = new System.Windows.Forms.Panel();
             this.OccupationGroupBox = new System.Windows.Forms.GroupBox();
-            this.CoefficientAllowanceText = new System.Windows.Forms.TextBox();
+            this.occupationText = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
@@ -155,7 +155,7 @@
             // 
             // OccupationGroupBox
             // 
-            this.OccupationGroupBox.Controls.Add(this.CoefficientAllowanceText);
+            this.OccupationGroupBox.Controls.Add(this.occupationText);
             this.OccupationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OccupationGroupBox.Location = new System.Drawing.Point(10, 10);
             this.OccupationGroupBox.Name = "OccupationGroupBox";
@@ -164,13 +164,13 @@
             this.OccupationGroupBox.TabStop = false;
             this.OccupationGroupBox.Text = "Occupation";
             // 
-            // CoefficientAllowanceText
+            // occupationText
             // 
-            this.CoefficientAllowanceText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CoefficientAllowanceText.Location = new System.Drawing.Point(3, 23);
-            this.CoefficientAllowanceText.Name = "CoefficientAllowanceText";
-            this.CoefficientAllowanceText.Size = new System.Drawing.Size(764, 27);
-            this.CoefficientAllowanceText.TabIndex = 0;
+            this.occupationText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.occupationText.Location = new System.Drawing.Point(3, 23);
+            this.occupationText.Name = "occupationText";
+            this.occupationText.Size = new System.Drawing.Size(764, 27);
+            this.occupationText.TabIndex = 0;
             // 
             // panel5
             // 
@@ -363,7 +363,7 @@
         private Panel panel4;
         private Panel panel12;
         private GroupBox OccupationGroupBox;
-        private TextBox CoefficientAllowanceText;
+        private TextBox occupationText;
         private Panel panel1;
         private GroupBox RelativeTypeBox;
         private RadioButton ChildBtn;

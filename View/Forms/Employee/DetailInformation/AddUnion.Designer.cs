@@ -34,20 +34,20 @@
             this.NameText = new System.Windows.Forms.TextBox();
             this.NameGroupBox = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.startDay = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.endDay = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.unionJoinBox = new System.Windows.Forms.ComboBox();
             this.AddUnionGroupBox = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.processText = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.NameGroupBox.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -127,18 +127,18 @@
             this.panel2.Size = new System.Drawing.Size(790, 70);
             this.panel2.TabIndex = 3;
             // 
-            // DateOfBirth
+            // startDay
             // 
-            this.DateOfBirth.CustomFormat = "";
-            this.DateOfBirth.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DateOfBirth.Location = new System.Drawing.Point(3, 23);
-            this.DateOfBirth.Name = "DateOfBirth";
-            this.DateOfBirth.Size = new System.Drawing.Size(322, 27);
-            this.DateOfBirth.TabIndex = 0;
+            this.startDay.CustomFormat = "";
+            this.startDay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startDay.Location = new System.Drawing.Point(3, 23);
+            this.startDay.Name = "startDay";
+            this.startDay.Size = new System.Drawing.Size(322, 27);
+            this.startDay.TabIndex = 0;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.DateOfBirth);
+            this.groupBox1.Controls.Add(this.startDay);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(10, 10);
             this.groupBox1.Name = "groupBox1";
@@ -173,7 +173,7 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.dateTimePicker1);
+            this.panel6.Controls.Add(this.endDay);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(72, 23);
             this.panel6.Name = "panel6";
@@ -181,14 +181,14 @@
             this.panel6.TabIndex = 2;
             this.panel6.Visible = false;
             // 
-            // dateTimePicker1
+            // endDay
             // 
-            this.dateTimePicker1.CustomFormat = "";
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dateTimePicker1.Location = new System.Drawing.Point(35, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(303, 27);
-            this.dateTimePicker1.TabIndex = 0;
+            this.endDay.CustomFormat = "";
+            this.endDay.Dock = System.Windows.Forms.DockStyle.Right;
+            this.endDay.Location = new System.Drawing.Point(35, 0);
+            this.endDay.Name = "endDay";
+            this.endDay.Size = new System.Drawing.Size(303, 27);
+            this.endDay.TabIndex = 0;
             // 
             // checkBox1
             // 
@@ -214,7 +214,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.unionJoinBox);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(10, 10);
             this.groupBox3.Name = "groupBox3";
@@ -223,19 +223,19 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Union join";
             // 
-            // comboBox1
+            // unionJoinBox
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.unionJoinBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.unionJoinBox.FormattingEnabled = true;
+            this.unionJoinBox.Items.AddRange(new object[] {
             "Đoàn thanh niên cộng sản Việt Name",
             "Hội chị em phụ nữ Việt Name",
             "Đảng",
             "4"});
-            this.comboBox1.Location = new System.Drawing.Point(3, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(764, 28);
-            this.comboBox1.TabIndex = 0;
+            this.unionJoinBox.Location = new System.Drawing.Point(3, 23);
+            this.unionJoinBox.Name = "unionJoinBox";
+            this.unionJoinBox.Size = new System.Drawing.Size(764, 28);
+            this.unionJoinBox.TabIndex = 0;
             // 
             // AddUnionGroupBox
             // 
@@ -267,7 +267,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.processText);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
@@ -276,14 +276,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Process";
             // 
-            // textBox1
+            // processText
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(3, 30);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(784, 90);
-            this.textBox1.TabIndex = 0;
+            this.processText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.processText.Location = new System.Drawing.Point(3, 30);
+            this.processText.Multiline = true;
+            this.processText.Name = "processText";
+            this.processText.Size = new System.Drawing.Size(784, 90);
+            this.processText.TabIndex = 0;
             // 
             // AddUnion
             // 
@@ -293,6 +293,7 @@
             this.Controls.Add(this.AddUnionGroupBox);
             this.Name = "AddUnion";
             this.Text = "AddUnion";
+            this.Load += new System.EventHandler(this.AddUnion_Load);
             this.panel3.ResumeLayout(false);
             this.NameGroupBox.ResumeLayout(false);
             this.NameGroupBox.PerformLayout();
@@ -321,7 +322,7 @@
         private TextBox NameText;
         private GroupBox NameGroupBox;
         private Panel panel2;
-        private DateTimePicker DateOfBirth;
+        private DateTimePicker startDay;
         private GroupBox groupBox1;
         private Panel panel5;
         private Panel panel1;
@@ -330,10 +331,10 @@
         private Panel panel4;
         private GroupBox groupBox2;
         private CheckBox checkBox1;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker endDay;
         private GroupBox groupBox4;
-        private TextBox textBox1;
+        private TextBox processText;
         private Panel panel6;
-        private ComboBox comboBox1;
+        private ComboBox unionJoinBox;
     }
 }

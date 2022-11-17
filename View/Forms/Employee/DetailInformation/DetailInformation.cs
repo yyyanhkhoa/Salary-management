@@ -1,4 +1,5 @@
 ﻿using Salary_management.Controller.Infrastructure.Repositories;
+using Salary_management.Infrastructure.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
     {
         private Management mng;
         private string idEmployee;
+
         public DetailInformation(Management mng,string idEmployee)
         {
             InitializeComponent();
@@ -68,14 +70,37 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
             }
         }
+      
         private void DetailInformation_Load(object sender, EventArgs e)
         {
 
-            var repo = new RepositoryEmployee();
-
-            var employee = repo.GetEmployeeDetail(idEmployee);
+            var repo = new RepositoryEmployee();            
+            var employee = repo.GetEmployeeDetail(idEmployee);           
+            enableInfo(false);
+            enableQualification(false);
 
             MessageBox.Show(employee.Name);
+
+            //get Infomation detail
+            NameText.Text = employee.Name;
+            AddressText.Text = employee.Address;
+            //DateOfBirth.Value = employee.DateOfBirth.ToString();
+            // StartDate.Value = employee.StartDate;
+            EthnicText.Text = employee.Ethnic;
+            IdentityText.Text = employee.IdentityCardNumber;
+            CoefficientAllowanceText.Text = employee.CoefficientAllowance.ToString();
+           
+            if (employee.Gender == Gender.Male)
+            {
+                MaleBtn.Checked = true;
+                FemaleBtn.Checked = false;
+            }
+            else
+            {
+                FemaleBtn.Checked = true;
+                MaleBtn.Checked = false;
+            }
+          
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -99,17 +124,31 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void AddFamilyBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng), sender);
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, "0"), sender);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void FixFamilyBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddQualification(this.mng), sender);
+            var senderGrid = (DataGridView)sender;
+            string idFamily = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();      
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, idFamily), sender);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void RemoveFamilyBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng), sender);
+            var senderGrid = (DataGridView)sender;
+            string idFamily = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();
+           //xoa = id family
+        }
+
+        private void addQualificationBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddQualification(this.mng, "0"), sender);
+        }
+
+        private void addUnion_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng,"0"), sender);
 
         }
 
@@ -118,7 +157,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void fixQualificationBtn_Click(object sender, EventArgs e)
         {
             if (fixQualificationBtn.Text == "Fix")
             {
@@ -132,19 +171,44 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void backQualificationBtn_Click(object sender, EventArgs e)
         {
             mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void backFamilyBtn_Click(object sender, EventArgs e)
         {
             mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void backUnionBtn_Click(object sender, EventArgs e)
         {
             mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
         }
+
+        private void removeUnion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fixUnion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FamilyGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            string id = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+
+                mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, id), sender);
+            }
+        }
+
+      
     }
 }
