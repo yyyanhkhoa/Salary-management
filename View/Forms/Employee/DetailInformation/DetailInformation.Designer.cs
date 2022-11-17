@@ -46,7 +46,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
+            this.backFamilyBtn = new System.Windows.Forms.Button();
             this.FamilyGridView = new System.Windows.Forms.DataGridView();
             this.IdFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,20 +111,20 @@
             this.panel16 = new System.Windows.Forms.Panel();
             this.fixQualificationBtn = new System.Windows.Forms.Button();
             this.addQualificationBtn = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.backQualificationBtn = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.backUnionBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.IDUnion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameUnion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SartDateUnion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndDateUnion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.removeUnion = new System.Windows.Forms.Button();
+            this.fixUnion = new System.Windows.Forms.Button();
+            this.addUnion = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.GenderGroupBox.SuspendLayout();
@@ -333,7 +333,7 @@
             // 
             // panel17
             // 
-            this.panel17.Controls.Add(this.button7);
+            this.panel17.Controls.Add(this.backFamilyBtn);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel17.Location = new System.Drawing.Point(5, 447);
             this.panel17.Name = "panel17";
@@ -341,16 +341,16 @@
             this.panel17.Size = new System.Drawing.Size(699, 46);
             this.panel17.TabIndex = 18;
             // 
-            // button7
+            // backFamilyBtn
             // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button7.Location = new System.Drawing.Point(0, 5);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(94, 41);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "< Back";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.backFamilyBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.backFamilyBtn.Location = new System.Drawing.Point(0, 5);
+            this.backFamilyBtn.Name = "backFamilyBtn";
+            this.backFamilyBtn.Size = new System.Drawing.Size(94, 41);
+            this.backFamilyBtn.TabIndex = 0;
+            this.backFamilyBtn.Text = "< Back";
+            this.backFamilyBtn.UseVisualStyleBackColor = true;
+            this.backFamilyBtn.Click += new System.EventHandler(this.backFamilyBtn_Click);
             // 
             // FamilyGridView
             // 
@@ -376,6 +376,7 @@
             this.FamilyGridView.RowTemplate.Height = 29;
             this.FamilyGridView.Size = new System.Drawing.Size(699, 387);
             this.FamilyGridView.TabIndex = 17;
+            this.FamilyGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FamilyGridView_CellContentClick);
             // 
             // IdFamily
             // 
@@ -442,6 +443,7 @@
             this.RemoveFamilyBtn.TabIndex = 5;
             this.RemoveFamilyBtn.Text = "Remove";
             this.RemoveFamilyBtn.UseVisualStyleBackColor = false;
+            this.RemoveFamilyBtn.Click += new System.EventHandler(this.RemoveFamilyBtn_Click);
             // 
             // FixFamilyBtn
             // 
@@ -454,6 +456,7 @@
             this.FixFamilyBtn.TabIndex = 4;
             this.FixFamilyBtn.Text = "Fix";
             this.FixFamilyBtn.UseVisualStyleBackColor = false;
+            this.FixFamilyBtn.Click += new System.EventHandler(this.FixFamilyBtn_Click);
             // 
             // AddFamilyBtn
             // 
@@ -989,7 +992,7 @@
             // 
             this.panel16.Controls.Add(this.fixQualificationBtn);
             this.panel16.Controls.Add(this.addQualificationBtn);
-            this.panel16.Controls.Add(this.button5);
+            this.panel16.Controls.Add(this.backQualificationBtn);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel16.Location = new System.Drawing.Point(3, 455);
             this.panel16.Name = "panel16";
@@ -1007,7 +1010,7 @@
             this.fixQualificationBtn.TabIndex = 2;
             this.fixQualificationBtn.Text = "Fix";
             this.fixQualificationBtn.UseVisualStyleBackColor = false;
-            this.fixQualificationBtn.Click += new System.EventHandler(this.button10_Click);
+            this.fixQualificationBtn.Click += new System.EventHandler(this.fixQualificationBtn_Click);
             // 
             // addQualificationBtn
             // 
@@ -1019,18 +1022,18 @@
             this.addQualificationBtn.TabIndex = 1;
             this.addQualificationBtn.Text = "Add new qualification";
             this.addQualificationBtn.UseVisualStyleBackColor = false;
-            this.addQualificationBtn.Click += new System.EventHandler(this.button4_Click);
+            this.addQualificationBtn.Click += new System.EventHandler(this.addQualificationBtn_Click);
             // 
-            // button5
+            // backQualificationBtn
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button5.Location = new System.Drawing.Point(0, 5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 41);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "< Back";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.backQualificationBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.backQualificationBtn.Location = new System.Drawing.Point(0, 5);
+            this.backQualificationBtn.Name = "backQualificationBtn";
+            this.backQualificationBtn.Size = new System.Drawing.Size(94, 41);
+            this.backQualificationBtn.TabIndex = 0;
+            this.backQualificationBtn.Text = "< Back";
+            this.backQualificationBtn.UseVisualStyleBackColor = true;
+            this.backQualificationBtn.Click += new System.EventHandler(this.backQualificationBtn_Click);
             // 
             // tabPage4
             // 
@@ -1062,7 +1065,7 @@
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.button9);
+            this.panel18.Controls.Add(this.backUnionBtn);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel18.Location = new System.Drawing.Point(5, 447);
             this.panel18.Name = "panel18";
@@ -1070,16 +1073,16 @@
             this.panel18.Size = new System.Drawing.Size(699, 46);
             this.panel18.TabIndex = 18;
             // 
-            // button9
+            // backUnionBtn
             // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button9.Location = new System.Drawing.Point(0, 5);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(94, 41);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "< Back";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.backUnionBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.backUnionBtn.Location = new System.Drawing.Point(0, 5);
+            this.backUnionBtn.Name = "backUnionBtn";
+            this.backUnionBtn.Size = new System.Drawing.Size(94, 41);
+            this.backUnionBtn.TabIndex = 0;
+            this.backUnionBtn.Text = "< Back";
+            this.backUnionBtn.UseVisualStyleBackColor = true;
+            this.backUnionBtn.Click += new System.EventHandler(this.backUnionBtn_Click);
             // 
             // dataGridView1
             // 
@@ -1138,9 +1141,9 @@
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.button1);
-            this.panel15.Controls.Add(this.button2);
-            this.panel15.Controls.Add(this.button3);
+            this.panel15.Controls.Add(this.removeUnion);
+            this.panel15.Controls.Add(this.fixUnion);
+            this.panel15.Controls.Add(this.addUnion);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(5, 32);
             this.panel15.Name = "panel15";
@@ -1148,42 +1151,44 @@
             this.panel15.Size = new System.Drawing.Size(699, 74);
             this.panel15.TabIndex = 16;
             // 
-            // button1
+            // removeUnion
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(268, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 54);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Remove";
-            this.button1.UseVisualStyleBackColor = false;
+            this.removeUnion.AutoSize = true;
+            this.removeUnion.BackColor = System.Drawing.Color.Transparent;
+            this.removeUnion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.removeUnion.Location = new System.Drawing.Point(268, 10);
+            this.removeUnion.Name = "removeUnion";
+            this.removeUnion.Size = new System.Drawing.Size(163, 54);
+            this.removeUnion.TabIndex = 5;
+            this.removeUnion.Text = "Remove";
+            this.removeUnion.UseVisualStyleBackColor = false;
+            this.removeUnion.Click += new System.EventHandler(this.removeUnion_Click);
             // 
-            // button2
+            // fixUnion
             // 
-            this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.Location = new System.Drawing.Point(431, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(258, 54);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Fix";
-            this.button2.UseVisualStyleBackColor = false;
+            this.fixUnion.AutoSize = true;
+            this.fixUnion.BackColor = System.Drawing.Color.Transparent;
+            this.fixUnion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.fixUnion.Location = new System.Drawing.Point(431, 10);
+            this.fixUnion.Name = "fixUnion";
+            this.fixUnion.Size = new System.Drawing.Size(258, 54);
+            this.fixUnion.TabIndex = 4;
+            this.fixUnion.Text = "Fix";
+            this.fixUnion.UseVisualStyleBackColor = false;
+            this.fixUnion.Click += new System.EventHandler(this.fixUnion_Click);
             // 
-            // button3
+            // addUnion
             // 
-            this.button3.AutoSize = true;
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.Location = new System.Drawing.Point(10, 10);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(258, 54);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.addUnion.AutoSize = true;
+            this.addUnion.BackColor = System.Drawing.Color.Transparent;
+            this.addUnion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.addUnion.Location = new System.Drawing.Point(10, 10);
+            this.addUnion.Name = "addUnion";
+            this.addUnion.Size = new System.Drawing.Size(258, 54);
+            this.addUnion.TabIndex = 3;
+            this.addUnion.Text = "Add";
+            this.addUnion.UseVisualStyleBackColor = false;
+            this.addUnion.Click += new System.EventHandler(this.addUnion_Click);
             // 
             // panel1
             // 
@@ -1327,16 +1332,16 @@
         private TabPage tabPage4;
         private GroupBox groupBox6;
         private Panel panel15;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button removeUnion;
+        private Button fixUnion;
+        private Button addUnion;
         private DataGridView dataGridView1;
         private Panel panel16;
-        private Button button5;
+        private Button backQualificationBtn;
         private Panel panel17;
-        private Button button7;
+        private Button backFamilyBtn;
         private Panel panel18;
-        private Button button9;
+        private Button backUnionBtn;
         private DataGridViewTextBoxColumn IdFamily;
         private DataGridViewTextBoxColumn NameFamily;
         private DataGridViewTextBoxColumn BirthFamily;

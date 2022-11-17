@@ -1,4 +1,6 @@
-﻿using Salary_management.Controller.Infrastructure.Repositories;
+﻿using Salary_management.Controller.Infrastructure.Data.Input;
+using Salary_management.Controller.Infrastructure.Repositories;
+using Salary_management.Infrastructure.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +17,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
     {
         private Management mng;
         private string idEmployee;
+
         public DetailInformation(Management mng,string idEmployee)
         {
             InitializeComponent();
@@ -68,14 +71,37 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
             }
         }
+      
         private void DetailInformation_Load(object sender, EventArgs e)
         {
 
-            var repo = new RepositoryEmployee();
+            var repo = new RepositoryEmployee();            
+            var employee = repo.GetEmployeeDetail(idEmployee);           
+            enableInfo(false);
+            enableQualification(false);
 
-            var employee = repo.GetEmployeeDetail(idEmployee);
+            MessageBox.Show(employee.DateOfBirth.ToString());
 
-            MessageBox.Show(employee.Name);
+            //get Infomation detail
+            NameText.Text = employee.Name;
+            AddressText.Text = employee.Address;
+            DateOfBirth.Value = new DateTime(employee.DateOfBirth.Year, employee.DateOfBirth.Month, employee.DateOfBirth.Day);
+            StartDate.Value =new DateTime(employee.StartDate.Year, employee.StartDate.Month, employee.StartDate.Day);
+            EthnicText.Text = employee.Ethnic;
+            IdentityText.Text = employee.IdentityCardNumber;
+            CoefficientAllowanceText.Text = employee.CoefficientAllowance.ToString();
+           
+            if (employee.Gender == Gender.Male)
+            {
+                MaleBtn.Checked = true;
+                FemaleBtn.Checked = false;
+            }
+            else
+            {
+                FemaleBtn.Checked = true;
+                MaleBtn.Checked = false;
+            }
+          
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -92,24 +118,83 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             }
             else
             {
-                enableInfo(false);               
-                FixBtn.Text = "Fix";
+                //update infomation
+                if (NameText.Text == "") MessageBox.Show("Pls input name");
+                else if ((!MaleBtn.Checked) && (!FemaleBtn.Checked)) MessageBox.Show("Pls select gender");
+                else if (AddressText.Text == "") MessageBox.Show("Hay nhap dia chi");
+                else if (EthnicText.Text == "") MessageBox.Show("Hay nhap dan toc");
+                else if (CoefficientAllowanceText.Text == "") MessageBox.Show("Hay nhap he so phu cap");
+                else if (IdentityText.Text == "") MessageBox.Show("Hay nhap cmnd");
+                else
+                {
+                    var RepoEmployee = new RepositoryEmployee();
+                    Gender gender;
+                    if (MaleBtn.Checked) gender = Gender.Male;
+                    else gender = Gender.Female;
+                    DateOnly dateOfBirth = DateOnly.FromDateTime(DateOfBirth.Value);
+                    DateOnly startDate = DateOnly.FromDateTime(StartDate.Value);
+                    //MessageBox.Show(name + " " + gender + " " + dateOfBirth + " " + ethnic + " " + address + " " + startDate + " " + identity + " " + coefficientAllowance);
+
+
+                    var imageConverter = new ImageConverter();
+                    // cap nhat employee
+                    var result = RepoEmployee.InsertEmployee(new EmployeeInput()
+                    {
+                        Name = NameText.Text,
+                        Gender = gender,
+                        DateOfBirth = dateOfBirth,
+                        Ethnic = EthnicText.Text,
+                        Address = AddressText.Text,
+                        StartDate = startDate,
+                        IdentityCardNumber = IdentityText.Text,
+                        CoefficientAllowance = float.Parse(CoefficientAllowanceText.Text),
+                        Image = imageConverter.ConvertTo(ImagePicture.Image, typeof(byte[])) as byte[]
+                    });
+
+                    if (result.Success)
+                    {
+                        MessageBox.Show("Insert Employee success");
+                        enableInfo(false);
+                        FixBtn.Text = "Fix";
+                    }
+                    else
+                    {
+                        MessageBox.Show(result.ErrorMessage);
+                    }
+
+                }
+               
+
             }
         }
 
         private void AddFamilyBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng), sender);
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, "0"), sender);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void FixFamilyBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddQualification(this.mng), sender);
+            var senderGrid = (DataGridView)sender;
+            string idFamily = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();      
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, idFamily), sender);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void RemoveFamilyBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng), sender);
+            var senderGrid = (DataGridView)sender;
+            string idFamily = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();
+           //xoa = id family
+        }
+
+        private void addQualificationBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddQualification(this.mng, "0"), sender);
+        }
+
+        private void addUnion_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng, "0"), sender);
 
         }
 
@@ -118,7 +203,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void fixQualificationBtn_Click(object sender, EventArgs e)
         {
             if (fixQualificationBtn.Text == "Fix")
             {
@@ -132,19 +217,44 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void backQualificationBtn_Click(object sender, EventArgs e)
         {
             mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void backFamilyBtn_Click(object sender, EventArgs e)
         {
             mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void backUnionBtn_Click(object sender, EventArgs e)
         {
             mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
         }
+
+        private void removeUnion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fixUnion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FamilyGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            string id = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+
+                mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, id), sender);
+            }
+        }
+
+      
     }
 }

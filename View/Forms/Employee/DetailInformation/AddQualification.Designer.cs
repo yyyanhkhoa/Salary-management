@@ -31,22 +31,22 @@
             this.AddFamilyGroupBox = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.OccupationGroupBox = new System.Windows.Forms.GroupBox();
-            this.CoefficientAllowanceText = new System.Windows.Forms.TextBox();
+            this.placeText = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.namecallText = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.NameGroupBox = new System.Windows.Forms.GroupBox();
             this.NameText = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.AddBtn = new System.Windows.Forms.Button();
             this.BackBtn = new System.Windows.Forms.Button();
+            this.exBox = new System.Windows.Forms.ComboBox();
             this.AddFamilyGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -92,7 +92,7 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.listBox1);
+            this.groupBox10.Controls.Add(this.exBox);
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox10.Location = new System.Drawing.Point(10, 10);
@@ -101,23 +101,6 @@
             this.groupBox10.TabIndex = 5;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Expertise name";
-            // 
-            // listBox1
-            // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.listBox1.Location = new System.Drawing.Point(3, 23);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(764, 34);
-            this.listBox1.TabIndex = 0;
             // 
             // panel12
             // 
@@ -132,7 +115,7 @@
             // 
             // OccupationGroupBox
             // 
-            this.OccupationGroupBox.Controls.Add(this.CoefficientAllowanceText);
+            this.OccupationGroupBox.Controls.Add(this.placeText);
             this.OccupationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OccupationGroupBox.Location = new System.Drawing.Point(10, 10);
             this.OccupationGroupBox.Name = "OccupationGroupBox";
@@ -141,13 +124,13 @@
             this.OccupationGroupBox.TabStop = false;
             this.OccupationGroupBox.Text = "Place of issue";
             // 
-            // CoefficientAllowanceText
+            // placeText
             // 
-            this.CoefficientAllowanceText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CoefficientAllowanceText.Location = new System.Drawing.Point(3, 23);
-            this.CoefficientAllowanceText.Name = "CoefficientAllowanceText";
-            this.CoefficientAllowanceText.Size = new System.Drawing.Size(764, 27);
-            this.CoefficientAllowanceText.TabIndex = 0;
+            this.placeText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.placeText.Location = new System.Drawing.Point(3, 23);
+            this.placeText.Name = "placeText";
+            this.placeText.Size = new System.Drawing.Size(764, 27);
+            this.placeText.TabIndex = 0;
             // 
             // panel5
             // 
@@ -196,7 +179,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.namecallText);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox2.Location = new System.Drawing.Point(408, 10);
@@ -206,13 +189,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Name call";
             // 
-            // textBox1
+            // namecallText
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox1.Location = new System.Drawing.Point(3, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(366, 27);
-            this.textBox1.TabIndex = 0;
+            this.namecallText.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.namecallText.Location = new System.Drawing.Point(3, 20);
+            this.namecallText.Name = "namecallText";
+            this.namecallText.Size = new System.Drawing.Size(366, 27);
+            this.namecallText.TabIndex = 0;
             // 
             // panel4
             // 
@@ -275,6 +258,19 @@
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
+            // exBox
+            // 
+            this.exBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.exBox.FormattingEnabled = true;
+            this.exBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.exBox.Location = new System.Drawing.Point(3, 23);
+            this.exBox.Name = "exBox";
+            this.exBox.Size = new System.Drawing.Size(764, 28);
+            this.exBox.TabIndex = 11;
+            // 
             // AddQualification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -309,7 +305,7 @@
         private Panel panel1;
         private Panel panel12;
         private GroupBox OccupationGroupBox;
-        private TextBox CoefficientAllowanceText;
+        private TextBox placeText;
         private Panel panel5;
         private GroupBox groupBox1;
         private DateTimePicker DateOfBirth;
@@ -318,11 +314,11 @@
         private Button BackBtn;
         private Panel panel2;
         private GroupBox groupBox2;
-        private TextBox textBox1;
+        private TextBox namecallText;
         private Panel panel4;
         private GroupBox NameGroupBox;
         private TextBox NameText;
         private GroupBox groupBox10;
-        private ListBox listBox1;
+        private ComboBox exBox;
     }
 }

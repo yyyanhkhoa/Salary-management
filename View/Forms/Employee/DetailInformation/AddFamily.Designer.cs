@@ -36,15 +36,11 @@
             this.WifeBtn = new System.Windows.Forms.RadioButton();
             this.panel12 = new System.Windows.Forms.Panel();
             this.OccupationGroupBox = new System.Windows.Forms.GroupBox();
-            this.CoefficientAllowanceText = new System.Windows.Forms.TextBox();
+            this.occupationText = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.GenderGroupBox = new System.Windows.Forms.GroupBox();
-            this.MaleBtn = new System.Windows.Forms.RadioButton();
-            this.FemaleBtn = new System.Windows.Forms.RadioButton();
             this.NameGroupBox = new System.Windows.Forms.GroupBox();
             this.NameText = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -58,7 +54,6 @@
             this.panel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.GenderGroupBox.SuspendLayout();
             this.NameGroupBox.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -155,7 +150,7 @@
             // 
             // OccupationGroupBox
             // 
-            this.OccupationGroupBox.Controls.Add(this.CoefficientAllowanceText);
+            this.OccupationGroupBox.Controls.Add(this.occupationText);
             this.OccupationGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OccupationGroupBox.Location = new System.Drawing.Point(10, 10);
             this.OccupationGroupBox.Name = "OccupationGroupBox";
@@ -164,13 +159,13 @@
             this.OccupationGroupBox.TabStop = false;
             this.OccupationGroupBox.Text = "Occupation";
             // 
-            // CoefficientAllowanceText
+            // occupationText
             // 
-            this.CoefficientAllowanceText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CoefficientAllowanceText.Location = new System.Drawing.Point(3, 23);
-            this.CoefficientAllowanceText.Name = "CoefficientAllowanceText";
-            this.CoefficientAllowanceText.Size = new System.Drawing.Size(764, 27);
-            this.CoefficientAllowanceText.TabIndex = 0;
+            this.occupationText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.occupationText.Location = new System.Drawing.Point(3, 23);
+            this.occupationText.Name = "occupationText";
+            this.occupationText.Size = new System.Drawing.Size(764, 27);
+            this.occupationText.TabIndex = 0;
             // 
             // panel5
             // 
@@ -205,8 +200,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.GenderGroupBox);
             this.panel2.Controls.Add(this.NameGroupBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -217,60 +210,14 @@
             this.panel2.Size = new System.Drawing.Size(790, 70);
             this.panel2.TabIndex = 3;
             // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(288, 10);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(112, 50);
-            this.panel4.TabIndex = 4;
-            // 
-            // GenderGroupBox
-            // 
-            this.GenderGroupBox.Controls.Add(this.MaleBtn);
-            this.GenderGroupBox.Controls.Add(this.FemaleBtn);
-            this.GenderGroupBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.GenderGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.GenderGroupBox.Location = new System.Drawing.Point(400, 10);
-            this.GenderGroupBox.Name = "GenderGroupBox";
-            this.GenderGroupBox.Padding = new System.Windows.Forms.Padding(40, 3, 40, 3);
-            this.GenderGroupBox.Size = new System.Drawing.Size(380, 50);
-            this.GenderGroupBox.TabIndex = 3;
-            this.GenderGroupBox.TabStop = false;
-            this.GenderGroupBox.Text = "Gender";
-            // 
-            // MaleBtn
-            // 
-            this.MaleBtn.AutoSize = true;
-            this.MaleBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MaleBtn.Location = new System.Drawing.Point(40, 23);
-            this.MaleBtn.Name = "MaleBtn";
-            this.MaleBtn.Size = new System.Drawing.Size(222, 24);
-            this.MaleBtn.TabIndex = 2;
-            this.MaleBtn.TabStop = true;
-            this.MaleBtn.Text = "Male";
-            this.MaleBtn.UseVisualStyleBackColor = true;
-            // 
-            // FemaleBtn
-            // 
-            this.FemaleBtn.AutoSize = true;
-            this.FemaleBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FemaleBtn.Location = new System.Drawing.Point(262, 23);
-            this.FemaleBtn.Name = "FemaleBtn";
-            this.FemaleBtn.Size = new System.Drawing.Size(78, 24);
-            this.FemaleBtn.TabIndex = 1;
-            this.FemaleBtn.TabStop = true;
-            this.FemaleBtn.Text = "Female";
-            this.FemaleBtn.UseVisualStyleBackColor = true;
-            // 
             // NameGroupBox
             // 
             this.NameGroupBox.Controls.Add(this.NameText);
-            this.NameGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.NameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NameGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.NameGroupBox.Location = new System.Drawing.Point(10, 10);
             this.NameGroupBox.Name = "NameGroupBox";
-            this.NameGroupBox.Size = new System.Drawing.Size(278, 50);
+            this.NameGroupBox.Size = new System.Drawing.Size(770, 50);
             this.NameGroupBox.TabIndex = 0;
             this.NameGroupBox.TabStop = false;
             this.NameGroupBox.Text = "Name";
@@ -280,7 +227,7 @@
             this.NameText.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.NameText.Location = new System.Drawing.Point(3, 20);
             this.NameText.Name = "NameText";
-            this.NameText.Size = new System.Drawing.Size(272, 27);
+            this.NameText.Size = new System.Drawing.Size(764, 27);
             this.NameText.TabIndex = 0;
             // 
             // panel3
@@ -335,8 +282,6 @@
             this.panel5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.GenderGroupBox.ResumeLayout(false);
-            this.GenderGroupBox.PerformLayout();
             this.NameGroupBox.ResumeLayout(false);
             this.NameGroupBox.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -355,15 +300,11 @@
         private GroupBox groupBox1;
         private DateTimePicker DateOfBirth;
         private Panel panel2;
-        private GroupBox GenderGroupBox;
-        private RadioButton MaleBtn;
-        private RadioButton FemaleBtn;
         private GroupBox NameGroupBox;
         private TextBox NameText;
-        private Panel panel4;
         private Panel panel12;
         private GroupBox OccupationGroupBox;
-        private TextBox CoefficientAllowanceText;
+        private TextBox occupationText;
         private Panel panel1;
         private GroupBox RelativeTypeBox;
         private RadioButton ChildBtn;

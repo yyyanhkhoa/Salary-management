@@ -11,7 +11,7 @@ namespace Salary_management.Model
 {
 	public class Family 
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public string EmployeeId { get; set; } = null!;
 
