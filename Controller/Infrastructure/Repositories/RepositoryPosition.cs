@@ -45,7 +45,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Result<Models.Position> { Success = true, Payload = ConnectWithRank(position) };
 		}
 
-		public Models.Position GetUnitDetail(string positionId)
+		public Models.Position GetPositionDetail(string positionId)
 		{
 			return MapToModel(Context.Positions.Where(p => p.Id == positionId).First());
 		}

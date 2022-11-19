@@ -115,6 +115,11 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			}
 		}
 
+		public Models.RewardOrDiscipline GetRewardOrDiscipline(int id)
+		{
+			return MapToModel(Context.RewardOrDisciplines.Where(r => r.Id == id).First());
+		}
+
 		public static RewardOrDiscipline MapToEntity(InputRewardOrDiscipline input)
 		{
 			return new RewardOrDiscipline

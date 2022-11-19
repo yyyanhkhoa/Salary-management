@@ -47,7 +47,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		}
 
 		/// <summary>
-		/// Lấy thông tin các nhân viên theo từ khóa, nếu từ khóa trống thì lấy thông tin của 20 nhân viên mới nhất
+		/// Lấy thông tin các nhân viên theo từ khóa, nếu từ khóa trống thì lấy thông tin của tất cả nhân viên mới nhất
 		/// </summary>
 		/// <param name="searchString"></param>
 		/// <returns></returns>
@@ -55,7 +55,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		{
 			if (string.IsNullOrWhiteSpace(keyword))
 			{
-				return Context.Employees.Take(20).Select(e => MapToModel(e)).ToList();
+				return Context.Employees.Select(e => MapToModel(e)).ToList();
 			}
 			else
 			{
