@@ -50,6 +50,16 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return MapToModel(Context.Positions.Where(p => p.Id == positionId).First());
 		}
 
+		public Result<Models.Position> FixPosition(string id, InputPosition input)
+		{
+			var position = MapToEntity(input);
+			position.Id = id;
+			Context.Positions.Update(position);
+			Context.SaveChanges();
+
+			return new() { Success = true, Payload = MapToModel(position) };
+		}
+
 		public List<Models.Position> GetPositions(string keyword)
 		{
 			if (string.IsNullOrWhiteSpace(keyword))

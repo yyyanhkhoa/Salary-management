@@ -67,6 +67,16 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			}
 		}
 
+		public Result<Models.EmployeeDetail> FixEmployee(string id, EmployeeInput input)
+		{
+			var employee = MapToEntity(input);
+			employee.Id = id;
+			Context.Employees.Update(employee);
+			Context.SaveChanges();
+
+			return new() { Success = true, Payload = MapToModelEmployeeDetail(employee) };
+		}
+
 
 		public Models.EmployeeDetail GetEmployeeDetail(string id)
 		{

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Salary_management.Controller.Infrastructure.Data;
+using Salary_management.Controller.Infrastructure.Data.Input;
 using Salary_management.Infrastructure.Entities;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,14 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			}
 		}
 
+		public Result<Models.Union> FixUnion(string id, string name)
+		{
+			var union = new Union() { Id = id, Name = name};
+			Context.Unions.Update(union);
+			Context.SaveChanges();
+
+			return new() { Success = true, Payload = MapToModel(union) };
+		}
 
 		private static Models.Union MapToModel(Union entity)
 		{
