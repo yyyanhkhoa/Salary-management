@@ -129,6 +129,14 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new() { Success = true, Payload = MapToModel(rewardOrDiscipline) };
 		}
 
+		public void DeleteRewardOrDiscipline(int id)
+		{
+			var rewardOrDiscipline = new RewardOrDiscipline { Id = id };
+			Context.RewardOrDisciplines.Attach(rewardOrDiscipline);
+			Context.RewardOrDisciplines.Remove(rewardOrDiscipline);
+			Context.SaveChanges();
+		}
+
 		public static RewardOrDiscipline MapToEntity(InputRewardOrDiscipline input)
 		{
 			return new RewardOrDiscipline

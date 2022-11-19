@@ -62,6 +62,14 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new() { Success = true, Payload = MapToModel(union) };
 		}
 
+		public void DeleteUnion(string id)
+		{
+			var union = new Union { Id = id };
+			Context.Unions.Attach(union);
+			Context.Unions.Remove(union);
+			Context.SaveChanges();
+		}
+
 		private static Models.Union MapToModel(Union entity)
 		{
 			return new Models.Union

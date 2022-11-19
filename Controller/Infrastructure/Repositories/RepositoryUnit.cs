@@ -44,6 +44,15 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Result<Models.UnitDetail> { Success = true, Payload = MapToUnitDetailModel(unit) };
 		}
 
+		public void DeleteUnit(string id)
+		{
+			var unit = new Unit { Id = id };
+			Context.Units.Attach(unit);
+			Context.Units.Remove(unit);
+			Context.SaveChanges();
+		}
+
+
 		public Result<List<Models.UnitTimeline>> GetTimeline(string unitId, DateOnly? from = null, DateOnly? to = null)
 		{
 			IQueryable<UnitHistory> query;

@@ -60,6 +60,14 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new() { Success = true, Payload = MapToModel(position) };
 		}
 
+		public void DeletePosition(string id)
+		{
+			var position = new Position { Id = id };
+			Context.Positions.Attach(position);
+			Context.Positions.Remove(position);
+			Context.SaveChanges();
+		}
+
 		public List<Models.Position> GetPositions(string keyword)
 		{
 			if (string.IsNullOrWhiteSpace(keyword))

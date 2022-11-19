@@ -77,6 +77,14 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new() { Success = true, Payload = MapToModelEmployeeDetail(employee) };
 		}
 
+		public void DeleteEmployee(string id)
+		{
+			var employee = new Employee { Id = id };
+			Context.Employees.Attach(employee);
+			Context.Employees.Remove(employee);
+			Context.SaveChanges();
+		}
+
 
 		public Models.EmployeeDetail GetEmployeeDetail(string id)
 		{

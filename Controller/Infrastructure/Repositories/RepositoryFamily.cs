@@ -58,6 +58,14 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Result<Models.Family> { Success = true, Payload = MapToModel(Family) };
 		}
 
+		public void DeleteFamily(int id)
+		{
+			var family = new Family { Id = id };
+			Context.Families.Attach(family);
+			Context.Families.Remove(family);
+			Context.SaveChanges();
+		}
+
 		public Result<Models.Family> DeleteFamily(int FamilyId)
 		{
 			var Family = new Family { Id = FamilyId };
