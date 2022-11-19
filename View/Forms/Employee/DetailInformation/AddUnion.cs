@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Salary_management.Controller.Infrastructure.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +14,29 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
     public partial class AddUnion : Form
     {
         private Management mng;
-        
-        public AddUnion(Management mng)
+        private string idUnion;
+        public AddUnion(Management mng, string idUnion)
         {
             InitializeComponent();
             this.mng = mng;
+            this.idUnion = idUnion;
         }
 
+        private void AddUnion_Load(object sender, EventArgs e)
+        {
+            if (idUnion == "0")
+            {
+                // add
+
+
+            }
+            else
+            {
+                // fix
+                var repo = new RepositoryEmployee();
+                var employee = repo.GetEmployeeDetail(idUnion);
+            }
+        }
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -42,5 +59,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             }
             else panel6.Visible = true;
         }
+
+
     }
 }
