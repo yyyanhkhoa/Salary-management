@@ -47,7 +47,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		}
 
 		/// <summary>
-		/// Lấy thông tin các nhân viên theo từ khóa, nếu từ khóa trống thì lấy thông tin của 20 nhân viên mới nhất
+		/// Lấy thông tin các nhân viên theo từ khóa, nếu từ khóa trống thì lấy thông tin của tất cả nhân viên mới nhất
 		/// </summary>
 		/// <param name="searchString"></param>
 		/// <returns></returns>
@@ -55,7 +55,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		{
 			if (string.IsNullOrWhiteSpace(keyword))
 			{
-				return Context.Employees.Take(20).Select(e => MapToModel(e)).ToList();
+				return Context.Employees.Select(e => MapToModel(e)).ToList();
 			}
 			else
 			{
@@ -65,6 +65,24 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				)
 					.Select(e => MapToModel(e)).ToList();
 			}
+		}
+
+		public Result<Models.EmployeeDetail> FixEmployee(string id, EmployeeInput input)
+		{
+			var employee = MapToEntity(input);
+			employee.Id = id;
+			Context.Employees.Update(employee);
+			Context.SaveChanges();
+
+			return new() { Success = true, Payload = MapToModelEmployeeDetail(employee) };
+		}
+
+		public void DeleteEmployee(string id)
+		{
+			var employee = new Employee { Id = id };
+			Context.Employees.Attach(employee);
+			Context.Employees.Remove(employee);
+			Context.SaveChanges();
 		}
 
 

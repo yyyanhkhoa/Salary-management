@@ -34,6 +34,25 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return detail;
 		}
 
+		public Result<Models.UnitDetail> FixUnit(string id, InputUnit input)
+		{
+			var unit = MapToEntity(input);
+			unit.Id = id;
+			Context.Units.Update(unit);
+			Context.SaveChanges();
+
+			return new Result<Models.UnitDetail> { Success = true, Payload = MapToUnitDetailModel(unit) };
+		}
+
+		public void DeleteUnit(string id)
+		{
+			var unit = new Unit { Id = id };
+			Context.Units.Attach(unit);
+			Context.Units.Remove(unit);
+			Context.SaveChanges();
+		}
+
+
 		public Result<List<Models.UnitTimeline>> GetTimeline(string unitId, DateOnly? from = null, DateOnly? to = null)
 		{
 			IQueryable<UnitHistory> query;

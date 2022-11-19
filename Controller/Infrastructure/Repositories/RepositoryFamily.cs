@@ -27,9 +27,25 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Result<Models.Family> { Success = true, Payload = MapToModel(family) };
 		}
 
-		public List<Models.Family> GetFamilies()
+		/// <summary>
+		/// Lấy thông tin các đoàn thể theo từ khóa, nếu từ khóa trống thì lấy thông tin của tất cả đoàn thể
+		/// </summary>
+		/// <param name="searchString">tên thân nhân hoặc mã nhân viên mà thân nhân đó thuộc</param>
+		/// <returns></returns>
+		public List<Models.Family> GetFamilies(string keyword)
 		{
-			return Context.Families.Select(f => MapToModel(f)).ToList();
+			if (string.IsNullOrWhiteSpace(keyword))
+			{
+				return Context.Families.Select(e => MapToModel(e)).ToList();
+			}
+			else
+			{
+				return Context.Families.Where(
+					e => EF.Functions.ILike(e.Name, $"%{keyword}%") ||
+						 EF.Functions.ILike(e.EmployeeId, $"%{keyword}%")
+				)
+				.Select(e => MapToModel(e)).ToList();
+			}
 		}
    
         public Models.Family GetFamilyDetail(string id)
@@ -47,14 +63,12 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Result<Models.Family> { Success = true, Payload = MapToModel(Family) };
 		}
 
-		public Result<Models.Family> DeleteFamily(string FamilyId)
+		public void DeleteFamily(int id)
 		{
-			var Family = new Family { Id = FamilyId };
-			Context.Families.Attach(Family);
-			Context.Families.Remove(Family);
+			var family = new Family { Id = id };
+			Context.Families.Attach(family);
+			Context.Families.Remove(family);
 			Context.SaveChanges();
-
-			return new Result<Models.Family> { Success = true, Payload = null };
 		}
 
 		private static Family MapToEntity(InputFamily inputFamily)

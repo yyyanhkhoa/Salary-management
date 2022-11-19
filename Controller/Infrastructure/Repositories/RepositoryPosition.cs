@@ -45,9 +45,27 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Result<Models.Position> { Success = true, Payload = ConnectWithRank(position) };
 		}
 
-		public Models.Position GetUnitDetail(string positionId)
+		public Models.Position GetPositionDetail(string positionId)
 		{
 			return MapToModel(Context.Positions.Where(p => p.Id == positionId).First());
+		}
+
+		public Result<Models.Position> FixPosition(string id, InputPosition input)
+		{
+			var position = MapToEntity(input);
+			position.Id = id;
+			Context.Positions.Update(position);
+			Context.SaveChanges();
+
+			return new() { Success = true, Payload = MapToModel(position) };
+		}
+
+		public void DeletePosition(string id)
+		{
+			var position = new Position { Id = id };
+			Context.Positions.Attach(position);
+			Context.Positions.Remove(position);
+			Context.SaveChanges();
 		}
 
 		public List<Models.Position> GetPositions(string keyword)

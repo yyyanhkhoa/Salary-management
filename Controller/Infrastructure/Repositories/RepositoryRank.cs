@@ -61,14 +61,12 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Result<Models.Rank> { Success = true, Payload = MapToModel(rank)};
 		}
 
-		public Result<Models.Rank> DeleteRank(int rankId)
+		public void DeleteRank(int rankId)
 		{
 			var rank = new Rank { Id = rankId };
 			Context.Ranks.Attach(rank);
 			Context.Ranks.Remove(rank);
 			Context.SaveChanges();
-
-			return new Result<Models.Rank> { Success = true, Payload = null };
 		}
 
 		private static Models.Rank Map(Rank input)
