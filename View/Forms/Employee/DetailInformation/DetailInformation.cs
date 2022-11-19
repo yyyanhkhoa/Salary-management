@@ -170,13 +170,13 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void AddFamilyBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, "0"), sender);
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, 0), sender);
         }
 
         private void FixFamilyBtn_Click(object sender, EventArgs e)
         {
             var senderGrid = (DataGridView)sender;
-            string idFamily = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();      
+            int idFamily = int.Parse(FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value.ToString());      
             mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, idFamily), sender);
         }
 

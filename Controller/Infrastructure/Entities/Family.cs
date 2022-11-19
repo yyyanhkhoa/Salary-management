@@ -10,7 +10,7 @@ namespace Salary_management.Infrastructure.Entities
 {
 	public class Family
 	{
-		public string Id { get; set; }
+		public int Id { get; set; }
 
 		[MaxLength(255)]
 		public string Name { get; set; } = null!;

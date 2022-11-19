@@ -48,12 +48,12 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			}
 		}
    
-        public Models.Family GetFamilyDetail(string id)
+        public Models.Family GetFamilyDetail(int id)
         {
             return MapToModel(Context.Families.Where(e => e.Id == id).First()!);
         }
 
-        public Result<Models.Family> FixFamily(string FamilyId, InputFamily inputFamily)
+        public Result<Models.Family> FixFamily(int FamilyId, InputFamily inputFamily)
 		{
 			var Family = MapToEntity(inputFamily);
 			Family.Id = FamilyId;
