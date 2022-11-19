@@ -74,13 +74,10 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
       
         private void DetailInformation_Load(object sender, EventArgs e)
         {
-
             var repo = new RepositoryEmployee();            
             var employee = repo.GetEmployeeDetail(idEmployee);           
             enableInfo(false);
             enableQualification(false);
-
-            MessageBox.Show(employee.DateOfBirth.ToString());
 
             //get Infomation detail
             NameText.Text = employee.Name;
@@ -101,7 +98,16 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 FemaleBtn.Checked = true;
                 MaleBtn.Checked = false;
             }
-          
+
+            //get family info
+            this.FamilyGridView.Rows.Clear();
+            RepositoryFamily repoFamily = new RepositoryFamily();
+            List<Model.Family> list = repoFamily.GetFamiliesByEmployee(idEmployee);
+            foreach (Model.Family famili in list)
+            {
+                FamilyGridView.Rows.Add(famili.Id, famili.Name, famili.DateOfBirth, famili.Occupation, famili.RelativeType.ToString());
+            }
+
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -170,14 +176,14 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void AddFamilyBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, "0"), sender);
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, 0, idEmployee), sender);
         }
 
         private void FixFamilyBtn_Click(object sender, EventArgs e)
         {
             var senderGrid = (DataGridView)sender;
-            string idFamily = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();      
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, idFamily), sender);
+            int idFamily = Int16.Parse(FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].ToString());      
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, idFamily, idEmployee), sender);
         }
 
         private void RemoveFamilyBtn_Click(object sender, EventArgs e)
@@ -244,17 +250,8 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void FamilyGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var senderGrid = (DataGridView)sender;
-            string id = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();
-
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0)
-            {
-
-                mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, id), sender);
-            }
+           
         }
-
-      
+       
     }
 }

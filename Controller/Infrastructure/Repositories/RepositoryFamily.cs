@@ -29,15 +29,20 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 		public List<Models.Family> GetFamilies()
 		{
-			return Context.Families.Select(f => MapToModel(f)).ToList();
+			return Context.Families.ToList().Select(f => MapToModel(f)).ToList();
 		}
-   
-        public Models.Family GetFamilyDetail(string id)
+
+        public List<Models.Family> GetFamiliesByEmployee(string EmployeeId)
+        {
+            return Context.Families.ToList().Select(f => MapToModel(f)).Where(e => e.EmployeeId == EmployeeId).ToList();
+        }
+
+        public Models.Family GetFamilyDetail(int id)
         {
             return MapToModel(Context.Families.Where(e => e.Id == id).First()!);
         }
 
-        public Result<Models.Family> FixFamily(string FamilyId, InputFamily inputFamily)
+        public Result<Models.Family> FixFamily(int FamilyId, InputFamily inputFamily)
 		{
 			var Family = MapToEntity(inputFamily);
 			Family.Id = FamilyId;
@@ -47,7 +52,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Result<Models.Family> { Success = true, Payload = MapToModel(Family) };
 		}
 
-		public Result<Models.Family> DeleteFamily(string FamilyId)
+		public Result<Models.Family> DeleteFamily(int FamilyId)
 		{
 			var Family = new Family { Id = FamilyId };
 			Context.Families.Attach(Family);

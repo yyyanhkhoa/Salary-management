@@ -16,16 +16,20 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
     public partial class AddFamily : Form
     {
         private Management mng;
-        private string idFamily;
-        public AddFamily(Management mng, string id)
+        private string idEmploye;
+        private int idFamily;
+        public AddFamily(Management mng, int id, string idEmploye)
         {
             InitializeComponent();
             this.mng = mng;
             this.idFamily = id;
+            this.idEmploye = idEmploye;
         }
         private void AddFamily_Load(object sender, EventArgs e)
         {
-            if (idFamily == "0")
+           
+           // this.idEmploye = family.EmployeeId;
+            if (idFamily == 0)
             {
                 // add
               
@@ -34,9 +38,9 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             else
             {
                 // fix
-                AddBtn.Text = "Save";
                 var repo = new RepositoryFamily();
                 var family = repo.GetFamilyDetail(idFamily);
+                AddBtn.Text = "Save";                
                 NameText.Text = family.Name;
                 if (family.RelativeType == RelativeType.Husband)
                 {
@@ -51,8 +55,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                     ChildBtn.Checked = true;
                 }
                 DateOfBirth.Value = new DateTime(family.DateOfBirth.Year, family.DateOfBirth.Month, family.DateOfBirth.Day);
-                occupationText.Text = family.Occupation;
-               
+                occupationText.Text = family.Occupation;               
             }
         }
 
@@ -68,14 +71,54 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng,"0"), sender);
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, idEmploye), sender);
         }
 
       
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            
+            if(idFamily == 0)
+            {
+                if (NameText.Text == "") MessageBox.Show("Pls input name");
+                else if ((!WifeBtn.Checked) && (!HusbanBtn.Checked) && (!ChildBtn.Checked)) MessageBox.Show("Pls select relative");
+                else if (occupationText.Text == "") MessageBox.Show("Pls input occupation");
+                else
+                {
+                    var repo = new RepositoryFamily();
+                    RelativeType relative;
+                    if (WifeBtn.Checked) relative = RelativeType.Wife;
+                    else if (HusbanBtn.Checked) relative = RelativeType.Husband;
+                    else relative = RelativeType.Child;
+                    DateOnly dateOfBirth = DateOnly.FromDateTime(DateOfBirth.Value);
+
+                    var result = repo.InsertFamily(new InputFamily()
+                    {
+                        Name = NameText.Text,
+                        DateOfBirth = dateOfBirth,
+                        Occupation = occupationText.Text,
+                        RelativeType = relative,
+                        EmployeeId = idEmploye,
+                    });
+
+                    if (result.Success)
+                    {
+                        MessageBox.Show("Insert Family success");
+                        mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, idEmploye), sender);
+                    }
+                    else
+                    {
+                        MessageBox.Show(result.ErrorMessage);
+                    }
+
+                }
+
+            }
+            else
+            {
+                // fix idFamily
+            }
+
         }
     }
 }
