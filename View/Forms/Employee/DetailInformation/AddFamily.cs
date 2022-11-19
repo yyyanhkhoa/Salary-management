@@ -16,9 +16,8 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
     public partial class AddFamily : Form
     {
         private Management mng;
-        private string idEmploye;
         private int idFamily;
-        public AddFamily(Management mng, int id, string idEmploye)
+        public AddFamily(Management mng, int id)
         {
             InitializeComponent();
             this.mng = mng;
@@ -27,8 +26,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         }
         private void AddFamily_Load(object sender, EventArgs e)
         {
-           
-           // this.idEmploye = family.EmployeeId;
+
             if (idFamily == 0)
             {
                 // add

@@ -24,6 +24,13 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			Context.SaveChanges(); 
 			return new Result<Auth> { Success = true, Payload = userAuth };
 		}
+		public void DeleteUser(int id)
+		{
+			var user = new Auth { Id = id };
+			Context.Auths.Attach(user);
+			Context.Auths.Remove(user);
+			Context.SaveChanges();
+		}
 
 		public Result<Auth> Login(string username, string password)
 		{

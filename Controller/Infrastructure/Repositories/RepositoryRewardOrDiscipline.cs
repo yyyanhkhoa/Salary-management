@@ -115,6 +115,28 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			}
 		}
 
+		public Models.RewardOrDiscipline GetRewardOrDiscipline(int id)
+		{
+			return MapToModel(Context.RewardOrDisciplines.Where(r => r.Id == id).First());
+		}
+		public Result<Models.RewardOrDiscipline> FixRewardOrDiscipline(int id, InputRewardOrDiscipline input)
+		{
+			var rewardOrDiscipline = MapToEntity(input);
+			rewardOrDiscipline.Id = id;
+			Context.RewardOrDisciplines.Update(rewardOrDiscipline);
+			Context.SaveChanges();
+
+			return new() { Success = true, Payload = MapToModel(rewardOrDiscipline) };
+		}
+
+		public void DeleteRewardOrDiscipline(int id)
+		{
+			var rewardOrDiscipline = new RewardOrDiscipline { Id = id };
+			Context.RewardOrDisciplines.Attach(rewardOrDiscipline);
+			Context.RewardOrDisciplines.Remove(rewardOrDiscipline);
+			Context.SaveChanges();
+		}
+
 		public static RewardOrDiscipline MapToEntity(InputRewardOrDiscipline input)
 		{
 			return new RewardOrDiscipline
