@@ -198,6 +198,34 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return lastestUh != null ? (lastestUh.EndDate ?? lastestUh.StartDate) : DateOnly.FromDateTime(DateTime.Now);
 		}
 
+		public Result<List<Models.EmployeeOfUnitOfUnion>> GetEmployeeOfUnitAndUnion(string unitId, string unionId)
+		{
+			if (!new RepositoryUnit().CheckUnitExists(unitId))
+			{
+				return new() { Success = false, ErrorMessage = "This Unit id does not exists." };
+			}
+
+			if (!new RepositoryUnion().CheckUnionExist(unitId))
+			{
+				return new() { Success = false, ErrorMessage = "This Union id does not exists." };
+			}
+
+			var unit = Context.Units.Single(u => u.Id == unitId);
+
+			var query = from unitHis in Context.UnitHistories.Where(uh => uh.UnitId == unionId && uh.EndDate != null)
+						from unionHis in Context.UnionHistories.Where(uh => uh.EmployeeId == unitHis.EmployeeId && uh.UnionId == unionId && uh.EndDate != null)
+						from employee in Context.Employees.Where(e => e.Id == unitHis.EmployeeId)
+						from union in Context.Employees.Where(u => u.Id == unionHis.UnionId)
+						select new Models.EmployeeOfUnitOfUnion() { 
+							EmployeeId = unionHis.EmployeeId, 
+							EmployeeName = employee.Name,
+							UnionName = union.Name,
+							UnionStartDate = unionHis.StartDate,
+						};
+
+			return new() { Success = true, Payload = query.ToList() };
+		}
+
 		private static Models.Employee MapToModel(Employee input)
 		{
 			return new Models.Employee
@@ -209,7 +237,6 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				CoefficientAllowance = input.CoefficientAllowance
 			};
 		}
-
 
 		private static Employee MapToEntity(EmployeeInput entity)
 		{
