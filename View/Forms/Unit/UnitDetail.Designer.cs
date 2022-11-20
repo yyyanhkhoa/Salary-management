@@ -67,7 +67,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.UnionTab = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.EmployeeInUnionGrid = new System.Windows.Forms.DataGridView();
             this.EmployeeIdGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeNameGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnionNameGrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,7 +108,7 @@
             this.panel1.SuspendLayout();
             this.UnionTab.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeInUnionGrid)).BeginInit();
             this.panel11.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.DateInUnionGroupBox.SuspendLayout();
@@ -516,7 +516,7 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.dataGridView1);
+            this.groupBox7.Controls.Add(this.EmployeeInUnionGrid);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Location = new System.Drawing.Point(3, 128);
             this.groupBox7.Name = "groupBox7";
@@ -525,21 +525,21 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "List Employee In Union";
             // 
-            // dataGridView1
+            // EmployeeInUnionGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EmployeeInUnionGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EmployeeInUnionGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmployeeIdGrid,
             this.EmployeeNameGrid,
             this.UnionNameGrid,
             this.StartDateUnionGrid});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1006, 265);
-            this.dataGridView1.TabIndex = 0;
+            this.EmployeeInUnionGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmployeeInUnionGrid.Location = new System.Drawing.Point(3, 23);
+            this.EmployeeInUnionGrid.Name = "EmployeeInUnionGrid";
+            this.EmployeeInUnionGrid.RowHeadersWidth = 51;
+            this.EmployeeInUnionGrid.RowTemplate.Height = 29;
+            this.EmployeeInUnionGrid.Size = new System.Drawing.Size(1006, 265);
+            this.EmployeeInUnionGrid.TabIndex = 0;
             // 
             // EmployeeIdGrid
             // 
@@ -745,6 +745,7 @@
             this.SelectUnionComboBox.Name = "SelectUnionComboBox";
             this.SelectUnionComboBox.Size = new System.Drawing.Size(162, 28);
             this.SelectUnionComboBox.TabIndex = 1;
+            this.SelectUnionComboBox.SelectedIndexChanged += new System.EventHandler(this.SelectUnionComboBox_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -793,7 +794,7 @@
             this.panel1.PerformLayout();
             this.UnionTab.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeInUnionGrid)).EndInit();
             this.panel11.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.DateInUnionGroupBox.ResumeLayout(false);
@@ -852,7 +853,7 @@
         private Label label1;
         private TabPage UnionTab;
         private GroupBox groupBox7;
-        private DataGridView dataGridView1;
+        private DataGridView EmployeeInUnionGrid;
         private DataGridViewTextBoxColumn EmployeeIdGrid;
         private DataGridViewTextBoxColumn EmployeeNameGrid;
         private DataGridViewTextBoxColumn UnionNameGrid;

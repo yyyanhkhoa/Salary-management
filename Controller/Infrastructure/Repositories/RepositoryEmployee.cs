@@ -205,7 +205,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				return new() { Success = false, ErrorMessage = "This Unit id does not exists." };
 			}
 
-			if (!new RepositoryUnion().CheckUnionExist(unitId))
+			if (!new RepositoryUnion().CheckUnionExist(unionId))
 			{
 				return new() { Success = false, ErrorMessage = "This Union id does not exists." };
 			}

@@ -120,5 +120,28 @@ namespace Salary_management.View.Forms.Unit
                 MessageBox.Show(result.ErrorMessage);
             }
         }
+
+        private void SelectUnionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectText = SelectUnionComboBox.Text;
+            var repoUnion = new RepositoryEmployee();
+            var idUnion = selectText.Trim().Split(":")[0];
+            var result = repoUnion.GetEmployeeOfUnitAndUnion(this.idUnit, idUnion);
+
+            if (result.Success)
+            {
+                MessageBox.Show("Xem thanh cong");
+                var getListInformation = result.Payload;
+                foreach (var item in getListInformation)
+                {
+                    EmployeeInUnionGrid.Rows.Add(item.EmployeeId, item.EmployeeName, item.UnionName, item.UnionStartDate);
+                }
+            }
+            else
+            {
+
+                MessageBox.Show("Union unit id:" + idUnion + " " + idUnit + "Message :" + result.ErrorMessage);
+            }
+        }
     }
 }

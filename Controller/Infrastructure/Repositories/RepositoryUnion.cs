@@ -13,12 +13,15 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 {
 	public class RepositoryUnion : Repository
 	{
-		public bool CheckUnionExist(string name)
+        public bool CheckUnionExist(string id)
+            => Context.Unions.Any(a => a.Id == id);
+
+        public bool CheckNameExist(string name)
 			=> Context.Unions.Any(a => a.Name == name);
 
 		public Result<Models.Union> InsertUnion(string id, string name)
 		{
-			if (CheckUnionExist(name))
+			if (CheckNameExist(name))
 				return new Result<Models.Union> { Success = false, ErrorMessage = "Union with this name already exists." };
 
 			var union = new Models.Union { Name = name , Id = id};
