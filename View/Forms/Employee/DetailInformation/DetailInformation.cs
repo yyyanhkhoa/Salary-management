@@ -226,8 +226,13 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void addUnion_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng, "0"), sender);
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng, "0", idEmployee), sender);
 
+        }
+        private void fixUnion_Click(object sender, EventArgs e)
+        {
+            string idUnion = UnionGridView.Rows[UnionGridView.CurrentRow.Index].Cells[0].Value.ToString();
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng, idUnion, idEmployee), sender);
         }
 
         private void panel13_Paint(object sender, PaintEventArgs e)
@@ -265,11 +270,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         }
 
         private void removeUnion_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fixUnion_Click(object sender, EventArgs e)
         {
 
         }

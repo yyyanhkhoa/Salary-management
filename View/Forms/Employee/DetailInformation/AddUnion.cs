@@ -39,21 +39,11 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 var repo = new RepositoryUnion();
                 var union = repo.GetUnionDetail(idUnion);
                 AddBtn.Text = "Save";
-                NameText.Text = family.Name;
-                if (family.RelativeType == RelativeType.Husband)
-                {
-                    HusbanBtn.Checked = true;
-                }
-                if (family.RelativeType == RelativeType.Wife)
-                {
-                    WifeBtn.Checked = true;
-                }
-                if (family.RelativeType == RelativeType.Child)
-                {
-                    ChildBtn.Checked = true;
-                }
-                DateOfBirth.Value = new DateTime(family.DateOfBirth.Year, family.DateOfBirth.Month, family.DateOfBirth.Day);
-                occupationText.Text = family.Occupation;
+                NameText.Text = union.Name;
+           
+               // startDay.Value = new DateTime(union.DateOfBirth.Year, family.DateOfBirth.Month, family.DateOfBirth.Day);
+               // occupationText.Text = family.Occupation;
+
             }
         }
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
