@@ -1,4 +1,5 @@
-﻿using Salary_management.Controller.Infrastructure.Data.Input;
+﻿using Salary_management.Controller.Infrastructure.Data;
+using Salary_management.Controller.Infrastructure.Data.Input;
 using Salary_management.Controller.Infrastructure.Repositories;
 using Salary_management.Infrastructure.Entities.Enums;
 using System;
@@ -100,6 +101,12 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             }
 
             //get family info
+            getFamilyInfo();
+
+        }
+
+        private void getFamilyInfo()
+        {
             this.FamilyGridView.Rows.Clear();
             RepositoryFamily repoFamily = new RepositoryFamily();
             List<Model.Family> list = repoFamily.GetFamiliesByEmployee(idEmployee);
@@ -107,9 +114,27 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             {
                 FamilyGridView.Rows.Add(famili.Id, famili.Name, famili.DateOfBirth, famili.Occupation, famili.RelativeType.ToString());
             }
-
         }
-
+        private void getQualificationInfo()
+        {
+            this.QualificationListView.Rows.Clear();
+            RepositoryFamily repoFamily = new RepositoryFamily();
+            List<Model.Family> list = repoFamily.GetFamiliesByEmployee(idEmployee);
+            foreach (Model.Family famili in list)
+            {
+                FamilyGridView.Rows.Add(famili.Id, famili.Name, famili.DateOfBirth, famili.Occupation, famili.RelativeType.ToString());
+            }
+        }
+        private void getUnionInfo()
+        {
+           // this.UnionGridView.Rows.Clear();
+           // RepositoryUnion repoUnion = new RepositoryUnion();
+           // List<Model.Union> list = repoUnion.GetFamiliesByEmployee(idEmployee);
+          //  foreach (Model.Union union in list)
+            //{
+          //      UnionGridView.Rows.Add(famili.Id, famili.Name, famili.DateOfBirth, famili.Occupation, famili.RelativeType.ToString());
+           // }
+        }
         private void BackBtn_Click(object sender, EventArgs e)
         {
             mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
@@ -181,16 +206,17 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void FixFamilyBtn_Click(object sender, EventArgs e)
         {
-            var senderGrid = (DataGridView)sender;
-            int idFamily = Int16.Parse(FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].ToString());      
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, idFamily, idEmployee), sender);
+            string idFamily = FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value.ToString();           
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, Int16.Parse(idFamily), idEmployee), sender);
         }
 
         private void RemoveFamilyBtn_Click(object sender, EventArgs e)
         {
-            var senderGrid = (DataGridView)sender;
             string idFamily = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();
-           //xoa = id family
+            //xoa = id family
+            var repo = new RepositoryFamily();
+            repo.DeleteFamily(Int16.Parse(idFamily));
+            getFamilyInfo();
         }
 
         private void addQualificationBtn_Click(object sender, EventArgs e)

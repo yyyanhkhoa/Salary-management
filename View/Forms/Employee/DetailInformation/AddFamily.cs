@@ -17,7 +17,8 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
     {
         private Management mng;
         private int idFamily;
-        public AddFamily(Management mng, int id)
+        private string idEmploye;
+        public AddFamily(Management mng, int id, string idEmploye)
         {
             InitializeComponent();
             this.mng = mng;
@@ -78,6 +79,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
             if(idFamily == 0)
             {
+                //add family
                 if (NameText.Text == "") MessageBox.Show("Pls input name");
                 else if ((!WifeBtn.Checked) && (!HusbanBtn.Checked) && (!ChildBtn.Checked)) MessageBox.Show("Pls select relative");
                 else if (occupationText.Text == "") MessageBox.Show("Pls input occupation");
@@ -108,13 +110,35 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                     {
                         MessageBox.Show(result.ErrorMessage);
                     }
-
                 }
-
             }
             else
             {
                 // fix idFamily
+                var repo = new RepositoryFamily();
+                RelativeType relative;
+                if (WifeBtn.Checked) relative = RelativeType.Wife;
+                else if (HusbanBtn.Checked) relative = RelativeType.Husband;
+                else relative = RelativeType.Child;
+                var result = repo.FixFamily(idFamily ,new InputFamily()
+                {
+                    Name = NameText.Text,
+                    DateOfBirth = DateOnly.FromDateTime(DateOfBirth.Value),
+                    Occupation = occupationText.Text,
+                    RelativeType = relative,
+                    EmployeeId = idEmploye,
+                });
+
+                if (result.Success)
+                {
+                    MessageBox.Show("Update Family success");
+                    mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, idEmploye), sender);
+                }
+                else
+                {
+                    MessageBox.Show(result.ErrorMessage);
+                }
+
             }
 
         }
