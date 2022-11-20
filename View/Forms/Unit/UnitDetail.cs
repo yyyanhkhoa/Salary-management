@@ -39,6 +39,12 @@ namespace Salary_management.View.Forms.Unit
             PhoneText.Text = unit.PhoneNumber;
             DateText.Text = unit.DateFounded.ToString();
 
+
+            NameTextInUnion.Text = unit.Name;
+            AddressTextInUnion.Text = unit.Address;
+            PhoneTextInUnion.Text = unit.PhoneNumber;
+            DateInUnion.Text = unit.DateFounded.ToString();
+
             StartDateInput.Value = unit.DateFounded.ToDateTime(new TimeOnly(0,0,0),DateTimeKind.Utc);
             //Employee in ComboBox
             var repoEmployee = new RepositoryEmployee();
@@ -47,6 +53,17 @@ namespace Salary_management.View.Forms.Unit
             {
                 EmployeeComboBox.Items.Add(employee.Id + ":" + employee.Name);
             }
+
+            //Union In ComboBox
+
+            var repoUnion = new RepositoryUnion();
+            var listUnion = repoUnion.GetUnions("");
+            foreach(var union in listUnion)
+            {
+                SelectUnionComboBox.Items.Add(union.Id+":"+union.Name);
+                
+            }
+            
 
 
             //Table
@@ -81,15 +98,16 @@ namespace Salary_management.View.Forms.Unit
             string NameAndId = EmployeeComboBox.Text;
             string id = NameAndId.Trim().Split(":")[0];
             DateOnly startDay = DateOnly.FromDateTime(StartDateInput.Value);
-            DateOnly endDate;
+            DateOnly? endDate;
 
             if (!WorkRecentlyCheckBox.Checked) endDate = DateOnly.FromDateTime(EndDateInput.Value);
+            else endDate = null;
             var result = repo.InsertUnitHistory(new InputUnitHistory()
             {
                 EmployeeId = id,
                 UnitId = idUnit,
                 StartDate = startDay,
-                EndDate = null
+                EndDate = endDate, 
             });
             if (result.Success)
             {

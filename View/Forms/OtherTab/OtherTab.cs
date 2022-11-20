@@ -22,17 +22,33 @@ namespace Salary_management.View.Forms.OtherTab
 
         private void OtherTab_Load(object sender, EventArgs e)
         {
+            var repo = new RepositoryUnion();
+            var listUnion = repo.GetUnions("");
+            foreach(var item in listUnion)
+            {
+                ListUnionGrid.Rows.Add(item.Id, item.Name);
+            }
+        }
 
+        
+
+        private void NextBtn_Click(object sender, EventArgs e)
+        {
+            OtherPageTab.SelectTab("QualificationTab");
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
             var repo = new RepositoryUnion();
-            if (NameText.Text == "") MessageBox.Show("Please input name");
+            if (IDText.Text == "") MessageBox.Show("Please input id"); 
+            else if (NameText.Text == "") MessageBox.Show("Please input name");
             else
             {
-                var result = repo.InsertUnion(NameText.Text);
-                if (result.Success) { MessageBox.Show("Insert Union Success"); }
+                var result = repo.InsertUnion(IDText.Text,NameText.Text);
+                if (result.Success) { 
+                    MessageBox.Show("Insert Union Success");
+                    mng.OpenChildForm(new View.Forms.OtherTab.OtherTab(this.mng), sender);
+                }
                 else MessageBox.Show(result.ErrorMessage);
             }
         }
