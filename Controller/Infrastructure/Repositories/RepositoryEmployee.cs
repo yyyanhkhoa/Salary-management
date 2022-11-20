@@ -159,7 +159,6 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			if (nullEndateHistory != null)
 			{
 				nullEndateHistory.EndDate = DateOnly.FromDateTime(DateTime.Now);
-
 			}
 
 			var invalidStartDate = dbset.Any(

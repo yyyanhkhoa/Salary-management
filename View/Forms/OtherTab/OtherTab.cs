@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Salary_management.Controller.Infrastructure.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,18 @@ namespace Salary_management.View.Forms.OtherTab
         private void OtherTab_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            var repo = new RepositoryUnion();
+            if (NameText.Text == "") MessageBox.Show("Please input name");
+            else
+            {
+                var result = repo.InsertUnion(NameText.Text);
+                if (result.Success) { MessageBox.Show("Insert Union Success"); }
+                else MessageBox.Show(result.ErrorMessage);
+            }
         }
     }
 }
