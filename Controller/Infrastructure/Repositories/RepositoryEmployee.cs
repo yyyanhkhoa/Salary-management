@@ -93,7 +93,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 		public Result<Models.UnitHistory> InsertUnitHistory(InputUnitHistory input)
 		{
-			var result = DoCommonHistoryValidation<UnitHistory, Models.UnitHistory>(input, Context.UnitHistories);
+			var result = DoCommonHistoryValidation<UnitHistory, Models.UnitHistory>("Union", input, Context.UnitHistories);
 			if (!result.Success)
 			{
 				return result;
@@ -118,7 +118,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 		public Result<Models.PositionHistory> InsertPositionHistory(InputPositionHistory input)
 		{
-			var result = DoCommonHistoryValidation<PositionHistory, Models.PositionHistory>(input, Context.PositionHistories);
+			var result = DoCommonHistoryValidation<PositionHistory, Models.PositionHistory>("Position", input, Context.PositionHistories);
 			if (!result.Success)
 			{
 				return result;
@@ -141,7 +141,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new() { Success = true, Payload = MapToModel(history) };
 		}
 
-		private Result<ModelT> DoCommonHistoryValidation<EntityT, ModelT>(History input, DbSet<EntityT> dbset) where EntityT : History
+		private Result<ModelT> DoCommonHistoryValidation<EntityT, ModelT>(string name, History input, DbSet<EntityT> dbset) where EntityT : History
 		{
 			if (input.EndDate < input.StartDate)
 			{
@@ -151,6 +151,12 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			if (!CheckEmployeeExists(input.EmployeeId))
 			{
 				return new() { Success = false, ErrorMessage = "Employee with this id do not exist." };
+			}
+
+
+			if (dbset.Any(uh => uh.EndDate == null))
+			{
+				return new() { Success = false, ErrorMessage = $"Please add previous {name} end date before adding new {name} history." };
 			}
 
 			var invalidStartDate = dbset.Any(
