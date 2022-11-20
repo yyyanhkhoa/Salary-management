@@ -154,9 +154,12 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			}
 
 
-			if (dbset.Any(uh => uh.EndDate == null))
+			var nullEndateHistory = dbset.Where(uh => uh.EndDate == null).FirstOrDefault();
+			
+			if (nullEndateHistory != null)
 			{
-				return new() { Success = false, ErrorMessage = $"Please add previous {name} end date before adding new {name} history." };
+				nullEndateHistory.EndDate = DateOnly.FromDateTime(DateTime.Now);
+
 			}
 
 			var invalidStartDate = dbset.Any(
@@ -193,7 +196,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 						  .OrderByDescending(uh => uh.EndDate)
 						  .FirstOrDefault();
 
-			return lastestUh != null ? (lastestUh.EndDate ?? lastestUh.StartDate) : new DateOnly();
+			return lastestUh != null ? (lastestUh.EndDate ?? lastestUh.StartDate) : DateOnly.FromDateTime(DateTime.Now);
 		}
 
 		private static Models.Employee MapToModel(Employee input)
