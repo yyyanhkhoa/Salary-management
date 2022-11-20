@@ -32,8 +32,10 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		/// </summary>
 		/// <param name="searchString">tên thân nhân hoặc mã nhân viên mà thân nhân đó thuộc</param>
 		/// <returns></returns>
+	
 		public List<Models.Family> GetFamilies(string keyword)
 		{
+
 			if (string.IsNullOrWhiteSpace(keyword))
 			{
 				return Context.Families.Select(e => MapToModel(e)).ToList();
@@ -47,13 +49,17 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				.Select(e => MapToModel(e)).ToList();
 			}
 		}
+		public List<Models.Family> GetFamiliesByEmployee(string EmployeeId)
+    {
+         return Context.Families.ToList().Select(f => MapToModel(f)).Where(e => e.EmployeeId == EmployeeId).ToList();
+    }
    
-        public Models.Family GetFamilyDetail(int id)
-        {
-            return MapToModel(Context.Families.Where(e => e.Id == id).First()!);
-        }
+    public Models.Family GetFamilyDetail(int id)
+    {
+       return MapToModel(Context.Families.Where(e => e.Id == id).First()!);
+    }
 
-        public Result<Models.Family> FixFamily(int FamilyId, InputFamily inputFamily)
+    public Result<Models.Family> FixFamily(int FamilyId, InputFamily inputFamily)
 		{
 			var Family = MapToEntity(inputFamily);
 			Family.Id = FamilyId;
@@ -62,6 +68,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 			return new Result<Models.Family> { Success = true, Payload = MapToModel(Family) };
 		}
+
 
 		public void DeleteFamily(int id)
 		{

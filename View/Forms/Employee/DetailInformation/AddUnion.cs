@@ -1,4 +1,5 @@
 ﻿using Salary_management.Controller.Infrastructure.Repositories;
+using Salary_management.Infrastructure.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,13 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
     {
         private Management mng;
         private string idUnion;
-        public AddUnion(Management mng, string idUnion)
+        private string idEmploye;
+        public AddUnion(Management mng, string idUnion, string idEmploye)
         {
             InitializeComponent();
             this.mng = mng;
             this.idUnion = idUnion;
+            this.idEmploye = idEmploye;
         }
 
         private void AddUnion_Load(object sender, EventArgs e)
@@ -33,8 +36,14 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             else
             {
                 // fix
-                var repo = new RepositoryEmployee();
-                var employee = repo.GetEmployeeDetail(idUnion);
+                var repo = new RepositoryUnion();
+                var union = repo.GetUnionDetail(idUnion);
+                AddBtn.Text = "Save";
+                NameText.Text = union.Name;
+           
+               // startDay.Value = new DateTime(union.DateOfBirth.Year, family.DateOfBirth.Month, family.DateOfBirth.Day);
+               // occupationText.Text = family.Occupation;
+
             }
         }
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)

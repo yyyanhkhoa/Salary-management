@@ -100,17 +100,17 @@
             this.NameText.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.NameText.Location = new System.Drawing.Point(3, 20);
             this.NameText.Name = "NameText";
-            this.NameText.Size = new System.Drawing.Size(272, 27);
+            this.NameText.Size = new System.Drawing.Size(764, 27);
             this.NameText.TabIndex = 0;
             // 
             // NameGroupBox
             // 
             this.NameGroupBox.Controls.Add(this.NameText);
-            this.NameGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.NameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NameGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.NameGroupBox.Location = new System.Drawing.Point(10, 10);
             this.NameGroupBox.Name = "NameGroupBox";
-            this.NameGroupBox.Size = new System.Drawing.Size(278, 50);
+            this.NameGroupBox.Size = new System.Drawing.Size(770, 50);
             this.NameGroupBox.TabIndex = 0;
             this.NameGroupBox.TabStop = false;
             this.NameGroupBox.Text = "Name";
