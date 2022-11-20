@@ -153,12 +153,9 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				return new() { Success = false, ErrorMessage = "Employee with this id do not exist." };
 			}
 
-
-			var nullEndateHistory = dbset.Where(uh => uh.EndDate == null).FirstOrDefault();
-			
-			if (nullEndateHistory != null)
+			if (dbset.Any(uh => uh.EndDate == null))
 			{
-				nullEndateHistory.EndDate = DateOnly.FromDateTime(DateTime.Now);
+				return new() { Success = false, ErrorMessage = $"Please add previous {name} end date before adding new {name} history." };
 			}
 
 			var invalidStartDate = dbset.Any(
@@ -212,10 +209,10 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 			var unit = Context.Units.Single(u => u.Id == unitId);
 
-			var query = from unitHis in Context.UnitHistories.Where(uh => uh.UnitId == unionId && uh.EndDate != null)
-						from unionHis in Context.UnionHistories.Where(uh => uh.EmployeeId == unitHis.EmployeeId && uh.UnionId == unionId && uh.EndDate != null)
+			var query = from unitHis in Context.UnitHistories.Where(uh => uh.UnitId == unitId && uh.EndDate == null)
+						from unionHis in Context.UnionHistories.Where(uh => uh.EmployeeId == unitHis.EmployeeId && uh.UnionId == unionId && uh.EndDate == null)
 						from employee in Context.Employees.Where(e => e.Id == unitHis.EmployeeId)
-						from union in Context.Employees.Where(u => u.Id == unionHis.UnionId)
+						from union in Context.Unions.Where(u => u.Id == unionHis.UnionId)
 						select new Models.EmployeeOfUnitOfUnion() { 
 							EmployeeId = unionHis.EmployeeId, 
 							EmployeeName = employee.Name,
