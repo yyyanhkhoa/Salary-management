@@ -14,6 +14,7 @@ namespace Salary_management.Infrastructure
 	public class SalaryManContext : DbContext
 	{
 		public DbSet<RewardOrDiscipline> RewardOrDisciplines { get; set; } = null!;
+		public DbSet<Expertise> Expertises { get; set; } = null!;
 		public DbSet<Auth> Auths { get; set; } = null!;
 		public DbSet<Employee> Employees { get; set; } = null!;
 		public DbSet<Rank> Ranks { get; set; } = null!;
