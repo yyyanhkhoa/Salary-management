@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Models = Salary_management.Model;
 using Salary_management.Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Salary_management.Controller.Infrastructure.Repositories
 {
@@ -87,31 +88,13 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 		public Result<List<Models.PositionTimeline>> GetTimeline(string positionId, DateOnly? from = null, DateOnly? to = null)
 		{
-			IQueryable<PositionHistory> query;
-			var dbSet = Context.PositionHistories;
-
-			if (from != null && to != null)
-			{
-				query = dbSet.Where(uh => uh.PositionId == positionId && uh.StartDate >= from && uh.EndDate <= to);
-			}
-			else if (from != null)
-			{
-				query = dbSet.Where(uh => uh.PositionId == positionId && uh.StartDate >= from);
-			}
-			else if (to != null)
-			{ 
-				query = dbSet.Where(uh => uh.PositionId == positionId && uh.EndDate <= to);
-			}
-			else
-			{
-				query = dbSet.Where(uh => uh.PositionId == positionId);
-			}
+			var query = Context.PositionHistories.Where(uh => uh.PositionId == positionId);
+			query = Helper.GetTimelineByDate(query, from, to);
 
 			return new()
 			{
 				Success = true,
-				Payload = query.OrderBy(ph => ph.StartDate)
-							   .Include(uh => uh.Employee)
+				Payload = query.Include(uh => uh.Employee)
 							   .Select(ph => MapToTimelineModel(ph))
 							   .ToList()
 			};

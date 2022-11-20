@@ -55,31 +55,13 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 		public Result<List<Models.UnitTimeline>> GetTimeline(string unitId, DateOnly? from = null, DateOnly? to = null)
 		{
-			IQueryable<UnitHistory> query;
-			var dbSet = Context.UnitHistories;
-			
-			if (from != null && to != null)
-			{
-				query = dbSet.Where(uh => uh.UnitId == unitId && uh.StartDate >= from && uh.EndDate <= to);
-			}
-			else if (from != null)
-			{
-				query = dbSet.Where(uh => uh.UnitId == unitId  && uh.StartDate >= from);
-			}
-			else if (to != null)
-			{
-				query = dbSet.Where(uh => uh.UnitId == unitId  && uh.EndDate <= to);
-			}
-			else
-			{
-				query = Context.UnitHistories.Where(uh => uh.UnitId == unitId);
-			}
+			var query = Context.UnitHistories.Where(uh => uh.UnitId == uh.UnitId);
+			query = Helper.GetTimelineByDate(query, from, to);
 
 			return new()
 			{
 				Success = true,
-				Payload = query.OrderBy(uh => uh.StartDate)
-							   .Include(uh => uh.Employee)
+				Payload = query.Include(uh => uh.Employee)
 							   .Select(uh => MapToTimelineModel(uh))
 							   .ToList()
 			};

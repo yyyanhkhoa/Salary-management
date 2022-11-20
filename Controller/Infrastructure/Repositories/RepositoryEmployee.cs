@@ -143,7 +143,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 		private Result<ModelT> DoCommonHistoryValidation<EntityT, ModelT>(string name, History input, DbSet<EntityT> dbset) where EntityT : History
 		{
-			if (input.EndDate < input.StartDate)
+			if (input.EndDate != null && input.EndDate < input.StartDate)
 			{
 				return new() { Success = false, ErrorMessage = "End date can not be smaller than start day." };
 			}
@@ -169,6 +169,31 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			}
 
 			return new() { Success = true };
+		}
+
+		public DateOnly GetLatestDateAtUnit(string employeeId)
+		{
+			return GetLatestDate(Context.UnitHistories, employeeId);
+		}
+
+		public DateOnly GetLatestDateAtUnion(string employeeId)
+		{
+			return GetLatestDate(Context.UnionHistories, employeeId);
+		}
+
+		public DateOnly GetLatestDateAtPosition(string employeeId)
+		{
+			return GetLatestDate(Context.PositionHistories, employeeId);
+		}
+
+		private DateOnly GetLatestDate<T>(DbSet<T> dbSet, string employeeId) where T : History
+		{
+			var lastestUh = dbSet.Where(uh => uh.EmployeeId == employeeId)
+						  .OrderByDescending(uh => uh.StartDate)
+						  .OrderByDescending(uh => uh.EndDate)
+						  .FirstOrDefault();
+
+			return lastestUh != null ? (lastestUh.EndDate ?? lastestUh.StartDate) : new DateOnly();
 		}
 
 		private static Models.Employee MapToModel(Employee input)
