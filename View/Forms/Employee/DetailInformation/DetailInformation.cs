@@ -80,7 +80,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             enableInfo(false);
             enableQualification(false);
 
-            MessageBox.Show(employee.DateOfBirth.ToString());
 
             //get Infomation detail
             NameText.Text = employee.Name;
