@@ -60,6 +60,15 @@ namespace Salary_management.View.Forms.Unit
             }
         }
 
+
+
+
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Unit.Unit(this.mng), sender);
+        }
+
         private void WorkRecentlyCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (WorkRecentlyCheckBox.Checked) EndDatePanel.Visible = false;
@@ -72,34 +81,26 @@ namespace Salary_management.View.Forms.Unit
             string NameAndId = EmployeeComboBox.Text;
             string id = NameAndId.Trim().Split(":")[0];
             DateOnly startDay = DateOnly.FromDateTime(StartDateInput.Value);
-            DateOnly endDate ;
-            
+            DateOnly endDate;
+
             if (!WorkRecentlyCheckBox.Checked) endDate = DateOnly.FromDateTime(EndDateInput.Value);
-            MessageBox.Show(endDate.ToString());
             var result = repo.InsertUnitHistory(new InputUnitHistory()
             {
                 EmployeeId = id,
                 UnitId = idUnit,
                 StartDate = startDay,
-                EndDate = endDate,
+                EndDate = null
             });
             if (result.Success)
             {
                 MessageBox.Show("Insert new Employee in Unit success");
 
-                mng.OpenChildForm(new View.Forms.Unit.UnitDetailForm(this.mng,this.idUnit), sender);
+                mng.OpenChildForm(new View.Forms.Unit.UnitDetailForm(this.mng, this.idUnit), sender);
             }
             else
             {
                 MessageBox.Show(result.ErrorMessage);
             }
-            
-
-        }
-
-        private void BackBtn_Click(object sender, EventArgs e)
-        {
-            mng.OpenChildForm(new View.Forms.Unit.Unit(this.mng), sender);
         }
     }
 }

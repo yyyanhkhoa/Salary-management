@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Management));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.SettingBtn = new System.Windows.Forms.Button();
             this.RewardOrNotBtn = new System.Windows.Forms.Button();
             this.UnitBtn = new System.Windows.Forms.Button();
             this.PositionBtn = new System.Windows.Forms.Button();
             this.ListEmployeeBtn = new System.Windows.Forms.Button();
             this.panelDesktopPanel = new System.Windows.Forms.Panel();
+            this.OtherTabBtn = new System.Windows.Forms.Button();
+            this.SettingBtn = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             this.panelMenu.BackColor = System.Drawing.Color.White;
             this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelMenu.Controls.Add(this.SettingBtn);
+            this.panelMenu.Controls.Add(this.OtherTabBtn);
             this.panelMenu.Controls.Add(this.RewardOrNotBtn);
             this.panelMenu.Controls.Add(this.UnitBtn);
             this.panelMenu.Controls.Add(this.PositionBtn);
@@ -54,23 +56,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(231, 622);
             this.panelMenu.TabIndex = 0;
-            // 
-            // SettingBtn
-            // 
-            this.SettingBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SettingBtn.FlatAppearance.BorderSize = 0;
-            this.SettingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SettingBtn.ForeColor = System.Drawing.Color.Black;
-            this.SettingBtn.Image = ((System.Drawing.Image)(resources.GetObject("SettingBtn.Image")));
-            this.SettingBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SettingBtn.Location = new System.Drawing.Point(0, 264);
-            this.SettingBtn.Name = "SettingBtn";
-            this.SettingBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.SettingBtn.Size = new System.Drawing.Size(229, 66);
-            this.SettingBtn.TabIndex = 6;
-            this.SettingBtn.Text = "    Setting";
-            this.SettingBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SettingBtn.UseVisualStyleBackColor = true;
             // 
             // RewardOrNotBtn
             // 
@@ -152,6 +137,41 @@
             this.panelDesktopPanel.Size = new System.Drawing.Size(982, 622);
             this.panelDesktopPanel.TabIndex = 2;
             // 
+            // OtherTabBtn
+            // 
+            this.OtherTabBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OtherTabBtn.FlatAppearance.BorderSize = 0;
+            this.OtherTabBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OtherTabBtn.ForeColor = System.Drawing.Color.Black;
+            this.OtherTabBtn.Image = ((System.Drawing.Image)(resources.GetObject("OtherTabBtn.Image")));
+            this.OtherTabBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.OtherTabBtn.Location = new System.Drawing.Point(0, 264);
+            this.OtherTabBtn.Name = "OtherTabBtn";
+            this.OtherTabBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.OtherTabBtn.Size = new System.Drawing.Size(229, 66);
+            this.OtherTabBtn.TabIndex = 7;
+            this.OtherTabBtn.Text = "OtherTab";
+            this.OtherTabBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.OtherTabBtn.UseVisualStyleBackColor = true;
+            this.OtherTabBtn.Click += new System.EventHandler(this.OtherTabBtn_Click);
+            // 
+            // SettingBtn
+            // 
+            this.SettingBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SettingBtn.FlatAppearance.BorderSize = 0;
+            this.SettingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SettingBtn.ForeColor = System.Drawing.Color.Black;
+            this.SettingBtn.Image = ((System.Drawing.Image)(resources.GetObject("SettingBtn.Image")));
+            this.SettingBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SettingBtn.Location = new System.Drawing.Point(0, 330);
+            this.SettingBtn.Name = "SettingBtn";
+            this.SettingBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.SettingBtn.Size = new System.Drawing.Size(229, 66);
+            this.SettingBtn.TabIndex = 8;
+            this.SettingBtn.Text = "    Setting";
+            this.SettingBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SettingBtn.UseVisualStyleBackColor = true;
+            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -178,5 +198,6 @@
         private Button UnitBtn;
         private Button PositionBtn;
         private Button SettingBtn;
+        private Button OtherTabBtn;
     }
 }

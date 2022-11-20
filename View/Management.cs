@@ -66,5 +66,7 @@ namespace Salary_management
         {
 
         }
+
+        private void OtherTabBtn_Click(object sender, EventArgs e) { OpenChildForm(new View.Forms.OtherTab.OtherTab(this), sender); }
     }
 }
