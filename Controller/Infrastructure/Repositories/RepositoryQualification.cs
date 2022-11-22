@@ -83,35 +83,6 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return lastestQah != null ? lastestQah.Year : DateTime.Now.Year;
 		}
 
-		public Result<Models.QualificationAllowanceHistory> InsertQualificationAllowanceHistory(InputQualificationAllowanceHistory input)
-		{
-			if (!CheckQualificationExist(input.QualificationId))
-			{
-				return new() { Success = false, ErrorMessage = "Employee with this id do not exist." };
-			}
-
-			var invalidYear = Context.QualificationAllowanceHistories.Any(
-				uh => input.QualificationId == uh.QualificationId
-				&& input.Year < uh.Year
-			);
-
-			if (invalidYear)
-			{
-				return new() { Success = false, ErrorMessage = "Year can not be earlier than previous history Year." };
-			}
-
-			var history = MapToEntity(input);
-			Context.QualificationAllowanceHistories.Add(history);
-			Context.SaveChanges();
-
-			history = Context.QualificationAllowanceHistories
-							 .Where(uh => uh.Id == history.Id)
-							 .Include(qah => qah.Qualification)
-							 .First();
-
-			return new() { Success = true, Payload = MapToModel(history) };
-		}
-
 		public Result<List<Models.QualificationAllowanceTimeline>> GetQualificationAllowanceTimeline(int qualificationId, int? yearFrom = null, int? yearTo = null)
 		{
 			var query = Context.QualificationAllowanceHistories.Where(uh => uh.QualificationId == qualificationId);
@@ -146,29 +117,6 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				Allowance = qah.Allowance
 			};
 		}
-
-		private Models.QualificationAllowanceHistory MapToModel(QualificationAllowanceHistory history)
-		{
-			return new Models.QualificationAllowanceHistory
-			{
-				Id = history.Id,
-				Year = history.Year,
-				Allowance = history.Allowance,
-				QualificationId = history.QualificationId,
-				QualificationName = history.Qualification.Name
-			};
-		}
-
-		private QualificationAllowanceHistory MapToEntity(InputQualificationAllowanceHistory input)
-		{
-			return new QualificationAllowanceHistory
-			{
-				Year = input.Year,
-				Allowance = input.Allowance,
-				QualificationId = input.QualificationId
-			};
-		}
-
 		private Qualification MapToEntity(InputQualification input)
 		{
 			return new Qualification
