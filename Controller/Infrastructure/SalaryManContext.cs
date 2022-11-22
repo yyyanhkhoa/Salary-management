@@ -52,10 +52,11 @@ namespace Salary_management.Infrastructure
 						.HasPostgresEnum<Role>();
 
 			// config
-			modelBuilder.Entity<Auth>().HasAlternateKey(e => e.Username);
+			modelBuilder.Entity<Auth>()
+						.HasAlternateKey(e => e.Username);
 
 			modelBuilder.Entity<EmployeeQualification>()
-						.HasKey(e => new { e.EmployeeId, e.QualificationId });
+						.HasAlternateKey(e => new { e.EmployeeId, e.QualificationId });
 
 			modelBuilder.Entity<Employee>()
 						.Property(e => e.DateCreated)
@@ -63,7 +64,11 @@ namespace Salary_management.Infrastructure
 
 			// seed DB
 			modelBuilder.Entity<Auth>()
-						.HasData(new Auth { Id = 1, Username = "admin", Password = "admin" });
+						.HasData(
+							new Auth { Id = 1, Username = "admin", Password = "admin", Role = Role.Admin },
+							new Auth { Id = 2, Username = "accountant", Password = "accountant", Role = Role.Accountant },
+							new Auth { Id = 3, Username = "viewer", Password = "viewer", Role = Role.Viewer }
+						);
 		}
 	}
 }

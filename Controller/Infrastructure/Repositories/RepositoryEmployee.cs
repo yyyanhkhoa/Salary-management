@@ -91,83 +91,110 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return MapToModelEmployeeDetail(Context.Employees.Where(e => e.Id == id).First()!);
 		}
 
-		public Result<Models.UnitHistory> InsertUnitHistory(InputUnitHistory input)
+		public Result<List<Models.UnionHistory>> GetEmployeeUnionHistory(string employeeId)
 		{
-			var result = DoCommonHistoryValidation<UnitHistory, Models.UnitHistory>("Union", input, Context.UnitHistories);
-			if (!result.Success)
+			if (!CheckEmployeeExists(employeeId))
 			{
-				return result;
+				return new() { Success = false, ErrorMessage = "Employee of this id does not exist." };
 			}
 
-			var unitExists = new RepositoryUnit().CheckUnitExists(input.UnitId);
-			if (!unitExists)
+
+			var query = Context.UnionHistories.Where(uh => uh.EmployeeId == employeeId)
+							   .Include(uh => uh.Union);
+			return new()
 			{
-				return new() { Success = false, ErrorMessage = "Unit with this id do not exist." };
-			}
-
-			var history = MapToEntity(input);
-			Context.UnitHistories.Add(history);
-			Context.SaveChanges();
-
-			history = Context.UnitHistories.Include(uh => uh.Unit)
-							 .Where(uh => uh.Id == history.Id)
-							 .First();
-
-			return new() { Success = true, Payload = MapToModel(history) };
+				Success = true,
+				Payload = Helper.GetTimelineByDateRange(query, null, null)
+								.Select(uh => MapToModel(uh))
+								.ToList()
+			};
 		}
 
-		public Result<Models.PositionHistory> InsertPositionHistory(InputPositionHistory input)
+		public Result<List<Models.UnitHistory>> GetEmployeeUnitHistory(string employeeId)
 		{
-			var result = DoCommonHistoryValidation<PositionHistory, Models.PositionHistory>("Position", input, Context.PositionHistories);
-			if (!result.Success)
+			if (!CheckEmployeeExists(employeeId))
 			{
-				return result;
+				return new() { Success = false, ErrorMessage = "Employee of this id does not exist." };
 			}
 
-			var positionExists = new RepositoryPosition().CheckPositionExist(input.PositionId);
-			if (!positionExists)
+			var query = Context.UnitHistories.Where(uh => uh.EmployeeId == employeeId)
+							   .Include(uh => uh.UnitId);
+			return new()
 			{
-				return new() { Success = false, ErrorMessage = "Position with this id do not exist." };
-			}
-
-			var history = MapToEntity(input);
-			Context.PositionHistories.Add(history);
-			Context.SaveChanges();
-
-			history = Context.PositionHistories.Include(ph => ph.Position)
-							 .Where(ph => ph.Id == history.Id)
-							 .First();
-
-			return new() { Success = true, Payload = MapToModel(history) };
+				Success = true,
+				Payload = Helper.GetTimelineByDateRange(query, null, null)
+								.Select(uh => MapToModel(uh))
+								.ToList()
+			};
 		}
 
-		private Result<ModelT> DoCommonHistoryValidation<EntityT, ModelT>(string name, History input, DbSet<EntityT> dbset) where EntityT : History
+		public Result<List<Models.PositionHistory>> GetEmployeePositionHistory(string employeeId)
 		{
-			if (input.EndDate != null && input.EndDate < input.StartDate)
+			if (!CheckEmployeeExists(employeeId))
 			{
-				return new() { Success = false, ErrorMessage = "End date can not be smaller than start day." };
+				return new() { Success = false, ErrorMessage = "Employee of this id does not exist." };
 			}
 
-			if (!CheckEmployeeExists(input.EmployeeId))
+			var query = Context.PositionHistories.Where(uh => uh.EmployeeId == employeeId)
+							   .Include(uh => uh.Position);
+			return new()
 			{
-				return new() { Success = false, ErrorMessage = "Employee with this id do not exist." };
+				Success = true,
+				Payload = Helper.GetTimelineByDateRange(query, null, null)
+								.Select(uh => MapToModel(uh))
+								.ToList()
+			};
+		}
+
+		public Result<List<Models.Family>> GetEmployeeFamilies(string employeeId)
+		{
+			if (!CheckEmployeeExists(employeeId))
+			{
+				return new() { Success = false, ErrorMessage = "Employee of this id does not exist." };
 			}
 
-			if (dbset.Any(uh => uh.EndDate == null))
+			return new()
 			{
-				return new() { Success = false, ErrorMessage = $"Please add previous {name} end date before adding new {name} history." };
+				Success = true,
+				Payload = Context.Families.Include(f => f.Employee)
+								.Where(f => f.EmployeeId == employeeId)
+								.Select(uh => MapToModel(uh))
+								.ToList()
+			};
+		}
+
+		public Result<List<Models.EmployeeQualification>> GetEmployeeQualifications(string employeeId)
+		{
+			if (!CheckEmployeeExists(employeeId))
+			{
+				return new() { Success = false, ErrorMessage = "Employee of this id does not exist." };
 			}
 
-			var invalidStartDate = dbset.Any(
-				uh => input.EmployeeId == uh.EmployeeId
-				   && input.StartDate < uh.EndDate
-			);
-			if (invalidStartDate)
+			return new()
 			{
-				return new() { Success = false, ErrorMessage = "Start date can not be earlier than previous Unit end date." };
-			}
+				Success = true,
+				Payload = Context.EmployeeQualifications
+							.Where(eq => eq.EmployeeId == employeeId)
+							.Include(eq => eq.Employee)
+							.Include(eq => eq.Qualification)
+							.Select(eq => MapToModel(eq))
+							.ToList()
+			};
+		}
 
-			return new() { Success = true };
+		private Models.EmployeeQualification MapToModel(EmployeeQualification eq)
+		{
+			return new Models.EmployeeQualification
+			{
+				Id = eq.Id,
+				Score = eq.Score,
+				IssueDate = eq.IssueDate,
+				PlaceOfIssue = eq.PlaceOfIssue,
+				QualificationId = eq.QualificationId,
+				QualificationName = eq.Qualification.Name,
+				EmployeeId = eq.EmployeeId,
+				EmployeeName = eq.Employee.Name
+			};
 		}
 
 		public DateOnly GetLatestDateAtUnit(string employeeId)
@@ -268,17 +295,6 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			};
 		}
 	
-		private static UnitHistory MapToEntity (InputUnitHistory input)
-		{
-			return new UnitHistory
-			{
-				StartDate = input.StartDate,
-				EndDate = input.EndDate,
-				EmployeeId = input.EmployeeId,
-				UnitId = input.UnitId
-			};
-		}
-
 		private static Models.UnitHistory MapToModel(UnitHistory entity)
 		{
 			return new Models.UnitHistory
@@ -289,17 +305,6 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				EmployeeId = entity.EmployeeId,
 				UnitId = entity.UnitId,
 				UnitName = entity.Unit.Name
-			};
-		}
-
-		private static PositionHistory MapToEntity(InputPositionHistory input)
-		{
-			return new PositionHistory
-			{
-				PositionId = input.PositionId,
-				StartDate = input.StartDate,
-				EndDate = input.EndDate,
-				EmployeeId = input.EmployeeId
 			};
 		}
 
@@ -315,6 +320,34 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				EmployeeId = entity.EmployeeId
 			};
 		}
+
+		private static Models.UnionHistory MapToModel(UnionHistory history)
+		{
+			return new Models.UnionHistory
+			{
+				Id = history.Id,
+				UnionId = history.UnionId,
+				UnionName = history.Union.Name,
+				StartDate = history.StartDate,
+				EndDate = history.EndDate,
+				EmployeeId = history.EmployeeId
+			};
+		}
+
+		private static Models.Family MapToModel(Family uh)
+		{
+			return new Models.Family
+			{
+				Id = uh.Id,
+				EmployeeId = uh.EmployeeId,
+				EmployeeName = uh.Employee.Name,
+				Name = uh.Name,
+				DateOfBirth = uh.DateOfBirth,
+				Occupation = uh.Occupation,
+				RelativeType = uh.RelativeType
+			};
+		}
+
 	}
 }
 

@@ -76,7 +76,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		public Result<List<Models.UnionTimeline>> GetTimeline(string unionId, DateOnly? from = null, DateOnly? to = null)
 		{
 			var query = Context.UnionHistories.Where(uh => uh.UnionId == unionId);
-			query = Helper.GetTimelineByDate(query, from, to);
+			query = Helper.GetTimelineByDateRange(query, from, to);
 
 			return new()
 			{

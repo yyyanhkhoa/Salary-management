@@ -89,7 +89,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		public Result<List<Models.PositionTimeline>> GetTimeline(string positionId, DateOnly? from = null, DateOnly? to = null)
 		{
 			var query = Context.PositionHistories.Where(uh => uh.PositionId == positionId);
-			query = Helper.GetTimelineByDate(query, from, to);
+			query = Helper.GetTimelineByDateRange(query, from, to);
 
 			return new()
 			{

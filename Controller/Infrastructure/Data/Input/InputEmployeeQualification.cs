@@ -5,22 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Salary_management.Infrastructure.Entities
+namespace Salary_management.Controller.Infrastructure.Data.Input
 {
-	public class EmployeeQualification
+	public class InputEmployeeQualification
 	{
-		public int Id { get; set; }
 		public float Score { get; set; }
-
 		public DateOnly IssueDate { get; set; }
-
-		[MaxLength(255)]
 		public string PlaceOfIssue { get; set; } = null!;
-
 		public int QualificationId { get; set; }
-		public Qualification Qualification { get; set; } = null!;
-
 		public string EmployeeId { get; set; } = null!;
-		public Employee Employee { get; set; } = null!;
 	}
 }

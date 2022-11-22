@@ -112,9 +112,9 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new() { Success = true, Payload = MapToModel(history) };
 		}
 
-		public Result<List<Models.QualificationAllowanceTimeline>> GetQualificationAllowanceTimeline(int qualification, int? yearFrom = null, int? yearTo = null)
+		public Result<List<Models.QualificationAllowanceTimeline>> GetQualificationAllowanceTimeline(int qualificationId, int? yearFrom = null, int? yearTo = null)
 		{
-			var query = Context.QualificationAllowanceHistories.Where(uh => uh.QualificationId == qualification);
+			var query = Context.QualificationAllowanceHistories.Where(uh => uh.QualificationId == qualificationId);
 			if (yearFrom != null && yearTo != null)
 			{
 				query = query.Where(h => h.Year >= yearFrom && h.Year <= yearTo);
