@@ -62,6 +62,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.AddBtn = new System.Windows.Forms.Button();
             this.BackBtn = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.AddEmployeeGroupBox.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -98,6 +99,7 @@
             // 
             this.AddEmployeeGroupBox.AutoSize = true;
             this.AddEmployeeGroupBox.BackColor = System.Drawing.Color.White;
+            this.AddEmployeeGroupBox.Controls.Add(this.dateTimePicker1);
             this.AddEmployeeGroupBox.Controls.Add(this.AddNewBtn);
             this.AddEmployeeGroupBox.Controls.Add(this.panel12);
             this.AddEmployeeGroupBox.Controls.Add(this.panel9);
@@ -447,6 +449,13 @@
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(412, 32);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(250, 34);
+            this.dateTimePicker1.TabIndex = 7;
+            // 
             // Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -523,5 +532,6 @@
         private GroupBox EthnicGroupBox;
         private TextBox EthnicText;
         private Panel AddNewBtn;
+        private DateTimePicker dateTimePicker1;
     }
 }
