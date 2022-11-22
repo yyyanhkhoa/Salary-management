@@ -14,6 +14,7 @@ namespace Salary_management.Model
         public int Id { get; set; }
 
         public string EmployeeId { get; set; } = null!;
+		public string EmployeeName { get; set; } = null!;
 
         public string Name { get; set; } = null!;
 
