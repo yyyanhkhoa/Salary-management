@@ -163,6 +163,40 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			};
 		}
 
+		public Result<List<Models.EmployeeQualification>> GetEmployeeQualifications(string employeeId)
+		{
+			if (!CheckEmployeeExists(employeeId))
+			{
+				return new() { Success = false, ErrorMessage = "Employee of this id does not exist." };
+			}
+
+			return new()
+			{
+				Success = true,
+				Payload = Context.EmployeeQualifications
+							.Where(eq => eq.EmployeeId == employeeId)
+							.Include(eq => eq.Employee)
+							.Include(eq => eq.Qualification)
+							.Select(eq => MapToModel(eq))
+							.ToList()
+			};
+		}
+
+		private Models.EmployeeQualification MapToModel(EmployeeQualification eq)
+		{
+			return new Models.EmployeeQualification
+			{
+				Id = eq.Id,
+				Score = eq.Score,
+				IssueDate = eq.IssueDate,
+				PlaceOfIssue = eq.PlaceOfIssue,
+				QualificationId = eq.QualificationId,
+				QualificationName = eq.Qualification.Name,
+				EmployeeId = eq.EmployeeId,
+				EmployeeName = eq.Employee.Name
+			};
+		}
+
 		public DateOnly GetLatestDateAtUnit(string employeeId)
 		{
 			return GetLatestDate(Context.UnitHistories, employeeId);
