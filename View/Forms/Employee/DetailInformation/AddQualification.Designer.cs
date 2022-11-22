@@ -31,6 +31,7 @@
             this.AddFamilyGroupBox = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.exBox = new System.Windows.Forms.ComboBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.OccupationGroupBox = new System.Windows.Forms.GroupBox();
             this.placeText = new System.Windows.Forms.TextBox();
@@ -46,7 +47,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.AddBtn = new System.Windows.Forms.Button();
             this.BackBtn = new System.Windows.Forms.Button();
-            this.exBox = new System.Windows.Forms.ComboBox();
             this.AddFamilyGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -102,6 +102,19 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Expertise name";
             // 
+            // exBox
+            // 
+            this.exBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.exBox.FormattingEnabled = true;
+            this.exBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.exBox.Location = new System.Drawing.Point(3, 23);
+            this.exBox.Name = "exBox";
+            this.exBox.Size = new System.Drawing.Size(764, 28);
+            this.exBox.TabIndex = 11;
+            // 
             // panel12
             // 
             this.panel12.Controls.Add(this.OccupationGroupBox);
@@ -131,6 +144,7 @@
             this.placeText.Name = "placeText";
             this.placeText.Size = new System.Drawing.Size(764, 27);
             this.placeText.TabIndex = 0;
+            this.placeText.TextChanged += new System.EventHandler(this.placeText_TextChanged);
             // 
             // panel5
             // 
@@ -257,19 +271,6 @@
             this.BackBtn.Text = "< Back";
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
-            // 
-            // exBox
-            // 
-            this.exBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.exBox.FormattingEnabled = true;
-            this.exBox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
-            this.exBox.Location = new System.Drawing.Point(3, 23);
-            this.exBox.Name = "exBox";
-            this.exBox.Size = new System.Drawing.Size(764, 28);
-            this.exBox.TabIndex = 11;
             // 
             // AddQualification
             // 

@@ -93,7 +93,7 @@
             this.qualificationGroupBox = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.exQualificationTB = new System.Windows.Forms.TextBox();
+            this.exQualificationBox = new System.Windows.Forms.ComboBox();
             this.panel21 = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.placeQualificationTB = new System.Windows.Forms.TextBox();
@@ -109,6 +109,7 @@
             this.IDQualificationTB = new System.Windows.Forms.TextBox();
             this.TitleListEmployee = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.removeQualification = new System.Windows.Forms.Button();
             this.fixQualificationBtn = new System.Windows.Forms.Button();
             this.addQualificationBtn = new System.Windows.Forms.Button();
             this.backQualificationBtn = new System.Windows.Forms.Button();
@@ -125,6 +126,18 @@
             this.removeUnion = new System.Windows.Forms.Button();
             this.fixUnion = new System.Windows.Forms.Button();
             this.addUnion = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.fromUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitHistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FromPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.positionHistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.GenderGroupBox.SuspendLayout();
@@ -168,6 +181,10 @@
             this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UnionGridView)).BeginInit();
             this.panel15.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -263,11 +280,13 @@
             // 
             this.ImagePicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ImagePicture.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ImagePicture.Image = global::Salary_management.Properties.Resources.icon_people;
             this.ImagePicture.Location = new System.Drawing.Point(10, 10);
             this.ImagePicture.Name = "ImagePicture";
             this.ImagePicture.Size = new System.Drawing.Size(113, 109);
             this.ImagePicture.TabIndex = 0;
             this.ImagePicture.TabStop = false;
+            this.ImagePicture.Click += new System.EventHandler(this.ImagePicture_Click);
             // 
             // panel3
             // 
@@ -491,6 +510,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(10, 10);
             this.tabControl1.Name = "tabControl1";
@@ -829,7 +849,7 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.exQualificationTB);
+            this.groupBox10.Controls.Add(this.exQualificationBox);
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox10.Location = new System.Drawing.Point(0, 0);
@@ -839,13 +859,20 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Expertise name";
             // 
-            // exQualificationTB
+            // exQualificationBox
             // 
-            this.exQualificationTB.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.exQualificationTB.Location = new System.Drawing.Point(3, 20);
-            this.exQualificationTB.Name = "exQualificationTB";
-            this.exQualificationTB.Size = new System.Drawing.Size(679, 27);
-            this.exQualificationTB.TabIndex = 0;
+            this.exQualificationBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.exQualificationBox.FormattingEnabled = true;
+            this.exQualificationBox.Items.AddRange(new object[] {
+            "1 - Toán",
+            "2 - Anh ",
+            "3 - Tin học",
+            "4 - Văn"});
+            this.exQualificationBox.Location = new System.Drawing.Point(3, 23);
+            this.exQualificationBox.Name = "exQualificationBox";
+            this.exQualificationBox.Size = new System.Drawing.Size(679, 28);
+            this.exQualificationBox.TabIndex = 1;
+            this.exQualificationBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panel21
             // 
@@ -990,6 +1017,7 @@
             // 
             // panel16
             // 
+            this.panel16.Controls.Add(this.removeQualification);
             this.panel16.Controls.Add(this.fixQualificationBtn);
             this.panel16.Controls.Add(this.addQualificationBtn);
             this.panel16.Controls.Add(this.backQualificationBtn);
@@ -999,6 +1027,17 @@
             this.panel16.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.panel16.Size = new System.Drawing.Size(709, 46);
             this.panel16.TabIndex = 11;
+            // 
+            // removeQualification
+            // 
+            this.removeQualification.BackColor = System.Drawing.Color.Yellow;
+            this.removeQualification.Dock = System.Windows.Forms.DockStyle.Right;
+            this.removeQualification.Location = new System.Drawing.Point(359, 5);
+            this.removeQualification.Name = "removeQualification";
+            this.removeQualification.Size = new System.Drawing.Size(91, 41);
+            this.removeQualification.TabIndex = 3;
+            this.removeQualification.Text = "Delete";
+            this.removeQualification.UseVisualStyleBackColor = false;
             // 
             // fixQualificationBtn
             // 
@@ -1190,6 +1229,132 @@
             this.addUnion.UseVisualStyleBackColor = false;
             this.addUnion.Click += new System.EventHandler(this.addUnion_Click);
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.groupBox9);
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(715, 504);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "History";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.AutoSize = true;
+            this.groupBox9.BackColor = System.Drawing.Color.White;
+            this.groupBox9.Controls.Add(this.panel13);
+            this.groupBox9.Controls.Add(this.dataGridView1);
+            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox9.Location = new System.Drawing.Point(3, 3);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox9.Size = new System.Drawing.Size(709, 498);
+            this.groupBox9.TabIndex = 18;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "History form";
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.button1);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel13.Location = new System.Drawing.Point(5, 447);
+            this.panel13.Name = "panel13";
+            this.panel13.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panel13.Size = new System.Drawing.Size(699, 46);
+            this.panel13.TabIndex = 18;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.Location = new System.Drawing.Point(0, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 41);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "< Back";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fromUnit,
+            this.toUnit,
+            this.unitHistory,
+            this.Column1,
+            this.FromPosition,
+            this.toPosition,
+            this.positionHistory});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(5, 32);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(699, 461);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // fromUnit
+            // 
+            this.fromUnit.FillWeight = 11.18012F;
+            this.fromUnit.Frozen = true;
+            this.fromUnit.HeaderText = "From";
+            this.fromUnit.MaxInputLength = 100;
+            this.fromUnit.MinimumWidth = 6;
+            this.fromUnit.Name = "fromUnit";
+            this.fromUnit.Width = 90;
+            // 
+            // toUnit
+            // 
+            this.toUnit.FillWeight = 40.24844F;
+            this.toUnit.Frozen = true;
+            this.toUnit.HeaderText = "To";
+            this.toUnit.MinimumWidth = 6;
+            this.toUnit.Name = "toUnit";
+            this.toUnit.Width = 90;
+            // 
+            // unitHistory
+            // 
+            this.unitHistory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.unitHistory.FillWeight = 278.5714F;
+            this.unitHistory.Frozen = true;
+            this.unitHistory.HeaderText = "Unit";
+            this.unitHistory.MinimumWidth = 6;
+            this.unitHistory.Name = "unitHistory";
+            this.unitHistory.Width = 120;
+            // 
+            // Column1
+            // 
+            this.Column1.Frozen = true;
+            this.Column1.HeaderText = " ";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 6;
+            // 
+            // FromPosition
+            // 
+            this.FromPosition.Frozen = true;
+            this.FromPosition.HeaderText = "From ";
+            this.FromPosition.MinimumWidth = 6;
+            this.FromPosition.Name = "FromPosition";
+            this.FromPosition.Width = 90;
+            // 
+            // toPosition
+            // 
+            this.toPosition.Frozen = true;
+            this.toPosition.HeaderText = "To";
+            this.toPosition.MinimumWidth = 6;
+            this.toPosition.Name = "toPosition";
+            this.toPosition.Width = 90;
+            // 
+            // positionHistory
+            // 
+            this.positionHistory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.positionHistory.HeaderText = "Position";
+            this.positionHistory.MinimumWidth = 6;
+            this.positionHistory.Name = "positionHistory";
+            // 
             // panel1
             // 
             this.panel1.AutoSize = true;
@@ -1250,7 +1415,6 @@
             this.qualificationGroupBox.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
             this.panel21.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
@@ -1272,6 +1436,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.UnionGridView)).EndInit();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1361,7 +1530,6 @@
         private Panel qualificationGroupBox;
         private Panel panel22;
         private GroupBox groupBox10;
-        private TextBox exQualificationTB;
         private Panel panel21;
         private GroupBox groupBox7;
         private TextBox placeQualificationTB;
@@ -1376,5 +1544,19 @@
         private GroupBox groupBox5;
         private TextBox IDQualificationTB;
         private Label TitleListEmployee;
+        private TabPage tabPage5;
+        private GroupBox groupBox9;
+        private Panel panel13;
+        private Button button1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn fromUnit;
+        private DataGridViewTextBoxColumn toUnit;
+        private DataGridViewTextBoxColumn unitHistory;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn FromPosition;
+        private DataGridViewTextBoxColumn toPosition;
+        private DataGridViewTextBoxColumn positionHistory;
+        private Button removeQualification;
+        private ComboBox exQualificationBox;
     }
 }

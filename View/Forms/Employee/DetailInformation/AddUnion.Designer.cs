@@ -227,11 +227,6 @@
             // 
             this.unionJoinBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.unionJoinBox.FormattingEnabled = true;
-            this.unionJoinBox.Items.AddRange(new object[] {
-            "Đoàn thanh niên cộng sản Việt Name",
-            "Hội chị em phụ nữ Việt Name",
-            "Đảng",
-            "4"});
             this.unionJoinBox.Location = new System.Drawing.Point(3, 23);
             this.unionJoinBox.Name = "unionJoinBox";
             this.unionJoinBox.Size = new System.Drawing.Size(764, 28);

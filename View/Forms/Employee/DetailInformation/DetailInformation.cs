@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 StartDate.Enabled = true;
                 MaleBtn.Enabled = true;
                 FemaleBtn.Enabled =true;
+                ImagePicture.Enabled = true;
             } else
             {
                 NameText.Enabled = false;
@@ -49,6 +51,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 StartDate.Enabled = false;
                 MaleBtn.Enabled = false;
                 FemaleBtn.Enabled = false;
+                ImagePicture.Enabled = false;
             }           
                 
         }
@@ -60,7 +63,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 nameQualificationTB.Enabled = true;
                 dateQualification.Enabled = true;
                 placeQualificationTB.Enabled = true;
-                exQualificationTB.Enabled = true;                  
+                exQualificationBox.Enabled = true;
             }
             else
             {
@@ -68,8 +71,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 nameQualificationTB.Enabled = false;
                 dateQualification.Enabled = false;
                 placeQualificationTB.Enabled = false;
-                exQualificationTB.Enabled = false;
-
+                exQualificationBox.Enabled = false;              
             }
         }
       
@@ -88,7 +90,10 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             EthnicText.Text = employee.Ethnic;
             IdentityText.Text = employee.IdentityCardNumber;
             CoefficientAllowanceText.Text = employee.CoefficientAllowance.ToString();
-           
+        
+            ImagePicture.Image = Image.FromStream(new MemoryStream(employee.Image));
+            ImagePicture.SizeMode = PictureBoxSizeMode.StretchImage;
+          
             if (employee.Gender == Gender.Male)
             {
                 MaleBtn.Checked = true;
@@ -102,6 +107,8 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
             //get family info
             getFamilyInfo();
+
+            //get quailifcation info
 
         }
 
@@ -118,12 +125,12 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         private void getQualificationInfo()
         {
             this.QualificationListView.Rows.Clear();
-            RepositoryFamily repoFamily = new RepositoryFamily();
-            List<Model.Family> list = repoFamily.GetFamiliesByEmployee(idEmployee);
-            foreach (Model.Family famili in list)
-            {
-                FamilyGridView.Rows.Add(famili.Id, famili.Name, famili.DateOfBirth, famili.Occupation, famili.RelativeType.ToString());
-            }
+            RepositoryQualification repoQualification = new RepositoryQualification();
+            List<Model.Qualification> list = repoQualification.GetQualifications(idEmployee);
+           // foreach (Model.Family qualifi in list)
+          //  {
+            //    QualificationListView.Rows.Add(qualifi.Id, qualifi.Name, qualifi.DateOfBirth, famili.Occupation, famili.RelativeType.ToString());
+           // }
         }
         private void getUnionInfo()
         {
@@ -164,12 +171,10 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                     else gender = Gender.Female;
                     DateOnly dateOfBirth = DateOnly.FromDateTime(DateOfBirth.Value);
                     DateOnly startDate = DateOnly.FromDateTime(StartDate.Value);
-                    //MessageBox.Show(name + " " + gender + " " + dateOfBirth + " " + ethnic + " " + address + " " + startDate + " " + identity + " " + coefficientAllowance);
-
-
+                   
                     var imageConverter = new ImageConverter();
                     // cap nhat employee
-                    var result = RepoEmployee.InsertEmployee(new EmployeeInput()
+                    var result = RepoEmployee.FixEmployee(idEmployee, new EmployeeInput()
                     {
                         Name = NameText.Text,
                         Gender = gender,
@@ -184,7 +189,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
                     if (result.Success)
                     {
-                        MessageBox.Show("Insert Employee success");
+                        MessageBox.Show("Insert Employee success" );                      
                         enableInfo(false);
                         FixBtn.Text = "Fix";
                     }
@@ -221,7 +226,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void addQualificationBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddQualification(this.mng, "0"), sender);
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddQualification(this.mng, "0", idEmployee), sender);
         }
 
         private void addUnion_Click(object sender, EventArgs e)
@@ -278,6 +283,25 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
            
         }
-       
+
+        private void ImagePicture_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = "Open Image";
+                dlg.Filter = "Image files (*.bmp;*.jpg;*.jpeg;*.png)|*.bmo;*.jpg;*.jpeg;*.png";
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    ImagePicture.Image = Image.FromFile(dlg.FileName);
+                    ImagePicture.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
