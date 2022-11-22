@@ -94,7 +94,7 @@ namespace Salary_management.View.Forms.Unit
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            var repo = new RepositoryEmployee();
+            var repo = new RepositoryUnitHistory();
             string NameAndId = EmployeeComboBox.Text;
             string id = NameAndId.Trim().Split(":")[0];
             DateOnly startDay = DateOnly.FromDateTime(StartDateInput.Value);
