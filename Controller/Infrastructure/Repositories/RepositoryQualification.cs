@@ -108,7 +108,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			};
 		}
 
-		private Models.QualificationAllowanceTimeline MapToTimelineModel(QualificationAllowanceHistory qah)
+		private static Models.QualificationAllowanceTimeline MapToTimelineModel(QualificationAllowanceHistory qah)
 		{
 			return new Models.QualificationAllowanceTimeline
 			{
@@ -117,7 +117,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				Allowance = qah.Allowance
 			};
 		}
-		private Qualification MapToEntity(InputQualification input)
+		private static Qualification MapToEntity(InputQualification input)
 		{
 			return new Qualification
 			{
@@ -126,7 +126,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			};
 		}
 
-		private Models.Qualification MapToModel(Qualification entity)
+		private static Models.Qualification MapToModel(Qualification entity)
 		{
 			return new Models.Qualification
 			{

@@ -27,7 +27,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new Result<Models.Expertise> { Success = true, Payload = MapToModel(expertise)};
 		}
 
-		private Models.Expertise MapToModel(Expertise expertise)
+		private static Models.Expertise MapToModel(Expertise expertise)
 		{
 			return new Models.Expertise
 			{
