@@ -61,7 +61,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			Context.SaveChanges();
 		}
 
-		private Models.EmployeeQualification MapToModel(EmployeeQualification eq)
+		private static Models.EmployeeQualification MapToModel(EmployeeQualification eq)
 		{
 			return new Models.EmployeeQualification
 			{
