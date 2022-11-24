@@ -86,11 +86,12 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.QualificationListView = new System.Windows.Forms.DataGridView();
             this.IdQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameCallQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IssueDateQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlaceOfIssueQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qualificationGroupBox = new System.Windows.Forms.Panel();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.scoreQualificationText = new System.Windows.Forms.TextBox();
             this.panel22 = new System.Windows.Forms.Panel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.exQualificationBox = new System.Windows.Forms.ComboBox();
@@ -98,10 +99,8 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.placeQualificationTB = new System.Windows.Forms.TextBox();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.namecallQualificationTB = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.nameQualificationTB = new System.Windows.Forms.TextBox();
+            this.nameQualificationTB = new System.Windows.Forms.ComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dateQualification = new System.Windows.Forms.DateTimePicker();
             this.panel19 = new System.Windows.Forms.Panel();
@@ -165,12 +164,12 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QualificationListView)).BeginInit();
             this.qualificationGroupBox.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.panel22.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.panel21.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel20.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -775,17 +774,17 @@
             this.QualificationListView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.QualificationListView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdQualification,
-            this.NameQualification,
-            this.NameCallQualification,
+            this.Qualification,
             this.IssueDateQualification,
             this.PlaceOfIssueQualification});
             this.QualificationListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.QualificationListView.Location = new System.Drawing.Point(3, 284);
+            this.QualificationListView.Location = new System.Drawing.Point(3, 330);
             this.QualificationListView.Name = "QualificationListView";
             this.QualificationListView.RowHeadersWidth = 51;
             this.QualificationListView.RowTemplate.Height = 29;
-            this.QualificationListView.Size = new System.Drawing.Size(709, 171);
+            this.QualificationListView.Size = new System.Drawing.Size(709, 125);
             this.QualificationListView.TabIndex = 3;
+            this.QualificationListView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QualificationListView_CellContentClick);
             // 
             // IdQualification
             // 
@@ -796,19 +795,12 @@
             this.IdQualification.ReadOnly = true;
             this.IdQualification.Width = 80;
             // 
-            // NameQualification
+            // Qualification
             // 
-            this.NameQualification.HeaderText = "Name";
-            this.NameQualification.MinimumWidth = 6;
-            this.NameQualification.Name = "NameQualification";
-            this.NameQualification.Width = 125;
-            // 
-            // NameCallQualification
-            // 
-            this.NameCallQualification.HeaderText = "Name call";
-            this.NameCallQualification.MinimumWidth = 6;
-            this.NameCallQualification.Name = "NameCallQualification";
-            this.NameCallQualification.Width = 130;
+            this.Qualification.HeaderText = "Qualification";
+            this.Qualification.MinimumWidth = 6;
+            this.Qualification.Name = "Qualification";
+            this.Qualification.Width = 225;
             // 
             // IssueDateQualification
             // 
@@ -827,6 +819,7 @@
             // qualificationGroupBox
             // 
             this.qualificationGroupBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.qualificationGroupBox.Controls.Add(this.groupBox11);
             this.qualificationGroupBox.Controls.Add(this.panel22);
             this.qualificationGroupBox.Controls.Add(this.panel21);
             this.qualificationGroupBox.Controls.Add(this.panel20);
@@ -835,8 +828,28 @@
             this.qualificationGroupBox.Location = new System.Drawing.Point(3, 3);
             this.qualificationGroupBox.Name = "qualificationGroupBox";
             this.qualificationGroupBox.Padding = new System.Windows.Forms.Padding(10);
-            this.qualificationGroupBox.Size = new System.Drawing.Size(709, 281);
+            this.qualificationGroupBox.Size = new System.Drawing.Size(709, 327);
             this.qualificationGroupBox.TabIndex = 12;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.scoreQualificationText);
+            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox11.Location = new System.Drawing.Point(10, 234);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(685, 54);
+            this.groupBox11.TabIndex = 10;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Score";
+            // 
+            // scoreQualificationText
+            // 
+            this.scoreQualificationText.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.scoreQualificationText.Location = new System.Drawing.Point(3, 24);
+            this.scoreQualificationText.Name = "scoreQualificationText";
+            this.scoreQualificationText.Size = new System.Drawing.Size(679, 27);
+            this.scoreQualificationText.TabIndex = 0;
             // 
             // panel22
             // 
@@ -905,7 +918,6 @@
             // 
             // panel20
             // 
-            this.panel20.Controls.Add(this.groupBox4);
             this.panel20.Controls.Add(this.groupBox3);
             this.panel20.Controls.Add(this.groupBox8);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
@@ -914,53 +926,34 @@
             this.panel20.Size = new System.Drawing.Size(685, 61);
             this.panel20.TabIndex = 7;
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.namecallQualificationTB);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox4.Location = new System.Drawing.Point(171, 0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(248, 61);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Name Call";
-            // 
-            // namecallQualificationTB
-            // 
-            this.namecallQualificationTB.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.namecallQualificationTB.Location = new System.Drawing.Point(3, 31);
-            this.namecallQualificationTB.Name = "namecallQualificationTB";
-            this.namecallQualificationTB.Size = new System.Drawing.Size(242, 27);
-            this.namecallQualificationTB.TabIndex = 0;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.nameQualificationTB);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(171, 61);
+            this.groupBox3.Size = new System.Drawing.Size(420, 61);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Name";
+            this.groupBox3.Text = "Qualification";
             // 
             // nameQualificationTB
             // 
-            this.nameQualificationTB.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.nameQualificationTB.Location = new System.Drawing.Point(3, 31);
+            this.nameQualificationTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameQualificationTB.FormattingEnabled = true;
+            this.nameQualificationTB.Location = new System.Drawing.Point(3, 23);
             this.nameQualificationTB.Name = "nameQualificationTB";
-            this.nameQualificationTB.Size = new System.Drawing.Size(165, 27);
+            this.nameQualificationTB.Size = new System.Drawing.Size(414, 28);
             this.nameQualificationTB.TabIndex = 0;
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.dateQualification);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox8.Location = new System.Drawing.Point(419, 0);
+            this.groupBox8.Location = new System.Drawing.Point(420, 0);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(266, 61);
+            this.groupBox8.Size = new System.Drawing.Size(265, 61);
             this.groupBox8.TabIndex = 5;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Issue Date";
@@ -971,7 +964,7 @@
             this.dateQualification.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dateQualification.Location = new System.Drawing.Point(3, 31);
             this.dateQualification.Name = "dateQualification";
-            this.dateQualification.Size = new System.Drawing.Size(260, 27);
+            this.dateQualification.Size = new System.Drawing.Size(259, 27);
             this.dateQualification.TabIndex = 0;
             // 
             // panel19
@@ -1413,16 +1406,15 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QualificationListView)).EndInit();
             this.qualificationGroupBox.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.panel22.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.panel20.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
@@ -1516,11 +1508,6 @@
         private DataGridViewTextBoxColumn BirthFamily;
         private DataGridViewTextBoxColumn OcupationFamily;
         private DataGridViewTextBoxColumn RelativeFamily;
-        private DataGridViewTextBoxColumn IdQualification;
-        private DataGridViewTextBoxColumn NameQualification;
-        private DataGridViewTextBoxColumn NameCallQualification;
-        private DataGridViewTextBoxColumn IssueDateQualification;
-        private DataGridViewTextBoxColumn PlaceOfIssueQualification;
         private DataGridViewTextBoxColumn IDUnion;
         private DataGridViewTextBoxColumn NameUnion;
         private DataGridViewTextBoxColumn SartDateUnion;
@@ -1534,10 +1521,7 @@
         private GroupBox groupBox7;
         private TextBox placeQualificationTB;
         private Panel panel20;
-        private GroupBox groupBox4;
-        private TextBox namecallQualificationTB;
         private GroupBox groupBox3;
-        private TextBox nameQualificationTB;
         private GroupBox groupBox8;
         private DateTimePicker dateQualification;
         private Panel panel19;
@@ -1558,5 +1542,12 @@
         private DataGridViewTextBoxColumn positionHistory;
         private Button removeQualification;
         private ComboBox exQualificationBox;
+        private GroupBox groupBox11;
+        private TextBox scoreQualificationText;
+        private ComboBox nameQualificationTB;
+        private DataGridViewTextBoxColumn IdQualification;
+        private DataGridViewTextBoxColumn Qualification;
+        private DataGridViewTextBoxColumn IssueDateQualification;
+        private DataGridViewTextBoxColumn PlaceOfIssueQualification;
     }
 }

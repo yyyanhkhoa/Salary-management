@@ -58,20 +58,20 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         void enableQualification(bool check)
         {
             if (check == true)
-            {
-                namecallQualificationTB.Enabled = true;
+            {                
                 nameQualificationTB.Enabled = true;
                 dateQualification.Enabled = true;
                 placeQualificationTB.Enabled = true;
                 exQualificationBox.Enabled = true;
+                scoreQualificationText.Enabled = true;
             }
             else
-            {
-                namecallQualificationTB.Enabled = false;
+            {             
                 nameQualificationTB.Enabled = false;
                 dateQualification.Enabled = false;
                 placeQualificationTB.Enabled = false;
-                exQualificationBox.Enabled = false;              
+                exQualificationBox.Enabled = false;
+                scoreQualificationText.Enabled = false;
             }
         }
       
@@ -109,6 +109,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             getFamilyInfo();
 
             //get quailifcation info
+            getQualificationInfo();
 
         }
 
@@ -125,22 +126,29 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         private void getQualificationInfo()
         {
             this.QualificationListView.Rows.Clear();
-            RepositoryQualification repoQualification = new RepositoryQualification();
-            List<Model.Qualification> list = repoQualification.GetQualifications(idEmployee);
-           // foreach (Model.Family qualifi in list)
-          //  {
-            //    QualificationListView.Rows.Add(qualifi.Id, qualifi.Name, qualifi.DateOfBirth, famili.Occupation, famili.RelativeType.ToString());
-           // }
+            RepositoryEmployee repo = new RepositoryEmployee();
+            if (repo.GetEmployeeQualifications(idEmployee).Success == false)
+            {
+                List<Model.EmployeeQualification> list = repo.GetEmployeeQualifications(idEmployee).Payload;
+                foreach (Model.EmployeeQualification qualifi in list)
+                {
+                    QualificationListView.Rows.Add(qualifi.Id, qualifi.QualificationName, qualifi.IssueDate, qualifi.PlaceOfIssue);
+                }
+            }
+          
         }
         private void getUnionInfo()
         {
-           // this.UnionGridView.Rows.Clear();
-           // RepositoryUnion repoUnion = new RepositoryUnion();
-           // List<Model.Union> list = repoUnion.GetFamiliesByEmployee(idEmployee);
-          //  foreach (Model.Union union in list)
-            //{
-          //      UnionGridView.Rows.Add(famili.Id, famili.Name, famili.DateOfBirth, famili.Occupation, famili.RelativeType.ToString());
-           // }
+            this.UnionGridView.Rows.Clear();
+            RepositoryEmployee repo = new RepositoryEmployee();
+            if (repo.GetEmployeeUnionHistory(idEmployee).Success == false)
+            {
+                List<Model.UnionHistory> list = repo.GetEmployeeUnionHistory(idEmployee).Payload;
+                foreach (Model.UnionHistory union in list)
+                {
+                    UnionGridView.Rows.Add(union.Id, union.UnionName, union.StartDate, union.EndDate);
+                }
+            }
         }
         private void BackBtn_Click(object sender, EventArgs e)
         {
@@ -208,11 +216,52 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
             mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, 0, idEmployee), sender);
         }
+        private void addQualificationBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddQualification(this.mng, "0", idEmployee), sender);
+        }
+        private void addUnion_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng, "0", idEmployee), sender);
+        }
 
         private void FixFamilyBtn_Click(object sender, EventArgs e)
         {
             string idFamily = FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value.ToString();           
             mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, Int16.Parse(idFamily), idEmployee), sender);
+        }
+        private void fixQualificationBtn_Click(object sender, EventArgs e)
+        {
+            if (fixQualificationBtn.Text == "Fix")
+            {
+                fixQualificationBtn.Text = "Save";
+                enableQualification(true);
+            }
+            else
+            {   // fix Qualification
+                string idQualification = (QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells[0].Value).ToString();
+                var repo = new RepositoryEmployeeQualification();
+                var result = repo.FixEmployeeQualification(Int16.Parse(idQualification), new InputEmployeeQualification()
+                {
+                    //Name = NameText.Text,
+                    //DateOfBirth = DateOnly.FromDateTime(DateOfBirth.Value),
+                   // Occupation = occupationText.Text,
+                   // RelativeType = relative,
+                    //EmployeeId = idEmploye,
+                });
+
+                if (result.Success)
+                {
+                    MessageBox.Show("Update Family success");
+                    
+                }
+                else
+                {
+                    MessageBox.Show(result.ErrorMessage);
+                }
+                fixQualificationBtn.Text = "Fix";
+                enableQualification(false);
+            }
         }
 
         private void RemoveFamilyBtn_Click(object sender, EventArgs e)
@@ -223,17 +272,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             repo.DeleteFamily(Int16.Parse(idFamily));
             getFamilyInfo();
         }
-
-        private void addQualificationBtn_Click(object sender, EventArgs e)
-        {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddQualification(this.mng, "0", idEmployee), sender);
-        }
-
-        private void addUnion_Click(object sender, EventArgs e)
-        {
-            mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng, "0", idEmployee), sender);
-
-        }
+  
         private void fixUnion_Click(object sender, EventArgs e)
         {
             string idUnion = UnionGridView.Rows[UnionGridView.CurrentRow.Index].Cells[0].Value.ToString();
@@ -244,21 +283,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
 
         }
-
-        private void fixQualificationBtn_Click(object sender, EventArgs e)
-        {
-            if (fixQualificationBtn.Text == "Fix")
-            {
-                fixQualificationBtn.Text = "Save";
-                enableQualification(true);
-            }
-            else
-            {
-                fixQualificationBtn.Text = "Fix";
-                enableQualification(false);
-            }
-        }
-
+          
         private void backQualificationBtn_Click(object sender, EventArgs e)
         {
             mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
@@ -301,6 +326,13 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void QualificationListView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string idQualification = (QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells[0].Value).ToString();
+            var repo = new RepositoryFamily();
 
         }
     }
