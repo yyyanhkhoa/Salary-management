@@ -45,9 +45,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.unionJoinBox = new System.Windows.Forms.ComboBox();
             this.AddUnionGroupBox = new System.Windows.Forms.GroupBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.processText = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.NameGroupBox.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -58,8 +55,6 @@
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.AddUnionGroupBox.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // BackBtn
@@ -231,12 +226,12 @@
             this.unionJoinBox.Name = "unionJoinBox";
             this.unionJoinBox.Size = new System.Drawing.Size(764, 28);
             this.unionJoinBox.TabIndex = 0;
+            this.unionJoinBox.Text = "--Select--";
             // 
             // AddUnionGroupBox
             // 
             this.AddUnionGroupBox.AutoSize = true;
             this.AddUnionGroupBox.BackColor = System.Drawing.Color.White;
-            this.AddUnionGroupBox.Controls.Add(this.panel4);
             this.AddUnionGroupBox.Controls.Add(this.panel1);
             this.AddUnionGroupBox.Controls.Add(this.panel5);
             this.AddUnionGroupBox.Controls.Add(this.panel2);
@@ -250,35 +245,6 @@
             this.AddUnionGroupBox.TabIndex = 6;
             this.AddUnionGroupBox.TabStop = false;
             this.AddUnionGroupBox.Text = "Add Union Form";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.groupBox4);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(5, 276);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(790, 123);
-            this.panel4.TabIndex = 11;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.processText);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(0, 0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(790, 123);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Process";
-            // 
-            // processText
-            // 
-            this.processText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.processText.Location = new System.Drawing.Point(3, 30);
-            this.processText.Multiline = true;
-            this.processText.Name = "processText";
-            this.processText.Size = new System.Drawing.Size(784, 90);
-            this.processText.TabIndex = 0;
             // 
             // AddUnion
             // 
@@ -301,9 +267,6 @@
             this.panel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.AddUnionGroupBox.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,12 +286,9 @@
         private Panel panel1;
         private GroupBox AddUnionGroupBox;
         private GroupBox groupBox3;
-        private Panel panel4;
         private GroupBox groupBox2;
         private CheckBox checkBox1;
         private DateTimePicker endDay;
-        private GroupBox groupBox4;
-        private TextBox processText;
         private Panel panel6;
         private ComboBox unionJoinBox;
     }
