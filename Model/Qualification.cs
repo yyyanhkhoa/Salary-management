@@ -11,7 +11,8 @@ namespace Salary_management.Model
 	{
 		public int Id { get; set; }
 		public string Name { get; set; } = null!;
-		public int ExpertiseId { get; set; }
+        public string NameCall { get; set; } = null!;
+        public int ExpertiseId { get; set; }
 		public Expertise Expertise { get; set; } = null!;
 	}
 }

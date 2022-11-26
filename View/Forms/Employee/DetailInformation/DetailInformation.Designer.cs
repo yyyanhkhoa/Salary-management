@@ -31,6 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GenderGroupBox = new System.Windows.Forms.GroupBox();
             this.MaleBtn = new System.Windows.Forms.RadioButton();
@@ -86,11 +90,13 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.QualificationListView = new System.Windows.Forms.DataGridView();
             this.IdQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameCallQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IssueDateQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlaceOfIssueQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qualificationGroupBox = new System.Windows.Forms.Panel();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.scoreQualificationText = new System.Windows.Forms.TextBox();
             this.panel22 = new System.Windows.Forms.Panel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.exQualificationBox = new System.Windows.Forms.ComboBox();
@@ -98,10 +104,8 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.placeQualificationTB = new System.Windows.Forms.TextBox();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.namecallQualificationTB = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.nameQualificationTB = new System.Windows.Forms.TextBox();
+            this.nameQualificationTB = new System.Windows.Forms.ComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dateQualification = new System.Windows.Forms.DateTimePicker();
             this.panel19 = new System.Windows.Forms.Panel();
@@ -128,16 +132,16 @@
             this.addUnion = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.fromPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PositionHistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.fromUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitHistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FromPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.positionHistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.GenderGroupBox.SuspendLayout();
@@ -165,12 +169,12 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QualificationListView)).BeginInit();
             this.qualificationGroupBox.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.panel22.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.panel21.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel20.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -183,8 +187,9 @@
             this.panel15.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel13.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -388,11 +393,20 @@
             this.BirthFamily,
             this.OcupationFamily,
             this.RelativeFamily});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FamilyGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.FamilyGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FamilyGridView.Location = new System.Drawing.Point(5, 106);
             this.FamilyGridView.Name = "FamilyGridView";
             this.FamilyGridView.RowHeadersWidth = 51;
             this.FamilyGridView.RowTemplate.Height = 29;
+            this.FamilyGridView.RowTemplate.ReadOnly = true;
             this.FamilyGridView.Size = new System.Drawing.Size(699, 387);
             this.FamilyGridView.TabIndex = 17;
             this.FamilyGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FamilyGridView_CellContentClick);
@@ -764,28 +778,29 @@
             // 
             // QualificationListView
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.QualificationListView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.QualificationListView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.QualificationListView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.QualificationListView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdQualification,
-            this.NameQualification,
-            this.NameCallQualification,
+            this.Qualification,
             this.IssueDateQualification,
-            this.PlaceOfIssueQualification});
+            this.PlaceOfIssueQualification,
+            this.dataGridViewTextBoxColumn1});
             this.QualificationListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.QualificationListView.Location = new System.Drawing.Point(3, 284);
+            this.QualificationListView.Location = new System.Drawing.Point(3, 330);
             this.QualificationListView.Name = "QualificationListView";
             this.QualificationListView.RowHeadersWidth = 51;
             this.QualificationListView.RowTemplate.Height = 29;
-            this.QualificationListView.Size = new System.Drawing.Size(709, 171);
+            this.QualificationListView.Size = new System.Drawing.Size(709, 125);
             this.QualificationListView.TabIndex = 3;
+            this.QualificationListView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QualificationListView_CellContentClick);
             // 
             // IdQualification
             // 
@@ -796,19 +811,12 @@
             this.IdQualification.ReadOnly = true;
             this.IdQualification.Width = 80;
             // 
-            // NameQualification
+            // Qualification
             // 
-            this.NameQualification.HeaderText = "Name";
-            this.NameQualification.MinimumWidth = 6;
-            this.NameQualification.Name = "NameQualification";
-            this.NameQualification.Width = 125;
-            // 
-            // NameCallQualification
-            // 
-            this.NameCallQualification.HeaderText = "Name call";
-            this.NameCallQualification.MinimumWidth = 6;
-            this.NameCallQualification.Name = "NameCallQualification";
-            this.NameCallQualification.Width = 130;
+            this.Qualification.HeaderText = "Qualification";
+            this.Qualification.MinimumWidth = 6;
+            this.Qualification.Name = "Qualification";
+            this.Qualification.Width = 225;
             // 
             // IssueDateQualification
             // 
@@ -824,9 +832,18 @@
             this.PlaceOfIssueQualification.MinimumWidth = 6;
             this.PlaceOfIssueQualification.Name = "PlaceOfIssueQualification";
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "idQualification";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
             // qualificationGroupBox
             // 
             this.qualificationGroupBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.qualificationGroupBox.Controls.Add(this.groupBox11);
             this.qualificationGroupBox.Controls.Add(this.panel22);
             this.qualificationGroupBox.Controls.Add(this.panel21);
             this.qualificationGroupBox.Controls.Add(this.panel20);
@@ -835,8 +852,28 @@
             this.qualificationGroupBox.Location = new System.Drawing.Point(3, 3);
             this.qualificationGroupBox.Name = "qualificationGroupBox";
             this.qualificationGroupBox.Padding = new System.Windows.Forms.Padding(10);
-            this.qualificationGroupBox.Size = new System.Drawing.Size(709, 281);
+            this.qualificationGroupBox.Size = new System.Drawing.Size(709, 327);
             this.qualificationGroupBox.TabIndex = 12;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.scoreQualificationText);
+            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox11.Location = new System.Drawing.Point(10, 234);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(685, 54);
+            this.groupBox11.TabIndex = 10;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Score";
+            // 
+            // scoreQualificationText
+            // 
+            this.scoreQualificationText.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.scoreQualificationText.Location = new System.Drawing.Point(3, 24);
+            this.scoreQualificationText.Name = "scoreQualificationText";
+            this.scoreQualificationText.Size = new System.Drawing.Size(679, 27);
+            this.scoreQualificationText.TabIndex = 0;
             // 
             // panel22
             // 
@@ -905,7 +942,6 @@
             // 
             // panel20
             // 
-            this.panel20.Controls.Add(this.groupBox4);
             this.panel20.Controls.Add(this.groupBox3);
             this.panel20.Controls.Add(this.groupBox8);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
@@ -914,53 +950,34 @@
             this.panel20.Size = new System.Drawing.Size(685, 61);
             this.panel20.TabIndex = 7;
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.namecallQualificationTB);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox4.Location = new System.Drawing.Point(171, 0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(248, 61);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Name Call";
-            // 
-            // namecallQualificationTB
-            // 
-            this.namecallQualificationTB.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.namecallQualificationTB.Location = new System.Drawing.Point(3, 31);
-            this.namecallQualificationTB.Name = "namecallQualificationTB";
-            this.namecallQualificationTB.Size = new System.Drawing.Size(242, 27);
-            this.namecallQualificationTB.TabIndex = 0;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.nameQualificationTB);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(171, 61);
+            this.groupBox3.Size = new System.Drawing.Size(420, 61);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Name";
+            this.groupBox3.Text = "Qualification";
             // 
             // nameQualificationTB
             // 
-            this.nameQualificationTB.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.nameQualificationTB.Location = new System.Drawing.Point(3, 31);
+            this.nameQualificationTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameQualificationTB.FormattingEnabled = true;
+            this.nameQualificationTB.Location = new System.Drawing.Point(3, 23);
             this.nameQualificationTB.Name = "nameQualificationTB";
-            this.nameQualificationTB.Size = new System.Drawing.Size(165, 27);
+            this.nameQualificationTB.Size = new System.Drawing.Size(414, 28);
             this.nameQualificationTB.TabIndex = 0;
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.dateQualification);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox8.Location = new System.Drawing.Point(419, 0);
+            this.groupBox8.Location = new System.Drawing.Point(420, 0);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(266, 61);
+            this.groupBox8.Size = new System.Drawing.Size(265, 61);
             this.groupBox8.TabIndex = 5;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Issue Date";
@@ -968,10 +985,10 @@
             // dateQualification
             // 
             this.dateQualification.CustomFormat = "";
-            this.dateQualification.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dateQualification.Location = new System.Drawing.Point(3, 31);
+            this.dateQualification.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dateQualification.Location = new System.Drawing.Point(3, 23);
             this.dateQualification.Name = "dateQualification";
-            this.dateQualification.Size = new System.Drawing.Size(260, 27);
+            this.dateQualification.Size = new System.Drawing.Size(259, 27);
             this.dateQualification.TabIndex = 0;
             // 
             // panel19
@@ -1125,20 +1142,28 @@
             // 
             // UnionGridView
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UnionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UnionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.UnionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UnionGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDUnion,
             this.NameUnion,
             this.SartDateUnion,
             this.EndDateUnion});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.UnionGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.UnionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnionGridView.Location = new System.Drawing.Point(5, 106);
             this.UnionGridView.Name = "UnionGridView";
@@ -1244,8 +1269,9 @@
             // 
             this.groupBox9.AutoSize = true;
             this.groupBox9.BackColor = System.Drawing.Color.White;
-            this.groupBox9.Controls.Add(this.panel13);
+            this.groupBox9.Controls.Add(this.dataGridView2);
             this.groupBox9.Controls.Add(this.dataGridView1);
+            this.groupBox9.Controls.Add(this.panel13);
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox9.Location = new System.Drawing.Point(3, 3);
@@ -1256,6 +1282,119 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "History form";
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fromPosition,
+            this.toPosition,
+            this.PositionHistory});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(362, 32);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 29;
+            this.dataGridView2.Size = new System.Drawing.Size(342, 415);
+            this.dataGridView2.TabIndex = 21;
+            this.dataGridView2.Resize += new System.EventHandler(this.dataGridView2_Resize);
+            // 
+            // fromPosition
+            // 
+            this.fromPosition.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.fromPosition.FillWeight = 11.18012F;
+            this.fromPosition.HeaderText = "From";
+            this.fromPosition.MaxInputLength = 100;
+            this.fromPosition.MinimumWidth = 6;
+            this.fromPosition.Name = "fromPosition";
+            this.fromPosition.ReadOnly = true;
+            this.fromPosition.Width = 90;
+            // 
+            // toPosition
+            // 
+            this.toPosition.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.toPosition.FillWeight = 40.24844F;
+            this.toPosition.HeaderText = "To";
+            this.toPosition.MinimumWidth = 6;
+            this.toPosition.Name = "toPosition";
+            this.toPosition.ReadOnly = true;
+            this.toPosition.Width = 90;
+            // 
+            // PositionHistory
+            // 
+            this.PositionHistory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PositionHistory.FillWeight = 278.5714F;
+            this.PositionHistory.HeaderText = "Position";
+            this.PositionHistory.MinimumWidth = 6;
+            this.PositionHistory.Name = "PositionHistory";
+            this.PositionHistory.ReadOnly = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fromUnit,
+            this.toUnit,
+            this.unitHistory});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dataGridView1.Location = new System.Drawing.Point(5, 32);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(357, 415);
+            this.dataGridView1.TabIndex = 20;
+            // 
+            // fromUnit
+            // 
+            this.fromUnit.FillWeight = 11.18012F;
+            this.fromUnit.Frozen = true;
+            this.fromUnit.HeaderText = "From";
+            this.fromUnit.MaxInputLength = 100;
+            this.fromUnit.MinimumWidth = 6;
+            this.fromUnit.Name = "fromUnit";
+            this.fromUnit.ReadOnly = true;
+            this.fromUnit.Width = 90;
+            // 
+            // toUnit
+            // 
+            this.toUnit.FillWeight = 40.24844F;
+            this.toUnit.Frozen = true;
+            this.toUnit.HeaderText = "To";
+            this.toUnit.MinimumWidth = 6;
+            this.toUnit.Name = "toUnit";
+            this.toUnit.ReadOnly = true;
+            this.toUnit.Width = 90;
+            // 
+            // unitHistory
+            // 
+            this.unitHistory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unitHistory.FillWeight = 278.5714F;
+            this.unitHistory.HeaderText = "Unit";
+            this.unitHistory.MinimumWidth = 6;
+            this.unitHistory.Name = "unitHistory";
+            this.unitHistory.ReadOnly = true;
+            // 
             // panel13
             // 
             this.panel13.Controls.Add(this.button1);
@@ -1264,7 +1403,7 @@
             this.panel13.Name = "panel13";
             this.panel13.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.panel13.Size = new System.Drawing.Size(699, 46);
-            this.panel13.TabIndex = 18;
+            this.panel13.TabIndex = 19;
             // 
             // button1
             // 
@@ -1275,85 +1414,6 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "< Back";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fromUnit,
-            this.toUnit,
-            this.unitHistory,
-            this.Column1,
-            this.FromPosition,
-            this.toPosition,
-            this.positionHistory});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 32);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(699, 461);
-            this.dataGridView1.TabIndex = 17;
-            // 
-            // fromUnit
-            // 
-            this.fromUnit.FillWeight = 11.18012F;
-            this.fromUnit.Frozen = true;
-            this.fromUnit.HeaderText = "From";
-            this.fromUnit.MaxInputLength = 100;
-            this.fromUnit.MinimumWidth = 6;
-            this.fromUnit.Name = "fromUnit";
-            this.fromUnit.Width = 90;
-            // 
-            // toUnit
-            // 
-            this.toUnit.FillWeight = 40.24844F;
-            this.toUnit.Frozen = true;
-            this.toUnit.HeaderText = "To";
-            this.toUnit.MinimumWidth = 6;
-            this.toUnit.Name = "toUnit";
-            this.toUnit.Width = 90;
-            // 
-            // unitHistory
-            // 
-            this.unitHistory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.unitHistory.FillWeight = 278.5714F;
-            this.unitHistory.Frozen = true;
-            this.unitHistory.HeaderText = "Unit";
-            this.unitHistory.MinimumWidth = 6;
-            this.unitHistory.Name = "unitHistory";
-            this.unitHistory.Width = 120;
-            // 
-            // Column1
-            // 
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = " ";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 6;
-            // 
-            // FromPosition
-            // 
-            this.FromPosition.Frozen = true;
-            this.FromPosition.HeaderText = "From ";
-            this.FromPosition.MinimumWidth = 6;
-            this.FromPosition.Name = "FromPosition";
-            this.FromPosition.Width = 90;
-            // 
-            // toPosition
-            // 
-            this.toPosition.Frozen = true;
-            this.toPosition.HeaderText = "To";
-            this.toPosition.MinimumWidth = 6;
-            this.toPosition.Name = "toPosition";
-            this.toPosition.Width = 90;
-            // 
-            // positionHistory
-            // 
-            this.positionHistory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.positionHistory.HeaderText = "Position";
-            this.positionHistory.MinimumWidth = 6;
-            this.positionHistory.Name = "positionHistory";
             // 
             // panel1
             // 
@@ -1413,16 +1473,15 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QualificationListView)).EndInit();
             this.qualificationGroupBox.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.panel22.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.panel20.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
@@ -1439,8 +1498,9 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.groupBox9.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel13.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1516,11 +1576,6 @@
         private DataGridViewTextBoxColumn BirthFamily;
         private DataGridViewTextBoxColumn OcupationFamily;
         private DataGridViewTextBoxColumn RelativeFamily;
-        private DataGridViewTextBoxColumn IdQualification;
-        private DataGridViewTextBoxColumn NameQualification;
-        private DataGridViewTextBoxColumn NameCallQualification;
-        private DataGridViewTextBoxColumn IssueDateQualification;
-        private DataGridViewTextBoxColumn PlaceOfIssueQualification;
         private DataGridViewTextBoxColumn IDUnion;
         private DataGridViewTextBoxColumn NameUnion;
         private DataGridViewTextBoxColumn SartDateUnion;
@@ -1534,10 +1589,7 @@
         private GroupBox groupBox7;
         private TextBox placeQualificationTB;
         private Panel panel20;
-        private GroupBox groupBox4;
-        private TextBox namecallQualificationTB;
         private GroupBox groupBox3;
-        private TextBox nameQualificationTB;
         private GroupBox groupBox8;
         private DateTimePicker dateQualification;
         private Panel panel19;
@@ -1546,17 +1598,25 @@
         private Label TitleListEmployee;
         private TabPage tabPage5;
         private GroupBox groupBox9;
+        private Button removeQualification;
+        private ComboBox exQualificationBox;
+        private GroupBox groupBox11;
+        private TextBox scoreQualificationText;
+        private ComboBox nameQualificationTB;
+        private DataGridViewTextBoxColumn IdQualification;
+        private DataGridViewTextBoxColumn Qualification;
+        private DataGridViewTextBoxColumn IssueDateQualification;
+        private DataGridViewTextBoxColumn PlaceOfIssueQualification;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridView dataGridView2;
+        private DataGridView dataGridView1;
         private Panel panel13;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn fromPosition;
+        private DataGridViewTextBoxColumn toPosition;
+        private DataGridViewTextBoxColumn PositionHistory;
         private DataGridViewTextBoxColumn fromUnit;
         private DataGridViewTextBoxColumn toUnit;
         private DataGridViewTextBoxColumn unitHistory;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn FromPosition;
-        private DataGridViewTextBoxColumn toPosition;
-        private DataGridViewTextBoxColumn positionHistory;
-        private Button removeQualification;
-        private ComboBox exQualificationBox;
     }
 }

@@ -104,7 +104,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                     if (result.Success)
                     {
                         MessageBox.Show("Insert Family success");
-                        mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, idEmploye), sender);
+                        mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, idEmploye, 1), sender);
                     }
                     else
                     {
