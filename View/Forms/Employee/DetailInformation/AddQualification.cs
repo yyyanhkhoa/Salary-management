@@ -32,8 +32,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             var listEX = repoEX.GetExpertises("");
             foreach (var ex in listEX)
             {
-                exBox.Items.Add(ex.Id + ":" + ex.Name);
-
+                exBox.Items.Add(ex.Id + "-" + ex.Name);
             }
 
             var repoQualifi = new RepositoryQualification();
@@ -54,7 +53,9 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             {
                 var repo = new RepositoryEmployeeQualification();
                 DateOnly dateOfBirth = DateOnly.FromDateTime(DateOfBirth.Value);
-                string[] splits = (nameQualificationBox.SelectedIndex.ToString()).Split('-');
+
+                string index = nameQualificationBox.Items[nameQualificationBox.SelectedIndex].ToString();
+                string[] splits = (index.ToString()).Split('-');
                 string idQuali = splits[0];
              
                 var result = repo.InsertEmployeeQualification(new InputEmployeeQualification()

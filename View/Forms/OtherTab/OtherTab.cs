@@ -81,21 +81,22 @@ namespace Salary_management.View.Forms.OtherTab
             else if (NameQText.Text == "") MessageBox.Show("Please input name");
             else
             {
-                string[] splits = (ExpertiseBox.SelectedIndex.ToString()).Split('-');
+                string index = ExpertiseBox.Items[ExpertiseBox.SelectedIndex].ToString() ;               
+                string[] splits = (index.ToString()).Split('-');
                 string idEx = splits[0];
-
+                              
                 var result = repo.InsertQualification(new InputQualification()
-                {
-                    ExpertiseId = Int16.Parse(idEx) + 1,
-                    Name = NameQText.Text
-                });
-             
-                if (result.Success)
-                {
-                    MessageBox.Show("Insert Qualification Success" + idEx);
-                    mng.OpenChildForm(new View.Forms.OtherTab.OtherTab(this.mng, 1), sender);
-                }
-                else MessageBox.Show(result.ErrorMessage);
+                 {
+                     ExpertiseId = Int16.Parse(idEx),
+                     Name = NameQText.Text
+                 });
+
+                 if (result.Success)
+                 {
+                     MessageBox.Show("Insert Qualification Success");
+                     mng.OpenChildForm(new View.Forms.OtherTab.OtherTab(this.mng, 1), sender);
+                 }
+               else MessageBox.Show(result.ErrorMessage);                 
             }
         }
 

@@ -139,10 +139,6 @@
             // 
             this.exBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.exBox.FormattingEnabled = true;
-            this.exBox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
             this.exBox.Location = new System.Drawing.Point(3, 23);
             this.exBox.Name = "exBox";
             this.exBox.Size = new System.Drawing.Size(764, 28);
@@ -238,11 +234,6 @@
             // 
             this.nameQualificationBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nameQualificationBox.FormattingEnabled = true;
-            this.nameQualificationBox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
             this.nameQualificationBox.Location = new System.Drawing.Point(3, 23);
             this.nameQualificationBox.Name = "nameQualificationBox";
             this.nameQualificationBox.Size = new System.Drawing.Size(764, 28);

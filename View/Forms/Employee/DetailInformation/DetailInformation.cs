@@ -278,6 +278,12 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             else
             {   // fix Qualification               
                 var repo = new RepositoryEmployeeQualification();
+                /*
+                string index = ExpertiseBox.Items[ExpertiseBox.SelectedIndex].ToString();
+                string[] splits = (index.ToString()).Split('-');
+                string idEx = splits[0];
+                */
+
                 string idQualification = (QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells["idQualification"].Value).ToString();
                 var result = repo.FixEmployeeQualification(Int16.Parse(idQualification), new InputEmployeeQualification()
                 {
