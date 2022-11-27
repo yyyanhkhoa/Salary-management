@@ -48,6 +48,39 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.NextBtn = new System.Windows.Forms.Button();
             this.QualificationTab = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.QualifcationGridView = new System.Windows.Forms.DataGridView();
+            this.IDQualifcation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Expertise = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.deleteQBtn = new System.Windows.Forms.Button();
+            this.addQBtn = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.NameQText = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.ExpertiseBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.ExpertiseTab = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.ExpertiseGridView = new System.Windows.Forms.DataGridView();
+            this.IdExpertise = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameExpertise = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.deleteExpertiseBtn = new System.Windows.Forms.Button();
+            this.addExpertiseBtn = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.nameExpertiseText = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.OtherPageTab.SuspendLayout();
             this.UnionTab.SuspendLayout();
             this.ListUnionGroupBox.SuspendLayout();
@@ -57,12 +90,28 @@
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.QualificationTab.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.QualifcationGridView)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.ExpertiseTab.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ExpertiseGridView)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // OtherPageTab
             // 
             this.OtherPageTab.Controls.Add(this.UnionTab);
             this.OtherPageTab.Controls.Add(this.QualificationTab);
+            this.OtherPageTab.Controls.Add(this.ExpertiseTab);
             this.OtherPageTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OtherPageTab.Location = new System.Drawing.Point(0, 0);
             this.OtherPageTab.Name = "OtherPageTab";
@@ -92,7 +141,7 @@
             this.ListUnionGroupBox.Size = new System.Drawing.Size(538, 437);
             this.ListUnionGroupBox.TabIndex = 2;
             this.ListUnionGroupBox.TabStop = false;
-            this.ListUnionGroupBox.Text = "ListUnion";
+            this.ListUnionGroupBox.Text = "List Union";
             // 
             // ListUnionGrid
             // 
@@ -164,6 +213,7 @@
             this.DeleteBtn.TabIndex = 1;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // AddBtn
             // 
@@ -257,6 +307,9 @@
             // 
             // QualificationTab
             // 
+            this.QualificationTab.Controls.Add(this.groupBox2);
+            this.QualificationTab.Controls.Add(this.groupBox3);
+            this.QualificationTab.Controls.Add(this.panel11);
             this.QualificationTab.Location = new System.Drawing.Point(4, 29);
             this.QualificationTab.Name = "QualificationTab";
             this.QualificationTab.Padding = new System.Windows.Forms.Padding(3);
@@ -264,6 +317,344 @@
             this.QualificationTab.TabIndex = 1;
             this.QualificationTab.Text = "Qualification";
             this.QualificationTab.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.QualifcationGridView);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox2.Location = new System.Drawing.Point(291, 55);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(538, 437);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "List Qualification";
+            // 
+            // QualifcationGridView
+            // 
+            this.QualifcationGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.QualifcationGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDQualifcation,
+            this.NameQualification,
+            this.Expertise});
+            this.QualifcationGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.QualifcationGridView.Location = new System.Drawing.Point(3, 23);
+            this.QualifcationGridView.Name = "QualifcationGridView";
+            this.QualifcationGridView.RowHeadersWidth = 51;
+            this.QualifcationGridView.RowTemplate.Height = 29;
+            this.QualifcationGridView.Size = new System.Drawing.Size(532, 411);
+            this.QualifcationGridView.TabIndex = 0;
+            // 
+            // IDQualifcation
+            // 
+            this.IDQualifcation.HeaderText = "ID";
+            this.IDQualifcation.MinimumWidth = 6;
+            this.IDQualifcation.Name = "IDQualifcation";
+            this.IDQualifcation.Width = 80;
+            // 
+            // NameQualification
+            // 
+            this.NameQualification.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NameQualification.HeaderText = "Name";
+            this.NameQualification.MinimumWidth = 6;
+            this.NameQualification.Name = "NameQualification";
+            this.NameQualification.Width = 160;
+            // 
+            // Expertise
+            // 
+            this.Expertise.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Expertise.HeaderText = "Expertise";
+            this.Expertise.MinimumWidth = 6;
+            this.Expertise.Name = "Expertise";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.panel6);
+            this.groupBox3.Controls.Add(this.panel9);
+            this.groupBox3.Controls.Add(this.panel10);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox3.Location = new System.Drawing.Point(3, 55);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(288, 437);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Actions";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.deleteQBtn);
+            this.panel6.Controls.Add(this.addQBtn);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(3, 189);
+            this.panel6.Name = "panel6";
+            this.panel6.Padding = new System.Windows.Forms.Padding(10);
+            this.panel6.Size = new System.Drawing.Size(282, 63);
+            this.panel6.TabIndex = 5;
+            // 
+            // panel7
+            // 
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(98, 10);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(80, 43);
+            this.panel7.TabIndex = 2;
+            // 
+            // deleteQBtn
+            // 
+            this.deleteQBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.deleteQBtn.Location = new System.Drawing.Point(178, 10);
+            this.deleteQBtn.Name = "deleteQBtn";
+            this.deleteQBtn.Size = new System.Drawing.Size(94, 43);
+            this.deleteQBtn.TabIndex = 1;
+            this.deleteQBtn.Text = "Delete";
+            this.deleteQBtn.UseVisualStyleBackColor = true;
+            this.deleteQBtn.Click += new System.EventHandler(this.deleteQBtn_Click);
+            // 
+            // addQBtn
+            // 
+            this.addQBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.addQBtn.Location = new System.Drawing.Point(10, 10);
+            this.addQBtn.Name = "addQBtn";
+            this.addQBtn.Size = new System.Drawing.Size(88, 43);
+            this.addQBtn.TabIndex = 0;
+            this.addQBtn.Text = "Add";
+            this.addQBtn.UseVisualStyleBackColor = true;
+            this.addQBtn.Click += new System.EventHandler(this.addQBtn_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.NameQText);
+            this.panel9.Controls.Add(this.label3);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(3, 106);
+            this.panel9.Name = "panel9";
+            this.panel9.Padding = new System.Windows.Forms.Padding(20);
+            this.panel9.Size = new System.Drawing.Size(282, 83);
+            this.panel9.TabIndex = 2;
+            // 
+            // NameQText
+            // 
+            this.NameQText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NameQText.Location = new System.Drawing.Point(76, 20);
+            this.NameQText.Name = "NameQText";
+            this.NameQText.Size = new System.Drawing.Size(186, 27);
+            this.NameQText.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Location = new System.Drawing.Point(20, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Name :";
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.ExpertiseBox);
+            this.panel10.Controls.Add(this.label4);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(3, 23);
+            this.panel10.Name = "panel10";
+            this.panel10.Padding = new System.Windows.Forms.Padding(20);
+            this.panel10.Size = new System.Drawing.Size(282, 83);
+            this.panel10.TabIndex = 0;
+            // 
+            // ExpertiseBox
+            // 
+            this.ExpertiseBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ExpertiseBox.FormattingEnabled = true;
+            this.ExpertiseBox.Location = new System.Drawing.Point(96, 20);
+            this.ExpertiseBox.Name = "ExpertiseBox";
+            this.ExpertiseBox.Size = new System.Drawing.Size(166, 28);
+            this.ExpertiseBox.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label4.Location = new System.Drawing.Point(20, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Expertise: ";
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.button1);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(3, 3);
+            this.panel11.Name = "panel11";
+            this.panel11.Padding = new System.Windows.Forms.Padding(10);
+            this.panel11.Size = new System.Drawing.Size(826, 52);
+            this.panel11.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.Location = new System.Drawing.Point(722, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 32);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Next >";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ExpertiseTab
+            // 
+            this.ExpertiseTab.Controls.Add(this.groupBox4);
+            this.ExpertiseTab.Controls.Add(this.groupBox5);
+            this.ExpertiseTab.Controls.Add(this.panel16);
+            this.ExpertiseTab.Location = new System.Drawing.Point(4, 29);
+            this.ExpertiseTab.Name = "ExpertiseTab";
+            this.ExpertiseTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ExpertiseTab.Size = new System.Drawing.Size(832, 495);
+            this.ExpertiseTab.TabIndex = 2;
+            this.ExpertiseTab.Text = "Expertise";
+            this.ExpertiseTab.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.ExpertiseGridView);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(362, 55);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(467, 437);
+            this.groupBox4.TabIndex = 5;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "List Expertise";
+            // 
+            // ExpertiseGridView
+            // 
+            this.ExpertiseGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ExpertiseGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdExpertise,
+            this.nameExpertise});
+            this.ExpertiseGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ExpertiseGridView.Location = new System.Drawing.Point(3, 23);
+            this.ExpertiseGridView.Name = "ExpertiseGridView";
+            this.ExpertiseGridView.RowHeadersWidth = 51;
+            this.ExpertiseGridView.RowTemplate.Height = 29;
+            this.ExpertiseGridView.Size = new System.Drawing.Size(461, 411);
+            this.ExpertiseGridView.TabIndex = 0;
+            // 
+            // IdExpertise
+            // 
+            this.IdExpertise.HeaderText = "ID";
+            this.IdExpertise.MinimumWidth = 6;
+            this.IdExpertise.Name = "IdExpertise";
+            this.IdExpertise.Width = 125;
+            // 
+            // nameExpertise
+            // 
+            this.nameExpertise.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameExpertise.HeaderText = "Name Expertise";
+            this.nameExpertise.MinimumWidth = 6;
+            this.nameExpertise.Name = "nameExpertise";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.panel12);
+            this.groupBox5.Controls.Add(this.panel14);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox5.Location = new System.Drawing.Point(3, 55);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(359, 437);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Actions";
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.panel13);
+            this.panel12.Controls.Add(this.deleteExpertiseBtn);
+            this.panel12.Controls.Add(this.addExpertiseBtn);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel12.Location = new System.Drawing.Point(3, 106);
+            this.panel12.Name = "panel12";
+            this.panel12.Padding = new System.Windows.Forms.Padding(10);
+            this.panel12.Size = new System.Drawing.Size(353, 63);
+            this.panel12.TabIndex = 3;
+            // 
+            // panel13
+            // 
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel13.Location = new System.Drawing.Point(98, 10);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(151, 43);
+            this.panel13.TabIndex = 2;
+            // 
+            // deleteExpertiseBtn
+            // 
+            this.deleteExpertiseBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.deleteExpertiseBtn.Location = new System.Drawing.Point(249, 10);
+            this.deleteExpertiseBtn.Name = "deleteExpertiseBtn";
+            this.deleteExpertiseBtn.Size = new System.Drawing.Size(94, 43);
+            this.deleteExpertiseBtn.TabIndex = 1;
+            this.deleteExpertiseBtn.Text = "Delete";
+            this.deleteExpertiseBtn.UseVisualStyleBackColor = true;
+            this.deleteExpertiseBtn.Click += new System.EventHandler(this.deleteExpertiseBtn_Click);
+            // 
+            // addExpertiseBtn
+            // 
+            this.addExpertiseBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.addExpertiseBtn.Location = new System.Drawing.Point(10, 10);
+            this.addExpertiseBtn.Name = "addExpertiseBtn";
+            this.addExpertiseBtn.Size = new System.Drawing.Size(88, 43);
+            this.addExpertiseBtn.TabIndex = 0;
+            this.addExpertiseBtn.Text = "Add";
+            this.addExpertiseBtn.UseVisualStyleBackColor = true;
+            this.addExpertiseBtn.Click += new System.EventHandler(this.addExpertiseBtn_Click);
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.nameExpertiseText);
+            this.panel14.Controls.Add(this.label5);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel14.Location = new System.Drawing.Point(3, 23);
+            this.panel14.Name = "panel14";
+            this.panel14.Padding = new System.Windows.Forms.Padding(20);
+            this.panel14.Size = new System.Drawing.Size(353, 83);
+            this.panel14.TabIndex = 2;
+            // 
+            // nameExpertiseText
+            // 
+            this.nameExpertiseText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameExpertiseText.Location = new System.Drawing.Point(76, 20);
+            this.nameExpertiseText.Name = "nameExpertiseText";
+            this.nameExpertiseText.Size = new System.Drawing.Size(257, 27);
+            this.nameExpertiseText.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label5.Location = new System.Drawing.Point(20, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Name :";
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.button4);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel16.Location = new System.Drawing.Point(3, 3);
+            this.panel16.Name = "panel16";
+            this.panel16.Padding = new System.Windows.Forms.Padding(10);
+            this.panel16.Size = new System.Drawing.Size(826, 52);
+            this.panel16.TabIndex = 3;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button4.Location = new System.Drawing.Point(722, 10);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 32);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Next >";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // OtherTab
             // 
@@ -285,6 +676,24 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.QualificationTab.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.QualifcationGridView)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.ExpertiseTab.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ExpertiseGridView)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel16.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -298,18 +707,51 @@
         private TabPage QualificationTab;
         private GroupBox ListUnionGroupBox;
         private DataGridView ListUnionGrid;
-        private DataGridViewTextBoxColumn IDGrid;
-        private DataGridViewTextBoxColumn NameUnionGrid;
         private GroupBox groupBox1;
         private Panel panel2;
-        private TextBox IDText;
         private Label label1;
+        private Panel panel5;
+        private TextBox NameText;
+        private Label NameLabel;
+        private DataGridViewTextBoxColumn IDGrid;
+        private DataGridViewTextBoxColumn NameUnionGrid;
         private Panel panel3;
         private Panel panel4;
         private Button DeleteBtn;
         private Button AddBtn;
-        private Panel panel5;
-        private TextBox NameText;
-        private Label NameLabel;
+        private TextBox IDText;
+        private GroupBox groupBox2;
+        private DataGridView QualifcationGridView;
+        private GroupBox groupBox3;
+        private Panel panel6;
+        private Panel panel7;
+        private Button deleteQBtn;
+        private Button addQBtn;
+        private Panel panel9;
+        private TextBox NameQText;
+        private Label label3;
+        private Panel panel10;
+        private ComboBox ExpertiseBox;
+        private Label label4;
+        private Panel panel11;
+        private Button button1;
+        private TabPage ExpertiseTab;
+        private GroupBox groupBox4;
+        private DataGridView ExpertiseGridView;
+        private GroupBox groupBox5;
+        private Panel panel12;
+        private Panel panel13;
+        private Button deleteExpertiseBtn;
+        private Button addExpertiseBtn;
+        private Panel panel14;
+        private TextBox nameExpertiseText;
+        private Label label5;
+        private Panel panel16;
+        private Button button4;
+        private DataGridViewTextBoxColumn IDQualifcation;
+        private DataGridViewTextBoxColumn NameQualification;
+        private DataGridViewTextBoxColumn Expertise;
+        private DataGridViewTextBoxColumn IdExpertise;
+        private DataGridViewTextBoxColumn nameExpertise;
     }
 }

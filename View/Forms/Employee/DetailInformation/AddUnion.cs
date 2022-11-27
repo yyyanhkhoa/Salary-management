@@ -56,7 +56,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 }
                 unionJoinBox.SelectedIndex = unionJoinBox.FindString(union.UnionId);
 
-
             }
         }
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
