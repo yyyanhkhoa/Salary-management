@@ -60,7 +60,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
             if (check == true)
             {                
-                nameQualificationTB.Enabled = true;
+                nameQualificationBox.Enabled = true;
                 dateQualification.Enabled = true;
                 placeQualificationTB.Enabled = true;
                 exQualificationBox.Enabled = true;
@@ -68,7 +68,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             }
             else
             {             
-                nameQualificationTB.Enabled = false;
+                nameQualificationBox.Enabled = false;
                 dateQualification.Enabled = false;
                 placeQualificationTB.Enabled = false;
                 exQualificationBox.Enabled = false;
@@ -77,7 +77,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         }
       
         private void DetailInformation_Load(object sender, EventArgs e)
-        {          
+        {  
             var repo = new RepositoryEmployee();            
             var employee = repo.GetEmployeeDetail(idEmployee);           
             enableInfo(false);
@@ -131,7 +131,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             var listQua = repoQualifi.GetQualifications("");
             foreach (var quali in listQua)
             {
-                nameQualificationTB.Items.Add(quali.Id + "-" + quali.Name);             
+                nameQualificationBox.Items.Add(quali.Id + "-" + quali.Name);             
             }
 
             this.QualificationListView.Rows.Clear();
@@ -145,6 +145,35 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 }
             }
           
+        }
+
+        private void getHistoryInfo()
+        {
+            // add unit history
+            this.UnitGridView.Rows.Clear();
+            RepositoryEmployee repoU = new RepositoryEmployee();
+            if (repoU.GetEmployeeUnitHistory(idEmployee).Success == false)
+            {
+                List<Model.UnitHistory> listUnit = repoU.GetEmployeeUnitHistory(idEmployee).Payload;
+                foreach (Model.UnitHistory unit in listUnit)
+                {
+                    UnitGridView.Rows.Add(unit.StartDate, unit.EndDate, unit.UnitName);
+                }
+            }
+
+            // add position history          
+            this.PositionGridView.Rows.Clear();
+            RepositoryEmployee repoP = new RepositoryEmployee();
+            if (repoP.GetEmployeePositionHistory(idEmployee).Success == false)
+            {
+                List<Model.PositionHistory> listPosition = repoP.GetEmployeePositionHistory(idEmployee).Payload;
+                foreach (Model.PositionHistory position in listPosition)
+                {
+                    PositionGridView.Rows.Add(position.StartDate, position.EndDate, position.PositionName);
+                }
+            }
+
+
         }
         private void getUnionInfo()
         {
@@ -349,9 +378,14 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void dataGridView2_Resize(object sender, EventArgs e)
         {
-            int width = dataGridView2.Width + dataGridView1.Width;
-            dataGridView2.Width = width / 2;
-            dataGridView1.Width = width / 2;
+            int width = PositionGridView.Width + UnitGridView.Width;
+            PositionGridView.Width = width / 2;
+            UnitGridView.Width = width / 2;
+        }
+
+        private void removeQualification_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

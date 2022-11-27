@@ -105,7 +105,7 @@
             this.placeQualificationTB = new System.Windows.Forms.TextBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.nameQualificationTB = new System.Windows.Forms.ComboBox();
+            this.nameQualificationBox = new System.Windows.Forms.ComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dateQualification = new System.Windows.Forms.DateTimePicker();
             this.panel19 = new System.Windows.Forms.Panel();
@@ -132,11 +132,11 @@
             this.addUnion = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.PositionGridView = new System.Windows.Forms.DataGridView();
             this.fromPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PositionHistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.UnitGridView = new System.Windows.Forms.DataGridView();
             this.fromUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitHistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -187,8 +187,8 @@
             this.panel15.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PositionGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitGridView)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -952,7 +952,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.nameQualificationTB);
+            this.groupBox3.Controls.Add(this.nameQualificationBox);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
@@ -962,14 +962,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Qualification";
             // 
-            // nameQualificationTB
+            // nameQualificationBox
             // 
-            this.nameQualificationTB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nameQualificationTB.FormattingEnabled = true;
-            this.nameQualificationTB.Location = new System.Drawing.Point(3, 23);
-            this.nameQualificationTB.Name = "nameQualificationTB";
-            this.nameQualificationTB.Size = new System.Drawing.Size(414, 28);
-            this.nameQualificationTB.TabIndex = 0;
+            this.nameQualificationBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameQualificationBox.FormattingEnabled = true;
+            this.nameQualificationBox.Location = new System.Drawing.Point(3, 23);
+            this.nameQualificationBox.Name = "nameQualificationBox";
+            this.nameQualificationBox.Size = new System.Drawing.Size(414, 28);
+            this.nameQualificationBox.TabIndex = 0;
             // 
             // groupBox8
             // 
@@ -1055,6 +1055,7 @@
             this.removeQualification.TabIndex = 3;
             this.removeQualification.Text = "Delete";
             this.removeQualification.UseVisualStyleBackColor = false;
+            this.removeQualification.Click += new System.EventHandler(this.removeQualification_Click);
             // 
             // fixQualificationBtn
             // 
@@ -1269,8 +1270,8 @@
             // 
             this.groupBox9.AutoSize = true;
             this.groupBox9.BackColor = System.Drawing.Color.White;
-            this.groupBox9.Controls.Add(this.dataGridView2);
-            this.groupBox9.Controls.Add(this.dataGridView1);
+            this.groupBox9.Controls.Add(this.PositionGridView);
+            this.groupBox9.Controls.Add(this.UnitGridView);
             this.groupBox9.Controls.Add(this.panel13);
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -1282,12 +1283,12 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "History form";
             // 
-            // dataGridView2
+            // PositionGridView
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PositionGridView.AllowUserToAddRows = false;
+            this.PositionGridView.AllowUserToDeleteRows = false;
+            this.PositionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PositionGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fromPosition,
             this.toPosition,
             this.PositionHistory});
@@ -1298,16 +1299,16 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(362, 32);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(342, 415);
-            this.dataGridView2.TabIndex = 21;
-            this.dataGridView2.Resize += new System.EventHandler(this.dataGridView2_Resize);
+            this.PositionGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            this.PositionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PositionGridView.Location = new System.Drawing.Point(362, 32);
+            this.PositionGridView.Name = "PositionGridView";
+            this.PositionGridView.ReadOnly = true;
+            this.PositionGridView.RowHeadersWidth = 51;
+            this.PositionGridView.RowTemplate.Height = 29;
+            this.PositionGridView.Size = new System.Drawing.Size(342, 415);
+            this.PositionGridView.TabIndex = 21;
+            this.PositionGridView.Resize += new System.EventHandler(this.dataGridView2_Resize);
             // 
             // fromPosition
             // 
@@ -1339,12 +1340,12 @@
             this.PositionHistory.Name = "PositionHistory";
             this.PositionHistory.ReadOnly = true;
             // 
-            // dataGridView1
+            // UnitGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.UnitGridView.AllowUserToAddRows = false;
+            this.UnitGridView.AllowUserToDeleteRows = false;
+            this.UnitGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UnitGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fromUnit,
             this.toUnit,
             this.unitHistory});
@@ -1355,15 +1356,15 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 32);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(357, 415);
-            this.dataGridView1.TabIndex = 20;
+            this.UnitGridView.DefaultCellStyle = dataGridViewCellStyle7;
+            this.UnitGridView.Dock = System.Windows.Forms.DockStyle.Left;
+            this.UnitGridView.Location = new System.Drawing.Point(5, 32);
+            this.UnitGridView.Name = "UnitGridView";
+            this.UnitGridView.ReadOnly = true;
+            this.UnitGridView.RowHeadersWidth = 51;
+            this.UnitGridView.RowTemplate.Height = 29;
+            this.UnitGridView.Size = new System.Drawing.Size(357, 415);
+            this.UnitGridView.TabIndex = 20;
             // 
             // fromUnit
             // 
@@ -1498,8 +1499,8 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.groupBox9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PositionGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnitGridView)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1602,14 +1603,14 @@
         private ComboBox exQualificationBox;
         private GroupBox groupBox11;
         private TextBox scoreQualificationText;
-        private ComboBox nameQualificationTB;
+        private ComboBox nameQualificationBox;
         private DataGridViewTextBoxColumn IdQualification;
         private DataGridViewTextBoxColumn Qualification;
         private DataGridViewTextBoxColumn IssueDateQualification;
         private DataGridViewTextBoxColumn PlaceOfIssueQualification;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridView dataGridView2;
-        private DataGridView dataGridView1;
+        private DataGridView PositionGridView;
+        private DataGridView UnitGridView;
         private Panel panel13;
         private Button button1;
         private DataGridViewTextBoxColumn fromPosition;
