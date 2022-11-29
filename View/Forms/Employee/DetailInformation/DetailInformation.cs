@@ -127,6 +127,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         }
         private void getQualificationInfo()
         {
+            this.QualificationListView.Rows.Clear();
             var repoQualifi = new RepositoryQualification();
             var listQua = repoQualifi.GetQualifications("");
             foreach (var quali in listQua)
@@ -306,17 +307,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 fixQualificationBtn.Text = "Fix";
                 enableQualification(false);
             }
-        }
-
-        private void RemoveFamilyBtn_Click(object sender, EventArgs e)
-        {
-            string idFamily = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();
-            //xoa = id family
-            var repo = new RepositoryFamily();
-            repo.DeleteFamily(Int16.Parse(idFamily));
-            getFamilyInfo();
-        }
-  
+        } 
         private void fixUnion_Click(object sender, EventArgs e)
         {
             string idUnion = UnionGridView.Rows[UnionGridView.CurrentRow.Index].Cells[0].Value.ToString();
@@ -341,13 +332,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         private void backUnionBtn_Click(object sender, EventArgs e)
         {
             mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
-        }
-
-        private void removeUnion_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        }     
         private void FamilyGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
@@ -367,12 +352,10 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 }
             }
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
         private void QualificationListView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int idQualification = Int16.Parse(QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells[0].Value.ToString());
@@ -381,17 +364,36 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
            
         }
-
         private void dataGridView2_Resize(object sender, EventArgs e)
         {
             int width = PositionGridView.Width + UnitGridView.Width;
             PositionGridView.Width = width / 2;
             UnitGridView.Width = width / 2;
         }
-
         private void removeQualification_Click(object sender, EventArgs e)
         {
-
+            string id = (QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells[0].Value).ToString();
+            //xoa = id 
+            var repo = new RepositoryEmployeeQualification();
+            repo.DeleteEmployeeQualification(Int16.Parse(id));
+            getQualificationInfo();
         }
+        private void RemoveFamilyBtn_Click(object sender, EventArgs e)
+        {
+            string idFamily = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();
+            //xoa = id family
+            var repo = new RepositoryFamily();
+            repo.DeleteFamily(Int16.Parse(idFamily));
+            getFamilyInfo();
+        }
+        private void removeUnion_Click(object sender, EventArgs e)
+        {
+            string idUnion = (UnionGridView.Rows[UnionGridView.CurrentRow.Index].Cells[0].Value).ToString();
+            //xoa = id family
+            var repo = new RepositoryUnionHistory();
+            repo.DeleteUnionHistory(Int16.Parse(idUnion));
+            getUnionInfo();
+        }
+
     }
 }
