@@ -365,6 +365,9 @@
             // 
             // QualifcationGridView
             // 
+            this.QualifcationGridView.AllowUserToAddRows = false;
+            this.QualifcationGridView.AllowUserToDeleteRows = false;
+            this.QualifcationGridView.AllowUserToOrderColumns = true;
             this.QualifcationGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.QualifcationGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDQualifcation,
@@ -373,17 +376,21 @@
             this.QualifcationGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.QualifcationGridView.Location = new System.Drawing.Point(3, 23);
             this.QualifcationGridView.Name = "QualifcationGridView";
+            this.QualifcationGridView.ReadOnly = true;
             this.QualifcationGridView.RowHeadersWidth = 51;
             this.QualifcationGridView.RowTemplate.Height = 29;
             this.QualifcationGridView.Size = new System.Drawing.Size(535, 206);
             this.QualifcationGridView.TabIndex = 0;
+            this.QualifcationGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QualifcationGridView_CellClick);
             this.QualifcationGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QualifcationGridView_CellContentClick);
+            this.QualifcationGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.QualifcationGridView_MouseClick);
             // 
             // IDQualifcation
             // 
             this.IDQualifcation.HeaderText = "ID";
             this.IDQualifcation.MinimumWidth = 6;
             this.IDQualifcation.Name = "IDQualifcation";
+            this.IDQualifcation.ReadOnly = true;
             this.IDQualifcation.Width = 80;
             // 
             // NameQualification
@@ -392,6 +399,7 @@
             this.NameQualification.HeaderText = "Name";
             this.NameQualification.MinimumWidth = 6;
             this.NameQualification.Name = "NameQualification";
+            this.NameQualification.ReadOnly = true;
             this.NameQualification.Width = 160;
             // 
             // Expertise
@@ -400,6 +408,7 @@
             this.Expertise.HeaderText = "Expertise";
             this.Expertise.MinimumWidth = 6;
             this.Expertise.Name = "Expertise";
+            this.Expertise.ReadOnly = true;
             // 
             // groupBox6
             // 
@@ -414,6 +423,9 @@
             // 
             // QualificationHistoryGridView
             // 
+            this.QualificationHistoryGridView.AllowUserToAddRows = false;
+            this.QualificationHistoryGridView.AllowUserToDeleteRows = false;
+            this.QualificationHistoryGridView.AllowUserToOrderColumns = true;
             this.QualificationHistoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.QualificationHistoryGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -422,6 +434,7 @@
             this.QualificationHistoryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.QualificationHistoryGridView.Location = new System.Drawing.Point(3, 23);
             this.QualificationHistoryGridView.Name = "QualificationHistoryGridView";
+            this.QualificationHistoryGridView.ReadOnly = true;
             this.QualificationHistoryGridView.RowHeadersWidth = 51;
             this.QualificationHistoryGridView.RowTemplate.Height = 29;
             this.QualificationHistoryGridView.Size = new System.Drawing.Size(535, 179);
@@ -432,6 +445,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 80;
             // 
             // yearQH
@@ -440,6 +454,7 @@
             this.yearQH.HeaderText = "Year";
             this.yearQH.MinimumWidth = 6;
             this.yearQH.Name = "yearQH";
+            this.yearQH.ReadOnly = true;
             this.yearQH.Width = 160;
             // 
             // AllowanceQH
@@ -448,6 +463,7 @@
             this.AllowanceQH.HeaderText = "Allowance";
             this.AllowanceQH.MinimumWidth = 6;
             this.AllowanceQH.Name = "AllowanceQH";
+            this.AllowanceQH.ReadOnly = true;
             // 
             // groupBox3
             // 
@@ -505,6 +521,7 @@
             this.deleteQHistoryBtn.TabIndex = 1;
             this.deleteQHistoryBtn.Text = "Delete";
             this.deleteQHistoryBtn.UseVisualStyleBackColor = true;
+            this.deleteQHistoryBtn.Click += new System.EventHandler(this.deleteQHistoryBtn_Click);
             // 
             // addQHistoryBtn
             // 
@@ -515,6 +532,7 @@
             this.addQHistoryBtn.TabIndex = 0;
             this.addQHistoryBtn.Text = "Add";
             this.addQHistoryBtn.UseVisualStyleBackColor = true;
+            this.addQHistoryBtn.Click += new System.EventHandler(this.addQHistoryBtn_Click);
             // 
             // panel17
             // 
@@ -534,6 +552,7 @@
             this.allowQualificationText.Name = "allowQualificationText";
             this.allowQualificationText.Size = new System.Drawing.Size(148, 27);
             this.allowQualificationText.TabIndex = 1;
+            this.allowQualificationText.TextChanged += new System.EventHandler(this.allowQualificationText_TextChanged);
             this.allowQualificationText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.allowQualificationText_KeyPress);
             // 
             // label6
@@ -561,9 +580,11 @@
             // 
             this.yearQualificationText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.yearQualificationText.Location = new System.Drawing.Point(64, 20);
+            this.yearQualificationText.MaxLength = 4;
             this.yearQualificationText.Name = "yearQualificationText";
             this.yearQualificationText.Size = new System.Drawing.Size(189, 27);
             this.yearQualificationText.TabIndex = 2;
+            this.yearQualificationText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.yearQualificationText_KeyPress);
             // 
             // label2
             // 

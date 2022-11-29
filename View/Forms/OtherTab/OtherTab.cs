@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,16 +18,18 @@ namespace Salary_management.View.Forms.OtherTab
     public partial class OtherTab : Form
     {
         Management mng;
+        private int QualificationId;       
         public OtherTab(Management mng, int tab = 0)
         {
             this.mng = mng;
             InitializeComponent();
             OtherPageTab.SelectedTab = OtherPageTab.TabPages[tab];
+            var listQH = 0;
         }
 
         private void OtherTab_Load(object sender, EventArgs e)
         {
-            //get Union info 
+            //get Union info             
             var repo = new RepositoryUnion();
             var listUnion = repo.GetUnions("");
             foreach(var item in listUnion)
@@ -60,11 +63,12 @@ namespace Salary_management.View.Forms.OtherTab
 
         void getQualificationHistoryInfo(int idQ)
         {
+            this.QualificationHistoryGridView.Rows.Clear();
             var repo = new RepositoryQualification();
-            var list = repo.GetQualificationAllowanceTimeline(idQ);
+            var list = repo.GetQualificationAllowanceTimeline(idQ).Payload;
             foreach (var item in list)
             {
-                QualificationHistoryGridView.Rows.Add(item.Id, item.Name, item.Expertise.Name + "-" + item.ExpertiseId);
+                QualificationHistoryGridView.Rows.Add(item.Id, item.Year, item.Allowance);
             }
         }
         private void AddBtn_Click(object sender, EventArgs e)
@@ -175,9 +179,76 @@ namespace Salary_management.View.Forms.OtherTab
             }
         }
 
+        private void addQHistoryBtn_Click(object sender, EventArgs e)
+        {
+            var repo = new RepositoryQualificationAllowanceHistory();           
+            if (yearQualificationText.Text == "") MessageBox.Show("Please input year");
+            else if (allowQualificationText.Text == "") MessageBox.Show("Please input allowance");
+            else
+            {
+                var result = repo.InsertQualificationAllowanceHistory(new InputQualificationAllowanceHistory()
+                {
+                    Year = Int16.Parse(yearQualificationText.Text),
+                    Allowance = Int32.Parse(allowQualificationText.Text),
+                    QualificationId = this.QualificationId,
+                });
+
+                if (result.Success)
+                {
+                    MessageBox.Show("Insert Qualification history Success");
+                    getQualificationHistoryInfo(QualificationId);
+                }
+                else MessageBox.Show(result.ErrorMessage);
+            }
+        }
+
+        private void allowQualificationText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void yearQualificationText_KeyPress(object sender, KeyPressEventArgs e)
+        {            
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }           
+        }
+
+        private void deleteQHistoryBtn_Click(object sender, EventArgs e)
+        {
+            string idQH = (QualificationHistoryGridView.Rows[QualificationHistoryGridView.CurrentRow.Index].Cells[0].Value).ToString();
+            //xoa = id 
+            var repo = new RepositoryQualificationAllowanceHistory();
+            repo.DeleteQualificationAllowanceHistory(Int16.Parse(idQH));
+            MessageBox.Show("Delete Qualification history Success");
+            getQualificationHistoryInfo(QualificationId);
+
+        }
+
+        private void QualifcationGridView_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void QualifcationGridView_MouseClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+
         private void QualifcationGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+         
+        }
+
+        private void QualifcationGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             int id = Int16.Parse(QualifcationGridView.Rows[QualifcationGridView.CurrentRow.Index].Cells[0].Value.ToString());
+            this.QualificationId = id;
             getQualificationHistoryInfo(id);
         }
     }

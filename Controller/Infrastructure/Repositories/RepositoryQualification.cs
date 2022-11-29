@@ -82,10 +82,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 			return lastestQah != null ? lastestQah.Year : DateTime.Now.Year;
 		}
-        public List<Models.QualificationAllowanceHistory> GetQualificationHistoryByQualification(int QualificationId)
-        {
-            return Context.QualificationAllowanceHistories.ToList().Select(f => MapToModel(f)).Where(e => e.QualificationId == QualificationId).ToList();
-        }      
+
         public Result<List<Models.QualificationAllowanceTimeline>> GetQualificationAllowanceTimeline(int qualificationId, int? yearFrom = null, int? yearTo = null)
 		{
 			var query = Context.QualificationAllowanceHistories.Where(uh => uh.QualificationId == qualificationId);

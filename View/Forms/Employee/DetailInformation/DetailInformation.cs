@@ -127,6 +127,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         }
         private void getQualificationInfo()
         {
+            this.QualificationListView.Rows.Clear();
             var repoQualifi = new RepositoryQualification();
             var listQua = repoQualifi.GetQualifications("");
             foreach (var quali in listQua)
