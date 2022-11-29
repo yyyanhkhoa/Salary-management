@@ -58,6 +58,15 @@ namespace Salary_management.View.Forms.OtherTab
             OtherPageTab.SelectTab("QualificationTab");
         }
 
+        void getQualificationHistoryInfo(int idQ)
+        {
+            var repo = new RepositoryQualification();
+            var list = repo.GetQualificationAllowanceTimeline(idQ);
+            foreach (var item in list)
+            {
+                QualificationHistoryGridView.Rows.Add(item.Id, item.Name, item.Expertise.Name + "-" + item.ExpertiseId);
+            }
+        }
         private void AddBtn_Click(object sender, EventArgs e)
         {
             var repo = new RepositoryUnion();
@@ -152,6 +161,24 @@ namespace Salary_management.View.Forms.OtherTab
 
             MessageBox.Show("Delete Expertise Success");
             mng.OpenChildForm(new View.Forms.OtherTab.OtherTab(this.mng, 2), sender);
+        }
+
+        private void allowQualificationText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void QualifcationGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = Int16.Parse(QualifcationGridView.Rows[QualifcationGridView.CurrentRow.Index].Cells[0].Value.ToString());
+            getQualificationHistoryInfo(id);
         }
     }
 }

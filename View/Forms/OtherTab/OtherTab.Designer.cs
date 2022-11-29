@@ -48,12 +48,29 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.NextBtn = new System.Windows.Forms.Button();
             this.QualificationTab = new System.Windows.Forms.TabPage();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.QualifcationGridView = new System.Windows.Forms.DataGridView();
             this.IDQualifcation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameQualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Expertise = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.QualificationHistoryGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearQH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AllowanceQH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.deleteQHistoryBtn = new System.Windows.Forms.Button();
+            this.addQHistoryBtn = new System.Windows.Forms.Button();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.allowQualificationText = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.yearQualificationText = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.deleteQBtn = new System.Windows.Forms.Button();
@@ -91,9 +108,16 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.QualificationTab.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QualifcationGridView)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.QualificationHistoryGridView)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -307,7 +331,7 @@
             // 
             // QualificationTab
             // 
-            this.QualificationTab.Controls.Add(this.groupBox2);
+            this.QualificationTab.Controls.Add(this.panel8);
             this.QualificationTab.Controls.Add(this.groupBox3);
             this.QualificationTab.Controls.Add(this.panel11);
             this.QualificationTab.Location = new System.Drawing.Point(4, 29);
@@ -318,13 +342,23 @@
             this.QualificationTab.Text = "Qualification";
             this.QualificationTab.UseVisualStyleBackColor = true;
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.groupBox2);
+            this.panel8.Controls.Add(this.groupBox6);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(288, 55);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(541, 437);
+            this.panel8.TabIndex = 6;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.QualifcationGridView);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox2.Location = new System.Drawing.Point(291, 55);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(538, 437);
+            this.groupBox2.Size = new System.Drawing.Size(541, 232);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "List Qualification";
@@ -341,8 +375,9 @@
             this.QualifcationGridView.Name = "QualifcationGridView";
             this.QualifcationGridView.RowHeadersWidth = 51;
             this.QualifcationGridView.RowTemplate.Height = 29;
-            this.QualifcationGridView.Size = new System.Drawing.Size(532, 411);
+            this.QualifcationGridView.Size = new System.Drawing.Size(535, 206);
             this.QualifcationGridView.TabIndex = 0;
+            this.QualifcationGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QualifcationGridView_CellContentClick);
             // 
             // IDQualifcation
             // 
@@ -366,18 +401,179 @@
             this.Expertise.MinimumWidth = 6;
             this.Expertise.Name = "Expertise";
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.QualificationHistoryGridView);
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox6.Location = new System.Drawing.Point(0, 232);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(541, 205);
+            this.groupBox6.TabIndex = 5;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Qualification history";
+            // 
+            // QualificationHistoryGridView
+            // 
+            this.QualificationHistoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.QualificationHistoryGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.yearQH,
+            this.AllowanceQH});
+            this.QualificationHistoryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.QualificationHistoryGridView.Location = new System.Drawing.Point(3, 23);
+            this.QualificationHistoryGridView.Name = "QualificationHistoryGridView";
+            this.QualificationHistoryGridView.RowHeadersWidth = 51;
+            this.QualificationHistoryGridView.RowTemplate.Height = 29;
+            this.QualificationHistoryGridView.Size = new System.Drawing.Size(535, 179);
+            this.QualificationHistoryGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 80;
+            // 
+            // yearQH
+            // 
+            this.yearQH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.yearQH.HeaderText = "Year";
+            this.yearQH.MinimumWidth = 6;
+            this.yearQH.Name = "yearQH";
+            this.yearQH.Width = 160;
+            // 
+            // AllowanceQH
+            // 
+            this.AllowanceQH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AllowanceQH.HeaderText = "Allowance";
+            this.AllowanceQH.MinimumWidth = 6;
+            this.AllowanceQH.Name = "AllowanceQH";
+            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.groupBox7);
             this.groupBox3.Controls.Add(this.panel6);
             this.groupBox3.Controls.Add(this.panel9);
             this.groupBox3.Controls.Add(this.panel10);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox3.Location = new System.Drawing.Point(3, 55);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(288, 437);
+            this.groupBox3.Size = new System.Drawing.Size(285, 437);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Actions";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.panel18);
+            this.groupBox7.Controls.Add(this.panel17);
+            this.groupBox7.Controls.Add(this.panel15);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.Location = new System.Drawing.Point(3, 207);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(279, 227);
+            this.groupBox7.TabIndex = 6;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Actions History";
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.panel19);
+            this.panel18.Controls.Add(this.deleteQHistoryBtn);
+            this.panel18.Controls.Add(this.addQHistoryBtn);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel18.Location = new System.Drawing.Point(3, 150);
+            this.panel18.Name = "panel18";
+            this.panel18.Padding = new System.Windows.Forms.Padding(10);
+            this.panel18.Size = new System.Drawing.Size(273, 57);
+            this.panel18.TabIndex = 6;
+            // 
+            // panel19
+            // 
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel19.Location = new System.Drawing.Point(98, 10);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(71, 37);
+            this.panel19.TabIndex = 2;
+            // 
+            // deleteQHistoryBtn
+            // 
+            this.deleteQHistoryBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.deleteQHistoryBtn.Location = new System.Drawing.Point(169, 10);
+            this.deleteQHistoryBtn.Name = "deleteQHistoryBtn";
+            this.deleteQHistoryBtn.Size = new System.Drawing.Size(94, 37);
+            this.deleteQHistoryBtn.TabIndex = 1;
+            this.deleteQHistoryBtn.Text = "Delete";
+            this.deleteQHistoryBtn.UseVisualStyleBackColor = true;
+            // 
+            // addQHistoryBtn
+            // 
+            this.addQHistoryBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.addQHistoryBtn.Location = new System.Drawing.Point(10, 10);
+            this.addQHistoryBtn.Name = "addQHistoryBtn";
+            this.addQHistoryBtn.Size = new System.Drawing.Size(88, 37);
+            this.addQHistoryBtn.TabIndex = 0;
+            this.addQHistoryBtn.Text = "Add";
+            this.addQHistoryBtn.UseVisualStyleBackColor = true;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.allowQualificationText);
+            this.panel17.Controls.Add(this.label6);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(3, 89);
+            this.panel17.Name = "panel17";
+            this.panel17.Padding = new System.Windows.Forms.Padding(20);
+            this.panel17.Size = new System.Drawing.Size(273, 61);
+            this.panel17.TabIndex = 3;
+            // 
+            // allowQualificationText
+            // 
+            this.allowQualificationText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.allowQualificationText.Location = new System.Drawing.Point(105, 20);
+            this.allowQualificationText.Name = "allowQualificationText";
+            this.allowQualificationText.Size = new System.Drawing.Size(148, 27);
+            this.allowQualificationText.TabIndex = 1;
+            this.allowQualificationText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.allowQualificationText_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label6.Location = new System.Drawing.Point(20, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Allowance :";
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.yearQualificationText);
+            this.panel15.Controls.Add(this.label2);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(3, 23);
+            this.panel15.Name = "panel15";
+            this.panel15.Padding = new System.Windows.Forms.Padding(20);
+            this.panel15.Size = new System.Drawing.Size(273, 66);
+            this.panel15.TabIndex = 1;
+            // 
+            // yearQualificationText
+            // 
+            this.yearQualificationText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.yearQualificationText.Location = new System.Drawing.Point(64, 20);
+            this.yearQualificationText.Name = "yearQualificationText";
+            this.yearQualificationText.Size = new System.Drawing.Size(189, 27);
+            this.yearQualificationText.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label2.Location = new System.Drawing.Point(20, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Year :";
             // 
             // panel6
             // 
@@ -385,10 +581,10 @@
             this.panel6.Controls.Add(this.deleteQBtn);
             this.panel6.Controls.Add(this.addQBtn);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(3, 189);
+            this.panel6.Location = new System.Drawing.Point(3, 150);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(10);
-            this.panel6.Size = new System.Drawing.Size(282, 63);
+            this.panel6.Size = new System.Drawing.Size(279, 57);
             this.panel6.TabIndex = 5;
             // 
             // panel7
@@ -396,15 +592,15 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(98, 10);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(80, 43);
+            this.panel7.Size = new System.Drawing.Size(77, 37);
             this.panel7.TabIndex = 2;
             // 
             // deleteQBtn
             // 
             this.deleteQBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.deleteQBtn.Location = new System.Drawing.Point(178, 10);
+            this.deleteQBtn.Location = new System.Drawing.Point(175, 10);
             this.deleteQBtn.Name = "deleteQBtn";
-            this.deleteQBtn.Size = new System.Drawing.Size(94, 43);
+            this.deleteQBtn.Size = new System.Drawing.Size(94, 37);
             this.deleteQBtn.TabIndex = 1;
             this.deleteQBtn.Text = "Delete";
             this.deleteQBtn.UseVisualStyleBackColor = true;
@@ -415,7 +611,7 @@
             this.addQBtn.Dock = System.Windows.Forms.DockStyle.Left;
             this.addQBtn.Location = new System.Drawing.Point(10, 10);
             this.addQBtn.Name = "addQBtn";
-            this.addQBtn.Size = new System.Drawing.Size(88, 43);
+            this.addQBtn.Size = new System.Drawing.Size(88, 37);
             this.addQBtn.TabIndex = 0;
             this.addQBtn.Text = "Add";
             this.addQBtn.UseVisualStyleBackColor = true;
@@ -426,10 +622,10 @@
             this.panel9.Controls.Add(this.NameQText);
             this.panel9.Controls.Add(this.label3);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(3, 106);
+            this.panel9.Location = new System.Drawing.Point(3, 89);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(20);
-            this.panel9.Size = new System.Drawing.Size(282, 83);
+            this.panel9.Size = new System.Drawing.Size(279, 61);
             this.panel9.TabIndex = 2;
             // 
             // NameQText
@@ -437,7 +633,7 @@
             this.NameQText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NameQText.Location = new System.Drawing.Point(76, 20);
             this.NameQText.Name = "NameQText";
-            this.NameQText.Size = new System.Drawing.Size(186, 27);
+            this.NameQText.Size = new System.Drawing.Size(183, 27);
             this.NameQText.TabIndex = 1;
             // 
             // label3
@@ -458,7 +654,7 @@
             this.panel10.Location = new System.Drawing.Point(3, 23);
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(20);
-            this.panel10.Size = new System.Drawing.Size(282, 83);
+            this.panel10.Size = new System.Drawing.Size(279, 66);
             this.panel10.TabIndex = 0;
             // 
             // ExpertiseBox
@@ -467,7 +663,7 @@
             this.ExpertiseBox.FormattingEnabled = true;
             this.ExpertiseBox.Location = new System.Drawing.Point(96, 20);
             this.ExpertiseBox.Name = "ExpertiseBox";
-            this.ExpertiseBox.Size = new System.Drawing.Size(166, 28);
+            this.ExpertiseBox.Size = new System.Drawing.Size(163, 28);
             this.ExpertiseBox.TabIndex = 6;
             // 
             // label4
@@ -677,9 +873,18 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.QualificationTab.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QualifcationGridView)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.QualificationHistoryGridView)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
@@ -753,5 +958,22 @@
         private DataGridViewTextBoxColumn Expertise;
         private DataGridViewTextBoxColumn IdExpertise;
         private DataGridViewTextBoxColumn nameExpertise;
+        private Panel panel8;
+        private GroupBox groupBox6;
+        private DataGridView QualificationHistoryGridView;
+        private GroupBox groupBox7;
+        private Panel panel18;
+        private Panel panel19;
+        private Button deleteQHistoryBtn;
+        private Button addQHistoryBtn;
+        private Panel panel17;
+        private TextBox allowQualificationText;
+        private Label label6;
+        private Panel panel15;
+        private TextBox yearQualificationText;
+        private Label label2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn yearQH;
+        private DataGridViewTextBoxColumn AllowanceQH;
     }
 }
