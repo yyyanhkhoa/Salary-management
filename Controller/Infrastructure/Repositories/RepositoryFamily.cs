@@ -76,7 +76,8 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			Context.Families.Attach(family);
 			Context.Families.Remove(family);
 			Context.SaveChanges();
-		}
+        }
+
 
 		private static Family MapToEntity(InputFamily inputFamily)
 		{

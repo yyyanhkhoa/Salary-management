@@ -378,6 +378,9 @@
             // 
             // FamilyGridView
             // 
+            this.FamilyGridView.AllowUserToAddRows = false;
+            this.FamilyGridView.AllowUserToDeleteRows = false;
+            this.FamilyGridView.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -404,6 +407,7 @@
             this.FamilyGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FamilyGridView.Location = new System.Drawing.Point(5, 106);
             this.FamilyGridView.Name = "FamilyGridView";
+            this.FamilyGridView.ReadOnly = true;
             this.FamilyGridView.RowHeadersWidth = 51;
             this.FamilyGridView.RowTemplate.Height = 29;
             this.FamilyGridView.RowTemplate.ReadOnly = true;
@@ -418,6 +422,7 @@
             this.IdFamily.HeaderText = "Id";
             this.IdFamily.MinimumWidth = 6;
             this.IdFamily.Name = "IdFamily";
+            this.IdFamily.ReadOnly = true;
             // 
             // NameFamily
             // 
@@ -426,6 +431,7 @@
             this.NameFamily.HeaderText = "Name";
             this.NameFamily.MinimumWidth = 6;
             this.NameFamily.Name = "NameFamily";
+            this.NameFamily.ReadOnly = true;
             // 
             // BirthFamily
             // 
@@ -433,6 +439,7 @@
             this.BirthFamily.HeaderText = "Birth";
             this.BirthFamily.MinimumWidth = 6;
             this.BirthFamily.Name = "BirthFamily";
+            this.BirthFamily.ReadOnly = true;
             // 
             // OcupationFamily
             // 
@@ -440,6 +447,7 @@
             this.OcupationFamily.HeaderText = "Ocupation";
             this.OcupationFamily.MinimumWidth = 6;
             this.OcupationFamily.Name = "OcupationFamily";
+            this.OcupationFamily.ReadOnly = true;
             this.OcupationFamily.Width = 110;
             // 
             // RelativeFamily
@@ -449,6 +457,7 @@
             this.RelativeFamily.HeaderText = "Relative Type";
             this.RelativeFamily.MinimumWidth = 6;
             this.RelativeFamily.Name = "RelativeFamily";
+            this.RelativeFamily.ReadOnly = true;
             this.RelativeFamily.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.RelativeFamily.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.RelativeFamily.Width = 156;
@@ -778,6 +787,9 @@
             // 
             // QualificationListView
             // 
+            this.QualificationListView.AllowUserToAddRows = false;
+            this.QualificationListView.AllowUserToDeleteRows = false;
+            this.QualificationListView.AllowUserToOrderColumns = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -796,10 +808,12 @@
             this.QualificationListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.QualificationListView.Location = new System.Drawing.Point(3, 330);
             this.QualificationListView.Name = "QualificationListView";
+            this.QualificationListView.ReadOnly = true;
             this.QualificationListView.RowHeadersWidth = 51;
             this.QualificationListView.RowTemplate.Height = 29;
             this.QualificationListView.Size = new System.Drawing.Size(709, 125);
             this.QualificationListView.TabIndex = 3;
+            this.QualificationListView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QualificationListView_CellClick);
             this.QualificationListView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QualificationListView_CellContentClick);
             // 
             // IdQualification
@@ -816,6 +830,7 @@
             this.Qualification.HeaderText = "Qualification";
             this.Qualification.MinimumWidth = 6;
             this.Qualification.Name = "Qualification";
+            this.Qualification.ReadOnly = true;
             this.Qualification.Width = 225;
             // 
             // IssueDateQualification
@@ -823,6 +838,7 @@
             this.IssueDateQualification.HeaderText = "Issue Date";
             this.IssueDateQualification.MinimumWidth = 6;
             this.IssueDateQualification.Name = "IssueDateQualification";
+            this.IssueDateQualification.ReadOnly = true;
             this.IssueDateQualification.Width = 140;
             // 
             // PlaceOfIssueQualification
@@ -831,12 +847,14 @@
             this.PlaceOfIssueQualification.HeaderText = "Place of issue";
             this.PlaceOfIssueQualification.MinimumWidth = 6;
             this.PlaceOfIssueQualification.Name = "PlaceOfIssueQualification";
+            this.PlaceOfIssueQualification.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "idQualification";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
             this.dataGridViewTextBoxColumn1.Width = 125;
             // 
@@ -874,6 +892,7 @@
             this.scoreQualificationText.Name = "scoreQualificationText";
             this.scoreQualificationText.Size = new System.Drawing.Size(679, 27);
             this.scoreQualificationText.TabIndex = 0;
+            this.scoreQualificationText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.scoreQualificationText_KeyPress);
             // 
             // panel22
             // 
@@ -1018,6 +1037,7 @@
             this.IDQualificationTB.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.IDQualificationTB.Location = new System.Drawing.Point(3, 20);
             this.IDQualificationTB.Name = "IDQualificationTB";
+            this.IDQualificationTB.ReadOnly = true;
             this.IDQualificationTB.Size = new System.Drawing.Size(81, 27);
             this.IDQualificationTB.TabIndex = 0;
             // 
@@ -1143,6 +1163,9 @@
             // 
             // UnionGridView
             // 
+            this.UnionGridView.AllowUserToAddRows = false;
+            this.UnionGridView.AllowUserToDeleteRows = false;
+            this.UnionGridView.AllowUserToOrderColumns = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -1168,6 +1191,7 @@
             this.UnionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnionGridView.Location = new System.Drawing.Point(5, 106);
             this.UnionGridView.Name = "UnionGridView";
+            this.UnionGridView.ReadOnly = true;
             this.UnionGridView.RowHeadersWidth = 51;
             this.UnionGridView.RowTemplate.Height = 29;
             this.UnionGridView.Size = new System.Drawing.Size(699, 387);
@@ -1181,6 +1205,7 @@
             this.IDUnion.MaxInputLength = 100;
             this.IDUnion.MinimumWidth = 6;
             this.IDUnion.Name = "IDUnion";
+            this.IDUnion.ReadOnly = true;
             // 
             // NameUnion
             // 
@@ -1189,6 +1214,7 @@
             this.NameUnion.HeaderText = "Name";
             this.NameUnion.MinimumWidth = 6;
             this.NameUnion.Name = "NameUnion";
+            this.NameUnion.ReadOnly = true;
             // 
             // SartDateUnion
             // 
@@ -1196,12 +1222,14 @@
             this.SartDateUnion.HeaderText = "Start date";
             this.SartDateUnion.MinimumWidth = 6;
             this.SartDateUnion.Name = "SartDateUnion";
+            this.SartDateUnion.ReadOnly = true;
             // 
             // EndDateUnion
             // 
             this.EndDateUnion.HeaderText = "End date";
             this.EndDateUnion.MinimumWidth = 6;
             this.EndDateUnion.Name = "EndDateUnion";
+            this.EndDateUnion.ReadOnly = true;
             this.EndDateUnion.Width = 110;
             // 
             // panel15
@@ -1287,6 +1315,7 @@
             // 
             this.PositionGridView.AllowUserToAddRows = false;
             this.PositionGridView.AllowUserToDeleteRows = false;
+            this.PositionGridView.AllowUserToOrderColumns = true;
             this.PositionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PositionGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fromPosition,
@@ -1344,6 +1373,7 @@
             // 
             this.UnitGridView.AllowUserToAddRows = false;
             this.UnitGridView.AllowUserToDeleteRows = false;
+            this.UnitGridView.AllowUserToOrderColumns = true;
             this.UnitGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UnitGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fromUnit,

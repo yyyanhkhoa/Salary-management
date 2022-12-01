@@ -69,7 +69,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
                 if (result.Success)
                 {
-                    MessageBox.Show("Insert Qualification success");
+                    MessageBox.Show("Insert Qualification of employee success" + scoreText.Text + " " + dateOfBirth.ToString() + " ");
                     mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, idEmploye, 2), sender);
                 }
                 else

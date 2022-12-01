@@ -12,6 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Globalization;
 
 namespace Salary_management.View.Forms.Employee.DetailInformation
 {
@@ -75,7 +77,28 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 scoreQualificationText.Enabled = false;
             }
         }
-      
+
+        void showEmployeeQualifi(Model.EmployeeQualification item, int idEmployeeQualification)
+        {
+            IDQualificationTB.Text = idEmployeeQualification.ToString();            
+            int indexQ = nameQualificationBox.FindString(item.QualificationId + "-" + item.QualificationName);
+            nameQualificationBox.SelectedIndex = indexQ;
+            dateQualification.Value = new DateTime(item.IssueDate.Year, item.IssueDate.Month, item.IssueDate.Day);
+            placeQualificationTB.Text = item.PlaceOfIssue;
+            scoreQualificationText.Text = item.Score.ToString();
+            var repo = new RepositoryQualification();
+            var detail = repo.GetQualificationDetail(item.QualificationId);
+
+            Model.Expertise  ex = detail.Expertise;
+            int indexEx = exQualificationBox.FindString(ex.Id + "-" + ex.Name);
+            exQualificationBox.SelectedIndex = indexEx;
+            
+
+
+
+
+        }
+
         private void DetailInformation_Load(object sender, EventArgs e)
         {  
             var repo = new RepositoryEmployee();            
@@ -109,8 +132,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             //get family info
             getFamilyInfo();
 
-            //get quailifcation info
-            IDQualificationTB.Enabled = false; 
+            //get quailifcation info        
             getQualificationInfo();
 
         }
@@ -134,14 +156,21 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             {
                 nameQualificationBox.Items.Add(quali.Id + "-" + quali.Name);             
             }
+            //get Expertise info 
+            var repoEx = new RepositoryExpertise();
+            var listEx = repoEx.GetExpertises("");
+            foreach (var ex in listEx)
+            {
+                exQualificationBox.Items.Add(ex.Id + "-" + ex.Name);               
+            }
 
             this.QualificationListView.Rows.Clear();
             RepositoryEmployee repo = new RepositoryEmployee();
-            if (repo.GetEmployeeQualifications(idEmployee).Success == false)
+            if (repo.GetEmployeeQualifications(idEmployee).Success == true)
             {
                 List<Model.EmployeeQualification> list = repo.GetEmployeeQualifications(idEmployee).Payload;
                 foreach (Model.EmployeeQualification qualifi in list)
-                {
+                {                   
                     QualificationListView.Rows.Add(qualifi.Id, qualifi.QualificationName, qualifi.IssueDate, qualifi.PlaceOfIssue, qualifi.QualificationId);
                 }
             }
@@ -357,12 +386,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         }
         private void QualificationListView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int idQualification = Int16.Parse(QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells[0].Value.ToString());
-            var repo = new RepositoryEmployeeQualification();           
-            var qualifi = repo.GetEmployeeQualification(idQualification);
-
-           
+        {          
         }
         private void dataGridView2_Resize(object sender, EventArgs e)
         {
@@ -373,9 +397,9 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         private void removeQualification_Click(object sender, EventArgs e)
         {
             string id = (QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells[0].Value).ToString();
-            //xoa = id 
+            //xoa = id            
             var repo = new RepositoryEmployeeQualification();
-            repo.DeleteEmployeeQualification(Int16.Parse(id));
+            repo.DeleteEmployeeQualification(Int32.Parse(id));
             getQualificationInfo();
         }
         private void RemoveFamilyBtn_Click(object sender, EventArgs e)
@@ -395,5 +419,24 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             getUnionInfo();
         }
 
+        private void QualificationListView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idEmployeeQualification = Int16.Parse(QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells[0].Value.ToString());
+            var repo = new RepositoryEmployeeQualification();
+            Model.EmployeeQualification qualifi = repo.GetEmployeeQualification(idEmployeeQualification);
+            showEmployeeQualifi(qualifi, idEmployeeQualification);
+        }
+
+        private void scoreQualificationText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

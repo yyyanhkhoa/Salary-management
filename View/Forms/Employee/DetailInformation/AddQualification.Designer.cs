@@ -238,6 +238,7 @@
             this.nameQualificationBox.Name = "nameQualificationBox";
             this.nameQualificationBox.Size = new System.Drawing.Size(764, 28);
             this.nameQualificationBox.TabIndex = 0;
+            this.nameQualificationBox.Text = "--select--";
             // 
             // panel3
             // 
