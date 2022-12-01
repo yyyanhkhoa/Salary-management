@@ -55,9 +55,6 @@ namespace Salary_management.Infrastructure
 			modelBuilder.Entity<Auth>()
 						.HasAlternateKey(e => e.Username);
 
-			modelBuilder.Entity<EmployeeQualification>()
-						.HasAlternateKey(e => new { e.EmployeeId, e.QualificationId });
-
 			modelBuilder.Entity<Employee>()
 						.Property(e => e.DateCreated)
 						.HasDefaultValueSql("now()");
