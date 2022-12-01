@@ -1,4 +1,5 @@
-﻿using Salary_management.Controller.Infrastructure.Repositories;
+﻿using Salary_management.Controller.Infrastructure.Data.Input;
+using Salary_management.Controller.Infrastructure.Repositories;
 using Salary_management.Infrastructure.Entities.Enums;
 using System;
 using System.Collections.Generic;
@@ -34,29 +35,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             {
                 unionJoinBox.Items.Add(union.Id + ":" + union.Name);
             }
-            if (idUnion == 0)
-            {
-                // add
-
-
-            }
-            else
-            {
-                // fix
-                var repo = new RepositoryUnionHistory();
-                var union = repo.GetUnionHistory(idUnion);
-                AddBtn.Text = "Save";
-                NameText.Text = union.UnionName;
-                startDay.Value = new DateTime(union.StartDate.Year, union.StartDate.Month, union.StartDate.Day);
-                if (union.EndDate != null)
-                {
-                    checkBox1.Checked = true;
-                    panel6.Visible = true;
-                    endDay.Value = new DateTime(union.EndDate.Value.Year, union.EndDate.Value.Month, union.EndDate.Value.Day);
-                }
-                unionJoinBox.SelectedIndex = unionJoinBox.FindString(union.UnionId);
-
-            }
+  
         }
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -65,17 +44,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            if (idUnion == 0)
-            {
-                // add
-
-
-            }
-            else
-            {
-                // fix
-                          
-            }
+          
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -91,7 +60,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             }
             else panel6.Visible = true;
         }
-
 
     }
 }

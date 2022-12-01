@@ -97,9 +97,6 @@
             this.qualificationGroupBox = new System.Windows.Forms.Panel();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.scoreQualificationText = new System.Windows.Forms.TextBox();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.exQualificationBox = new System.Windows.Forms.ComboBox();
             this.panel21 = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.placeQualificationTB = new System.Windows.Forms.TextBox();
@@ -118,17 +115,30 @@
             this.addQualificationBtn = new System.Windows.Forms.Button();
             this.backQualificationBtn = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.backUnionBtn = new System.Windows.Forms.Button();
             this.UnionGridView = new System.Windows.Forms.DataGridView();
             this.IDUnion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameUnion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SartDateUnion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndDateUnion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.unionEndDayPanel = new System.Windows.Forms.Panel();
+            this.endDayUnionBox = new System.Windows.Forms.DateTimePicker();
+            this.checkUnionEndDay = new System.Windows.Forms.CheckBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.startDayUnionBox = new System.Windows.Forms.DateTimePicker();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.unionJoinBox = new System.Windows.Forms.ComboBox();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.idUnionText = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.panel18 = new System.Windows.Forms.Panel();
             this.removeUnion = new System.Windows.Forms.Button();
             this.fixUnion = new System.Windows.Forms.Button();
+            this.backUnionBtn = new System.Windows.Forms.Button();
             this.addUnion = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -170,8 +180,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.QualificationListView)).BeginInit();
             this.qualificationGroupBox.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            this.panel22.SuspendLayout();
-            this.groupBox10.SuspendLayout();
             this.panel21.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel20.SuspendLayout();
@@ -181,10 +189,17 @@
             this.groupBox5.SuspendLayout();
             this.panel16.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UnionGridView)).BeginInit();
             this.panel15.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.unionEndDayPanel.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.panel24.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PositionGridView)).BeginInit();
@@ -346,7 +361,7 @@
             this.groupBox2.Controls.Add(this.FamilyGridView);
             this.groupBox2.Controls.Add(this.panel14);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
@@ -405,13 +420,13 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.FamilyGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.FamilyGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FamilyGridView.Location = new System.Drawing.Point(5, 106);
+            this.FamilyGridView.Location = new System.Drawing.Point(5, 111);
             this.FamilyGridView.Name = "FamilyGridView";
             this.FamilyGridView.ReadOnly = true;
             this.FamilyGridView.RowHeadersWidth = 51;
             this.FamilyGridView.RowTemplate.Height = 29;
             this.FamilyGridView.RowTemplate.ReadOnly = true;
-            this.FamilyGridView.Size = new System.Drawing.Size(699, 387);
+            this.FamilyGridView.Size = new System.Drawing.Size(699, 382);
             this.FamilyGridView.TabIndex = 17;
             this.FamilyGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FamilyGridView_CellContentClick);
             // 
@@ -468,7 +483,7 @@
             this.panel14.Controls.Add(this.FixFamilyBtn);
             this.panel14.Controls.Add(this.AddFamilyBtn);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(5, 32);
+            this.panel14.Location = new System.Drawing.Point(5, 37);
             this.panel14.Name = "panel14";
             this.panel14.Padding = new System.Windows.Forms.Padding(10);
             this.panel14.Size = new System.Drawing.Size(699, 74);
@@ -806,12 +821,12 @@
             this.PlaceOfIssueQualification,
             this.dataGridViewTextBoxColumn1});
             this.QualificationListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.QualificationListView.Location = new System.Drawing.Point(3, 330);
+            this.QualificationListView.Location = new System.Drawing.Point(3, 266);
             this.QualificationListView.Name = "QualificationListView";
             this.QualificationListView.ReadOnly = true;
             this.QualificationListView.RowHeadersWidth = 51;
             this.QualificationListView.RowTemplate.Height = 29;
-            this.QualificationListView.Size = new System.Drawing.Size(709, 125);
+            this.QualificationListView.Size = new System.Drawing.Size(709, 189);
             this.QualificationListView.TabIndex = 3;
             this.QualificationListView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QualificationListView_CellClick);
             this.QualificationListView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QualificationListView_CellContentClick);
@@ -862,7 +877,6 @@
             // 
             this.qualificationGroupBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.qualificationGroupBox.Controls.Add(this.groupBox11);
-            this.qualificationGroupBox.Controls.Add(this.panel22);
             this.qualificationGroupBox.Controls.Add(this.panel21);
             this.qualificationGroupBox.Controls.Add(this.panel20);
             this.qualificationGroupBox.Controls.Add(this.panel19);
@@ -870,15 +884,16 @@
             this.qualificationGroupBox.Location = new System.Drawing.Point(3, 3);
             this.qualificationGroupBox.Name = "qualificationGroupBox";
             this.qualificationGroupBox.Padding = new System.Windows.Forms.Padding(10);
-            this.qualificationGroupBox.Size = new System.Drawing.Size(709, 327);
+            this.qualificationGroupBox.Size = new System.Drawing.Size(709, 263);
             this.qualificationGroupBox.TabIndex = 12;
+            this.qualificationGroupBox.Paint += new System.Windows.Forms.PaintEventHandler(this.qualificationGroupBox_Paint);
             // 
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.scoreQualificationText);
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox11.Location = new System.Drawing.Point(10, 234);
+            this.groupBox11.Location = new System.Drawing.Point(10, 175);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(685, 54);
             this.groupBox11.TabIndex = 10;
@@ -893,42 +908,6 @@
             this.scoreQualificationText.Size = new System.Drawing.Size(679, 27);
             this.scoreQualificationText.TabIndex = 0;
             this.scoreQualificationText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.scoreQualificationText_KeyPress);
-            // 
-            // panel22
-            // 
-            this.panel22.Controls.Add(this.groupBox10);
-            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel22.Location = new System.Drawing.Point(10, 175);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(685, 59);
-            this.panel22.TabIndex = 9;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.exQualificationBox);
-            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox10.Location = new System.Drawing.Point(0, 0);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(685, 50);
-            this.groupBox10.TabIndex = 4;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Expertise name";
-            // 
-            // exQualificationBox
-            // 
-            this.exQualificationBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.exQualificationBox.FormattingEnabled = true;
-            this.exQualificationBox.Items.AddRange(new object[] {
-            "1 - Toán",
-            "2 - Anh ",
-            "3 - Tin học",
-            "4 - Văn"});
-            this.exQualificationBox.Location = new System.Drawing.Point(3, 23);
-            this.exQualificationBox.Name = "exQualificationBox";
-            this.exQualificationBox.Size = new System.Drawing.Size(679, 28);
-            this.exQualificationBox.TabIndex = 1;
-            this.exQualificationBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panel21
             // 
@@ -1114,7 +1093,9 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.groupBox6);
+            this.tabPage4.Controls.Add(this.UnionGridView);
+            this.tabPage4.Controls.Add(this.panel15);
+            this.tabPage4.Controls.Add(this.panel18);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -1122,44 +1103,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Union";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.AutoSize = true;
-            this.groupBox6.BackColor = System.Drawing.Color.White;
-            this.groupBox6.Controls.Add(this.panel18);
-            this.groupBox6.Controls.Add(this.UnionGridView);
-            this.groupBox6.Controls.Add(this.panel15);
-            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox6.Location = new System.Drawing.Point(3, 3);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox6.Size = new System.Drawing.Size(709, 498);
-            this.groupBox6.TabIndex = 17;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Union form";
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.backUnionBtn);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel18.Location = new System.Drawing.Point(5, 447);
-            this.panel18.Name = "panel18";
-            this.panel18.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel18.Size = new System.Drawing.Size(699, 46);
-            this.panel18.TabIndex = 18;
-            // 
-            // backUnionBtn
-            // 
-            this.backUnionBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.backUnionBtn.Location = new System.Drawing.Point(0, 5);
-            this.backUnionBtn.Name = "backUnionBtn";
-            this.backUnionBtn.Size = new System.Drawing.Size(94, 41);
-            this.backUnionBtn.TabIndex = 0;
-            this.backUnionBtn.Text = "< Back";
-            this.backUnionBtn.UseVisualStyleBackColor = true;
-            this.backUnionBtn.Click += new System.EventHandler(this.backUnionBtn_Click);
             // 
             // UnionGridView
             // 
@@ -1189,13 +1132,14 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.UnionGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.UnionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UnionGridView.Location = new System.Drawing.Point(5, 106);
+            this.UnionGridView.Location = new System.Drawing.Point(3, 281);
             this.UnionGridView.Name = "UnionGridView";
             this.UnionGridView.ReadOnly = true;
             this.UnionGridView.RowHeadersWidth = 51;
             this.UnionGridView.RowTemplate.Height = 29;
-            this.UnionGridView.Size = new System.Drawing.Size(699, 387);
-            this.UnionGridView.TabIndex = 17;
+            this.UnionGridView.Size = new System.Drawing.Size(709, 177);
+            this.UnionGridView.TabIndex = 19;
+            this.UnionGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UnionGridView_CellClick);
             // 
             // IDUnion
             // 
@@ -1234,52 +1178,233 @@
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.removeUnion);
-            this.panel15.Controls.Add(this.fixUnion);
-            this.panel15.Controls.Add(this.addUnion);
+            this.panel15.BackColor = System.Drawing.Color.White;
+            this.panel15.Controls.Add(this.panel22);
+            this.panel15.Controls.Add(this.panel24);
+            this.panel15.Controls.Add(this.panel25);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel15.Location = new System.Drawing.Point(5, 32);
+            this.panel15.Location = new System.Drawing.Point(3, 3);
             this.panel15.Name = "panel15";
-            this.panel15.Padding = new System.Windows.Forms.Padding(10);
-            this.panel15.Size = new System.Drawing.Size(699, 74);
-            this.panel15.TabIndex = 16;
+            this.panel15.Size = new System.Drawing.Size(709, 278);
+            this.panel15.TabIndex = 20;
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.groupBox4);
+            this.panel22.Controls.Add(this.groupBox10);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel22.Location = new System.Drawing.Point(0, 138);
+            this.panel22.Name = "panel22";
+            this.panel22.Padding = new System.Windows.Forms.Padding(10);
+            this.panel22.Size = new System.Drawing.Size(709, 91);
+            this.panel22.TabIndex = 23;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.unionEndDayPanel);
+            this.groupBox4.Controls.Add(this.checkUnionEndDay);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox4.Location = new System.Drawing.Point(286, 10);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(413, 71);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "End Day";
+            // 
+            // unionEndDayPanel
+            // 
+            this.unionEndDayPanel.Controls.Add(this.endDayUnionBox);
+            this.unionEndDayPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.unionEndDayPanel.Location = new System.Drawing.Point(72, 23);
+            this.unionEndDayPanel.Name = "unionEndDayPanel";
+            this.unionEndDayPanel.Size = new System.Drawing.Size(338, 45);
+            this.unionEndDayPanel.TabIndex = 2;
+            this.unionEndDayPanel.Visible = false;
+            // 
+            // endDayUnionBox
+            // 
+            this.endDayUnionBox.CustomFormat = "";
+            this.endDayUnionBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.endDayUnionBox.Location = new System.Drawing.Point(35, 0);
+            this.endDayUnionBox.Name = "endDayUnionBox";
+            this.endDayUnionBox.Size = new System.Drawing.Size(303, 27);
+            this.endDayUnionBox.TabIndex = 0;
+            // 
+            // checkUnionEndDay
+            // 
+            this.checkUnionEndDay.AutoSize = true;
+            this.checkUnionEndDay.Location = new System.Drawing.Point(3, 23);
+            this.checkUnionEndDay.Name = "checkUnionEndDay";
+            this.checkUnionEndDay.Size = new System.Drawing.Size(63, 24);
+            this.checkUnionEndDay.TabIndex = 1;
+            this.checkUnionEndDay.Text = "End?";
+            this.checkUnionEndDay.UseVisualStyleBackColor = true;
+            this.checkUnionEndDay.CheckedChanged += new System.EventHandler(this.checkUnionEndDay_CheckedChanged);
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.startDayUnionBox);
+            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox10.Location = new System.Drawing.Point(10, 10);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(328, 71);
+            this.groupBox10.TabIndex = 4;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Start Day";
+            // 
+            // startDayUnionBox
+            // 
+            this.startDayUnionBox.CustomFormat = "";
+            this.startDayUnionBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startDayUnionBox.Location = new System.Drawing.Point(3, 23);
+            this.startDayUnionBox.Name = "startDayUnionBox";
+            this.startDayUnionBox.Size = new System.Drawing.Size(322, 27);
+            this.startDayUnionBox.TabIndex = 0;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.groupBox12);
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel24.Location = new System.Drawing.Point(0, 55);
+            this.panel24.Margin = new System.Windows.Forms.Padding(10);
+            this.panel24.Name = "panel24";
+            this.panel24.Padding = new System.Windows.Forms.Padding(10);
+            this.panel24.Size = new System.Drawing.Size(709, 83);
+            this.panel24.TabIndex = 22;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.unionJoinBox);
+            this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox12.Location = new System.Drawing.Point(10, 10);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(689, 63);
+            this.groupBox12.TabIndex = 0;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Union join";
+            // 
+            // unionJoinBox
+            // 
+            this.unionJoinBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.unionJoinBox.FormattingEnabled = true;
+            this.unionJoinBox.Location = new System.Drawing.Point(3, 23);
+            this.unionJoinBox.Name = "unionJoinBox";
+            this.unionJoinBox.Size = new System.Drawing.Size(683, 28);
+            this.unionJoinBox.TabIndex = 1;
+            this.unionJoinBox.Text = "--Select--";
+            // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.groupBox13);
+            this.panel25.Controls.Add(this.groupBox6);
+            this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel25.Location = new System.Drawing.Point(0, 0);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(709, 55);
+            this.panel25.TabIndex = 21;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.idUnionText);
+            this.groupBox13.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox13.Location = new System.Drawing.Point(622, 0);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(87, 55);
+            this.groupBox13.TabIndex = 19;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "ID";
+            // 
+            // idUnionText
+            // 
+            this.idUnionText.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.idUnionText.Location = new System.Drawing.Point(3, 25);
+            this.idUnionText.Name = "idUnionText";
+            this.idUnionText.ReadOnly = true;
+            this.idUnionText.Size = new System.Drawing.Size(81, 27);
+            this.idUnionText.TabIndex = 0;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.AutoSize = true;
+            this.groupBox6.BackColor = System.Drawing.Color.White;
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox6.Location = new System.Drawing.Point(0, 0);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox6.Size = new System.Drawing.Size(709, 55);
+            this.groupBox6.TabIndex = 18;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Union form";
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.removeUnion);
+            this.panel18.Controls.Add(this.fixUnion);
+            this.panel18.Controls.Add(this.backUnionBtn);
+            this.panel18.Controls.Add(this.addUnion);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel18.Location = new System.Drawing.Point(3, 458);
+            this.panel18.Name = "panel18";
+            this.panel18.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panel18.Size = new System.Drawing.Size(709, 43);
+            this.panel18.TabIndex = 18;
             // 
             // removeUnion
             // 
             this.removeUnion.AutoSize = true;
-            this.removeUnion.BackColor = System.Drawing.Color.Transparent;
-            this.removeUnion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.removeUnion.Location = new System.Drawing.Point(268, 10);
+            this.removeUnion.BackColor = System.Drawing.SystemColors.Info;
+            this.removeUnion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.removeUnion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.removeUnion.Location = new System.Drawing.Point(302, 5);
             this.removeUnion.Name = "removeUnion";
-            this.removeUnion.Size = new System.Drawing.Size(163, 54);
-            this.removeUnion.TabIndex = 5;
+            this.removeUnion.Size = new System.Drawing.Size(138, 38);
+            this.removeUnion.TabIndex = 6;
             this.removeUnion.Text = "Remove";
             this.removeUnion.UseVisualStyleBackColor = false;
-            this.removeUnion.Click += new System.EventHandler(this.removeUnion_Click);
+            this.removeUnion.Click += new System.EventHandler(this.removeUnion_Click_1);
             // 
             // fixUnion
             // 
             this.fixUnion.AutoSize = true;
-            this.fixUnion.BackColor = System.Drawing.Color.Transparent;
+            this.fixUnion.BackColor = System.Drawing.SystemColors.Info;
             this.fixUnion.Dock = System.Windows.Forms.DockStyle.Right;
-            this.fixUnion.Location = new System.Drawing.Point(431, 10);
+            this.fixUnion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.fixUnion.Location = new System.Drawing.Point(440, 5);
             this.fixUnion.Name = "fixUnion";
-            this.fixUnion.Size = new System.Drawing.Size(258, 54);
-            this.fixUnion.TabIndex = 4;
+            this.fixUnion.Size = new System.Drawing.Size(134, 38);
+            this.fixUnion.TabIndex = 5;
             this.fixUnion.Text = "Fix";
             this.fixUnion.UseVisualStyleBackColor = false;
-            this.fixUnion.Click += new System.EventHandler(this.fixUnion_Click);
+            this.fixUnion.Click += new System.EventHandler(this.fixUnion_Click_1);
+            // 
+            // backUnionBtn
+            // 
+            this.backUnionBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.backUnionBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.backUnionBtn.Location = new System.Drawing.Point(0, 5);
+            this.backUnionBtn.Name = "backUnionBtn";
+            this.backUnionBtn.Size = new System.Drawing.Size(94, 38);
+            this.backUnionBtn.TabIndex = 0;
+            this.backUnionBtn.Text = "< Back";
+            this.backUnionBtn.UseVisualStyleBackColor = true;
+            this.backUnionBtn.Click += new System.EventHandler(this.backUnionBtn_Click);
             // 
             // addUnion
             // 
             this.addUnion.AutoSize = true;
-            this.addUnion.BackColor = System.Drawing.Color.Transparent;
-            this.addUnion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.addUnion.Location = new System.Drawing.Point(10, 10);
+            this.addUnion.BackColor = System.Drawing.SystemColors.Info;
+            this.addUnion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.addUnion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addUnion.Location = new System.Drawing.Point(574, 5);
             this.addUnion.Name = "addUnion";
-            this.addUnion.Size = new System.Drawing.Size(258, 54);
+            this.addUnion.Size = new System.Drawing.Size(135, 38);
             this.addUnion.TabIndex = 3;
-            this.addUnion.Text = "Add";
+            this.addUnion.Text = "Add new union";
             this.addUnion.UseVisualStyleBackColor = false;
             this.addUnion.Click += new System.EventHandler(this.addUnion_Click);
             // 
@@ -1506,8 +1631,6 @@
             this.qualificationGroupBox.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
-            this.panel22.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
@@ -1520,12 +1643,21 @@
             this.groupBox5.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.UnionGridView)).EndInit();
             this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.unionEndDayPanel.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.panel24.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.groupBox9.ResumeLayout(false);
@@ -1590,12 +1722,7 @@
         private DataGridView QualificationListView;
 
         private TabPage tabPage4;
-        private GroupBox groupBox6;
-        private Panel panel15;
-        private Button removeUnion;
-        private Button fixUnion;
         private Button addUnion;
-        private DataGridView UnionGridView;
         private Panel panel16;
         private Button backQualificationBtn;
         private Panel panel17;
@@ -1607,15 +1734,9 @@
         private DataGridViewTextBoxColumn BirthFamily;
         private DataGridViewTextBoxColumn OcupationFamily;
         private DataGridViewTextBoxColumn RelativeFamily;
-        private DataGridViewTextBoxColumn IDUnion;
-        private DataGridViewTextBoxColumn NameUnion;
-        private DataGridViewTextBoxColumn SartDateUnion;
-        private DataGridViewTextBoxColumn EndDateUnion;
         private Button fixQualificationBtn;
         private Button addQualificationBtn;
         private Panel qualificationGroupBox;
-        private Panel panel22;
-        private GroupBox groupBox10;
         private Panel panel21;
         private GroupBox groupBox7;
         private TextBox placeQualificationTB;
@@ -1624,13 +1745,10 @@
         private GroupBox groupBox8;
         private DateTimePicker dateQualification;
         private Panel panel19;
-        private GroupBox groupBox5;
-        private TextBox IDQualificationTB;
         private Label TitleListEmployee;
         private TabPage tabPage5;
         private GroupBox groupBox9;
         private Button removeQualification;
-        private ComboBox exQualificationBox;
         private GroupBox groupBox11;
         private TextBox scoreQualificationText;
         private ComboBox nameQualificationBox;
@@ -1649,5 +1767,29 @@
         private DataGridViewTextBoxColumn fromUnit;
         private DataGridViewTextBoxColumn toUnit;
         private DataGridViewTextBoxColumn unitHistory;
+        private DataGridView UnionGridView;
+        private DataGridViewTextBoxColumn IDUnion;
+        private DataGridViewTextBoxColumn NameUnion;
+        private DataGridViewTextBoxColumn SartDateUnion;
+        private DataGridViewTextBoxColumn EndDateUnion;
+        private Panel panel15;
+        private GroupBox groupBox6;
+        private Button removeUnion;
+        private Button fixUnion;
+        private GroupBox groupBox5;
+        private TextBox IDQualificationTB;
+        private Panel panel22;
+        private GroupBox groupBox4;
+        private Panel unionEndDayPanel;
+        private DateTimePicker endDayUnionBox;
+        private CheckBox checkUnionEndDay;
+        private GroupBox groupBox10;
+        private DateTimePicker startDayUnionBox;
+        private Panel panel24;
+        private GroupBox groupBox12;
+        private ComboBox unionJoinBox;
+        private Panel panel25;
+        private GroupBox groupBox13;
+        private TextBox idUnionText;
     }
 }

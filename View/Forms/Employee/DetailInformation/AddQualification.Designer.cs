@@ -32,9 +32,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.scoreText = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.exBox = new System.Windows.Forms.ComboBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.OccupationGroupBox = new System.Windows.Forms.GroupBox();
             this.placeText = new System.Windows.Forms.TextBox();
@@ -50,8 +47,6 @@
             this.AddFamilyGroupBox.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.groupBox10.SuspendLayout();
             this.panel12.SuspendLayout();
             this.OccupationGroupBox.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -66,7 +61,6 @@
             this.AddFamilyGroupBox.AutoSize = true;
             this.AddFamilyGroupBox.BackColor = System.Drawing.Color.White;
             this.AddFamilyGroupBox.Controls.Add(this.panel4);
-            this.AddFamilyGroupBox.Controls.Add(this.panel1);
             this.AddFamilyGroupBox.Controls.Add(this.panel12);
             this.AddFamilyGroupBox.Controls.Add(this.panel5);
             this.AddFamilyGroupBox.Controls.Add(this.panel2);
@@ -86,7 +80,7 @@
             this.panel4.Controls.Add(this.groupBox2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel4.Location = new System.Drawing.Point(5, 355);
+            this.panel4.Location = new System.Drawing.Point(5, 275);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(10);
             this.panel4.Size = new System.Drawing.Size(790, 80);
@@ -111,38 +105,6 @@
             this.scoreText.Size = new System.Drawing.Size(764, 27);
             this.scoreText.TabIndex = 0;
             this.scoreText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.scoreText_KeyPress);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.groupBox10);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel1.Location = new System.Drawing.Point(5, 275);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(790, 80);
-            this.panel1.TabIndex = 10;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.exBox);
-            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox10.Location = new System.Drawing.Point(10, 10);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(770, 60);
-            this.groupBox10.TabIndex = 5;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Expertise name";
-            // 
-            // exBox
-            // 
-            this.exBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.exBox.FormattingEnabled = true;
-            this.exBox.Location = new System.Drawing.Point(3, 23);
-            this.exBox.Name = "exBox";
-            this.exBox.Size = new System.Drawing.Size(764, 28);
-            this.exBox.TabIndex = 11;
             // 
             // panel12
             // 
@@ -286,8 +248,6 @@
             this.panel4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.OccupationGroupBox.ResumeLayout(false);
             this.OccupationGroupBox.PerformLayout();
@@ -304,7 +264,6 @@
         #endregion
 
         private GroupBox AddFamilyGroupBox;
-        private Panel panel1;
         private Panel panel12;
         private GroupBox OccupationGroupBox;
         private TextBox placeText;
@@ -315,8 +274,6 @@
         private Button AddBtn;
         private Button BackBtn;
         private Panel panel2;
-        private GroupBox groupBox10;
-        private ComboBox exBox;
         private GroupBox groupBox3;
         private ComboBox nameQualificationBox;
         private Panel panel4;
