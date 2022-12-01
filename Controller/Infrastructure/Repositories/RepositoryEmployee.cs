@@ -118,7 +118,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			}
 
 			var query = Context.UnitHistories.Where(uh => uh.EmployeeId == employeeId)
-							   .Include(uh => uh.UnitId);
+							   .Include(uh => uh.Unit);
 			return new()
 			{
 				Success = true,
