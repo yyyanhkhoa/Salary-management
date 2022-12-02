@@ -1,4 +1,5 @@
-﻿using Salary_management.Controller.Infrastructure.Data.Input;
+﻿using Salary_management.Controller.Infrastructure.Data;
+using Salary_management.Controller.Infrastructure.Data.Input;
 using Salary_management.Controller.Infrastructure.Repositories;
 using Salary_management.Infrastructure.Entities.Enums;
 using System;
@@ -16,14 +17,12 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 {
     public partial class AddUnion : Form
     {
-        private Management mng;
-        private int idUnion;
+        private Management mng;       
         private string idEmploye;
-        public AddUnion(Management mng, int idUnion, string idEmploye)
+        public AddUnion(Management mng, string idEmploye)
         {
             InitializeComponent();
-            this.mng = mng;
-            this.idUnion = idUnion;
+            this.mng = mng;         
             this.idEmploye = idEmploye;
         }
 
@@ -37,14 +36,68 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             }
   
         }
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
           
+            if (unionJoinBox.SelectedIndex  == -1)
+            {
+                MessageBox.Show("Please select union");
+            }
+            else if (checkBox1.Checked)
+            {
+                var repo = new RepositoryUnionHistory();
+
+                DateOnly startDate = DateOnly.FromDateTime(startDayBox.Value);
+                string indexU = unionJoinBox.Items[unionJoinBox.SelectedIndex].ToString();
+                string[] splitsU = (indexU.ToString()).Split(':');
+                string idU = splitsU[0];
+
+                // if have endDay
+                DateOnly enddate = DateOnly.FromDateTime(endDayBox.Value);
+                var result = repo.InsertUnionHistory( new InputUnionHistory()
+                {
+                    UnionId = idU,
+                    StartDate = startDate,
+                    EndDate = enddate,
+                    EmployeeId = idEmploye ,
+                });
+                if (result.Success)
+                {
+                    MessageBox.Show("Add new Union history success");
+                    mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, idEmploye, 3), sender);
+                }
+                else
+                {
+                    MessageBox.Show(result.ErrorMessage);
+                }
+            }
+            else
+            {
+                var repo = new RepositoryUnionHistory();
+
+                DateOnly startDate = DateOnly.FromDateTime(startDayBox.Value);
+                string indexU = unionJoinBox.Items[unionJoinBox.SelectedIndex].ToString();
+                string[] splitsU = (indexU.ToString()).Split(':');
+                string idU = splitsU[0];
+                // if don't have endDay
+                var result = repo.InsertUnionHistory( new InputUnionHistory()
+                {
+                    UnionId = idU,
+                    StartDate = startDate,
+                    EmployeeId = idEmploye,
+                   // EndDate = null ,
+                });
+                if (result.Success)
+                {
+                    MessageBox.Show("Add new Union history success");
+                    mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, idEmploye, 3), sender);
+                }
+                else
+                {
+                    MessageBox.Show(result.ErrorMessage);
+                }
+            }
         }
 
         private void BackBtn_Click(object sender, EventArgs e)

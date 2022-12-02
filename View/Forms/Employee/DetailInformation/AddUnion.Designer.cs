@@ -34,12 +34,12 @@
             this.NameGroupBox = new System.Windows.Forms.GroupBox();
             this.unionJoinBox = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.startDay = new System.Windows.Forms.DateTimePicker();
+            this.startDayBox = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.endDay = new System.Windows.Forms.DateTimePicker();
+            this.endDayBox = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.AddUnionGroupBox = new System.Windows.Forms.GroupBox();
             this.panel3.SuspendLayout();
@@ -119,18 +119,18 @@
             this.panel2.Size = new System.Drawing.Size(790, 83);
             this.panel2.TabIndex = 3;
             // 
-            // startDay
+            // startDayBox
             // 
-            this.startDay.CustomFormat = "";
-            this.startDay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.startDay.Location = new System.Drawing.Point(3, 23);
-            this.startDay.Name = "startDay";
-            this.startDay.Size = new System.Drawing.Size(322, 27);
-            this.startDay.TabIndex = 0;
+            this.startDayBox.CustomFormat = "";
+            this.startDayBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startDayBox.Location = new System.Drawing.Point(3, 23);
+            this.startDayBox.Name = "startDayBox";
+            this.startDayBox.Size = new System.Drawing.Size(322, 27);
+            this.startDayBox.TabIndex = 0;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.startDay);
+            this.groupBox1.Controls.Add(this.startDayBox);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(10, 10);
             this.groupBox1.Name = "groupBox1";
@@ -165,7 +165,7 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.endDay);
+            this.panel6.Controls.Add(this.endDayBox);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(72, 23);
             this.panel6.Name = "panel6";
@@ -173,14 +173,14 @@
             this.panel6.TabIndex = 2;
             this.panel6.Visible = false;
             // 
-            // endDay
+            // endDayBox
             // 
-            this.endDay.CustomFormat = "";
-            this.endDay.Dock = System.Windows.Forms.DockStyle.Right;
-            this.endDay.Location = new System.Drawing.Point(35, 0);
-            this.endDay.Name = "endDay";
-            this.endDay.Size = new System.Drawing.Size(303, 27);
-            this.endDay.TabIndex = 0;
+            this.endDayBox.CustomFormat = "";
+            this.endDayBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.endDayBox.Location = new System.Drawing.Point(35, 0);
+            this.endDayBox.Name = "endDayBox";
+            this.endDayBox.Size = new System.Drawing.Size(303, 27);
+            this.endDayBox.TabIndex = 0;
             // 
             // checkBox1
             // 
@@ -240,13 +240,13 @@
         private Button AddBtn;
         private GroupBox NameGroupBox;
         private Panel panel2;
-        private DateTimePicker startDay;
+        private DateTimePicker startDayBox;
         private GroupBox groupBox1;
         private Panel panel5;
         private GroupBox AddUnionGroupBox;
         private GroupBox groupBox2;
         private CheckBox checkBox1;
-        private DateTimePicker endDay;
+        private DateTimePicker endDayBox;
         private Panel panel6;
         private ComboBox unionJoinBox;
     }

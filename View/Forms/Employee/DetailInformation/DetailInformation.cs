@@ -113,7 +113,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             idUnionText.Text = idUnion.ToString();
             int indexUJ = unionJoinBox.FindString(item.UnionId + "-" + item.UnionName);
             unionJoinBox.SelectedIndex = indexUJ;
-
         }
 
         private void DetailInformation_Load(object sender, EventArgs e)
@@ -122,7 +121,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             var employee = repo.GetEmployeeDetail(idEmployee);           
             enableInfo(false);
             enableQualification(false);
-
+            enableUnion(false);
             //get Infomation detail
             NameText.Text = employee.Name;
             AddressText.Text = employee.Address;
@@ -173,6 +172,8 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         private void getQualificationInfo()
         {
             this.QualificationListView.Rows.Clear();
+            this.nameQualificationBox.Items.Clear();
+            
             var repoQualifi = new RepositoryQualification();
             var listQua = repoQualifi.GetQualifications("");
             foreach (var quali in listQua)
@@ -188,8 +189,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 {                   
                     QualificationListView.Rows.Add(qualifi.Id, qualifi.QualificationName, qualifi.IssueDate, qualifi.PlaceOfIssue, qualifi.QualificationId);
                 }
-            }
-          
+            }          
         }
 
         private void getHistoryInfo()
@@ -222,7 +222,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
             this.UnionGridView.Rows.Clear();
             RepositoryEmployee repo = new RepositoryEmployee();
-            if (repo.GetEmployeeUnionHistory(idEmployee).Success == false)
+            if (repo.GetEmployeeUnionHistory(idEmployee).Success == true)
             {
                 List<Model.UnionHistory> list = repo.GetEmployeeUnionHistory(idEmployee).Payload;
                 foreach (Model.UnionHistory union in list)
@@ -230,7 +230,8 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                     UnionGridView.Rows.Add(union.Id, union.UnionName, union.StartDate, union.EndDate);
                 }
             }
-           
+
+            this.unionJoinBox.Items.Clear();
             var repoUnionJoin = new RepositoryUnion();
             var listU = repoUnionJoin.GetUnions("");
             foreach (var union in listU)
@@ -293,10 +294,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                     {
                         MessageBox.Show(result.ErrorMessage);
                     }
-
-                }
-               
-
+                }      
             }
         }
 
@@ -310,7 +308,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         }
         private void addUnion_Click(object sender, EventArgs e)
         {
-             mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng, 0, idEmployee), sender);
+             mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddUnion(this.mng,  idEmployee), sender);
         }
 
         private void FixFamilyBtn_Click(object sender, EventArgs e)
@@ -319,87 +317,120 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             mng.OpenChildForm(new View.Forms.Employee.DetailInformation.AddFamily(this.mng, Int16.Parse(idFamily), idEmployee), sender);
         }
         private void fixQualificationBtn_Click(object sender, EventArgs e)
-        {
-            if (fixQualificationBtn.Text == "Fix")
+        {           
+            if (IDQualificationTB.Text == "" )
             {
-                fixQualificationBtn.Text = "Save";
-                enableQualification(true);
+                MessageBox.Show("Please select Employee Qualification first");
             }
             else
-            {   // fix Qualification               
-                var repo = new RepositoryEmployeeQualification();
-     
-                string indexQ = nameQualificationBox.Items[nameQualificationBox.SelectedIndex].ToString();
-                string[] splitsQ = (indexQ.ToString()).Split('-');
-                string idQ = splitsQ[0];                
-                DateOnly date = DateOnly.FromDateTime(dateQualification.Value);
+            {
+                if (fixQualificationBtn.Text == "Fix")
+                {
+                    fixQualificationBtn.Text = "Save";
+                    enableQualification(true);
+                }
+                else
+                {   // fix Qualification               
+                    var repo = new RepositoryEmployeeQualification();
+                    string indexQ = nameQualificationBox.Items[nameQualificationBox.SelectedIndex].ToString();
+                    string[] splitsQ = (indexQ.ToString()).Split('-');
+                    string idQ = splitsQ[0];
+                    DateOnly date = DateOnly.FromDateTime(dateQualification.Value);
+                   
+                    var result = repo.FixEmployeeQualification(Int32.Parse(IDQualificationTB.Text), new InputEmployeeQualification()
+                    {
+                        Score = float.Parse(scoreQualificationText.Text),
+                        IssueDate = date,
+                        PlaceOfIssue = placeQualificationTB.Text,
+                        QualificationId = Int16.Parse(idQ),
+                        EmployeeId = idEmployee,
+                    });
 
-                // string idEmployeeQualification = (QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells[0].Value).ToString();
-                  var result = repo.FixEmployeeQualification(Int32.Parse(IDQualificationTB.Text), new InputEmployeeQualification()
-                  {
-                      Score = float.Parse(scoreQualificationText.Text),
-                      IssueDate = date,
-                      PlaceOfIssue = placeQualificationTB.Text,
-                      QualificationId = Int16.Parse(idQ),
-                  });
-
-                  if (result.Success)
-                  {
-                      MessageBox.Show("Update Employee Qualification success");
-                      getQualificationInfo();
-                  }
-                  else
-                  {
-                      MessageBox.Show(result.ErrorMessage);
-                  }
-                  fixQualificationBtn.Text = "Fix";
-                  enableQualification(false);                 
-            }
+                    if (result.Success)
+                    {
+                        MessageBox.Show("Update Employee Qualification success");
+                        getQualificationInfo();
+                    }
+                    else
+                    {
+                        MessageBox.Show(result.ErrorMessage);
+                    }
+                    fixQualificationBtn.Text = "Fix";
+                    enableQualification(false);
+                }
+            }          
         }
 
         private void fixUnion_Click_1(object sender, EventArgs e)
-        {
-            if (fixUnion.Text == "Fix")
+        {           
+            if (idUnionText.Text == "")
             {
-                fixUnion.Text = "Save";
-                enableUnion(true);
+                MessageBox.Show("Please select Union history first");
             }
             else
-            {   // fix Union               
-                var repo = new RepositoryUnionHistory();
-
-                string indexU = unionJoinBox.Items[unionJoinBox.SelectedIndex].ToString();
-                string[] splitsU = (indexU.ToString()).Split('-');
-                string idU = splitsU[0];
-                MessageBox.Show(idU);
-                DateOnly startdate = DateOnly.FromDateTime(startDayUnionBox.Value);
-                if (!checkUnionEndDay.Checked)
+            {
+                if (fixUnion.Text == "Fix")
                 {
-                    unionEndDayPanel.Visible = false;
+                    fixUnion.Text = "Save";
+                    enableUnion(true);
                 }
                 else
                 {
-                    DateOnly enddate = DateOnly.FromDateTime(endDayUnionBox.Value);
-                }
+                    // fix Union                                  
+                    var repo = new RepositoryUnionHistory();                   
+                    DateOnly startDate = DateOnly.FromDateTime(startDayUnionBox.Value);
+                    string indexU = unionJoinBox.Items[unionJoinBox.SelectedIndex].ToString();
+                    string[] splitsU = (indexU.ToString()).Split('-');
+                    string idU = splitsU[0];                   
 
-                // string idEmployeeQualification = (QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells[0].Value).ToString();
-                var result = repo.FixUnionHistory(Int32.Parse(idUnionText.Text), new InputEmployeeQualification()
-                {
-                 
-                });
-
-                if (result.Success)
-                {
-                    MessageBox.Show("Update Family success");
-                    getQualificationInfo();
+                    if (checkUnionEndDay.Checked)
+                    {
+                        // if have endDay
+                        DateOnly enddate = DateOnly.FromDateTime(endDayUnionBox.Value);
+                        var result = repo.FixUnionHistory(Int32.Parse(idUnionText.Text), new InputUnionHistory()
+                        {
+                            UnionId = idU,
+                            StartDate = startDate,
+                            EmployeeId = idEmployee,
+                            EndDate = enddate,                           
+                        });
+                        if (result.Success)
+                        {
+                            MessageBox.Show("Update Union history success");
+                            getUnionInfo();
+                        }
+                        else
+                        {
+                            MessageBox.Show(result.ErrorMessage);
+                        }
+                    }
+                    else
+                    {         
+                        // if don't have endDay
+                        var result = repo.FixUnionHistory(Int32.Parse(idUnionText.Text), new InputUnionHistory()
+                        {
+                            UnionId = idU,
+                            StartDate = startDate,
+                            EmployeeId = idEmployee,
+                            EndDate = null,
+                        });
+                        if (result.Success)
+                        {
+                            MessageBox.Show("Update Union history success");
+                            getUnionInfo();
+                        }
+                        else
+                        {
+                            MessageBox.Show(result.ErrorMessage);
+                        }
+                    }
+                  
+                    fixUnion.Text = "Fix";
+                    enableUnion(false);
+                    
                 }
-                else
-                {
-                    MessageBox.Show(result.ErrorMessage);
-                }
-                fixUnion.Text = "Fix";
-                enableUnion(false);
             }
+          
         }
 
         private void panel13_Paint(object sender, PaintEventArgs e)
