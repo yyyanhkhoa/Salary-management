@@ -30,16 +30,12 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
             var repoEX = new RepositoryExpertise();
             var listEX = repoEX.GetExpertises("");
-            foreach (var ex in listEX)
-            {
-                exBox.Items.Add(ex.Id + "-" + ex.Name);
-            }
 
             var repoQualifi = new RepositoryQualification();
             var list = repoQualifi.GetQualifications("");
             foreach (var quali in list)
             {
-                nameQualificationBox.Items.Add(quali.Id + "-" + quali.Name);
+                nameQualificationBox.Items.Add(quali.Id + "-" + quali.Name + "-" + quali.Expertise.Name);
             }  
         }
 
@@ -47,8 +43,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
             if (nameQualificationBox.SelectedIndex.ToString() == "") MessageBox.Show("Pls chosse qualification");
             else if (placeText.Text == "") MessageBox.Show("Pls input place of issue");
-            else if (scoreText.Text == "") MessageBox.Show("Pls input score");
-            else if (exBox.SelectedIndex.ToString() == "") MessageBox.Show("Pls chosse expertise");
+            else if (scoreText.Text == "") MessageBox.Show("Pls input score");         
             else
             {
                 var repo = new RepositoryEmployeeQualification();
@@ -69,7 +64,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
                 if (result.Success)
                 {
-                    MessageBox.Show("Insert Qualification success");
+                    MessageBox.Show("Insert Qualification of employee success" );
                     mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng, idEmploye, 2), sender);
                 }
                 else
