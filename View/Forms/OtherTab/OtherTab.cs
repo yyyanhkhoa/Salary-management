@@ -2,6 +2,7 @@
 using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Salary_management.Controller.Infrastructure.Data.Input;
 using Salary_management.Controller.Infrastructure.Repositories;
+using Salary_management.Infrastructure.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -274,7 +275,7 @@ namespace Salary_management.View.Forms.OtherTab
         private void searchFamilyBtn_Click(object sender, EventArgs e)
         {
             this.FamilyGridView.Rows.Clear();
-            RepositoryFamily repo = new RepositoryFamily();           
+            RepositoryFamily repo = new RepositoryFamily();
             if (relativeBox.SelectedIndex == -1)
             {
                 //search all
@@ -296,7 +297,7 @@ namespace Salary_management.View.Forms.OtherTab
             else if (relativeBox.SelectedIndex == 1)
             {
                 //search Wife
-                List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text);
+                List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text, RelativeType.Wife);
                 foreach (Model.Family family in list)
                 {
                     FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType);
@@ -306,7 +307,7 @@ namespace Salary_management.View.Forms.OtherTab
             else if (relativeBox.SelectedIndex == 2)
             {
                 //search Husband
-                List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text);
+                List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text, RelativeType.Husband);
                 foreach (Model.Family family in list)
                 {
                     FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType);
@@ -315,7 +316,7 @@ namespace Salary_management.View.Forms.OtherTab
             else if (relativeBox.SelectedIndex == 3)
             {
                 //search Child
-                List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text);
+                List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text, RelativeType.Child);
                 foreach (Model.Family family in list)
                 {
                     FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType);
