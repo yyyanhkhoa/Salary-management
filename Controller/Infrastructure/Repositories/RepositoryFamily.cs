@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Models = Salary_management.Model;
 using Salary_management.Infrastructure.Entities;
+using Salary_management.Infrastructure.Entities.Enums;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Salary_management.Controller.Infrastructure.Repositories
 {
@@ -31,22 +33,35 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		/// Lấy thông tin các thân nhân theo tên hoặc theo id của nhân viên, nếu từ khóa trống thì lấy thông tin của tất cả thân nhân
 		/// </summary>
 		/// <param name="keyword">tên thân nhân hoặc mã nhân viên mà thân nhân đó thuộc</param>
+		/// <param name="relativeType">loại thân nhân muốn lấy, nếu để null thì sẽ lấy hết tất cả loại thân nhân</param>
 		/// <returns></returns>
-
-		public List<Models.Family> GetFamilies(string keyword)
+		public List<Models.Family> GetFamilies(string keyword, RelativeType? relativeType = null)
 		{
-
 			if (string.IsNullOrWhiteSpace(keyword))
 			{
-				return Context.Families.Select(e => MapToModel(e)).ToList();
+				if (relativeType == null)
+				{
+					return Context.Families.Select(e => MapToModel(e)).ToList();
+				}
+				else
+				{
+					return Context.Families.Where(f => f.RelativeType == relativeType).Select(e => MapToModel(e)).ToList();
+				}
+
 			}
 			else
 			{
-				return Context.Families.Where(
+				var query = Context.Families.Where(
 					e => EF.Functions.ILike(e.Name, $"%{keyword}%") ||
 						 EF.Functions.ILike(e.EmployeeId, $"%{keyword}%")
-				)
-				.Select(e => MapToModel(e)).ToList();
+				);
+
+				if (relativeType != null)
+				{
+					query = query.Where(f => f.RelativeType == relativeType);
+				}
+
+				return query.Select(e => MapToModel(e)).ToList();
 			}
 		}
 		public List<Models.Family> GetFamiliesByEmployee(string EmployeeId)
