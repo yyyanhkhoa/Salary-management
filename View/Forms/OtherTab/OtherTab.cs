@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Salary_management.Controller.Infrastructure.Data.Input;
 using Salary_management.Controller.Infrastructure.Repositories;
 using System;
@@ -52,7 +53,15 @@ namespace Salary_management.View.Forms.OtherTab
             foreach (var item in listQualification)
             {               
                 QualifcationGridView.Rows.Add(item.Id, item.Name, item.Expertise.Name + "-" + item.ExpertiseId);
-            }          
+            }
+
+            //get Family info 
+            var repoF = new RepositoryFamily();
+            List<Model.Family> listF = repoF.GetFamilies("");
+            foreach (Model.Family family in listF)
+            {
+                FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType.ToString());
+            }
 
         }
 
@@ -250,6 +259,69 @@ namespace Salary_management.View.Forms.OtherTab
             int id = Int16.Parse(QualifcationGridView.Rows[QualifcationGridView.CurrentRow.Index].Cells[0].Value.ToString());
             this.QualificationId = id;
             getQualificationHistoryInfo(id);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OtherPageTab.SelectTab("FamilyTab"); 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchFamilyBtn_Click(object sender, EventArgs e)
+        {
+            this.FamilyGridView.Rows.Clear();
+            RepositoryFamily repo = new RepositoryFamily();           
+            if (relativeBox.SelectedIndex == -1)
+            {
+                //search all
+                List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text);
+                foreach (Model.Family family in list)
+                {
+                    FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType);
+                }
+            }
+            else if (relativeBox.SelectedIndex == 0)
+            {     
+                //search all
+                List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text);
+                foreach (Model.Family family in list)
+                {
+                    FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType);
+                }
+            }
+            else if (relativeBox.SelectedIndex == 1)
+            {
+                //search Wife
+                List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text);
+                foreach (Model.Family family in list)
+                {
+                    FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType);
+                }
+
+            }
+            else if (relativeBox.SelectedIndex == 2)
+            {
+                //search Husband
+                List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text);
+                foreach (Model.Family family in list)
+                {
+                    FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType);
+                }
+            }
+            else if (relativeBox.SelectedIndex == 3)
+            {
+                //search Child
+                List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text);
+                foreach (Model.Family family in list)
+                {
+                    FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType);
+                }
+            }
+
         }
     }
 }

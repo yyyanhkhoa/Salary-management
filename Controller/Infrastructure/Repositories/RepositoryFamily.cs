@@ -91,7 +91,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			};
 		}
 
-		private Models.Family MapToModel(Family family)
+		private static Models.Family MapToModel(Family family)
 		{
 			return new Models.Family
 			{
