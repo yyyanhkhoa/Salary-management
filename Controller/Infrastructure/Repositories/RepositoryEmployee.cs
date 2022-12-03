@@ -9,6 +9,7 @@ using Models = Salary_management.Model;
 using Salary_management.Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic.Devices;
+using Salary_management.Infrastructure.Entities.Enums;
 
 namespace Salary_management.Controller.Infrastructure.Repositories
 {
@@ -146,20 +147,32 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			};
 		}
 
-		public Result<List<Models.Family>> GetEmployeeFamilies(string employeeId)
+		/// <summary>
+		/// Lấy thân nhân của nhân viên
+		/// </summary>
+		/// <param name="employeeId">id nhân viên</param>
+		/// <param name="relativeType">loại thân nhân muốn lấy, nếu để null thì sẽ lấy hết tất cả loại thân nhân</param>
+		/// <returns></returns>
+		public Result<List<Models.Family>> GetEmployeeFamilies(string employeeId, RelativeType? relativeType = null)
 		{
 			if (!CheckEmployeeExists(employeeId))
 			{
 				return new() { Success = false, ErrorMessage = "Employee of this id does not exist." };
 			}
 
+			var query = Context.Families.Include(f => f.Employee)
+								.Where(f => f.EmployeeId == employeeId);
+
+			if (relativeType != null)
+			{
+				query = query.Where(f => f.RelativeType == relativeType);
+			}
+
 			return new()
 			{
 				Success = true,
-				Payload = Context.Families.Include(f => f.Employee)
-								.Where(f => f.EmployeeId == employeeId)
-								.Select(uh => MapToModel(uh))
-								.ToList()
+				Payload = query.Select(uh => MapToModel(uh))
+							   .ToList()
 			};
 		}
 
