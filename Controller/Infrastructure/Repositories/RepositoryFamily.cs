@@ -28,11 +28,11 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		}
 
 		/// <summary>
-		/// Lấy thông tin các đoàn thể theo từ khóa, nếu từ khóa trống thì lấy thông tin của tất cả đoàn thể
+		/// Lấy thông tin các thân nhân theo tên hoặc theo id của nhân viên, nếu từ khóa trống thì lấy thông tin của tất cả thân nhân
 		/// </summary>
-		/// <param name="searchString">tên thân nhân hoặc mã nhân viên mà thân nhân đó thuộc</param>
+		/// <param name="keyword">tên thân nhân hoặc mã nhân viên mà thân nhân đó thuộc</param>
 		/// <returns></returns>
-	
+
 		public List<Models.Family> GetFamilies(string keyword)
 		{
 
@@ -91,7 +91,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			};
 		}
 
-		private Models.Family MapToModel(Family family)
+		private static Models.Family MapToModel(Family family)
 		{
 			return new Models.Family
 			{
