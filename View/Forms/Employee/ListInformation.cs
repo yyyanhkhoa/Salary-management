@@ -39,10 +39,9 @@ namespace Salary_management.View.Forms.Employee
             var senderGrid = (DataGridView)sender;
             string id = (ListViewEmployee.Rows[ListViewEmployee.CurrentRow.Index].Cells[0].Value).ToString();
 
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&
                 e.RowIndex >= 0)
-            {
-                
+            {                
                 mng.OpenChildForm(new View.Forms.Employee.DetailInformation.DetailInformation(this.mng,id), sender);
             }
         }
