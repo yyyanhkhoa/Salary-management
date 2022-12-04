@@ -31,12 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.ListViewEmployee = new System.Windows.Forms.DataGridView();
-            this.IdEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Identity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CurrentSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detail = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.AddBtn = new System.Windows.Forms.Button();
@@ -45,6 +39,12 @@
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.TitleListEmployee = new System.Windows.Forms.Label();
+            this.IdEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Identity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrentSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detail = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListViewEmployee)).BeginInit();
@@ -77,6 +77,9 @@
             // 
             // ListViewEmployee
             // 
+            this.ListViewEmployee.AllowUserToAddRows = false;
+            this.ListViewEmployee.AllowUserToDeleteRows = false;
+            this.ListViewEmployee.AllowUserToOrderColumns = true;
             this.ListViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListViewEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdEmployee,
@@ -88,54 +91,12 @@
             this.ListViewEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListViewEmployee.Location = new System.Drawing.Point(10, 10);
             this.ListViewEmployee.Name = "ListViewEmployee";
+            this.ListViewEmployee.ReadOnly = true;
             this.ListViewEmployee.RowHeadersWidth = 51;
             this.ListViewEmployee.RowTemplate.Height = 29;
             this.ListViewEmployee.Size = new System.Drawing.Size(788, 261);
             this.ListViewEmployee.TabIndex = 0;
             this.ListViewEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListViewEmployee_CellContentClick);
-            // 
-            // IdEmployee
-            // 
-            this.IdEmployee.HeaderText = "IdEmployee";
-            this.IdEmployee.MinimumWidth = 6;
-            this.IdEmployee.Name = "IdEmployee";
-            this.IdEmployee.ReadOnly = true;
-            this.IdEmployee.Width = 125;
-            // 
-            // NameEmployee
-            // 
-            this.NameEmployee.HeaderText = "Name";
-            this.NameEmployee.MinimumWidth = 6;
-            this.NameEmployee.Name = "NameEmployee";
-            this.NameEmployee.Width = 125;
-            // 
-            // Birth
-            // 
-            this.Birth.HeaderText = "Birth";
-            this.Birth.MinimumWidth = 6;
-            this.Birth.Name = "Birth";
-            this.Birth.Width = 110;
-            // 
-            // Identity
-            // 
-            this.Identity.HeaderText = "Identity";
-            this.Identity.MinimumWidth = 6;
-            this.Identity.Name = "Identity";
-            this.Identity.Width = 110;
-            // 
-            // CurrentSalary
-            // 
-            this.CurrentSalary.HeaderText = "Allowance";
-            this.CurrentSalary.MinimumWidth = 6;
-            this.CurrentSalary.Name = "CurrentSalary";
-            this.CurrentSalary.Width = 125;
-            // 
-            // Detail
-            // 
-            this.Detail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Detail.HeaderText = "Detail";
-            this.Detail.MinimumWidth = 6;
-            this.Detail.Name = "Detail";
             // 
             // panel2
             // 
@@ -227,6 +188,57 @@
             this.TitleListEmployee.TabIndex = 0;
             this.TitleListEmployee.Text = "Employee Management";
             // 
+            // IdEmployee
+            // 
+            this.IdEmployee.HeaderText = "IdEmployee";
+            this.IdEmployee.MinimumWidth = 6;
+            this.IdEmployee.Name = "IdEmployee";
+            this.IdEmployee.ReadOnly = true;
+            this.IdEmployee.Width = 125;
+            // 
+            // NameEmployee
+            // 
+            this.NameEmployee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameEmployee.HeaderText = "Name";
+            this.NameEmployee.MinimumWidth = 6;
+            this.NameEmployee.Name = "NameEmployee";
+            this.NameEmployee.ReadOnly = true;
+            // 
+            // Birth
+            // 
+            this.Birth.HeaderText = "Birth";
+            this.Birth.MinimumWidth = 6;
+            this.Birth.Name = "Birth";
+            this.Birth.ReadOnly = true;
+            this.Birth.Width = 120;
+            // 
+            // Identity
+            // 
+            this.Identity.HeaderText = "Identity";
+            this.Identity.MinimumWidth = 6;
+            this.Identity.Name = "Identity";
+            this.Identity.ReadOnly = true;
+            this.Identity.Width = 120;
+            // 
+            // CurrentSalary
+            // 
+            this.CurrentSalary.HeaderText = "Allowance";
+            this.CurrentSalary.MinimumWidth = 6;
+            this.CurrentSalary.Name = "CurrentSalary";
+            this.CurrentSalary.ReadOnly = true;
+            this.CurrentSalary.Width = 125;
+            // 
+            // Detail
+            // 
+            this.Detail.HeaderText = "Detail";
+            this.Detail.Image = global::Salary_management.Properties.Resources.eye_icon;
+            this.Detail.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Detail.MinimumWidth = 6;
+            this.Detail.Name = "Detail";
+            this.Detail.ReadOnly = true;
+            this.Detail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Detail.Width = 55;
+            // 
             // ListInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -268,6 +280,6 @@
         private DataGridViewTextBoxColumn Birth;
         private DataGridViewTextBoxColumn Identity;
         private DataGridViewTextBoxColumn CurrentSalary;
-        private DataGridViewButtonColumn Detail;
+        private DataGridViewImageColumn Detail;
     }
 }
