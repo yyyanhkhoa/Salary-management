@@ -43,7 +43,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				return new() { Success = false, ErrorMessage = "Employee with this id do not exist." };
 			}
 
-			if (dbset.Any(uh => uh.EndDate == null))
+			if (dbset.Any(uh => uh.EndDate == null && uh.EmployeeId == input.EmployeeId))
 			{
 				return new() { Success = false, ErrorMessage = $"Please add previous {name} end date before adding new {name} history." };
 			}
