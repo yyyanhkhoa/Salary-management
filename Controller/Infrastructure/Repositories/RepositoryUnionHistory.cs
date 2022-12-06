@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Models = Salary_management.Model;
 using Salary_management.Infrastructure.Entities;
+using System.Xml.Linq;
 
 namespace Salary_management.Controller.Infrastructure.Repositories
 {
@@ -25,11 +26,14 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 		public Result<Models.UnionHistory> InsertUnionHistory(InputUnionHistory input)
 		{
-			var result = Helper.DoCommonHistoryValidation<UnionHistory, Models.UnionHistory>
-				("Union", input, Context.UnionHistories);
-			if (!result.Success)
+			if (input.EndDate != null && input.EndDate < input.StartDate)
 			{
-				return result;
+				return new() { Success = false, ErrorMessage = "End date can not be smaller than start day." };
+			}
+
+			if (!new RepositoryEmployee().CheckEmployeeExists(input.EmployeeId))
+			{
+				return new() { Success = false, ErrorMessage = "Employee with this id do not exist." };
 			}
 
 			var unitExists = new RepositoryUnion().CheckUnionExist(input.UnionId);
