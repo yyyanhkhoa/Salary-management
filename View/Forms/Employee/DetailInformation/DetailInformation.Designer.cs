@@ -161,8 +161,12 @@
             this.SalaryGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.IdSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allowanceSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BHXHSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BHYTSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BHTNSalay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.GenderGroupBox.SuspendLayout();
             this.NameGroupBox.SuspendLayout();
@@ -569,7 +573,7 @@
             this.tabControl1.Location = new System.Drawing.Point(10, 10);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(723, 537);
+            this.tabControl1.Size = new System.Drawing.Size(921, 537);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
@@ -1585,7 +1589,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 29);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(715, 504);
+            this.tabPage6.Size = new System.Drawing.Size(913, 504);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Salary";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1601,7 +1605,7 @@
             this.groupBox14.Location = new System.Drawing.Point(3, 3);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox14.Size = new System.Drawing.Size(709, 498);
+            this.groupBox14.Size = new System.Drawing.Size(907, 498);
             this.groupBox14.TabIndex = 17;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Salary Form";
@@ -1613,7 +1617,7 @@
             this.panel23.Location = new System.Drawing.Point(5, 447);
             this.panel23.Name = "panel23";
             this.panel23.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel23.Size = new System.Drawing.Size(699, 46);
+            this.panel23.Size = new System.Drawing.Size(897, 46);
             this.panel23.TabIndex = 18;
             // 
             // button2
@@ -1642,8 +1646,12 @@
             this.SalaryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.SalaryGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdSalary,
-            this.Salary,
-            this.dateSalary});
+            this.dateSalary,
+            this.allowanceSalary,
+            this.BHXHSalary,
+            this.BHYTSalary,
+            this.BHTNSalay,
+            this.Salary});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -1667,7 +1675,7 @@
             this.SalaryGridView.RowHeadersWidth = 51;
             this.SalaryGridView.RowTemplate.Height = 29;
             this.SalaryGridView.RowTemplate.ReadOnly = true;
-            this.SalaryGridView.Size = new System.Drawing.Size(699, 456);
+            this.SalaryGridView.Size = new System.Drawing.Size(897, 456);
             this.SalaryGridView.TabIndex = 17;
             // 
             // panel1
@@ -1679,17 +1687,56 @@
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(745, 559);
+            this.panel1.Size = new System.Drawing.Size(943, 559);
             this.panel1.TabIndex = 3;
             // 
             // IdSalary
             // 
-            this.IdSalary.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.IdSalary.FillWeight = 50F;
             this.IdSalary.HeaderText = "Id";
             this.IdSalary.MinimumWidth = 6;
             this.IdSalary.Name = "IdSalary";
             this.IdSalary.ReadOnly = true;
+            this.IdSalary.Width = 70;
+            // 
+            // dateSalary
+            // 
+            this.dateSalary.HeaderText = "Date";
+            this.dateSalary.MinimumWidth = 6;
+            this.dateSalary.Name = "dateSalary";
+            this.dateSalary.ReadOnly = true;
+            // 
+            // allowanceSalary
+            // 
+            this.allowanceSalary.HeaderText = "Allowance";
+            this.allowanceSalary.MinimumWidth = 6;
+            this.allowanceSalary.Name = "allowanceSalary";
+            this.allowanceSalary.ReadOnly = true;
+            this.allowanceSalary.Width = 125;
+            // 
+            // BHXHSalary
+            // 
+            this.BHXHSalary.HeaderText = "BHXH";
+            this.BHXHSalary.MinimumWidth = 6;
+            this.BHXHSalary.Name = "BHXHSalary";
+            this.BHXHSalary.ReadOnly = true;
+            this.BHXHSalary.Width = 125;
+            // 
+            // BHYTSalary
+            // 
+            this.BHYTSalary.HeaderText = "BHYT";
+            this.BHYTSalary.MinimumWidth = 6;
+            this.BHYTSalary.Name = "BHYTSalary";
+            this.BHYTSalary.ReadOnly = true;
+            this.BHYTSalary.Width = 125;
+            // 
+            // BHTNSalay
+            // 
+            this.BHTNSalay.HeaderText = "BHTN";
+            this.BHTNSalay.MinimumWidth = 6;
+            this.BHTNSalay.Name = "BHTNSalay";
+            this.BHTNSalay.ReadOnly = true;
+            this.BHTNSalay.Width = 125;
             // 
             // Salary
             // 
@@ -1699,21 +1746,12 @@
             this.Salary.Name = "Salary";
             this.Salary.ReadOnly = true;
             // 
-            // dateSalary
-            // 
-            this.dateSalary.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dateSalary.FillWeight = 180F;
-            this.dateSalary.HeaderText = "Date salary";
-            this.dateSalary.MinimumWidth = 6;
-            this.dateSalary.Name = "dateSalary";
-            this.dateSalary.ReadOnly = true;
-            // 
             // DetailInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(765, 579);
+            this.ClientSize = new System.Drawing.Size(963, 579);
             this.Controls.Add(this.panel1);
             this.Name = "DetailInformation";
             this.Padding = new System.Windows.Forms.Padding(10);
@@ -1927,7 +1965,11 @@
         private Button button2;
         private DataGridView SalaryGridView;
         private DataGridViewTextBoxColumn IdSalary;
-        private DataGridViewTextBoxColumn Salary;
         private DataGridViewTextBoxColumn dateSalary;
+        private DataGridViewTextBoxColumn allowanceSalary;
+        private DataGridViewTextBoxColumn BHXHSalary;
+        private DataGridViewTextBoxColumn BHYTSalary;
+        private DataGridViewTextBoxColumn BHTNSalay;
+        private DataGridViewTextBoxColumn Salary;
     }
 }
