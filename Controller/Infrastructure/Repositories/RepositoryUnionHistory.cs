@@ -36,6 +36,21 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				return new() { Success = false, ErrorMessage = "Employee with this id do not exist." };
 			}
 
+			if (Context.UnionHistories.Any(uh => uh.EndDate == null && uh.UnionId == input.UnionId && uh.EmployeeId == input.EmployeeId))
+			{
+				return new() { Success = false, ErrorMessage = $"Please add previous Union end date before adding new Union history of that same Union." };
+			}
+
+			var invalidStartDate = Context.UnionHistories.Any(
+				uh => input.EmployeeId == uh.EmployeeId
+				   && input.UnionId == uh.UnionId
+				   && input.StartDate < uh.EndDate
+			);
+			if (invalidStartDate)
+			{
+				return new() { Success = false, ErrorMessage = "Start date can not be earlier than previous Unit end date." };
+			}
+
 			var unitExists = new RepositoryUnion().CheckUnionExist(input.UnionId);
 			if (!unitExists)
 			{
