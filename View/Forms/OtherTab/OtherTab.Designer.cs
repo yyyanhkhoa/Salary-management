@@ -770,6 +770,9 @@
             // 
             // ExpertiseGridView
             // 
+            this.ExpertiseGridView.AllowUserToAddRows = false;
+            this.ExpertiseGridView.AllowUserToDeleteRows = false;
+            this.ExpertiseGridView.AllowUserToOrderColumns = true;
             this.ExpertiseGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ExpertiseGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdExpertise,
@@ -777,6 +780,7 @@
             this.ExpertiseGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ExpertiseGridView.Location = new System.Drawing.Point(3, 23);
             this.ExpertiseGridView.Name = "ExpertiseGridView";
+            this.ExpertiseGridView.ReadOnly = true;
             this.ExpertiseGridView.RowHeadersWidth = 51;
             this.ExpertiseGridView.RowTemplate.Height = 29;
             this.ExpertiseGridView.Size = new System.Drawing.Size(518, 411);
@@ -787,6 +791,7 @@
             this.IdExpertise.HeaderText = "ID";
             this.IdExpertise.MinimumWidth = 6;
             this.IdExpertise.Name = "IdExpertise";
+            this.IdExpertise.ReadOnly = true;
             this.IdExpertise.Width = 125;
             // 
             // nameExpertise
@@ -795,6 +800,7 @@
             this.nameExpertise.HeaderText = "Name Expertise";
             this.nameExpertise.MinimumWidth = 6;
             this.nameExpertise.Name = "nameExpertise";
+            this.nameExpertise.ReadOnly = true;
             // 
             // groupBox5
             // 
