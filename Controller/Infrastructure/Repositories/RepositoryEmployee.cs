@@ -20,7 +20,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 
 		public bool CheckEmployeeExists(string id)
-			=> Context.Employees.Any(a => a.Id	== id);
+			=> Context.Employees.Any(a => a.Id == id);
 
 
 		public Result<Models.Employee> InsertEmployee(EmployeeInput input)
@@ -38,7 +38,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			else
 			{
 				employee.Id = $"EM_{int.Parse(newestEmployee.Id[3..^0]) + 1}";
-			} 
+			}
 
 			Context.Employees.Add(employee);
 			Context.SaveChanges();
@@ -253,14 +253,23 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 						from unionHis in Context.UnionHistories.Where(uh => uh.EmployeeId == unitHis.EmployeeId && uh.UnionId == unionId && uh.EndDate == null)
 						from employee in Context.Employees.Where(e => e.Id == unitHis.EmployeeId)
 						from union in Context.Unions.Where(u => u.Id == unionHis.UnionId)
-						select new Models.EmployeeOfUnitOfUnion() { 
-							EmployeeId = unionHis.EmployeeId, 
+						select new Models.EmployeeOfUnitOfUnion() {
+							EmployeeId = unionHis.EmployeeId,
 							EmployeeName = employee.Name,
 							UnionName = union.Name,
 							UnionStartDate = unionHis.StartDate,
 						};
 
 			return new() { Success = true, Payload = query.ToList() };
+		}
+
+		public List<Models.Employee> GetRetiredEmployeesAt(DateOnly date)
+		{
+			string dateStr = date.ToString("yyyy-MM-dd");
+			var males = Context.Employees.FromSqlInterpolated($"SELECT * FROM employees WHERE gender='male' AND DATE_PART('year', AGE({dateStr}::timestamptz, date_of_birth)) >= 60");
+			var females = Context.Employees.FromSqlInterpolated($"SELECT * FROM employees WHERE gender='female' AND DATE_PART('year', AGE({dateStr}::timestamptz, date_of_birth)) >= 55");
+
+			return males.Concat(females).OrderByDescending(e => e.DateCreated).Select(e => MapToModel(e)).ToList();
 		}
 
 		private static Models.Employee MapToModel(Employee input)
