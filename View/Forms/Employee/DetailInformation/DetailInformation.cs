@@ -131,8 +131,11 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             IdentityText.Text = employee.IdentityCardNumber;
             CoefficientAllowanceText.Text = employee.CoefficientAllowance.ToString();
         
-            ImagePicture.Image = Image.FromStream(new MemoryStream(employee.Image));
-            ImagePicture.SizeMode = PictureBoxSizeMode.StretchImage;
+            if(employee.Image != null)
+            {
+                ImagePicture.Image = Image.FromStream(new MemoryStream(employee.Image));
+                ImagePicture.SizeMode = PictureBoxSizeMode.StretchImage;
+            }          
           
             if (employee.Gender == Gender.Male)
             {

@@ -102,6 +102,7 @@
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.FamilyGridView = new System.Windows.Forms.DataGridView();
             this.idFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.relativeFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -770,6 +771,9 @@
             // 
             // ExpertiseGridView
             // 
+            this.ExpertiseGridView.AllowUserToAddRows = false;
+            this.ExpertiseGridView.AllowUserToDeleteRows = false;
+            this.ExpertiseGridView.AllowUserToOrderColumns = true;
             this.ExpertiseGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ExpertiseGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdExpertise,
@@ -777,6 +781,7 @@
             this.ExpertiseGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ExpertiseGridView.Location = new System.Drawing.Point(3, 23);
             this.ExpertiseGridView.Name = "ExpertiseGridView";
+            this.ExpertiseGridView.ReadOnly = true;
             this.ExpertiseGridView.RowHeadersWidth = 51;
             this.ExpertiseGridView.RowTemplate.Height = 29;
             this.ExpertiseGridView.Size = new System.Drawing.Size(518, 411);
@@ -787,6 +792,7 @@
             this.IdExpertise.HeaderText = "ID";
             this.IdExpertise.MinimumWidth = 6;
             this.IdExpertise.Name = "IdExpertise";
+            this.IdExpertise.ReadOnly = true;
             this.IdExpertise.Width = 125;
             // 
             // nameExpertise
@@ -795,6 +801,7 @@
             this.nameExpertise.HeaderText = "Name Expertise";
             this.nameExpertise.MinimumWidth = 6;
             this.nameExpertise.Name = "nameExpertise";
+            this.nameExpertise.ReadOnly = true;
             // 
             // groupBox5
             // 
@@ -932,6 +939,7 @@
             this.FamilyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FamilyGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idFamily,
+            this.idEmployee,
             this.nameFamily,
             this.relativeFamily});
             this.FamilyGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -949,7 +957,15 @@
             this.idFamily.MinimumWidth = 6;
             this.idFamily.Name = "idFamily";
             this.idFamily.ReadOnly = true;
-            this.idFamily.Width = 125;
+            this.idFamily.Width = 80;
+            // 
+            // idEmployee
+            // 
+            this.idEmployee.HeaderText = "ID employee";
+            this.idEmployee.MinimumWidth = 6;
+            this.idEmployee.Name = "idEmployee";
+            this.idEmployee.ReadOnly = true;
+            this.idEmployee.Width = 125;
             // 
             // nameFamily
             // 
@@ -1224,9 +1240,6 @@
         private Button button5;
         private GroupBox groupBox9;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn idFamily;
-        private DataGridViewTextBoxColumn nameFamily;
-        private DataGridViewTextBoxColumn relativeFamily;
         private GroupBox groupBox8;
         private Panel panel20;
         private Button searchFamilyBtn;
@@ -1237,5 +1250,9 @@
         private TextBox searchFamilyText;
         private Label label7;
         private DataGridView FamilyGridView;
+        private DataGridViewTextBoxColumn idFamily;
+        private DataGridViewTextBoxColumn idEmployee;
+        private DataGridViewTextBoxColumn nameFamily;
+        private DataGridViewTextBoxColumn relativeFamily;
     }
 }

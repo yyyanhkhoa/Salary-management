@@ -53,11 +53,19 @@ namespace Salary_management.View.Forms.Employee
                 else gender = Gender.Female;
                 DateOnly dateOfBirth = DateOnly.FromDateTime(DateOfBirth.Value);
                 DateOnly startDate = DateOnly.FromDateTime(StartDate.Value);
-				//MessageBox.Show(name + " " + gender + " " + dateOfBirth + " " + ethnic + " " + address + " " + startDate + " " + identity + " " + coefficientAllowance);
+			
+                var imageConverter = new ImageConverter();
+                byte[] img ;
+                if (ImagePicture.Image != null)
+                {
+                   img = imageConverter.ConvertTo(ImagePicture.Image, typeof(byte[])) as byte[];
+                }
+                else
+                {
+                    img = null; 
+                }
 
-				
-				var imageConverter = new ImageConverter();
-				var result = RepoEmployee.InsertEmployee(new EmployeeInput()
+                var result = RepoEmployee.InsertEmployee(new EmployeeInput()
                 {
                     Name = NameText.Text,
                     Gender = gender,
@@ -67,7 +75,7 @@ namespace Salary_management.View.Forms.Employee
                     StartDate = startDate,
                     IdentityCardNumber = IdentityText.Text,
                     CoefficientAllowance = float.Parse(CoefficientAllowanceText.Text),
-					Image = imageConverter.ConvertTo(ImagePicture.Image, typeof(byte[])) as byte[]
+					Image = img
                 });
 
                 if (result.Success)
