@@ -1,4 +1,5 @@
-﻿using Salary_management.Controller.Infrastructure.Repositories;
+﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
+using Salary_management.Controller.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,16 +22,7 @@ namespace Salary_management.View.Forms.Position
             InitializeComponent();
         }
 
-        private void ListViewPosition_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var senderGrid = (DataGridView)sender;
-
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0)
-            {
-                mng.OpenChildForm(new View.Forms.Position.DetailPosition(), sender);
-            }
-        }
+     
 
         private void AddRankBtn_Click(object sender, EventArgs e)
         {
@@ -71,6 +63,19 @@ namespace Salary_management.View.Forms.Position
             {
                 ListViewEmployee.Rows.Add(employee.Id, employee.Name, employee.DateOfBirth, employee.IdentityCardNumber, employee.CoefficientAllowance);
             }*/
+        }
+
+        private void PositionGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            var id = PositionGridView.Rows[PositionGridView.CurrentRow.Index].Cells[0].Value;
+           // mng.OpenChildForm(new View.Forms.Position.DetailPosition(this.mng, "GV111"), sender);
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+        e.RowIndex >= 0)
+            {
+                mng.OpenChildForm(new View.Forms.Position.DetailPosition(this.mng, "GV111"), sender);
+            }
         }
     }
 }

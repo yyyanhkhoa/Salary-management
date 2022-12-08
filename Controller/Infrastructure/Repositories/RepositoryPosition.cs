@@ -48,7 +48,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 
 		public Models.Position GetPositionDetail(string positionId)
 		{
-			return MapToModel(Context.Positions.Where(p => p.Id == positionId).First());
+			return MapToModel(Context.Positions.Include(p => p.Rank).Where(p => p.Id == positionId).First());
 		}
 
 		public Result<Models.Position> FixPosition(string id, InputPosition input)

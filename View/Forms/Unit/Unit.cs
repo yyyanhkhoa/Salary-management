@@ -116,5 +116,10 @@ namespace Salary_management.View.Forms.Unit
                     break;
             }
         }
+
+        private void UnitGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

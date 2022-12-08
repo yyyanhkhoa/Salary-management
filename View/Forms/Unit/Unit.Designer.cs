@@ -339,6 +339,7 @@
             this.UnitGridView.RowTemplate.Height = 29;
             this.UnitGridView.Size = new System.Drawing.Size(572, 364);
             this.UnitGridView.TabIndex = 0;
+            this.UnitGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UnitGridView_CellContentClick);
             // 
             // IDGrid
             // 

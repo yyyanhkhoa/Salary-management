@@ -126,6 +126,7 @@
             this.PositionGridView.RowTemplate.Height = 29;
             this.PositionGridView.Size = new System.Drawing.Size(791, 304);
             this.PositionGridView.TabIndex = 4;
+            this.PositionGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PositionGridView_CellContentClick);
             // 
             // Id
             // 
