@@ -102,6 +102,7 @@
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.FamilyGridView = new System.Windows.Forms.DataGridView();
             this.idFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.relativeFamily = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -938,6 +939,7 @@
             this.FamilyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FamilyGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idFamily,
+            this.idEmployee,
             this.nameFamily,
             this.relativeFamily});
             this.FamilyGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -955,7 +957,15 @@
             this.idFamily.MinimumWidth = 6;
             this.idFamily.Name = "idFamily";
             this.idFamily.ReadOnly = true;
-            this.idFamily.Width = 125;
+            this.idFamily.Width = 80;
+            // 
+            // idEmployee
+            // 
+            this.idEmployee.HeaderText = "ID employee";
+            this.idEmployee.MinimumWidth = 6;
+            this.idEmployee.Name = "idEmployee";
+            this.idEmployee.ReadOnly = true;
+            this.idEmployee.Width = 125;
             // 
             // nameFamily
             // 
@@ -1230,9 +1240,6 @@
         private Button button5;
         private GroupBox groupBox9;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn idFamily;
-        private DataGridViewTextBoxColumn nameFamily;
-        private DataGridViewTextBoxColumn relativeFamily;
         private GroupBox groupBox8;
         private Panel panel20;
         private Button searchFamilyBtn;
@@ -1243,5 +1250,9 @@
         private TextBox searchFamilyText;
         private Label label7;
         private DataGridView FamilyGridView;
+        private DataGridViewTextBoxColumn idFamily;
+        private DataGridViewTextBoxColumn idEmployee;
+        private DataGridViewTextBoxColumn nameFamily;
+        private DataGridViewTextBoxColumn relativeFamily;
     }
 }

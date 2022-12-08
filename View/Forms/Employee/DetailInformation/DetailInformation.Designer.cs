@@ -237,7 +237,7 @@
             this.panel2.Margin = new System.Windows.Forms.Padding(10);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(545, 70);
+            this.panel2.Size = new System.Drawing.Size(743, 70);
             this.panel2.TabIndex = 2;
             // 
             // GenderGroupBox
@@ -249,7 +249,7 @@
             this.GenderGroupBox.Location = new System.Drawing.Point(307, 10);
             this.GenderGroupBox.Name = "GenderGroupBox";
             this.GenderGroupBox.Padding = new System.Windows.Forms.Padding(40, 3, 40, 3);
-            this.GenderGroupBox.Size = new System.Drawing.Size(228, 50);
+            this.GenderGroupBox.Size = new System.Drawing.Size(426, 50);
             this.GenderGroupBox.TabIndex = 3;
             this.GenderGroupBox.TabStop = false;
             this.GenderGroupBox.Text = "Gender";
@@ -260,7 +260,7 @@
             this.MaleBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MaleBtn.Location = new System.Drawing.Point(40, 23);
             this.MaleBtn.Name = "MaleBtn";
-            this.MaleBtn.Size = new System.Drawing.Size(70, 24);
+            this.MaleBtn.Size = new System.Drawing.Size(268, 24);
             this.MaleBtn.TabIndex = 2;
             this.MaleBtn.TabStop = true;
             this.MaleBtn.Text = "Male";
@@ -270,7 +270,7 @@
             // 
             this.FemaleBtn.AutoSize = true;
             this.FemaleBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FemaleBtn.Location = new System.Drawing.Point(110, 23);
+            this.FemaleBtn.Location = new System.Drawing.Point(308, 23);
             this.FemaleBtn.Name = "FemaleBtn";
             this.FemaleBtn.Size = new System.Drawing.Size(78, 24);
             this.FemaleBtn.TabIndex = 1;
@@ -334,14 +334,14 @@
             this.panel3.Location = new System.Drawing.Point(3, 455);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(709, 46);
+            this.panel3.Size = new System.Drawing.Size(907, 46);
             this.panel3.TabIndex = 10;
             // 
             // FixBtn
             // 
             this.FixBtn.BackColor = System.Drawing.Color.Yellow;
             this.FixBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FixBtn.Location = new System.Drawing.Point(611, 5);
+            this.FixBtn.Location = new System.Drawing.Point(809, 5);
             this.FixBtn.Name = "FixBtn";
             this.FixBtn.Size = new System.Drawing.Size(98, 41);
             this.FixBtn.TabIndex = 1;
@@ -366,7 +366,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(715, 504);
+            this.tabPage2.Size = new System.Drawing.Size(913, 504);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Family";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -383,7 +383,7 @@
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox2.Size = new System.Drawing.Size(709, 498);
+            this.groupBox2.Size = new System.Drawing.Size(907, 498);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Family Form";
@@ -395,7 +395,7 @@
             this.panel17.Location = new System.Drawing.Point(5, 447);
             this.panel17.Name = "panel17";
             this.panel17.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel17.Size = new System.Drawing.Size(699, 46);
+            this.panel17.Size = new System.Drawing.Size(897, 46);
             this.panel17.TabIndex = 18;
             // 
             // backFamilyBtn
@@ -444,7 +444,7 @@
             this.FamilyGridView.RowHeadersWidth = 51;
             this.FamilyGridView.RowTemplate.Height = 29;
             this.FamilyGridView.RowTemplate.ReadOnly = true;
-            this.FamilyGridView.Size = new System.Drawing.Size(699, 382);
+            this.FamilyGridView.Size = new System.Drawing.Size(897, 382);
             this.FamilyGridView.TabIndex = 17;
             this.FamilyGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FamilyGridView_CellContentClick);
             // 
@@ -505,7 +505,7 @@
             this.panel14.Location = new System.Drawing.Point(5, 37);
             this.panel14.Name = "panel14";
             this.panel14.Padding = new System.Windows.Forms.Padding(10);
-            this.panel14.Size = new System.Drawing.Size(699, 74);
+            this.panel14.Size = new System.Drawing.Size(897, 74);
             this.panel14.TabIndex = 16;
             // 
             // RemoveFamilyBtn
@@ -515,7 +515,7 @@
             this.RemoveFamilyBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RemoveFamilyBtn.Location = new System.Drawing.Point(268, 10);
             this.RemoveFamilyBtn.Name = "RemoveFamilyBtn";
-            this.RemoveFamilyBtn.Size = new System.Drawing.Size(163, 54);
+            this.RemoveFamilyBtn.Size = new System.Drawing.Size(361, 54);
             this.RemoveFamilyBtn.TabIndex = 5;
             this.RemoveFamilyBtn.Text = "Remove";
             this.RemoveFamilyBtn.UseVisualStyleBackColor = false;
@@ -526,7 +526,7 @@
             this.FixFamilyBtn.AutoSize = true;
             this.FixFamilyBtn.BackColor = System.Drawing.Color.Transparent;
             this.FixFamilyBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FixFamilyBtn.Location = new System.Drawing.Point(431, 10);
+            this.FixFamilyBtn.Location = new System.Drawing.Point(629, 10);
             this.FixFamilyBtn.Name = "FixFamilyBtn";
             this.FixFamilyBtn.Size = new System.Drawing.Size(258, 54);
             this.FixFamilyBtn.TabIndex = 4;
@@ -583,7 +583,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(715, 504);
+            this.tabPage1.Size = new System.Drawing.Size(913, 504);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Info";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -602,7 +602,7 @@
             this.EmployeeGroupBox.Location = new System.Drawing.Point(3, 3);
             this.EmployeeGroupBox.Name = "EmployeeGroupBox";
             this.EmployeeGroupBox.Padding = new System.Windows.Forms.Padding(5);
-            this.EmployeeGroupBox.Size = new System.Drawing.Size(709, 452);
+            this.EmployeeGroupBox.Size = new System.Drawing.Size(907, 452);
             this.EmployeeGroupBox.TabIndex = 11;
             this.EmployeeGroupBox.TabStop = false;
             this.EmployeeGroupBox.Text = "Detail Employee Form";
@@ -612,7 +612,7 @@
             this.AddNewBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddNewBtn.Location = new System.Drawing.Point(5, 404);
             this.AddNewBtn.Name = "AddNewBtn";
-            this.AddNewBtn.Size = new System.Drawing.Size(699, 43);
+            this.AddNewBtn.Size = new System.Drawing.Size(897, 43);
             this.AddNewBtn.TabIndex = 6;
             // 
             // panel12
@@ -623,7 +623,7 @@
             this.panel12.Location = new System.Drawing.Point(5, 324);
             this.panel12.Name = "panel12";
             this.panel12.Padding = new System.Windows.Forms.Padding(10);
-            this.panel12.Size = new System.Drawing.Size(699, 80);
+            this.panel12.Size = new System.Drawing.Size(897, 80);
             this.panel12.TabIndex = 5;
             // 
             // CoefficientAllowanceGroupBox
@@ -632,7 +632,7 @@
             this.CoefficientAllowanceGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CoefficientAllowanceGroupBox.Location = new System.Drawing.Point(10, 10);
             this.CoefficientAllowanceGroupBox.Name = "CoefficientAllowanceGroupBox";
-            this.CoefficientAllowanceGroupBox.Size = new System.Drawing.Size(679, 60);
+            this.CoefficientAllowanceGroupBox.Size = new System.Drawing.Size(877, 60);
             this.CoefficientAllowanceGroupBox.TabIndex = 1;
             this.CoefficientAllowanceGroupBox.TabStop = false;
             this.CoefficientAllowanceGroupBox.Text = "Coefficient Allowance";
@@ -642,7 +642,7 @@
             this.CoefficientAllowanceText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CoefficientAllowanceText.Location = new System.Drawing.Point(3, 23);
             this.CoefficientAllowanceText.Name = "CoefficientAllowanceText";
-            this.CoefficientAllowanceText.Size = new System.Drawing.Size(673, 27);
+            this.CoefficientAllowanceText.Size = new System.Drawing.Size(871, 27);
             this.CoefficientAllowanceText.TabIndex = 0;
             // 
             // panel9
@@ -657,7 +657,7 @@
             this.panel9.Location = new System.Drawing.Point(5, 243);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(10);
-            this.panel9.Size = new System.Drawing.Size(699, 81);
+            this.panel9.Size = new System.Drawing.Size(897, 81);
             this.panel9.TabIndex = 4;
             // 
             // StartDateGroupBox
@@ -666,7 +666,7 @@
             this.StartDateGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StartDateGroupBox.Location = new System.Drawing.Point(489, 10);
             this.StartDateGroupBox.Name = "StartDateGroupBox";
-            this.StartDateGroupBox.Size = new System.Drawing.Size(200, 61);
+            this.StartDateGroupBox.Size = new System.Drawing.Size(398, 61);
             this.StartDateGroupBox.TabIndex = 4;
             this.StartDateGroupBox.TabStop = false;
             this.StartDateGroupBox.Text = "Start Date At School";
@@ -677,7 +677,7 @@
             this.StartDate.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.StartDate.Location = new System.Drawing.Point(3, 31);
             this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(194, 27);
+            this.StartDate.Size = new System.Drawing.Size(392, 27);
             this.StartDate.TabIndex = 0;
             // 
             // panel11
@@ -744,7 +744,7 @@
             this.panel5.Location = new System.Drawing.Point(5, 161);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(10);
-            this.panel5.Size = new System.Drawing.Size(699, 82);
+            this.panel5.Size = new System.Drawing.Size(897, 82);
             this.panel5.TabIndex = 3;
             // 
             // groupBox1
@@ -753,7 +753,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(466, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(223, 62);
+            this.groupBox1.Size = new System.Drawing.Size(421, 62);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Date of Birth";
@@ -764,7 +764,7 @@
             this.DateOfBirth.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DateOfBirth.Location = new System.Drawing.Point(3, 32);
             this.DateOfBirth.Name = "DateOfBirth";
-            this.DateOfBirth.Size = new System.Drawing.Size(217, 27);
+            this.DateOfBirth.Size = new System.Drawing.Size(415, 27);
             this.DateOfBirth.TabIndex = 0;
             // 
             // panel6
@@ -804,7 +804,7 @@
             this.panel7.Location = new System.Drawing.Point(5, 32);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(10);
-            this.panel7.Size = new System.Drawing.Size(699, 129);
+            this.panel7.Size = new System.Drawing.Size(897, 129);
             this.panel7.TabIndex = 2;
             // 
             // tabPage3
@@ -1111,7 +1111,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(715, 504);
+            this.tabPage4.Size = new System.Drawing.Size(913, 504);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Union";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1149,7 +1149,7 @@
             this.UnionGridView.ReadOnly = true;
             this.UnionGridView.RowHeadersWidth = 51;
             this.UnionGridView.RowTemplate.Height = 29;
-            this.UnionGridView.Size = new System.Drawing.Size(709, 177);
+            this.UnionGridView.Size = new System.Drawing.Size(907, 177);
             this.UnionGridView.TabIndex = 19;
             this.UnionGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UnionGridView_CellClick);
             // 
@@ -1197,7 +1197,7 @@
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(3, 3);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(709, 278);
+            this.panel15.Size = new System.Drawing.Size(907, 278);
             this.panel15.TabIndex = 20;
             // 
             // panel22
@@ -1209,7 +1209,7 @@
             this.panel22.Location = new System.Drawing.Point(0, 138);
             this.panel22.Name = "panel22";
             this.panel22.Padding = new System.Windows.Forms.Padding(10);
-            this.panel22.Size = new System.Drawing.Size(709, 91);
+            this.panel22.Size = new System.Drawing.Size(907, 91);
             this.panel22.TabIndex = 23;
             // 
             // groupBox4
@@ -1217,7 +1217,7 @@
             this.groupBox4.Controls.Add(this.unionEndDayPanel);
             this.groupBox4.Controls.Add(this.checkUnionEndDay);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox4.Location = new System.Drawing.Point(286, 10);
+            this.groupBox4.Location = new System.Drawing.Point(484, 10);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(413, 71);
             this.groupBox4.TabIndex = 6;
@@ -1283,7 +1283,7 @@
             this.panel24.Margin = new System.Windows.Forms.Padding(10);
             this.panel24.Name = "panel24";
             this.panel24.Padding = new System.Windows.Forms.Padding(10);
-            this.panel24.Size = new System.Drawing.Size(709, 83);
+            this.panel24.Size = new System.Drawing.Size(907, 83);
             this.panel24.TabIndex = 22;
             // 
             // groupBox12
@@ -1293,7 +1293,7 @@
             this.groupBox12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox12.Location = new System.Drawing.Point(10, 10);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(689, 63);
+            this.groupBox12.Size = new System.Drawing.Size(887, 63);
             this.groupBox12.TabIndex = 0;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Union join";
@@ -1304,7 +1304,7 @@
             this.unionJoinBox.FormattingEnabled = true;
             this.unionJoinBox.Location = new System.Drawing.Point(3, 23);
             this.unionJoinBox.Name = "unionJoinBox";
-            this.unionJoinBox.Size = new System.Drawing.Size(683, 28);
+            this.unionJoinBox.Size = new System.Drawing.Size(881, 28);
             this.unionJoinBox.TabIndex = 1;
             this.unionJoinBox.Text = "--Select--";
             // 
@@ -1315,7 +1315,7 @@
             this.panel25.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel25.Location = new System.Drawing.Point(0, 0);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(709, 55);
+            this.panel25.Size = new System.Drawing.Size(907, 55);
             this.panel25.TabIndex = 21;
             // 
             // groupBox13
@@ -1323,7 +1323,7 @@
             this.groupBox13.Controls.Add(this.idUnionText);
             this.groupBox13.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox13.Location = new System.Drawing.Point(622, 0);
+            this.groupBox13.Location = new System.Drawing.Point(820, 0);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(87, 55);
             this.groupBox13.TabIndex = 19;
@@ -1348,7 +1348,7 @@
             this.groupBox6.Location = new System.Drawing.Point(0, 0);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox6.Size = new System.Drawing.Size(709, 55);
+            this.groupBox6.Size = new System.Drawing.Size(907, 55);
             this.groupBox6.TabIndex = 18;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Union form";
@@ -1363,7 +1363,7 @@
             this.panel18.Location = new System.Drawing.Point(3, 458);
             this.panel18.Name = "panel18";
             this.panel18.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel18.Size = new System.Drawing.Size(709, 43);
+            this.panel18.Size = new System.Drawing.Size(907, 43);
             this.panel18.TabIndex = 18;
             // 
             // removeUnion
@@ -1372,7 +1372,7 @@
             this.removeUnion.BackColor = System.Drawing.SystemColors.Info;
             this.removeUnion.Dock = System.Windows.Forms.DockStyle.Right;
             this.removeUnion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.removeUnion.Location = new System.Drawing.Point(302, 5);
+            this.removeUnion.Location = new System.Drawing.Point(500, 5);
             this.removeUnion.Name = "removeUnion";
             this.removeUnion.Size = new System.Drawing.Size(138, 38);
             this.removeUnion.TabIndex = 6;
@@ -1386,7 +1386,7 @@
             this.fixUnion.BackColor = System.Drawing.SystemColors.Info;
             this.fixUnion.Dock = System.Windows.Forms.DockStyle.Right;
             this.fixUnion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fixUnion.Location = new System.Drawing.Point(440, 5);
+            this.fixUnion.Location = new System.Drawing.Point(638, 5);
             this.fixUnion.Name = "fixUnion";
             this.fixUnion.Size = new System.Drawing.Size(134, 38);
             this.fixUnion.TabIndex = 5;
@@ -1412,7 +1412,7 @@
             this.addUnion.BackColor = System.Drawing.SystemColors.Info;
             this.addUnion.Dock = System.Windows.Forms.DockStyle.Right;
             this.addUnion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addUnion.Location = new System.Drawing.Point(574, 5);
+            this.addUnion.Location = new System.Drawing.Point(772, 5);
             this.addUnion.Name = "addUnion";
             this.addUnion.Size = new System.Drawing.Size(135, 38);
             this.addUnion.TabIndex = 3;
@@ -1426,7 +1426,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(715, 504);
+            this.tabPage5.Size = new System.Drawing.Size(913, 504);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "History";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1443,7 +1443,7 @@
             this.groupBox9.Location = new System.Drawing.Point(3, 3);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox9.Size = new System.Drawing.Size(709, 498);
+            this.groupBox9.Size = new System.Drawing.Size(907, 498);
             this.groupBox9.TabIndex = 18;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "History form";
@@ -1467,12 +1467,12 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.PositionGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.PositionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PositionGridView.Location = new System.Drawing.Point(362, 32);
+            this.PositionGridView.Location = new System.Drawing.Point(411, 32);
             this.PositionGridView.Name = "PositionGridView";
             this.PositionGridView.ReadOnly = true;
             this.PositionGridView.RowHeadersWidth = 51;
             this.PositionGridView.RowTemplate.Height = 29;
-            this.PositionGridView.Size = new System.Drawing.Size(342, 415);
+            this.PositionGridView.Size = new System.Drawing.Size(491, 415);
             this.PositionGridView.TabIndex = 21;
             this.PositionGridView.Resize += new System.EventHandler(this.dataGridView2_Resize);
             // 
@@ -1530,7 +1530,7 @@
             this.UnitGridView.ReadOnly = true;
             this.UnitGridView.RowHeadersWidth = 51;
             this.UnitGridView.RowTemplate.Height = 29;
-            this.UnitGridView.Size = new System.Drawing.Size(357, 415);
+            this.UnitGridView.Size = new System.Drawing.Size(406, 415);
             this.UnitGridView.TabIndex = 20;
             // 
             // fromUnit
@@ -1570,7 +1570,7 @@
             this.panel13.Location = new System.Drawing.Point(5, 447);
             this.panel13.Name = "panel13";
             this.panel13.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel13.Size = new System.Drawing.Size(699, 46);
+            this.panel13.Size = new System.Drawing.Size(897, 46);
             this.panel13.TabIndex = 19;
             // 
             // button1

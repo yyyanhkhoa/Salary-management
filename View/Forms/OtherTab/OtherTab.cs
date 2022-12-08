@@ -61,7 +61,7 @@ namespace Salary_management.View.Forms.OtherTab
             List<Model.Family> listF = repoF.GetFamilies("");
             foreach (Model.Family family in listF)
             {
-                FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType.ToString());
+                FamilyGridView.Rows.Add(family.Id,family.EmployeeId, family.Name, family.RelativeType.ToString());
             }
 
         }
@@ -282,7 +282,7 @@ namespace Salary_management.View.Forms.OtherTab
                 List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text);
                 foreach (Model.Family family in list)
                 {
-                    FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType);
+                    FamilyGridView.Rows.Add(family.Id, family.EmployeeId, family.Name, family.RelativeType);
                 }
             }
             else if (relativeBox.SelectedIndex == 0)
@@ -291,7 +291,7 @@ namespace Salary_management.View.Forms.OtherTab
                 List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text);
                 foreach (Model.Family family in list)
                 {
-                    FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType);
+                    FamilyGridView.Rows.Add(family.Id, family.EmployeeId, family.Name, family.RelativeType);
                 }
             }
             else if (relativeBox.SelectedIndex == 1)
@@ -300,7 +300,7 @@ namespace Salary_management.View.Forms.OtherTab
                 List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text, RelativeType.Wife);
                 foreach (Model.Family family in list)
                 {
-                    FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType);
+                    FamilyGridView.Rows.Add(family.Id, family.EmployeeId, family.Name, family.RelativeType);
                 }
 
             }
@@ -310,7 +310,7 @@ namespace Salary_management.View.Forms.OtherTab
                 List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text, RelativeType.Husband);
                 foreach (Model.Family family in list)
                 {
-                    FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType);
+                    FamilyGridView.Rows.Add(family.Id, family.EmployeeId, family.Name, family.RelativeType);
                 }
             }
             else if (relativeBox.SelectedIndex == 3)
@@ -319,7 +319,7 @@ namespace Salary_management.View.Forms.OtherTab
                 List<Model.Family> list = repo.GetFamilies(searchFamilyText.Text, RelativeType.Child);
                 foreach (Model.Family family in list)
                 {
-                    FamilyGridView.Rows.Add(family.Id, family.Name, family.RelativeType);
+                    FamilyGridView.Rows.Add(family.Id, family.EmployeeId, family.Name, family.RelativeType);
                 }
             }
 
