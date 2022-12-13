@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Npgsql;
 using Salary_management.Controller.Infrastructure.Entities.Enums;
 using Salary_management.Infrastructure.Entities;
@@ -29,7 +30,9 @@ namespace Salary_management.Infrastructure
 		public DbSet<EmployeeQualification> EmployeeQualifications { get; set; } = null!;
 		public DbSet<QualificationAllowanceHistory> QualificationAllowanceHistories { get; set; } = null!;
 
-
+		//Keyless
+		public DbSet<Model.EmployeeSalary> EmployeeSalaries { get; set; }
+		
 		static SalaryManContext()
 			=> NpgsqlConnection.GlobalTypeMapper.MapEnum<Gender>()
 												.MapEnum<RelativeType>()
@@ -58,6 +61,8 @@ namespace Salary_management.Infrastructure
 			modelBuilder.Entity<Employee>()
 						.Property(e => e.DateCreated)
 						.HasDefaultValueSql("now()");
+
+			modelBuilder.Entity<Model.EmployeeSalary>().HasNoKey();
 
 			// seed DB
 			modelBuilder.Entity<Auth>()
