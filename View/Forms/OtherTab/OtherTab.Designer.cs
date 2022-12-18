@@ -108,6 +108,9 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.searchFamilyBtn = new System.Windows.Forms.Button();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.UnitBox = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.relativeBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -152,6 +155,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.FamilyGridView)).BeginInit();
             this.groupBox8.SuspendLayout();
             this.panel20.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.panel24.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
@@ -986,6 +990,7 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.panel20);
+            this.groupBox8.Controls.Add(this.panel21);
             this.groupBox8.Controls.Add(this.panel24);
             this.groupBox8.Controls.Add(this.panel22);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Left;
@@ -1000,11 +1005,11 @@
             // 
             this.panel20.Controls.Add(this.searchFamilyBtn);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(3, 189);
+            this.panel20.Location = new System.Drawing.Point(3, 272);
             this.panel20.Name = "panel20";
             this.panel20.Padding = new System.Windows.Forms.Padding(10);
             this.panel20.Size = new System.Drawing.Size(302, 63);
-            this.panel20.TabIndex = 4;
+            this.panel20.TabIndex = 6;
             // 
             // searchFamilyBtn
             // 
@@ -1015,7 +1020,39 @@
             this.searchFamilyBtn.TabIndex = 0;
             this.searchFamilyBtn.Text = "Search";
             this.searchFamilyBtn.UseVisualStyleBackColor = true;
-            this.searchFamilyBtn.Click += new System.EventHandler(this.searchFamilyBtn_Click);
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.UnitBox);
+            this.panel21.Controls.Add(this.label9);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel21.Location = new System.Drawing.Point(3, 189);
+            this.panel21.Name = "panel21";
+            this.panel21.Padding = new System.Windows.Forms.Padding(20);
+            this.panel21.Size = new System.Drawing.Size(302, 83);
+            this.panel21.TabIndex = 5;
+            // 
+            // UnitBox
+            // 
+            this.UnitBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UnitBox.FormattingEnabled = true;
+            this.UnitBox.Items.AddRange(new object[] {
+            "All"});
+            this.UnitBox.Location = new System.Drawing.Point(63, 20);
+            this.UnitBox.Name = "UnitBox";
+            this.UnitBox.Size = new System.Drawing.Size(219, 28);
+            this.UnitBox.TabIndex = 5;
+            this.UnitBox.Text = "All";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label9.Location = new System.Drawing.Point(20, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Unit :";
             // 
             // panel24
             // 
@@ -1154,6 +1191,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.FamilyGridView)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
             this.panel22.ResumeLayout(false);
@@ -1241,8 +1280,6 @@
         private GroupBox groupBox9;
         private DataGridView dataGridView1;
         private GroupBox groupBox8;
-        private Panel panel20;
-        private Button searchFamilyBtn;
         private Panel panel24;
         private ComboBox relativeBox;
         private Label label8;
@@ -1254,5 +1291,10 @@
         private DataGridViewTextBoxColumn idEmployee;
         private DataGridViewTextBoxColumn nameFamily;
         private DataGridViewTextBoxColumn relativeFamily;
+        private Panel panel20;
+        private Button searchFamilyBtn;
+        private Panel panel21;
+        private ComboBox UnitBox;
+        private Label label9;
     }
 }

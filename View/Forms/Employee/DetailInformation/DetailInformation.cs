@@ -160,6 +160,15 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             //get family info
             getUnionInfo();
 
+            //get salary info
+            getSalaryInfo();
+            dateSalaryBox.CustomFormat = "yyyy";
+            dateSalaryBox.ShowUpDown = true;
+            dateSalaryBox.MaxDate = DateTime.Now;
+
+            int width = PositionGridView.Width + UnitGridView.Width;
+            PositionGridView.Width = width / 2;
+            UnitGridView.Width = width / 2;
         }
 
         private void getFamilyInfo()
@@ -170,6 +179,21 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             foreach (Model.Family famili in list)
             {
                 FamilyGridView.Rows.Add(famili.Id, famili.Name, famili.DateOfBirth, famili.Occupation, famili.RelativeType.ToString());
+            }
+        }
+        private void getSalaryInfo()
+        {
+            this.SalaryGridView.Rows.Clear();
+            RepositorySalary repoSalary = new RepositorySalary();
+            List<Model.EmployeeSalary> list = repoSalary.GetEmployeeSalaryAtYear(idEmployee).Payload;
+          
+            foreach (Model.EmployeeSalary salary in list)
+            {
+                long BHXH = salary.Salary;
+                long BHYT = salary.Salary;
+                long BHTN = salary.Salary;
+              
+                SalaryGridView.Rows.Add( salary.Date, salary.EmployeeAllowanceCoefficient, BHXH, BHYT, BHTN, salary.Salary);
             }
         }
         private void getQualificationInfo()
@@ -551,6 +575,26 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 unionEndDayPanel.Visible = false;
             }
             else unionEndDayPanel.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
+        }
+
+        private void searchSalaryBtn_Click(object sender, EventArgs e)
+        {
+            SalaryGridView.Rows.Clear();
+            RepositorySalary repoSalary = new RepositorySalary();
+            List<Model.EmployeeSalary> list = repoSalary.GetEmployeeSalaryAtYear(idEmployee,dateSalaryBox.Value.Year).Payload;         
+            foreach (Model.EmployeeSalary salary in list)
+            {
+                long BHXH = salary.Salary / 20;
+                long BHYT = salary.Salary / 100;
+                long BHTN = salary.Salary / 100;
+                SalaryGridView.Rows.Add(salary.Date, salary.EmployeeAllowanceCoefficient, BHXH, BHYT, BHTN, salary.Salary);
+                //salary.RankCoefficient,
+            }
         }
     }
 }

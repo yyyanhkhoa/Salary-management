@@ -33,10 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GenderGroupBox = new System.Windows.Forms.GroupBox();
             this.MaleBtn = new System.Windows.Forms.RadioButton();
@@ -155,18 +151,21 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.panel23 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel26 = new System.Windows.Forms.Panel();
             this.SalaryGridView = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.IdSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.allowanceSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BHXHSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BHYTSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BHTNSalay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.dateSalaryBox = new System.Windows.Forms.DateTimePicker();
+            this.searchSalaryBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.GenderGroupBox.SuspendLayout();
             this.NameGroupBox.SuspendLayout();
@@ -220,9 +219,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.UnitGridView)).BeginInit();
             this.panel13.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            this.groupBox14.SuspendLayout();
             this.panel23.SuspendLayout();
+            this.panel26.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryGridView)).BeginInit();
+            this.groupBox14.SuspendLayout();
+            this.panel27.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -815,7 +816,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(715, 504);
+            this.tabPage3.Size = new System.Drawing.Size(913, 504);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Employee Qualification";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -838,7 +839,7 @@
             this.QualificationListView.ReadOnly = true;
             this.QualificationListView.RowHeadersWidth = 51;
             this.QualificationListView.RowTemplate.Height = 29;
-            this.QualificationListView.Size = new System.Drawing.Size(709, 189);
+            this.QualificationListView.Size = new System.Drawing.Size(907, 189);
             this.QualificationListView.TabIndex = 3;
             this.QualificationListView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QualificationListView_CellClick);
             this.QualificationListView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QualificationListView_CellContentClick);
@@ -896,7 +897,7 @@
             this.qualificationGroupBox.Location = new System.Drawing.Point(3, 3);
             this.qualificationGroupBox.Name = "qualificationGroupBox";
             this.qualificationGroupBox.Padding = new System.Windows.Forms.Padding(10);
-            this.qualificationGroupBox.Size = new System.Drawing.Size(709, 263);
+            this.qualificationGroupBox.Size = new System.Drawing.Size(907, 263);
             this.qualificationGroupBox.TabIndex = 12;
             this.qualificationGroupBox.Paint += new System.Windows.Forms.PaintEventHandler(this.qualificationGroupBox_Paint);
             // 
@@ -907,7 +908,7 @@
             this.groupBox11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox11.Location = new System.Drawing.Point(10, 175);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(685, 54);
+            this.groupBox11.Size = new System.Drawing.Size(883, 54);
             this.groupBox11.TabIndex = 10;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Score";
@@ -917,7 +918,7 @@
             this.scoreQualificationText.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.scoreQualificationText.Location = new System.Drawing.Point(3, 24);
             this.scoreQualificationText.Name = "scoreQualificationText";
-            this.scoreQualificationText.Size = new System.Drawing.Size(679, 27);
+            this.scoreQualificationText.Size = new System.Drawing.Size(877, 27);
             this.scoreQualificationText.TabIndex = 0;
             this.scoreQualificationText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.scoreQualificationText_KeyPress);
             // 
@@ -927,7 +928,7 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel21.Location = new System.Drawing.Point(10, 121);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(685, 54);
+            this.panel21.Size = new System.Drawing.Size(883, 54);
             this.panel21.TabIndex = 8;
             // 
             // groupBox7
@@ -937,7 +938,7 @@
             this.groupBox7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox7.Location = new System.Drawing.Point(0, 0);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(685, 54);
+            this.groupBox7.Size = new System.Drawing.Size(883, 54);
             this.groupBox7.TabIndex = 4;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Place of issue";
@@ -947,7 +948,7 @@
             this.placeQualificationTB.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.placeQualificationTB.Location = new System.Drawing.Point(3, 24);
             this.placeQualificationTB.Name = "placeQualificationTB";
-            this.placeQualificationTB.Size = new System.Drawing.Size(679, 27);
+            this.placeQualificationTB.Size = new System.Drawing.Size(877, 27);
             this.placeQualificationTB.TabIndex = 0;
             // 
             // panel20
@@ -957,7 +958,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(10, 60);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(685, 61);
+            this.panel20.Size = new System.Drawing.Size(883, 61);
             this.panel20.TabIndex = 7;
             // 
             // groupBox3
@@ -967,7 +968,7 @@
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(420, 61);
+            this.groupBox3.Size = new System.Drawing.Size(618, 61);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Qualification";
@@ -978,14 +979,14 @@
             this.nameQualificationBox.FormattingEnabled = true;
             this.nameQualificationBox.Location = new System.Drawing.Point(3, 23);
             this.nameQualificationBox.Name = "nameQualificationBox";
-            this.nameQualificationBox.Size = new System.Drawing.Size(414, 28);
+            this.nameQualificationBox.Size = new System.Drawing.Size(612, 28);
             this.nameQualificationBox.TabIndex = 0;
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.dateQualification);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox8.Location = new System.Drawing.Point(420, 0);
+            this.groupBox8.Location = new System.Drawing.Point(618, 0);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(265, 61);
             this.groupBox8.TabIndex = 5;
@@ -1008,7 +1009,7 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel19.Location = new System.Drawing.Point(10, 10);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(685, 50);
+            this.panel19.Size = new System.Drawing.Size(883, 50);
             this.panel19.TabIndex = 6;
             // 
             // groupBox5
@@ -1016,7 +1017,7 @@
             this.groupBox5.Controls.Add(this.IDQualificationTB);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox5.Location = new System.Drawing.Point(598, 0);
+            this.groupBox5.Location = new System.Drawing.Point(796, 0);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(87, 50);
             this.groupBox5.TabIndex = 3;
@@ -1053,14 +1054,14 @@
             this.panel16.Location = new System.Drawing.Point(3, 455);
             this.panel16.Name = "panel16";
             this.panel16.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel16.Size = new System.Drawing.Size(709, 46);
+            this.panel16.Size = new System.Drawing.Size(907, 46);
             this.panel16.TabIndex = 11;
             // 
             // removeQualification
             // 
             this.removeQualification.BackColor = System.Drawing.Color.Yellow;
             this.removeQualification.Dock = System.Windows.Forms.DockStyle.Right;
-            this.removeQualification.Location = new System.Drawing.Point(359, 5);
+            this.removeQualification.Location = new System.Drawing.Point(557, 5);
             this.removeQualification.Name = "removeQualification";
             this.removeQualification.Size = new System.Drawing.Size(91, 41);
             this.removeQualification.TabIndex = 3;
@@ -1072,7 +1073,7 @@
             // 
             this.fixQualificationBtn.BackColor = System.Drawing.Color.Yellow;
             this.fixQualificationBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.fixQualificationBtn.Location = new System.Drawing.Point(450, 5);
+            this.fixQualificationBtn.Location = new System.Drawing.Point(648, 5);
             this.fixQualificationBtn.Name = "fixQualificationBtn";
             this.fixQualificationBtn.Size = new System.Drawing.Size(91, 41);
             this.fixQualificationBtn.TabIndex = 2;
@@ -1084,7 +1085,7 @@
             // 
             this.addQualificationBtn.BackColor = System.Drawing.Color.Yellow;
             this.addQualificationBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.addQualificationBtn.Location = new System.Drawing.Point(541, 5);
+            this.addQualificationBtn.Location = new System.Drawing.Point(739, 5);
             this.addQualificationBtn.Name = "addQualificationBtn";
             this.addQualificationBtn.Size = new System.Drawing.Size(168, 41);
             this.addQualificationBtn.TabIndex = 1;
@@ -1438,7 +1439,7 @@
             this.groupBox9.Controls.Add(this.PositionGridView);
             this.groupBox9.Controls.Add(this.UnitGridView);
             this.groupBox9.Controls.Add(this.panel13);
-            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox9.Location = new System.Drawing.Point(3, 3);
             this.groupBox9.Name = "groupBox9";
@@ -1466,7 +1467,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.PositionGridView.DefaultCellStyle = dataGridViewCellStyle5;
-            this.PositionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PositionGridView.Dock = System.Windows.Forms.DockStyle.Left;
             this.PositionGridView.Location = new System.Drawing.Point(411, 32);
             this.PositionGridView.Name = "PositionGridView";
             this.PositionGridView.ReadOnly = true;
@@ -1516,14 +1517,6 @@
             this.fromUnit,
             this.toUnit,
             this.unitHistory});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.UnitGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.UnitGridView.Dock = System.Windows.Forms.DockStyle.Left;
             this.UnitGridView.Location = new System.Drawing.Point(5, 32);
             this.UnitGridView.Name = "UnitGridView";
@@ -1576,16 +1569,19 @@
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(0, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 41);
             this.button1.TabIndex = 0;
             this.button1.Text = "< Back";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.groupBox14);
+            this.tabPage6.Controls.Add(this.panel23);
+            this.tabPage6.Controls.Add(this.panel26);
             this.tabPage6.Location = new System.Drawing.Point(4, 29);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -1594,30 +1590,14 @@
             this.tabPage6.Text = "Salary";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // groupBox14
-            // 
-            this.groupBox14.AutoSize = true;
-            this.groupBox14.BackColor = System.Drawing.Color.White;
-            this.groupBox14.Controls.Add(this.panel23);
-            this.groupBox14.Controls.Add(this.SalaryGridView);
-            this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox14.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox14.Location = new System.Drawing.Point(3, 3);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox14.Size = new System.Drawing.Size(907, 498);
-            this.groupBox14.TabIndex = 17;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Salary Form";
-            // 
             // panel23
             // 
             this.panel23.Controls.Add(this.button2);
             this.panel23.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel23.Location = new System.Drawing.Point(5, 447);
+            this.panel23.Location = new System.Drawing.Point(3, 455);
             this.panel23.Name = "panel23";
             this.panel23.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel23.Size = new System.Drawing.Size(897, 46);
+            this.panel23.Size = new System.Drawing.Size(907, 46);
             this.panel23.TabIndex = 18;
             // 
             // button2
@@ -1630,74 +1610,38 @@
             this.button2.Text = "< Back";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // panel26
+            // 
+            this.panel26.Controls.Add(this.SalaryGridView);
+            this.panel26.Controls.Add(this.groupBox14);
+            this.panel26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel26.Location = new System.Drawing.Point(3, 3);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(907, 498);
+            this.panel26.TabIndex = 18;
+            // 
             // SalaryGridView
             // 
             this.SalaryGridView.AllowUserToAddRows = false;
             this.SalaryGridView.AllowUserToDeleteRows = false;
             this.SalaryGridView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SalaryGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.SalaryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.SalaryGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdSalary,
             this.dateSalary,
             this.allowanceSalary,
             this.BHXHSalary,
             this.BHYTSalary,
             this.BHTNSalay,
             this.Salary});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.SalaryGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.SalaryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SalaryGridView.Location = new System.Drawing.Point(5, 37);
+            this.SalaryGridView.Location = new System.Drawing.Point(0, 83);
             this.SalaryGridView.Name = "SalaryGridView";
             this.SalaryGridView.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SalaryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.SalaryGridView.RowHeadersWidth = 51;
             this.SalaryGridView.RowTemplate.Height = 29;
             this.SalaryGridView.RowTemplate.ReadOnly = true;
-            this.SalaryGridView.Size = new System.Drawing.Size(897, 456);
+            this.SalaryGridView.Size = new System.Drawing.Size(907, 415);
             this.SalaryGridView.TabIndex = 17;
-            // 
-            // panel1
-            // 
-            this.panel1.AutoSize = true;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.tabControl1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(10, 10);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(943, 559);
-            this.panel1.TabIndex = 3;
-            // 
-            // IdSalary
-            // 
-            this.IdSalary.FillWeight = 50F;
-            this.IdSalary.HeaderText = "Id";
-            this.IdSalary.MinimumWidth = 6;
-            this.IdSalary.Name = "IdSalary";
-            this.IdSalary.ReadOnly = true;
-            this.IdSalary.Width = 70;
             // 
             // dateSalary
             // 
@@ -1705,6 +1649,7 @@
             this.dateSalary.MinimumWidth = 6;
             this.dateSalary.Name = "dateSalary";
             this.dateSalary.ReadOnly = true;
+            this.dateSalary.Width = 125;
             // 
             // allowanceSalary
             // 
@@ -1745,6 +1690,67 @@
             this.Salary.MinimumWidth = 6;
             this.Salary.Name = "Salary";
             this.Salary.ReadOnly = true;
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.AutoSize = true;
+            this.groupBox14.BackColor = System.Drawing.Color.White;
+            this.groupBox14.Controls.Add(this.panel27);
+            this.groupBox14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox14.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox14.Location = new System.Drawing.Point(0, 0);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Padding = new System.Windows.Forms.Padding(5);
+            this.groupBox14.Size = new System.Drawing.Size(907, 83);
+            this.groupBox14.TabIndex = 17;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Salary Form";
+            // 
+            // panel27
+            // 
+            this.panel27.Controls.Add(this.dateSalaryBox);
+            this.panel27.Controls.Add(this.searchSalaryBtn);
+            this.panel27.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel27.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel27.Location = new System.Drawing.Point(5, 37);
+            this.panel27.Name = "panel27";
+            this.panel27.Padding = new System.Windows.Forms.Padding(2);
+            this.panel27.Size = new System.Drawing.Size(897, 41);
+            this.panel27.TabIndex = 2;
+            // 
+            // dateSalaryBox
+            // 
+            this.dateSalaryBox.CustomFormat = "";
+            this.dateSalaryBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateSalaryBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateSalaryBox.Location = new System.Drawing.Point(2, 2);
+            this.dateSalaryBox.Name = "dateSalaryBox";
+            this.dateSalaryBox.Size = new System.Drawing.Size(718, 27);
+            this.dateSalaryBox.TabIndex = 3;
+            // 
+            // searchSalaryBtn
+            // 
+            this.searchSalaryBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.searchSalaryBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.searchSalaryBtn.Location = new System.Drawing.Point(720, 2);
+            this.searchSalaryBtn.Name = "searchSalaryBtn";
+            this.searchSalaryBtn.Size = new System.Drawing.Size(175, 37);
+            this.searchSalaryBtn.TabIndex = 2;
+            this.searchSalaryBtn.Text = "search";
+            this.searchSalaryBtn.UseVisualStyleBackColor = true;
+            this.searchSalaryBtn.Click += new System.EventHandler(this.searchSalaryBtn_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.tabControl1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(10, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.panel1.Size = new System.Drawing.Size(943, 559);
+            this.panel1.TabIndex = 3;
             // 
             // DetailInformation
             // 
@@ -1828,10 +1834,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.UnitGridView)).EndInit();
             this.panel13.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
-            this.groupBox14.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
+            this.panel26.ResumeLayout(false);
+            this.panel26.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryGridView)).EndInit();
+            this.groupBox14.ResumeLayout(false);
+            this.panel27.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1964,12 +1972,15 @@
         private Panel panel23;
         private Button button2;
         private DataGridView SalaryGridView;
-        private DataGridViewTextBoxColumn IdSalary;
         private DataGridViewTextBoxColumn dateSalary;
         private DataGridViewTextBoxColumn allowanceSalary;
         private DataGridViewTextBoxColumn BHXHSalary;
         private DataGridViewTextBoxColumn BHYTSalary;
         private DataGridViewTextBoxColumn BHTNSalay;
         private DataGridViewTextBoxColumn Salary;
+        private Panel panel26;
+        private Panel panel27;
+        private DateTimePicker dateSalaryBox;
+        private Button searchSalaryBtn;
     }
 }

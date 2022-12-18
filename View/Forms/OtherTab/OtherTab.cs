@@ -64,6 +64,12 @@ namespace Salary_management.View.Forms.OtherTab
                 FamilyGridView.Rows.Add(family.Id,family.EmployeeId, family.Name, family.RelativeType.ToString());
             }
 
+            var repoUnit = new RepositoryUnit();
+            var listUnit = repoUnit.GetUnits("");
+            foreach (var unit in listUnit)
+            {
+                UnitBox.Items.Add(unit.Id+ "-" + unit.Name);
+            }
         }
 
         private void NextBtn_Click(object sender, EventArgs e)
@@ -321,7 +327,7 @@ namespace Salary_management.View.Forms.OtherTab
                 {
                     FamilyGridView.Rows.Add(family.Id, family.EmployeeId, family.Name, family.RelativeType);
                 }
-            }
+            }           
 
         }
     }
