@@ -505,12 +505,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         private void QualificationListView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {          
         }
-        private void dataGridView2_Resize(object sender, EventArgs e)
-        {
-            int width = PositionGridView.Width + UnitGridView.Width;
-            PositionGridView.Width = width / 2;
-            UnitGridView.Width = width / 2;
-        }
         private void removeQualification_Click(object sender, EventArgs e)
         {
             string id = (QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells[0].Value).ToString();
@@ -595,6 +589,18 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 SalaryGridView.Rows.Add(salary.Date, salary.EmployeeAllowanceCoefficient, BHXH, BHYT, BHTN, salary.Salary);
                 //salary.RankCoefficient,
             }
+        }
+
+        private void UnitGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void PositionGridView_Resize(object sender, EventArgs e)
+        {
+            int width = PositionGridView.Width + UnitGridView.Width;
+            PositionGridView.Width = width / 2;
+            UnitGridView.Width = width / 2;
         }
     }
 }

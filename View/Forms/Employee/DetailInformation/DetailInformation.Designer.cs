@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GenderGroupBox = new System.Windows.Forms.GroupBox();
             this.MaleBtn = new System.Windows.Forms.RadioButton();
@@ -140,10 +139,12 @@
             this.addUnion = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.PositiongroupBox = new System.Windows.Forms.GroupBox();
             this.PositionGridView = new System.Windows.Forms.DataGridView();
             this.fromPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PositionHistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitgroupBox = new System.Windows.Forms.GroupBox();
             this.UnitGridView = new System.Windows.Forms.DataGridView();
             this.fromUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -215,7 +216,9 @@
             this.panel18.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            this.PositiongroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PositionGridView)).BeginInit();
+            this.UnitgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UnitGridView)).BeginInit();
             this.panel13.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -1436,10 +1439,10 @@
             // 
             this.groupBox9.AutoSize = true;
             this.groupBox9.BackColor = System.Drawing.Color.White;
-            this.groupBox9.Controls.Add(this.PositionGridView);
-            this.groupBox9.Controls.Add(this.UnitGridView);
+            this.groupBox9.Controls.Add(this.PositiongroupBox);
+            this.groupBox9.Controls.Add(this.UnitgroupBox);
             this.groupBox9.Controls.Add(this.panel13);
-            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox9.Location = new System.Drawing.Point(3, 3);
             this.groupBox9.Name = "groupBox9";
@@ -1448,6 +1451,21 @@
             this.groupBox9.TabIndex = 18;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "History form";
+            // 
+            // PositiongroupBox
+            // 
+            this.PositiongroupBox.AutoSize = true;
+            this.PositiongroupBox.BackColor = System.Drawing.Color.White;
+            this.PositiongroupBox.Controls.Add(this.PositionGridView);
+            this.PositiongroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PositiongroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PositiongroupBox.Location = new System.Drawing.Point(452, 32);
+            this.PositiongroupBox.Name = "PositiongroupBox";
+            this.PositiongroupBox.Padding = new System.Windows.Forms.Padding(5);
+            this.PositiongroupBox.Size = new System.Drawing.Size(450, 421);
+            this.PositiongroupBox.TabIndex = 23;
+            this.PositiongroupBox.TabStop = false;
+            this.PositiongroupBox.Text = "Position history";
             // 
             // PositionGridView
             // 
@@ -1459,23 +1477,15 @@
             this.fromPosition,
             this.toPosition,
             this.PositionHistory});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.PositionGridView.DefaultCellStyle = dataGridViewCellStyle5;
-            this.PositionGridView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PositionGridView.Location = new System.Drawing.Point(411, 32);
+            this.PositionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PositionGridView.Location = new System.Drawing.Point(5, 32);
             this.PositionGridView.Name = "PositionGridView";
             this.PositionGridView.ReadOnly = true;
             this.PositionGridView.RowHeadersWidth = 51;
             this.PositionGridView.RowTemplate.Height = 29;
-            this.PositionGridView.Size = new System.Drawing.Size(491, 415);
+            this.PositionGridView.Size = new System.Drawing.Size(440, 384);
             this.PositionGridView.TabIndex = 21;
-            this.PositionGridView.Resize += new System.EventHandler(this.dataGridView2_Resize);
+            this.PositionGridView.Resize += new System.EventHandler(this.PositionGridView_Resize);
             // 
             // fromPosition
             // 
@@ -1507,6 +1517,21 @@
             this.PositionHistory.Name = "PositionHistory";
             this.PositionHistory.ReadOnly = true;
             // 
+            // UnitgroupBox
+            // 
+            this.UnitgroupBox.AutoSize = true;
+            this.UnitgroupBox.BackColor = System.Drawing.Color.White;
+            this.UnitgroupBox.Controls.Add(this.UnitGridView);
+            this.UnitgroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.UnitgroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.UnitgroupBox.Location = new System.Drawing.Point(5, 32);
+            this.UnitgroupBox.Name = "UnitgroupBox";
+            this.UnitgroupBox.Padding = new System.Windows.Forms.Padding(5);
+            this.UnitgroupBox.Size = new System.Drawing.Size(447, 421);
+            this.UnitgroupBox.TabIndex = 22;
+            this.UnitgroupBox.TabStop = false;
+            this.UnitgroupBox.Text = "Unit history";
+            // 
             // UnitGridView
             // 
             this.UnitGridView.AllowUserToAddRows = false;
@@ -1523,8 +1548,9 @@
             this.UnitGridView.ReadOnly = true;
             this.UnitGridView.RowHeadersWidth = 51;
             this.UnitGridView.RowTemplate.Height = 29;
-            this.UnitGridView.Size = new System.Drawing.Size(406, 415);
+            this.UnitGridView.Size = new System.Drawing.Size(437, 384);
             this.UnitGridView.TabIndex = 20;
+            this.UnitGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UnitGridView_CellContentClick);
             // 
             // fromUnit
             // 
@@ -1560,10 +1586,10 @@
             // 
             this.panel13.Controls.Add(this.button1);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel13.Location = new System.Drawing.Point(5, 447);
+            this.panel13.Location = new System.Drawing.Point(5, 453);
             this.panel13.Name = "panel13";
             this.panel13.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel13.Size = new System.Drawing.Size(897, 46);
+            this.panel13.Size = new System.Drawing.Size(897, 40);
             this.panel13.TabIndex = 19;
             // 
             // button1
@@ -1572,7 +1598,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(0, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 41);
+            this.button1.Size = new System.Drawing.Size(94, 35);
             this.button1.TabIndex = 0;
             this.button1.Text = "< Back";
             this.button1.UseVisualStyleBackColor = true;
@@ -1634,13 +1660,13 @@
             this.BHTNSalay,
             this.Salary});
             this.SalaryGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SalaryGridView.Location = new System.Drawing.Point(0, 83);
+            this.SalaryGridView.Location = new System.Drawing.Point(0, 50);
             this.SalaryGridView.Name = "SalaryGridView";
             this.SalaryGridView.ReadOnly = true;
             this.SalaryGridView.RowHeadersWidth = 51;
             this.SalaryGridView.RowTemplate.Height = 29;
             this.SalaryGridView.RowTemplate.ReadOnly = true;
-            this.SalaryGridView.Size = new System.Drawing.Size(907, 415);
+            this.SalaryGridView.Size = new System.Drawing.Size(907, 448);
             this.SalaryGridView.TabIndex = 17;
             // 
             // dateSalary
@@ -1701,7 +1727,7 @@
             this.groupBox14.Location = new System.Drawing.Point(0, 0);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox14.Size = new System.Drawing.Size(907, 83);
+            this.groupBox14.Size = new System.Drawing.Size(907, 50);
             this.groupBox14.TabIndex = 17;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Salary Form";
@@ -1712,7 +1738,7 @@
             this.panel27.Controls.Add(this.searchSalaryBtn);
             this.panel27.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel27.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel27.Location = new System.Drawing.Point(5, 37);
+            this.panel27.Location = new System.Drawing.Point(5, 4);
             this.panel27.Name = "panel27";
             this.panel27.Padding = new System.Windows.Forms.Padding(2);
             this.panel27.Size = new System.Drawing.Size(897, 41);
@@ -1830,7 +1856,10 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.PositiongroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PositionGridView)).EndInit();
+            this.UnitgroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.UnitGridView)).EndInit();
             this.panel13.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
@@ -1982,5 +2011,7 @@
         private Panel panel27;
         private DateTimePicker dateSalaryBox;
         private Button searchSalaryBtn;
+        private GroupBox PositiongroupBox;
+        private GroupBox UnitgroupBox;
     }
 }
