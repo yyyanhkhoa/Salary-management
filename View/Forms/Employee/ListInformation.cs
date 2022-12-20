@@ -94,7 +94,8 @@ namespace Salary_management.View.Forms.Employee
                 long BHXH = salary.Salary / 20;
                 long BHYT = salary.Salary / 100;
                 long BHTN = salary.Salary / 100;
-                salaryGridView.Rows.Add(salary.EmployeeName, salary.UnitName, salary.RankCoefficient, salary.EmployeeAllowanceCoefficient, BHXH, BHYT, BHTN, salary.Salary);
+                long allSalary = salary.Salary - BHXH - BHYT - BHTN;
+                salaryGridView.Rows.Add(salary.EmployeeName, salary.UnitName, salary.RankCoefficient, salary.EmployeeAllowanceCoefficient, BHXH, BHYT, BHTN, allSalary);
             }
             
         }
