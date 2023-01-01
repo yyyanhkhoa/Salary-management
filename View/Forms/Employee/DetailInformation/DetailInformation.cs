@@ -29,7 +29,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             InitializeComponent();
             this.mng = mng;
             this.idEmployee = idEmployee;
-            tabControl1.SelectedTab = tabControl1.TabPages[tab];
+            siticoneTabControl1.SelectedTab = siticoneTabControl1.TabPages[tab];
         }
         void enableInfo (bool check)
         {
@@ -155,7 +155,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             getQualificationInfo();
 
             //get History Info
-            // getHistoryInfo();
+            getHistoryInfo();
 
             //get family info
             getUnionInfo();
@@ -166,9 +166,13 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             dateSalaryBox.ShowUpDown = true;
             dateSalaryBox.MaxDate = DateTime.Now;
 
-            int width = PositionGridView.Width + UnitGridView.Width;
-            PositionGridView.Width = width / 2;
+            int width = PositionGridView.Width + UnitGridView.Width ;           
+            UnitgroupBox.Width = width / 2 + 10;           
             UnitGridView.Width = width / 2;
+
+            // change siticoneTabControl1
+            siticoneTabControl1.SizeMode = TabSizeMode.Normal;
+            siticoneTabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
         }
 
         private void getFamilyInfo()
@@ -388,7 +392,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             }          
         }
 
-        private void fixUnion_Click_1(object sender, EventArgs e)
+        private void fixUnion_Click(object sender, EventArgs e)
         {           
             if (idUnionText.Text == "")
             {
@@ -459,11 +463,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             }
           
         }
-
-        private void panel13_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
           
         private void backQualificationBtn_Click(object sender, EventArgs e)
         {
@@ -479,11 +478,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
             mng.OpenChildForm(new View.Forms.Employee.ListInformation(this.mng), sender);
         }     
-        private void FamilyGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
         private void ImagePicture_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog dlg = new OpenFileDialog())
@@ -497,13 +491,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                     ImagePicture.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
-        }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void QualificationListView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {          
         }
         private void removeQualification_Click(object sender, EventArgs e)
         {
@@ -521,7 +508,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             repo.DeleteFamily(Int16.Parse(idFamily));
             getFamilyInfo();
         }
-        private void removeUnion_Click_1(object sender, EventArgs e)
+        private void removeUnion_Click(object sender, EventArgs e)
         {
             string idUnion = (UnionGridView.Rows[UnionGridView.CurrentRow.Index].Cells[0].Value).ToString();
             //xoa = id family
@@ -547,11 +534,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             {
                 e.Handled = true;
             }
-        }
-
-        private void qualificationGroupBox_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void UnionGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -591,16 +573,21 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             }
         }
 
-        private void UnitGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void PositionGridView_Resize(object sender, EventArgs e)
         {
             int width = PositionGridView.Width + UnitGridView.Width;
             PositionGridView.Width = width / 2;
             UnitGridView.Width = width / 2;
+        }
+
+        private void dateQualification_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkUnionEndDay_CheckedChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
