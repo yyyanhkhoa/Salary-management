@@ -492,6 +492,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 }
             }
         }
+
         private void removeQualification_Click(object sender, EventArgs e)
         {
             string id = (QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells[0].Value).ToString();

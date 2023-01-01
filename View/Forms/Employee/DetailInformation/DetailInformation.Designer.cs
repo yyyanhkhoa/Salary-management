@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
             this.npgsqlDataAdapter2 = new Npgsql.NpgsqlDataAdapter();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -138,7 +138,6 @@
             this.backUnionBtn = new System.Windows.Forms.Button();
             this.addUnion = new System.Windows.Forms.Button();
             this.History = new System.Windows.Forms.TabPage();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.PositiongroupBox = new System.Windows.Forms.GroupBox();
             this.PositionGridView = new System.Windows.Forms.DataGridView();
             this.fromPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,8 +148,6 @@
             this.fromUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitHistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.SalaryTab = new System.Windows.Forms.TabPage();
             this.panel26 = new System.Windows.Forms.Panel();
             this.salaryTabControl = new Siticone.Desktop.UI.WinForms.SiticoneTabControl();
@@ -216,12 +213,10 @@
             this.groupBox13.SuspendLayout();
             this.panel18.SuspendLayout();
             this.History.SuspendLayout();
-            this.groupBox9.SuspendLayout();
             this.PositiongroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PositionGridView)).BeginInit();
             this.UnitgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UnitGridView)).BeginInit();
-            this.panel13.SuspendLayout();
             this.SalaryTab.SuspendLayout();
             this.panel26.SuspendLayout();
             this.salaryTabControl.SuspendLayout();
@@ -727,14 +722,14 @@
             this.BirthFamily,
             this.OcupationFamily,
             this.RelativeFamily});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FamilyGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FamilyGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.FamilyGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FamilyGridView.Location = new System.Drawing.Point(5, 111);
             this.FamilyGridView.Name = "FamilyGridView";
@@ -1156,28 +1151,28 @@
             this.UnionGridView.AllowUserToAddRows = false;
             this.UnionGridView.AllowUserToDeleteRows = false;
             this.UnionGridView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UnionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UnionGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.UnionGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UnionGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDUnion,
             this.NameUnion,
             this.SartDateUnion,
             this.EndDateUnion});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.UnionGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.UnionGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.UnionGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnionGridView.Location = new System.Drawing.Point(0, 278);
             this.UnionGridView.Name = "UnionGridView";
@@ -1457,30 +1452,14 @@
             // 
             // History
             // 
-            this.History.Controls.Add(this.groupBox9);
+            this.History.Controls.Add(this.PositiongroupBox);
+            this.History.Controls.Add(this.UnitgroupBox);
             this.History.Location = new System.Drawing.Point(4, 39);
             this.History.Name = "History";
             this.History.Size = new System.Drawing.Size(1057, 494);
             this.History.TabIndex = 4;
             this.History.Text = "History";
             this.History.UseVisualStyleBackColor = true;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.AutoSize = true;
-            this.groupBox9.BackColor = System.Drawing.Color.White;
-            this.groupBox9.Controls.Add(this.PositiongroupBox);
-            this.groupBox9.Controls.Add(this.UnitgroupBox);
-            this.groupBox9.Controls.Add(this.panel13);
-            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox9.Location = new System.Drawing.Point(0, 0);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox9.Size = new System.Drawing.Size(1057, 494);
-            this.groupBox9.TabIndex = 20;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "History form";
             // 
             // PositiongroupBox
             // 
@@ -1489,10 +1468,10 @@
             this.PositiongroupBox.Controls.Add(this.PositionGridView);
             this.PositiongroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PositiongroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.PositiongroupBox.Location = new System.Drawing.Point(452, 32);
+            this.PositiongroupBox.Location = new System.Drawing.Point(481, 0);
             this.PositiongroupBox.Name = "PositiongroupBox";
             this.PositiongroupBox.Padding = new System.Windows.Forms.Padding(5);
-            this.PositiongroupBox.Size = new System.Drawing.Size(600, 417);
+            this.PositiongroupBox.Size = new System.Drawing.Size(576, 494);
             this.PositiongroupBox.TabIndex = 23;
             this.PositiongroupBox.TabStop = false;
             this.PositiongroupBox.Text = "Position history";
@@ -1513,7 +1492,7 @@
             this.PositionGridView.ReadOnly = true;
             this.PositionGridView.RowHeadersWidth = 51;
             this.PositionGridView.RowTemplate.Height = 29;
-            this.PositionGridView.Size = new System.Drawing.Size(590, 380);
+            this.PositionGridView.Size = new System.Drawing.Size(566, 457);
             this.PositionGridView.TabIndex = 21;
             this.PositionGridView.Resize += new System.EventHandler(this.PositionGridView_Resize);
             // 
@@ -1554,10 +1533,10 @@
             this.UnitgroupBox.Controls.Add(this.UnitGridView);
             this.UnitgroupBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.UnitgroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UnitgroupBox.Location = new System.Drawing.Point(5, 32);
+            this.UnitgroupBox.Location = new System.Drawing.Point(0, 0);
             this.UnitgroupBox.Name = "UnitgroupBox";
             this.UnitgroupBox.Padding = new System.Windows.Forms.Padding(5);
-            this.UnitgroupBox.Size = new System.Drawing.Size(447, 417);
+            this.UnitgroupBox.Size = new System.Drawing.Size(481, 494);
             this.UnitgroupBox.TabIndex = 22;
             this.UnitgroupBox.TabStop = false;
             this.UnitgroupBox.Text = "Unit history";
@@ -1578,7 +1557,7 @@
             this.UnitGridView.ReadOnly = true;
             this.UnitGridView.RowHeadersWidth = 51;
             this.UnitGridView.RowTemplate.Height = 29;
-            this.UnitGridView.Size = new System.Drawing.Size(437, 380);
+            this.UnitGridView.Size = new System.Drawing.Size(471, 457);
             this.UnitGridView.TabIndex = 20;
             // 
             // fromUnit
@@ -1610,28 +1589,6 @@
             this.unitHistory.MinimumWidth = 6;
             this.unitHistory.Name = "unitHistory";
             this.unitHistory.ReadOnly = true;
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.button1);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel13.Location = new System.Drawing.Point(5, 449);
-            this.panel13.Name = "panel13";
-            this.panel13.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel13.Size = new System.Drawing.Size(1047, 40);
-            this.panel13.TabIndex = 19;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(0, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "< Back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SalaryTab
             // 
@@ -1902,13 +1859,10 @@
             this.panel18.PerformLayout();
             this.History.ResumeLayout(false);
             this.History.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
             this.PositiongroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PositionGridView)).EndInit();
             this.UnitgroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.UnitGridView)).EndInit();
-            this.panel13.ResumeLayout(false);
             this.SalaryTab.ResumeLayout(false);
             this.panel26.ResumeLayout(false);
             this.panel26.PerformLayout();
@@ -2030,7 +1984,6 @@
         private Button backUnionBtn;
         private Button addUnion;
         private TabPage History;
-        private GroupBox groupBox9;
         private GroupBox PositiongroupBox;
         private DataGridView PositionGridView;
         private DataGridViewTextBoxColumn fromPosition;
@@ -2041,8 +1994,6 @@
         private DataGridViewTextBoxColumn fromUnit;
         private DataGridViewTextBoxColumn toUnit;
         private DataGridViewTextBoxColumn unitHistory;
-        private Panel panel13;
-        private Button button1;
         private TabPage SalaryTab;
         private Panel panel26;
         private Siticone.Desktop.UI.WinForms.SiticoneTabControl salaryTabControl;

@@ -125,7 +125,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Salary_management.Properties.Resources.logo_uit;
-            this.pictureBox1.Location = new System.Drawing.Point(107, 38);
+            this.pictureBox1.Location = new System.Drawing.Point(95, 38);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(167, 151);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -137,11 +137,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(95, 242);
+            this.label3.Location = new System.Drawing.Point(91, 242);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(218, 33);
+            this.label3.Size = new System.Drawing.Size(92, 33);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Employee - Salary";
+            this.label3.Text = " Salary";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel2
