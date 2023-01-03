@@ -359,35 +359,43 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 {
                     fixQualificationBtn.Text = "Save";
                     enableQualification(true);
-                }
+                }               
                 else
-                {   // fix Qualification               
-                    var repo = new RepositoryEmployeeQualification();
-                    string indexQ = nameQualificationBox.Items[nameQualificationBox.SelectedIndex].ToString();
-                    string[] splitsQ = (indexQ.ToString()).Split('-');
-                    string idQ = splitsQ[0];
-                    DateOnly date = DateOnly.FromDateTime(dateQualification.Value);
-                   
-                    var result = repo.FixEmployeeQualification(Int32.Parse(IDQualificationTB.Text), new InputEmployeeQualification()
-                    {
-                        Score = float.Parse(scoreQualificationText.Text),
-                        IssueDate = date,
-                        PlaceOfIssue = placeQualificationTB.Text,
-                        QualificationId = Int16.Parse(idQ),
-                        EmployeeId = idEmployee,
-                    });
-
-                    if (result.Success)
-                    {
-                        MessageBox.Show("Update Employee Qualification success");
-                        getQualificationInfo();
-                    }
+                {
+                    if (nameQualificationBox.Text == "") MessageBox.Show("Pls chosse qualification");
+                    else if (placeQualificationTB.Text == "") MessageBox.Show("Pls input place of issue");
+                    else if (scoreQualificationText.Text == "") MessageBox.Show("Pls input score");
                     else
                     {
-                        MessageBox.Show(result.ErrorMessage);
+                        // fix Qualification               
+                        var repo = new RepositoryEmployeeQualification();
+                        string indexQ = nameQualificationBox.Items[nameQualificationBox.SelectedIndex].ToString();
+                        string[] splitsQ = (indexQ.ToString()).Split('-');
+                        string idQ = splitsQ[0];
+                        DateOnly date = DateOnly.FromDateTime(dateQualification.Value);
+
+                        var result = repo.FixEmployeeQualification(Int32.Parse(IDQualificationTB.Text), new InputEmployeeQualification()
+                        {
+                            Score = float.Parse(scoreQualificationText.Text),
+                            IssueDate = date,
+                            PlaceOfIssue = placeQualificationTB.Text,
+                            QualificationId = Int16.Parse(idQ),
+                            EmployeeId = idEmployee,
+                        });
+
+                        if (result.Success)
+                        {
+                            MessageBox.Show("Update Employee Qualification success");
+                            getQualificationInfo();
+                        }
+                        else
+                        {
+                            MessageBox.Show(result.ErrorMessage);
+                        }
+                        fixQualificationBtn.Text = "Fix";
+                        enableQualification(false);
                     }
-                    fixQualificationBtn.Text = "Fix";
-                    enableQualification(false);
+                   
                 }
             }          
         }

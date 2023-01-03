@@ -91,7 +91,7 @@
             this.RewardOrNotBtn.PressedDepth = 0;
             this.RewardOrNotBtn.Size = new System.Drawing.Size(244, 56);
             this.RewardOrNotBtn.TabIndex = 4;
-            this.RewardOrNotBtn.Text = "RewardOrDiscipline";
+            this.RewardOrNotBtn.Text = "Reward Or Discipline";
             this.RewardOrNotBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.RewardOrNotBtn.TextOffset = new System.Drawing.Point(15, 0);
             this.RewardOrNotBtn.Click += new System.EventHandler(this.RewardOrNotBtn_Click);

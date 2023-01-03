@@ -121,5 +121,10 @@ namespace Salary_management.View.Forms.Unit
         {
 
         }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
