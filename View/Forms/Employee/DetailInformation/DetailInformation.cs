@@ -175,22 +175,26 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             siticoneTabControl1.SizeMode = TabSizeMode.Normal;
             siticoneTabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
 
-            //chart           
+            //làm biểu đồ (chart)       
             formsPlot1.Plot.XLabel("Months");
             formsPlot1.Plot.YLabel("Salary (million)");
             formsPlot1.Plot.SetAxisLimitsX(1, 12);
-            double[] xPositions = { 1,2,3,4,5,6,7,8,9,10,11,12 };
+            formsPlot1.Plot.SetAxisLimitsY(0, 30);
+            double[] xPositions = {1,2,3,4,5,6,7,8,9,10,11,12 };
             string[] xLabels = { "Jan", "Feb", "Mar", "Apr" ,"May","Jun" , "Jul", "Aug", "Sep","Oct", "Nov", "Dec" };            
             formsPlot1.Plot.XAxis.ManualTickPositions(xPositions, xLabels);
+            
             setChart();
+
         }
 
         private void setChart()
         {
+            formsPlot1.Refresh();
             double[] dataX = new double[] { 1, 2, 3, 4, 5 };
             double[] dataY = new double[] { 1, 4, 9, 16, 25 };
             formsPlot1.Plot.AddScatter(dataX, dataY);
-            formsPlot1.Refresh();
+            
         }
 
         private void getFamilyInfo()
