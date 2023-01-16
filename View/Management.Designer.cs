@@ -29,147 +29,226 @@
         private void InitializeComponent()
         {
             this.panelMenu = new Siticone.Desktop.UI.WinForms.SiticonePanel();
-            this.OtherTabBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.RewardOrNotBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.UnitBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.PositionBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.EmployeeBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.qualificationBtn = new FontAwesome.Sharp.IconButton();
+            this.unionBtn = new FontAwesome.Sharp.IconButton();
+            this.reviewBtn = new FontAwesome.Sharp.IconButton();
+            this.unitBtn = new FontAwesome.Sharp.IconButton();
+            this.positionBtn = new FontAwesome.Sharp.IconButton();
+            this.employeeBtn = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelMain = new Siticone.Desktop.UI.WinForms.SiticonePanel();
+            this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
+            this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
-            this.panelMenu.Controls.Add(this.OtherTabBtn);
-            this.panelMenu.Controls.Add(this.RewardOrNotBtn);
-            this.panelMenu.Controls.Add(this.UnitBtn);
-            this.panelMenu.Controls.Add(this.PositionBtn);
-            this.panelMenu.Controls.Add(this.EmployeeBtn);
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.qualificationBtn);
+            this.panelMenu.Controls.Add(this.unionBtn);
+            this.panelMenu.Controls.Add(this.reviewBtn);
+            this.panelMenu.Controls.Add(this.unitBtn);
+            this.panelMenu.Controls.Add(this.positionBtn);
+            this.panelMenu.Controls.Add(this.employeeBtn);
+            this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(10, 10);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(244, 622);
+            this.panelMenu.Size = new System.Drawing.Size(238, 622);
             this.panelMenu.TabIndex = 2;
             // 
-            // OtherTabBtn
+            // qualificationBtn
             // 
-            this.OtherTabBtn.BorderColor = System.Drawing.Color.White;
-            this.OtherTabBtn.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.OtherTabBtn.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.OtherTabBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.OtherTabBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.OtherTabBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.OtherTabBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.OtherTabBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OtherTabBtn.FillColor = System.Drawing.Color.White;
-            this.OtherTabBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.OtherTabBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.OtherTabBtn.Location = new System.Drawing.Point(0, 224);
-            this.OtherTabBtn.Name = "OtherTabBtn";
-            this.OtherTabBtn.PressedDepth = 0;
-            this.OtherTabBtn.Size = new System.Drawing.Size(244, 56);
-            this.OtherTabBtn.TabIndex = 5;
-            this.OtherTabBtn.Text = "OtherTab";
-            this.OtherTabBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.OtherTabBtn.TextOffset = new System.Drawing.Point(15, 0);
-            this.OtherTabBtn.Click += new System.EventHandler(this.OtherTabBtn_Click);
+            this.qualificationBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.qualificationBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.qualificationBtn.FlatAppearance.BorderSize = 0;
+            this.qualificationBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.qualificationBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.qualificationBtn.IconChar = FontAwesome.Sharp.IconChar.UserGraduate;
+            this.qualificationBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.qualificationBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.qualificationBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.qualificationBtn.Location = new System.Drawing.Point(0, 402);
+            this.qualificationBtn.Name = "qualificationBtn";
+            this.qualificationBtn.Padding = new System.Windows.Forms.Padding(4);
+            this.qualificationBtn.Size = new System.Drawing.Size(238, 62);
+            this.qualificationBtn.TabIndex = 6;
+            this.qualificationBtn.Text = "Qualification";
+            this.qualificationBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.qualificationBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.qualificationBtn.UseVisualStyleBackColor = false;
+            this.qualificationBtn.Click += new System.EventHandler(this.qualificationBtn_Click);
             // 
-            // RewardOrNotBtn
+            // unionBtn
             // 
-            this.RewardOrNotBtn.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.RewardOrNotBtn.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.RewardOrNotBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.RewardOrNotBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.RewardOrNotBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.RewardOrNotBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.RewardOrNotBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RewardOrNotBtn.FillColor = System.Drawing.Color.White;
-            this.RewardOrNotBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RewardOrNotBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.RewardOrNotBtn.Location = new System.Drawing.Point(0, 168);
-            this.RewardOrNotBtn.Name = "RewardOrNotBtn";
-            this.RewardOrNotBtn.PressedDepth = 0;
-            this.RewardOrNotBtn.Size = new System.Drawing.Size(244, 56);
-            this.RewardOrNotBtn.TabIndex = 4;
-            this.RewardOrNotBtn.Text = "Reward Or Discipline";
-            this.RewardOrNotBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.RewardOrNotBtn.TextOffset = new System.Drawing.Point(15, 0);
-            this.RewardOrNotBtn.Click += new System.EventHandler(this.RewardOrNotBtn_Click);
+            this.unionBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.unionBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.unionBtn.FlatAppearance.BorderSize = 0;
+            this.unionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.unionBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.unionBtn.IconChar = FontAwesome.Sharp.IconChar.ObjectGroup;
+            this.unionBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.unionBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.unionBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.unionBtn.Location = new System.Drawing.Point(0, 340);
+            this.unionBtn.Name = "unionBtn";
+            this.unionBtn.Padding = new System.Windows.Forms.Padding(4);
+            this.unionBtn.Size = new System.Drawing.Size(238, 62);
+            this.unionBtn.TabIndex = 5;
+            this.unionBtn.Text = "Union";
+            this.unionBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.unionBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.unionBtn.UseVisualStyleBackColor = false;
+            this.unionBtn.Click += new System.EventHandler(this.unionBtn_Click);
             // 
-            // UnitBtn
+            // reviewBtn
             // 
-            this.UnitBtn.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.UnitBtn.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.UnitBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.UnitBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.UnitBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.UnitBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.UnitBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.UnitBtn.FillColor = System.Drawing.Color.White;
-            this.UnitBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UnitBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.UnitBtn.Location = new System.Drawing.Point(0, 112);
-            this.UnitBtn.Name = "UnitBtn";
-            this.UnitBtn.PressedDepth = 0;
-            this.UnitBtn.Size = new System.Drawing.Size(244, 56);
-            this.UnitBtn.TabIndex = 3;
-            this.UnitBtn.Text = "Unit";
-            this.UnitBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.UnitBtn.TextOffset = new System.Drawing.Point(15, 0);
-            this.UnitBtn.Click += new System.EventHandler(this.UnitBtn_Click);
+            this.reviewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.reviewBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.reviewBtn.FlatAppearance.BorderSize = 0;
+            this.reviewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reviewBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.reviewBtn.IconChar = FontAwesome.Sharp.IconChar.Trophy;
+            this.reviewBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.reviewBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.reviewBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reviewBtn.Location = new System.Drawing.Point(0, 278);
+            this.reviewBtn.Name = "reviewBtn";
+            this.reviewBtn.Padding = new System.Windows.Forms.Padding(4);
+            this.reviewBtn.Size = new System.Drawing.Size(238, 62);
+            this.reviewBtn.TabIndex = 4;
+            this.reviewBtn.Text = "Employee Review";
+            this.reviewBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reviewBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.reviewBtn.UseVisualStyleBackColor = false;
+            this.reviewBtn.Click += new System.EventHandler(this.reviewBtn_Click);
             // 
-            // PositionBtn
+            // unitBtn
             // 
-            this.PositionBtn.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.PositionBtn.CheckedState.CustomBorderColor = System.Drawing.Color.Blue;
-            this.PositionBtn.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.PositionBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.PositionBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.PositionBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.PositionBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.PositionBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PositionBtn.FillColor = System.Drawing.Color.White;
-            this.PositionBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PositionBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.PositionBtn.Location = new System.Drawing.Point(0, 56);
-            this.PositionBtn.Name = "PositionBtn";
-            this.PositionBtn.PressedDepth = 0;
-            this.PositionBtn.Size = new System.Drawing.Size(244, 56);
-            this.PositionBtn.TabIndex = 2;
-            this.PositionBtn.Text = "Position";
-            this.PositionBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.PositionBtn.TextOffset = new System.Drawing.Point(15, 0);
-            this.PositionBtn.Click += new System.EventHandler(this.PositionBtn_Click);
+            this.unitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.unitBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.unitBtn.FlatAppearance.BorderSize = 0;
+            this.unitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.unitBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.unitBtn.IconChar = FontAwesome.Sharp.IconChar.BuildingLock;
+            this.unitBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.unitBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.unitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.unitBtn.Location = new System.Drawing.Point(0, 216);
+            this.unitBtn.Name = "unitBtn";
+            this.unitBtn.Padding = new System.Windows.Forms.Padding(4);
+            this.unitBtn.Size = new System.Drawing.Size(238, 62);
+            this.unitBtn.TabIndex = 3;
+            this.unitBtn.Text = "Unit";
+            this.unitBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.unitBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.unitBtn.UseVisualStyleBackColor = false;
+            this.unitBtn.Click += new System.EventHandler(this.unitBtn_Click);
             // 
-            // EmployeeBtn
+            // positionBtn
             // 
-            this.EmployeeBtn.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.EmployeeBtn.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.EmployeeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.EmployeeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.EmployeeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.EmployeeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.EmployeeBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.EmployeeBtn.FillColor = System.Drawing.Color.White;
-            this.EmployeeBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EmployeeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.EmployeeBtn.Location = new System.Drawing.Point(0, 0);
-            this.EmployeeBtn.Name = "EmployeeBtn";
-            this.EmployeeBtn.PressedDepth = 0;
-            this.EmployeeBtn.Size = new System.Drawing.Size(244, 56);
-            this.EmployeeBtn.TabIndex = 0;
-            this.EmployeeBtn.Text = "Employee";
-            this.EmployeeBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.EmployeeBtn.TextOffset = new System.Drawing.Point(15, 0);
-            this.EmployeeBtn.Click += new System.EventHandler(this.EmployeeBtn_Click);
+            this.positionBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.positionBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.positionBtn.FlatAppearance.BorderSize = 0;
+            this.positionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.positionBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.positionBtn.IconChar = FontAwesome.Sharp.IconChar.UserTie;
+            this.positionBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.positionBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.positionBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.positionBtn.Location = new System.Drawing.Point(0, 154);
+            this.positionBtn.Name = "positionBtn";
+            this.positionBtn.Padding = new System.Windows.Forms.Padding(4);
+            this.positionBtn.Size = new System.Drawing.Size(238, 62);
+            this.positionBtn.TabIndex = 2;
+            this.positionBtn.Text = "Position";
+            this.positionBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.positionBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.positionBtn.UseVisualStyleBackColor = false;
+            this.positionBtn.Click += new System.EventHandler(this.positionBtn_Click);
+            // 
+            // employeeBtn
+            // 
+            this.employeeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.employeeBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.employeeBtn.FlatAppearance.BorderSize = 0;
+            this.employeeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.employeeBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.employeeBtn.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.employeeBtn.IconColor = System.Drawing.Color.Gainsboro;
+            this.employeeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.employeeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.employeeBtn.Location = new System.Drawing.Point(0, 92);
+            this.employeeBtn.Name = "employeeBtn";
+            this.employeeBtn.Padding = new System.Windows.Forms.Padding(4);
+            this.employeeBtn.Size = new System.Drawing.Size(238, 62);
+            this.employeeBtn.TabIndex = 1;
+            this.employeeBtn.Text = "Employee";
+            this.employeeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.employeeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.employeeBtn.UseVisualStyleBackColor = false;
+            this.employeeBtn.Click += new System.EventHandler(this.employeeBtn_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Padding = new System.Windows.Forms.Padding(70, 15, 70, 15);
+            this.panelLogo.Size = new System.Drawing.Size(238, 92);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel1.Controls.Add(this.lblTitleChildForm);
+            this.panel1.Controls.Add(this.iconCurrentChildForm);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(248, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
+            this.panel1.Size = new System.Drawing.Size(975, 60);
+            this.panel1.TabIndex = 4;
             // 
             // panelMain
             // 
+            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(78)))));
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(254, 10);
+            this.panelMain.Location = new System.Drawing.Point(248, 70);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(969, 622);
-            this.panelMain.TabIndex = 3;
+            this.panelMain.Padding = new System.Windows.Forms.Padding(20);
+            this.panelMain.Size = new System.Drawing.Size(975, 562);
+            this.panelMain.TabIndex = 5;
+            // 
+            // iconCurrentChildForm
+            // 
+            this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.iconCurrentChildForm.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconCurrentChildForm.FlatAppearance.BorderSize = 0;
+            this.iconCurrentChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconCurrentChildForm.IconColor = System.Drawing.Color.SlateBlue;
+            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconCurrentChildForm.IconSize = 32;
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(20, 10);
+            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
+            this.iconCurrentChildForm.Size = new System.Drawing.Size(40, 40);
+            this.iconCurrentChildForm.TabIndex = 0;
+            this.iconCurrentChildForm.UseVisualStyleBackColor = false;
+            // 
+            // lblTitleChildForm
+            // 
+            this.lblTitleChildForm.AutoSize = true;
+            this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitleChildForm.Location = new System.Drawing.Point(66, 20);
+            this.lblTitleChildForm.Name = "lblTitleChildForm";
+            this.lblTitleChildForm.Size = new System.Drawing.Size(50, 20);
+            this.lblTitleChildForm.TabIndex = 2;
+            this.lblTitleChildForm.Text = "Home";
             // 
             // Management
             // 
@@ -177,11 +256,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1233, 642);
             this.Controls.Add(this.panelMain);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.Name = "Management";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Management";
+            this.Load += new System.EventHandler(this.Management_Load);
             this.panelMenu.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -189,11 +272,16 @@
         #endregion
 
         private Siticone.Desktop.UI.WinForms.SiticonePanel panelMenu;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton OtherTabBtn;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton RewardOrNotBtn;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton UnitBtn;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton PositionBtn;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton EmployeeBtn;
+        private Panel panelLogo;
+        private FontAwesome.Sharp.IconButton qualificationBtn;
+        private FontAwesome.Sharp.IconButton unionBtn;
+        private FontAwesome.Sharp.IconButton reviewBtn;
+        private FontAwesome.Sharp.IconButton unitBtn;
+        private FontAwesome.Sharp.IconButton positionBtn;
+        private FontAwesome.Sharp.IconButton employeeBtn;
+        private Panel panel1;
         private Siticone.Desktop.UI.WinForms.SiticonePanel panelMain;
+        private Label lblTitleChildForm;
+        private FontAwesome.Sharp.IconButton iconCurrentChildForm;
     }
 }
