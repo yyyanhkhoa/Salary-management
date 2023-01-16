@@ -36,6 +36,7 @@ namespace Salary_management.View.Employees
             LoadListEmployee();
             AuthorizationButton(mng.Role);
         }
+
         private void AuthorizationButton(Role Role)
         {
             switch (Role)

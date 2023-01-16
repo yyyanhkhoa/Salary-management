@@ -107,6 +107,7 @@ namespace Salary_management.View.Positions
 
         private void addRankBtn_Click(object sender, EventArgs e)
         {
+            mng.OpenChildForm(new View.Positions.AddNewRankForm(this.mng));
 
         }
     }
