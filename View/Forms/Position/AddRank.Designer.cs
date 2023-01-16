@@ -1,6 +1,6 @@
-﻿namespace Salary_management.View.Positions
+﻿namespace Salary_management.View.Forms.Position
 {
-    partial class AddNewRankForm
+    partial class AddRank
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.addBtn = new System.Windows.Forms.Button();
-            this.backBtn = new System.Windows.Forms.Button();
+            this.AddBtn = new System.Windows.Forms.Button();
+            this.BackBtn = new System.Windows.Forms.Button();
             this.AddEmployeeGroupBox = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.RankGroupBox = new System.Windows.Forms.GroupBox();
-            this.coefficientText = new System.Windows.Forms.TextBox();
+            this.CoefficientText = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.MilestoneGroupBox = new System.Windows.Forms.GroupBox();
-            this.milestoneComboBox = new System.Windows.Forms.ComboBox();
+            this.MilestoneComboBox = new System.Windows.Forms.ComboBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.nameText = new System.Windows.Forms.TextBox();
+            this.NameText = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.AddEmployeeGroupBox.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -54,40 +54,36 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.addBtn);
-            this.panel3.Controls.Add(this.backBtn);
+            this.panel3.Controls.Add(this.AddBtn);
+            this.panel3.Controls.Add(this.BackBtn);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 404);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.panel3.Size = new System.Drawing.Size(800, 46);
-            this.panel3.TabIndex = 7;
+            this.panel3.TabIndex = 4;
             // 
-            // addBtn
+            // AddBtn
             // 
-            this.addBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.addBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.addBtn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.addBtn.Location = new System.Drawing.Point(702, 5);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(98, 41);
-            this.addBtn.TabIndex = 1;
-            this.addBtn.Text = "+ Add";
-            this.addBtn.UseVisualStyleBackColor = false;
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            this.AddBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.AddBtn.Location = new System.Drawing.Point(702, 5);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(98, 41);
+            this.AddBtn.TabIndex = 1;
+            this.AddBtn.Text = "+ Add";
+            this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // backBtn
+            // BackBtn
             // 
-            this.backBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.backBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.backBtn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.backBtn.Location = new System.Drawing.Point(0, 5);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(94, 41);
-            this.backBtn.TabIndex = 0;
-            this.backBtn.Text = "< Back";
-            this.backBtn.UseVisualStyleBackColor = false;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            this.BackBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BackBtn.Location = new System.Drawing.Point(0, 5);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(94, 41);
+            this.BackBtn.TabIndex = 0;
+            this.BackBtn.Text = "< Back";
+            this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // AddEmployeeGroupBox
             // 
@@ -103,7 +99,7 @@
             this.AddEmployeeGroupBox.Name = "AddEmployeeGroupBox";
             this.AddEmployeeGroupBox.Padding = new System.Windows.Forms.Padding(5);
             this.AddEmployeeGroupBox.Size = new System.Drawing.Size(800, 404);
-            this.AddEmployeeGroupBox.TabIndex = 8;
+            this.AddEmployeeGroupBox.TabIndex = 5;
             this.AddEmployeeGroupBox.TabStop = false;
             this.AddEmployeeGroupBox.Text = "Add Rank Form";
             // 
@@ -128,7 +124,7 @@
             // 
             // RankGroupBox
             // 
-            this.RankGroupBox.Controls.Add(this.coefficientText);
+            this.RankGroupBox.Controls.Add(this.CoefficientText);
             this.RankGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RankGroupBox.Location = new System.Drawing.Point(10, 10);
             this.RankGroupBox.Name = "RankGroupBox";
@@ -137,13 +133,13 @@
             this.RankGroupBox.TabStop = false;
             this.RankGroupBox.Text = "Coefficient";
             // 
-            // coefficientText
+            // CoefficientText
             // 
-            this.coefficientText.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.coefficientText.Location = new System.Drawing.Point(3, 44);
-            this.coefficientText.Name = "coefficientText";
-            this.coefficientText.Size = new System.Drawing.Size(764, 27);
-            this.coefficientText.TabIndex = 0;
+            this.CoefficientText.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CoefficientText.Location = new System.Drawing.Point(3, 44);
+            this.CoefficientText.Name = "CoefficientText";
+            this.CoefficientText.Size = new System.Drawing.Size(764, 27);
+            this.CoefficientText.TabIndex = 0;
             // 
             // panel2
             // 
@@ -158,7 +154,7 @@
             // 
             // MilestoneGroupBox
             // 
-            this.MilestoneGroupBox.Controls.Add(this.milestoneComboBox);
+            this.MilestoneGroupBox.Controls.Add(this.MilestoneComboBox);
             this.MilestoneGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MilestoneGroupBox.Location = new System.Drawing.Point(10, 10);
             this.MilestoneGroupBox.Name = "MilestoneGroupBox";
@@ -167,11 +163,11 @@
             this.MilestoneGroupBox.TabStop = false;
             this.MilestoneGroupBox.Text = "Milestone";
             // 
-            // milestoneComboBox
+            // MilestoneComboBox
             // 
-            this.milestoneComboBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.milestoneComboBox.FormattingEnabled = true;
-            this.milestoneComboBox.Items.AddRange(new object[] {
+            this.MilestoneComboBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MilestoneComboBox.FormattingEnabled = true;
+            this.MilestoneComboBox.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -179,10 +175,10 @@
             "5",
             "6",
             "7"});
-            this.milestoneComboBox.Location = new System.Drawing.Point(3, 37);
-            this.milestoneComboBox.Name = "milestoneComboBox";
-            this.milestoneComboBox.Size = new System.Drawing.Size(764, 28);
-            this.milestoneComboBox.TabIndex = 0;
+            this.MilestoneComboBox.Location = new System.Drawing.Point(3, 37);
+            this.MilestoneComboBox.Name = "MilestoneComboBox";
+            this.MilestoneComboBox.Size = new System.Drawing.Size(764, 28);
+            this.MilestoneComboBox.TabIndex = 0;
             // 
             // panel7
             // 
@@ -197,7 +193,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.nameText);
+            this.groupBox2.Controls.Add(this.NameText);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(10, 10);
             this.groupBox2.Name = "groupBox2";
@@ -206,23 +202,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Name";
             // 
-            // nameText
+            // NameText
             // 
-            this.nameText.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.nameText.Location = new System.Drawing.Point(3, 22);
-            this.nameText.Name = "nameText";
-            this.nameText.Size = new System.Drawing.Size(764, 27);
-            this.nameText.TabIndex = 0;
+            this.NameText.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.NameText.Location = new System.Drawing.Point(3, 22);
+            this.NameText.Name = "NameText";
+            this.NameText.Size = new System.Drawing.Size(764, 27);
+            this.NameText.TabIndex = 0;
             // 
-            // AddNewRankForm
+            // AddRank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.AddEmployeeGroupBox);
             this.Controls.Add(this.panel3);
-            this.Name = "AddNewRankForm";
-            this.Text = "AddNewRankForm";
+            this.Name = "AddRank";
+            this.Text = "AddRank";
             this.panel3.ResumeLayout(false);
             this.AddEmployeeGroupBox.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -241,18 +237,18 @@
         #endregion
 
         private Panel panel3;
-        private Button addBtn;
-        private Button backBtn;
+        private Button AddBtn;
+        private Button BackBtn;
         private GroupBox AddEmployeeGroupBox;
         private Panel panel1;
         private Panel panel4;
         private GroupBox RankGroupBox;
-        private TextBox coefficientText;
         private Panel panel2;
         private GroupBox MilestoneGroupBox;
-        private ComboBox milestoneComboBox;
         private Panel panel7;
         private GroupBox groupBox2;
-        private TextBox nameText;
+        private TextBox NameText;
+        private TextBox CoefficientText;
+        private ComboBox MilestoneComboBox;
     }
 }
