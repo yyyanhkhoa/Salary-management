@@ -183,7 +183,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             double[] xPositions = {1,2,3,4,5,6,7,8,9,10,11,12 };
             string[] xLabels = { "Jan", "Feb", "Mar", "Apr" ,"May","Jun" , "Jul", "Aug", "Sep","Oct", "Nov", "Dec" };            
             formsPlot1.Plot.XAxis.ManualTickPositions(xPositions, xLabels);
-<<<<<<< HEAD
             
             setChart();
 
@@ -194,20 +193,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             formsPlot1.Refresh();
             double[] dataX = new double[] { 1, 2, 3, 4, 5 };
             double[] dataY = new double[] { 1, 4, 9, 16, 25 };
-=======
-
-            // du lieu mau
-            double[] dataX = { 1, 2, 3, 4, 5 };
-            double[] dataY = { 1, 4, 9, 16, 25 };
-            setChart(dataX, dataY);
-
-        }
-
-        private void setChart(double[] dataX, double[] dataY)
-        {
-            formsPlot1.Refresh();
-         
->>>>>>> parent of 4f527d0 (push 1 giao dien moi)
             formsPlot1.Plot.AddScatter(dataX, dataY);
             
         }
