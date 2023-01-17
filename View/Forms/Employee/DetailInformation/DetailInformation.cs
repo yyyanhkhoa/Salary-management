@@ -184,14 +184,11 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             string[] xLabels = { "Jan", "Feb", "Mar", "Apr" ,"May","Jun" , "Jul", "Aug", "Sep","Oct", "Nov", "Dec" };            
             formsPlot1.Plot.XAxis.ManualTickPositions(xPositions, xLabels);
 
-            // du lieu mau
-            double[] dataX = { 1, 2, 3, 4, 5 };
-            double[] dataY = { 1, 4, 9, 16, 25 };
-            setChart(dataX, dataY);
 
         }
 
-        private void setChart(double[] dataX, double[] dataY)
+
+        private void setChart(int[] dataX, float[] dataY)
         {
             formsPlot1.Refresh();
          
@@ -214,15 +211,22 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             this.SalaryGridView.Rows.Clear();
             RepositorySalary repoSalary = new RepositorySalary();
             List<Model.EmployeeSalary> list = repoSalary.GetEmployeeSalaryAtYear(idEmployee).Payload;
-          
+            int[] dataX = new int[15];
+            float[] dataY = new float[15];
+            int count = 0;
+
             foreach (Model.EmployeeSalary salary in list)
             {
+                count++;    
                 long BHXH = salary.Salary;
                 long BHYT = salary.Salary;
                 long BHTN = salary.Salary;
-              
+                dataX[count] = count;
+                dataY[count] = salary.Salary;
                 SalaryGridView.Rows.Add( salary.Date, salary.EmployeeAllowanceCoefficient, BHXH, BHYT, BHTN, salary.Salary);
             }
+            setChart(dataX, dataY);
+
         }
         private void getQualificationInfo()
         {
@@ -595,15 +599,23 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
             SalaryGridView.Rows.Clear();
             RepositorySalary repoSalary = new RepositorySalary();
-            List<Model.EmployeeSalary> list = repoSalary.GetEmployeeSalaryAtYear(idEmployee,dateSalaryBox.Value.Year).Payload;         
+            List<Model.EmployeeSalary> list = repoSalary.GetEmployeeSalaryAtYear(idEmployee,dateSalaryBox.Value.Year).Payload;
+            int[] dataX = new int[15];
+            float[] dataY = new float[15];
+            int count = 0;
+           
             foreach (Model.EmployeeSalary salary in list)
             {
+                count++;
                 long BHXH = salary.Salary / 20;
                 long BHYT = salary.Salary / 100;
                 long BHTN = salary.Salary / 100;
-                SalaryGridView.Rows.Add(salary.Date, salary.EmployeeAllowanceCoefficient, BHXH, BHYT, BHTN, salary.Salary);
+                dataX[count] = count;
+                dataY[count] = salary.Salary;
+               SalaryGridView.Rows.Add(salary.Date, salary.EmployeeAllowanceCoefficient, BHXH, BHYT, BHTN, salary.Salary);
                 //salary.RankCoefficient,
             }
+            setChart(dataX, dataY);
         }
 
         private void PositionGridView_Resize(object sender, EventArgs e)
@@ -618,9 +630,5 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         }
 
-        private void checkUnionEndDay_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
