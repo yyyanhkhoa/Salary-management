@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Salary_management.View
+namespace Salary_management.Forms
 {
-    public partial class BaseForm : System.Windows.Forms.Form
+    public partial class FormSetting : Form
     {
-        protected Management mng;
-
+        public FormSetting()
+        {
+            InitializeComponent();
+        }
     }
 }

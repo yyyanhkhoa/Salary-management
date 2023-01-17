@@ -1,6 +1,6 @@
-﻿namespace Salary_management.View.Qualifications
+﻿namespace Salary_management.Forms
 {
-    partial class QualificationsForm
+    partial class FormSetting
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(191, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(447, 89);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Đây là Setting";
+            // 
+            // FormSetting
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "QualificationsForm";
+            this.Controls.Add(this.label1);
+            this.Name = "FormSetting";
+            this.Text = "FormSetting";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private Label label1;
     }
 }
