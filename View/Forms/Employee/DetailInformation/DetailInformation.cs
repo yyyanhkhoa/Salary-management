@@ -177,18 +177,16 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
             //làm biểu đồ (chart)       
             formsPlot1.Plot.XLabel("Months");
-            formsPlot1.Plot.YLabel("Salary (million)");
+            formsPlot1.Plot.YLabel("Salary (vnd)");
             formsPlot1.Plot.SetAxisLimitsX(1, 12);
             formsPlot1.Plot.SetAxisLimitsY(0, 30);
             double[] xPositions = {1,2,3,4,5,6,7,8,9,10,11,12 };
             string[] xLabels = { "Jan", "Feb", "Mar", "Apr" ,"May","Jun" , "Jul", "Aug", "Sep","Oct", "Nov", "Dec" };            
             formsPlot1.Plot.XAxis.ManualTickPositions(xPositions, xLabels);
 
-
         }
 
-
-        private void setChart(int[] dataX, float[] dataY)
+        private void setChart(double[] dataX, double[] dataY)
         {
             formsPlot1.Refresh();
          
@@ -211,8 +209,8 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             this.SalaryGridView.Rows.Clear();
             RepositorySalary repoSalary = new RepositorySalary();
             List<Model.EmployeeSalary> list = repoSalary.GetEmployeeSalaryAtYear(idEmployee).Payload;
-            int[] dataX = new int[15];
-            float[] dataY = new float[15];
+            double[] dataX = new double[15];
+            double[] dataY = new double[15];
             int count = 0;
 
             foreach (Model.EmployeeSalary salary in list)
@@ -223,6 +221,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 long BHTN = salary.Salary;
                 dataX[count] = count;
                 dataY[count] = salary.Salary;
+               // dataY[count] = salary.Salary / 1000000;
                 SalaryGridView.Rows.Add( salary.Date, salary.EmployeeAllowanceCoefficient, BHXH, BHYT, BHTN, salary.Salary);
             }
             setChart(dataX, dataY);
@@ -600,8 +599,8 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             SalaryGridView.Rows.Clear();
             RepositorySalary repoSalary = new RepositorySalary();
             List<Model.EmployeeSalary> list = repoSalary.GetEmployeeSalaryAtYear(idEmployee,dateSalaryBox.Value.Year).Payload;
-            int[] dataX = new int[15];
-            float[] dataY = new float[15];
+            double[] dataX = new double[15];
+            double[] dataY = new double[15];
             int count = 0;
            
             foreach (Model.EmployeeSalary salary in list)
