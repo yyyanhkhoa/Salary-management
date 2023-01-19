@@ -184,11 +184,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             string[] xLabels = { "Jan", "Feb", "Mar", "Apr" ,"May","Jun" , "Jul", "Aug", "Sep","Oct", "Nov", "Dec" };            
             formsPlot1.Plot.XAxis.ManualTickPositions(xPositions, xLabels);
 
-            // du lieu mau
-            double[] dataX = { 1, 2, 3, 4, 5 };
-            double[] dataY = { 1, 4, 9, 16, 25 };
-            setChart(dataX, dataY);
-
         }
 
         private void setChart(double[] dataX, double[] dataY)
@@ -214,7 +209,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
             this.SalaryGridView.Rows.Clear();
             RepositorySalary repoSalary = new RepositorySalary();
             List<Model.EmployeeSalary> list = repoSalary.GetEmployeeSalaryAtYear(idEmployee).Payload;
-
             double[] dataX = new double[15];
             double[] dataY = new double[15];
             int count = 0;
@@ -231,6 +225,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 SalaryGridView.Rows.Add( salary.Date, salary.EmployeeAllowanceCoefficient, BHXH, BHYT, BHTN, salary.Salary);
             }
             setChart(dataX, dataY);
+
         }
         private void getQualificationInfo()
         {
@@ -633,5 +628,6 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
         {
 
         }
+
     }
 }
