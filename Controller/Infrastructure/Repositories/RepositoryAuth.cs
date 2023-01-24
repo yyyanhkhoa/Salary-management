@@ -1,4 +1,5 @@
-﻿using Salary_management.Controller.Infrastructure.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Salary_management.Controller.Infrastructure.Data;
 using Salary_management.Controller.Infrastructure.Entities.Enums;
 using Salary_management.Migrations;
 using Salary_management.Model;
@@ -24,6 +25,38 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			Context.SaveChanges(); 
 			return new Result<Auth> { Success = true, Payload = userAuth };
 		}
+
+		/// <summary>
+		/// Lấy thông tin các user theo từ khóa, nếu từ khóa trống thì lấy thông tin của tất cả user mới nhất
+		/// </summary>
+		/// <param name="searchString"></param>
+		/// <returns></returns>
+		public List<Models.Auth> GetUsers(string keyword)
+		{
+			if (string.IsNullOrWhiteSpace(keyword))
+			{
+				return Context.Auths.Select(e => MapToModel(e)).ToList();
+			}
+			else
+			{
+				return Context.Auths.Where(
+					e => EF.Functions.ILike(e.Username, $"%{keyword}%") 
+				)
+					.Select(e => MapToModel(e)).ToList();
+			}
+		}
+
+		private static Models.Auth MapToModel(Salary_management.Infrastructure.Entities.Auth e)
+		{
+			return new Auth
+			{
+				Id = e.Id,
+				Username = e.Username,
+				Password = e.Password,
+				Role = e.Role
+			};
+		}
+
 		public void DeleteUser(int id)
 		{
 			var user = new Auth { Id = id };
