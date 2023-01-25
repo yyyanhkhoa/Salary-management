@@ -29,17 +29,6 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 				return new Result<Models.Employee> { Success = false, ErrorMessage = "Employee with this ID card already exists." };
 
 			var employee = MapToEntity(input);
-			var newestEmployee = Context.Employees.OrderByDescending(e => e.DateCreated).FirstOrDefault();
-
-			if (newestEmployee == null)
-			{
-				employee.Id = "EM_1";
-			}
-			else
-			{
-				employee.Id = $"EM_{int.Parse(newestEmployee.Id[3..^0]) + 1}";
-			}
-
 			Context.Employees.Add(employee);
 			Context.SaveChanges();
 
