@@ -1,4 +1,5 @@
 using Salary_management.Controller.Infrastructure.Repositories;
+using Salary_management.View;
 
 namespace Salary_management
 {
@@ -10,16 +11,11 @@ namespace Salary_management
         [STAThread]
         static void Main()
         {
-			//var resAll = new RepositorySalary().GetEmployeeSalaries(new DateOnly(2022, 12, 1));
-			//var resOmor = new RepositorySalary().GetEmployeeSalariesAtUnit("U_DAMN", new DateOnly(2022, 12, 1));
-			//var res = new RepositorySalary().GetEmployeeSalaryAtYear("EM_5", 2022);
-		
 			// To customize application configuration such as set high DPI settings or default font,
 			// see https://aka.ms/applicationconfiguration.
 
 			ApplicationConfiguration.Initialize();
-            Application.Run(new Management(Controller.Infrastructure.Entities.Enums.Role.Admin));
-            
+            Application.Run(new LoginForm());            
         }
     }
 }
