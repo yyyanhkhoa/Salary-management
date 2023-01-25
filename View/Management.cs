@@ -1,10 +1,12 @@
-﻿using Salary_management.Controller.Infrastructure.Entities.Enums;
+﻿using FontAwesome.Sharp;
+using Salary_management.Controller.Infrastructure.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,86 +15,172 @@ namespace Salary_management
 {
     public partial class Management : Form
     {
-        private Form activeForm;
+        //Fields
+        private Form currentChildForm;
+        private IconButton currentBtn;
+        private Panel leftBorderBtn;
         public Role Role { get; set; }
 
 
         public Management(Role role)
         {
-            this.Role = role;
             InitializeComponent();
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7, 60);  
+            panelMenu.Controls.Add(leftBorderBtn);
+            this.Role = role;
+        }
+        private struct RGBColors
+        {
+            public static Color color1 = Color.FromArgb(172, 126, 241);
+            public static Color color2 = Color.FromArgb(249, 118, 176);
+            public static Color color3 = Color.FromArgb(253, 138, 114);
+            public static Color color4 = Color.FromArgb(95, 77, 221);
+            public static Color color5 = Color.FromArgb(249, 88, 155);
+            public static Color color6 = Color.FromArgb(24, 161, 251);
+            public static Color color7 = Color.FromArgb(255, 204, 0);
+
+        }
+        //Methods
+
+        private void Management_Load(object sender, EventArgs e)
+        {
+            Reset();
+            AuthorizationButton(this.Role);
+            OpenChildForm(new Salary_management.View.Home.HomeForm());
         }
 
+
+        private void AuthorizationButton(Role role)
+        {
+            switch (role)
+            {
+                case Role.Admin:
+                    break;
+                case Role.Accountant:
+                    userButton.Visible = false;
+                    break;
+                case Role.Viewer:
+                    userButton.Visible = false;
+                    break;
+                default: return;
+            }
+        }
+        private void Reset()
+        {
+            DisableButton();
+            leftBorderBtn.Visible = false;
+            iconCurrentChildForm.IconChar = IconChar.Home;
+            iconCurrentChildForm.IconColor = Color.MediumPurple;
+            lblTitleChildForm.Text = "Home";
+
+        }
+        private void ActivateButton(object senderBtn, Color color)
+        {
+            if (senderBtn != null)
+            {
+                DisableButton();
+
+                currentBtn = (IconButton)senderBtn;
+                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.ForeColor = color;
+                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                currentBtn.IconColor = color;
+                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+                //left border button
+                leftBorderBtn.BackColor = color;
+                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                leftBorderBtn.Visible = true;
+                leftBorderBtn.BringToFront();
+
+                //title button
+                iconCurrentChildForm.IconChar = currentBtn.IconChar;
+                iconCurrentChildForm.IconColor = color;
+                lblTitleChildForm.Text = currentBtn.Text;
+            }
+        }
 
 
         private void DisableButton()
         {
-            foreach (Control previousBtn in panelMenu.Controls)
+            if (currentBtn != null)
             {
-                if (previousBtn.GetType() == typeof(Button))
-                {
-                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                }
+                currentBtn.BackColor = Color.FromArgb(31, 30, 68);
+                currentBtn.ForeColor = Color.Gainsboro;
+                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                currentBtn.IconColor = Color.Gainsboro;
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
 
-        public void OpenChildForm(Form childForm, object btnSender)
+        public void OpenChildForm(Form childForm)
         {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
+            //open only form
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            //End
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            this.panelMain.Controls.Add(childForm);
-            this.panelMain.Tag = childForm;
+            panelMain.Controls.Add(childForm);
+            panelMain.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }
 
-
-        private void SettingBtn_Click(object sender, EventArgs e)
+        private void employeeBtn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormSetting(), sender);
-
-        }
-		//private void Management_FormClosed(object sender, FormClosedEventArgs e){ Application.Exit(); }
-        //private void ListEmployeeBtn_Click(object sender, EventArgs e){ OpenChildForm(new View.Forms.Employee.ListInformation(this), sender); }
-        //private void PositionBtn_Click(object sender, EventArgs e) { OpenChildForm(new View.Forms.Position.ListPosition(this), sender); }
-        //private void UnitBtn_Click(object sender, EventArgs e) { OpenChildForm(new View.Forms.Unit.Unit(this), sender); }
-        //private void RewardOrNotBtn_Click(object sender, EventArgs e) { OpenChildForm(new View.Forms.RewardOrDiscipline.RewardOrNot(this), sender); }
-
-        private void Management_Load(object sender, EventArgs e)
-        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new Salary_management.View.Employees.ListEmployeeForm(this));
 
         }
 
-        //private void OtherTabBtn_Click(object sender, EventArgs e) { OpenChildForm(new View.Forms.OtherTab.OtherTab(this), sender); }
-
-        private void EmployeeBtn_Click(object sender, EventArgs e)
+        private void positionBtn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new View.Forms.Employee.ListInformation(this), sender);
+            ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new View.Positions.ListPositionForm(this));
+
+
         }
 
-        private void PositionBtn_Click(object sender, EventArgs e)
+        private void unitBtn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new View.Forms.Position.ListPosition(this), sender);
-            //OpenChildForm(new View.Forms.Position.DetailPosition(this,"GV111"), sender);
+            ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new View.Units.UnitsForm(this));
         }
 
-        private void UnitBtn_Click(object sender, EventArgs e)
+        private void reviewBtn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new View.Forms.Unit.Unit(this), sender);
+            ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new View.Employees_Review.ReviewForm(this));
         }
 
-        private void RewardOrNotBtn_Click(object sender, EventArgs e)
+        private void unionBtn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new View.Forms.RewardOrDiscipline.RewardOrNot(this), sender);
+            ActivateButton(sender, RGBColors.color5);
+            OpenChildForm(new View.Unions.UnionsForm(this));
         }
 
-        private void OtherTabBtn_Click(object sender, EventArgs e)
+        private void qualificationBtn_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new View.Forms.OtherTab.OtherTab(this), sender);
+            ActivateButton(sender, RGBColors.color6);
+            OpenChildForm(new View.Qualifications.QualificationsForm(this));
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
+
+        private void userButton_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color7);
+            OpenChildForm(new View.Users.UsersForm(this));
         }
     }
 }
