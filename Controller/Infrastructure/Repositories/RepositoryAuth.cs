@@ -29,7 +29,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		/// <summary>
 		/// Lấy thông tin các user theo từ khóa, nếu từ khóa trống thì lấy thông tin của tất cả user mới nhất
 		/// </summary>
-		/// <param name="searchString"></param>
+		/// <param name="keyword"></param>
 		/// <returns></returns>
 		public List<Models.Auth> GetUsers(string keyword)
 		{
