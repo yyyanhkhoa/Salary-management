@@ -530,27 +530,52 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void removeQualification_Click(object sender, EventArgs e)
         {
-            string id = (QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells[0].Value).ToString();
-            //xoa = id            
-            var repo = new RepositoryEmployeeQualification();
-            repo.DeleteEmployeeQualification(Int32.Parse(id));
-            getQualificationInfo();
+            if (QualificationListView.RowCount > 0)
+            {
+                string id = (QualificationListView.Rows[QualificationListView.CurrentRow.Index].Cells[0].Value).ToString();
+                //xoa = id            
+                var repo = new RepositoryEmployeeQualification();
+                repo.DeleteEmployeeQualification(Int32.Parse(id));
+                getQualificationInfo();
+
+            }
+            else
+            {
+                MessageBox.Show("Pls chossed a Qualification to remove");
+            }
+          
         }
         private void RemoveFamilyBtn_Click(object sender, EventArgs e)
-        {
-            string idFamily = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();
-            //xoa = id family
-            var repo = new RepositoryFamily();
-            repo.DeleteFamily(Int16.Parse(idFamily));
-            getFamilyInfo();
+        {           
+            if (FamilyGridView.RowCount > 0) {
+                string idFamily = (FamilyGridView.Rows[FamilyGridView.CurrentRow.Index].Cells[0].Value).ToString();
+                //xoa = id family
+                var repo = new RepositoryFamily();
+                repo.DeleteFamily(Int16.Parse(idFamily));
+                getFamilyInfo();
+                 
+            }
+            else
+            {
+                MessageBox.Show("Pls chossed a family to remove");
+            }
+         
         }
         private void removeUnion_Click(object sender, EventArgs e)
         {
-            string idUnion = (UnionGridView.Rows[UnionGridView.CurrentRow.Index].Cells[0].Value).ToString();
-            //xoa = id family
-            var repo = new RepositoryUnionHistory();
-            repo.DeleteUnionHistory(Int16.Parse(idUnion));
-            getUnionInfo();
+            if (UnionGridView.RowCount > 0)
+            {
+                string idUnion = (UnionGridView.Rows[UnionGridView.CurrentRow.Index].Cells[0].Value).ToString();
+                //xoa = id union
+                var repo = new RepositoryUnionHistory();
+                repo.DeleteUnionHistory(Int16.Parse(idUnion));
+                getUnionInfo();
+            }
+            else
+            {
+                MessageBox.Show("Pls chossed an Union to remove");
+            }
+          
         }
         private void QualificationListView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
