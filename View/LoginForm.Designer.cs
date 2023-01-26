@@ -62,9 +62,9 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(40, 40);
+            this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(720, 370);
+            this.panel1.Size = new System.Drawing.Size(790, 440);
             this.panel1.TabIndex = 0;
             // 
             // panel4
@@ -75,17 +75,17 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(309, 54);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(411, 316);
+            this.panel4.Size = new System.Drawing.Size(481, 386);
             this.panel4.TabIndex = 2;
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.loginBtn);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 198);
+            this.panel7.Location = new System.Drawing.Point(0, 192);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(20);
-            this.panel7.Size = new System.Drawing.Size(411, 88);
+            this.panel7.Size = new System.Drawing.Size(481, 88);
             this.panel7.TabIndex = 2;
             // 
             // loginBtn
@@ -98,7 +98,7 @@
             this.loginBtn.ForeColor = System.Drawing.Color.Gainsboro;
             this.loginBtn.Location = new System.Drawing.Point(20, 20);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(371, 48);
+            this.loginBtn.Size = new System.Drawing.Size(441, 48);
             this.loginBtn.TabIndex = 0;
             this.loginBtn.Text = "LOGIN";
             this.loginBtn.UseVisualStyleBackColor = false;
@@ -113,26 +113,27 @@
             this.panel6.Location = new System.Drawing.Point(0, 94);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(20);
-            this.panel6.Size = new System.Drawing.Size(411, 104);
+            this.panel6.Size = new System.Drawing.Size(481, 98);
             this.panel6.TabIndex = 1;
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(354, 50);
+            this.pictureBox4.Location = new System.Drawing.Point(424, 42);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox4.Size = new System.Drawing.Size(37, 36);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
             // 
             // passwordText
             // 
-            this.passwordText.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.passwordText.Location = new System.Drawing.Point(20, 50);
+            this.passwordText.Dock = System.Windows.Forms.DockStyle.Left;
+            this.passwordText.Location = new System.Drawing.Point(20, 42);
             this.passwordText.Multiline = true;
             this.passwordText.Name = "passwordText";
-            this.passwordText.Size = new System.Drawing.Size(371, 34);
+            this.passwordText.Size = new System.Drawing.Size(398, 36);
             this.passwordText.TabIndex = 1;
             // 
             // label1
@@ -156,26 +157,27 @@
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(20);
-            this.panel5.Size = new System.Drawing.Size(411, 94);
+            this.panel5.Size = new System.Drawing.Size(481, 94);
             this.panel5.TabIndex = 0;
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(354, 40);
+            this.pictureBox3.Location = new System.Drawing.Point(424, 42);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(37, 34);
+            this.pictureBox3.Size = new System.Drawing.Size(37, 32);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
             // userText
             // 
-            this.userText.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.userText.Location = new System.Drawing.Point(20, 40);
+            this.userText.Dock = System.Windows.Forms.DockStyle.Left;
+            this.userText.Location = new System.Drawing.Point(20, 42);
             this.userText.Multiline = true;
             this.userText.Name = "userText";
-            this.userText.Size = new System.Drawing.Size(371, 34);
+            this.userText.Size = new System.Drawing.Size(398, 32);
             this.userText.TabIndex = 1;
             // 
             // userNamelbl
@@ -197,7 +199,7 @@
             this.panel3.Location = new System.Drawing.Point(309, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(150, 0, 150, 0);
-            this.panel3.Size = new System.Drawing.Size(411, 54);
+            this.panel3.Size = new System.Drawing.Size(481, 54);
             this.panel3.TabIndex = 1;
             // 
             // panel2
@@ -208,7 +210,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(60);
-            this.panel2.Size = new System.Drawing.Size(309, 370);
+            this.panel2.Size = new System.Drawing.Size(309, 440);
             this.panel2.TabIndex = 0;
             // 
             // pictureBox1
@@ -217,7 +219,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(60, 60);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(187, 248);
+            this.pictureBox1.Size = new System.Drawing.Size(187, 318);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -230,7 +232,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "LoginForm";
-            this.Padding = new System.Windows.Forms.Padding(40);
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.Text = "LoginForm";
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

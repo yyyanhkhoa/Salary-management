@@ -37,6 +37,8 @@
             this.AddEmployeeGroupBox = new System.Windows.Forms.GroupBox();
             this.AddNewBtn = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.deleteEmployeeBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.saveBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -68,8 +70,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBoxBtn = new System.Windows.Forms.PictureBox();
             this.salaryTab = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.employeeDetailTabControl.SuspendLayout();
             this.informationTab.SuspendLayout();
             this.AddEmployeeGroupBox.SuspendLayout();
@@ -204,7 +204,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.deleteEmployeeBtn);
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.saveBtn);
             this.panel3.Controls.Add(this.backBtn);
@@ -214,6 +214,28 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.panel3.Size = new System.Drawing.Size(985, 46);
             this.panel3.TabIndex = 4;
+            // 
+            // deleteEmployeeBtn
+            // 
+            this.deleteEmployeeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.deleteEmployeeBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.deleteEmployeeBtn.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deleteEmployeeBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.deleteEmployeeBtn.Location = new System.Drawing.Point(765, 5);
+            this.deleteEmployeeBtn.Name = "deleteEmployeeBtn";
+            this.deleteEmployeeBtn.Size = new System.Drawing.Size(98, 41);
+            this.deleteEmployeeBtn.TabIndex = 3;
+            this.deleteEmployeeBtn.Text = "Delete";
+            this.deleteEmployeeBtn.UseVisualStyleBackColor = false;
+            this.deleteEmployeeBtn.Click += new System.EventHandler(this.deleteEmployeeBtn_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(863, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(24, 41);
+            this.panel1.TabIndex = 2;
             // 
             // saveBtn
             // 
@@ -449,11 +471,11 @@
             this.panel2.Controls.Add(this.NameGroupBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel2.Location = new System.Drawing.Point(144, 49);
+            this.panel2.Location = new System.Drawing.Point(144, 47);
             this.panel2.Margin = new System.Windows.Forms.Padding(10);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.panel2.Size = new System.Drawing.Size(831, 70);
+            this.panel2.Size = new System.Drawing.Size(831, 72);
             this.panel2.TabIndex = 2;
             // 
             // GenderGroupBox
@@ -465,7 +487,7 @@
             this.GenderGroupBox.Location = new System.Drawing.Point(307, 10);
             this.GenderGroupBox.Name = "GenderGroupBox";
             this.GenderGroupBox.Padding = new System.Windows.Forms.Padding(40, 3, 40, 3);
-            this.GenderGroupBox.Size = new System.Drawing.Size(514, 50);
+            this.GenderGroupBox.Size = new System.Drawing.Size(514, 52);
             this.GenderGroupBox.TabIndex = 3;
             this.GenderGroupBox.TabStop = false;
             this.GenderGroupBox.Text = "Gender";
@@ -476,7 +498,7 @@
             this.maleRadioBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.maleRadioBtn.Location = new System.Drawing.Point(40, 23);
             this.maleRadioBtn.Name = "maleRadioBtn";
-            this.maleRadioBtn.Size = new System.Drawing.Size(356, 24);
+            this.maleRadioBtn.Size = new System.Drawing.Size(356, 26);
             this.maleRadioBtn.TabIndex = 2;
             this.maleRadioBtn.TabStop = true;
             this.maleRadioBtn.Text = "Male";
@@ -489,7 +511,7 @@
             this.femaleRadioBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.femaleRadioBtn.Location = new System.Drawing.Point(396, 23);
             this.femaleRadioBtn.Name = "femaleRadioBtn";
-            this.femaleRadioBtn.Size = new System.Drawing.Size(78, 24);
+            this.femaleRadioBtn.Size = new System.Drawing.Size(78, 26);
             this.femaleRadioBtn.TabIndex = 1;
             this.femaleRadioBtn.TabStop = true;
             this.femaleRadioBtn.Text = "Female";
@@ -501,7 +523,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(288, 10);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(19, 50);
+            this.panel4.Size = new System.Drawing.Size(19, 52);
             this.panel4.TabIndex = 2;
             // 
             // NameGroupBox
@@ -511,7 +533,7 @@
             this.NameGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.NameGroupBox.Location = new System.Drawing.Point(10, 10);
             this.NameGroupBox.Name = "NameGroupBox";
-            this.NameGroupBox.Size = new System.Drawing.Size(278, 50);
+            this.NameGroupBox.Size = new System.Drawing.Size(278, 52);
             this.NameGroupBox.TabIndex = 0;
             this.NameGroupBox.TabStop = false;
             this.NameGroupBox.Text = "Name";
@@ -519,7 +541,7 @@
             // nameText
             // 
             this.nameText.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.nameText.Location = new System.Drawing.Point(3, 20);
+            this.nameText.Location = new System.Drawing.Point(3, 22);
             this.nameText.Name = "nameText";
             this.nameText.Size = new System.Drawing.Size(272, 27);
             this.nameText.TabIndex = 0;
@@ -552,27 +574,6 @@
             this.salaryTab.TabIndex = 5;
             this.salaryTab.Text = "Salary";
             this.salaryTab.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(863, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(24, 41);
-            this.panel1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.Location = new System.Drawing.Point(765, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 41);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // InformationDetailAboutEmployeeForm
             // 
@@ -655,7 +656,7 @@
         private Panel panel8;
         private PictureBox pictureBoxBtn;
         private TabPage salaryTab;
-        private Button button1;
+        private Button deleteEmployeeBtn;
         private Panel panel1;
     }
 }

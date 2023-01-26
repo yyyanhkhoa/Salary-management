@@ -35,7 +35,8 @@ namespace Salary_management.View.Employees
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (nameText.Text == "") MessageBox.Show("Pls input name");
+            if (idText.Text == "") MessageBox.Show("Pls input ID");
+            else if (nameText.Text == "") MessageBox.Show("Pls input name");
             else if ((!maleRadioBtn.Checked) && (!femaleRadioBtn.Checked)) MessageBox.Show("Pls select gender");
             else if (addressText.Text == "") MessageBox.Show("Hay nhap dia chi");
             else if (ethnicText.Text == "") MessageBox.Show("Hay nhap dan toc");
@@ -63,6 +64,7 @@ namespace Salary_management.View.Employees
 
                 var result = RepoEmployee.InsertEmployee(new EmployeeInput()
                 {
+                    Id = idText.Text,
                     Name = nameText.Text,
                     Gender = gender,
                     DateOfBirth = dateOfBirth,

@@ -50,6 +50,10 @@
             this.AddressGroupBox = new System.Windows.Forms.GroupBox();
             this.addressText = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.idText = new System.Windows.Forms.TextBox();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.GenderGroupBox = new System.Windows.Forms.GroupBox();
             this.maleRadioBtn = new System.Windows.Forms.RadioButton();
@@ -74,6 +78,7 @@
             this.groupBox1.SuspendLayout();
             this.AddressGroupBox.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel2.SuspendLayout();
             this.GenderGroupBox.SuspendLayout();
             this.NameGroupBox.SuspendLayout();
@@ -302,6 +307,7 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.panel13);
             this.panel7.Controls.Add(this.panel2);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.pictureBoxBtn);
@@ -312,6 +318,44 @@
             this.panel7.Padding = new System.Windows.Forms.Padding(10);
             this.panel7.Size = new System.Drawing.Size(848, 129);
             this.panel7.TabIndex = 2;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.idText);
+            this.panel13.Controls.Add(this.panel14);
+            this.panel13.Controls.Add(this.label1);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel13.Location = new System.Drawing.Point(144, 10);
+            this.panel13.Name = "panel13";
+            this.panel13.Padding = new System.Windows.Forms.Padding(10);
+            this.panel13.Size = new System.Drawing.Size(694, 39);
+            this.panel13.TabIndex = 4;
+            // 
+            // idText
+            // 
+            this.idText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.idText.Location = new System.Drawing.Point(74, 10);
+            this.idText.Name = "idText";
+            this.idText.Size = new System.Drawing.Size(610, 27);
+            this.idText.TabIndex = 2;
+            // 
+            // panel14
+            // 
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel14.Location = new System.Drawing.Point(34, 10);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(40, 19);
+            this.panel14.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(24, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID";
             // 
             // panel2
             // 
@@ -475,6 +519,8 @@
             this.AddressGroupBox.ResumeLayout(false);
             this.AddressGroupBox.PerformLayout();
             this.panel7.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.GenderGroupBox.ResumeLayout(false);
             this.GenderGroupBox.PerformLayout();
@@ -523,5 +569,9 @@
         private Panel panel3;
         private Button addBtn;
         private Button backBtn;
+        private Panel panel13;
+        private TextBox idText;
+        private Panel panel14;
+        private Label label1;
     }
 }

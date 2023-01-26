@@ -79,5 +79,10 @@ namespace Salary_management.View.Employees_Review
             mng.OpenChildForm(new AddReviewForm(this.mng, false));
 
         }
+
+        private void disciplineTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

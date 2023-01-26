@@ -158,13 +158,6 @@ namespace Salary_management.View.Employees.Detail
                         MessageBox.Show(result.ErrorMessage);
                     }
                 }
-
-
-                
-              
-
-                
-
             }
         }
 
@@ -226,6 +219,16 @@ namespace Salary_management.View.Employees.Detail
         {
             saveBtn.Enabled = true;
 
+        }
+
+        private void deleteEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to delete this employee ??", "Confirm Delete!!", MessageBoxButton.YesNo);
+            if (confirmResult == MessageBoxResult.Yes)
+            {
+                var repo =new RepositoryEmployee();
+                repo.DeleteEmployee(idEmployee);
+            }
         }
     }
 }
