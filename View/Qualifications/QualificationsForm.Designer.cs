@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.siticoneTabControl1 = new Siticone.Desktop.UI.WinForms.SiticoneTabControl();
             this.qualificationTab = new System.Windows.Forms.TabPage();
             this.expertiseTab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.expertiseTable = new Siticone.Desktop.UI.WinForms.SiticoneDataGridView();
+            this.IdExpertiseColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameExpertiseColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -40,18 +47,14 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.nameExpertiseText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.ExpertiseGridView = new System.Windows.Forms.DataGridView();
-            this.IdExpertise = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameExpertise = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siticoneTabControl1.SuspendLayout();
             this.expertiseTab.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.expertiseTable)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ExpertiseGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // siticoneTabControl1
@@ -116,6 +119,88 @@
             this.panel1.Size = new System.Drawing.Size(786, 396);
             this.panel1.TabIndex = 0;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.expertiseTable);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(307, 5);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(474, 386);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "List Expertise";
+            // 
+            // expertiseTable
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.expertiseTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.expertiseTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.expertiseTable.ColumnHeadersHeight = 22;
+            this.expertiseTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.expertiseTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdExpertiseColumn,
+            this.nameExpertiseColumn});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.expertiseTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.expertiseTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expertiseTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.expertiseTable.Location = new System.Drawing.Point(3, 23);
+            this.expertiseTable.Name = "expertiseTable";
+            this.expertiseTable.RowHeadersVisible = false;
+            this.expertiseTable.RowHeadersWidth = 51;
+            this.expertiseTable.RowTemplate.Height = 29;
+            this.expertiseTable.Size = new System.Drawing.Size(468, 360);
+            this.expertiseTable.TabIndex = 0;
+            this.expertiseTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.expertiseTable.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.expertiseTable.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.expertiseTable.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.expertiseTable.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.expertiseTable.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.expertiseTable.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.expertiseTable.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.expertiseTable.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.expertiseTable.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.expertiseTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.expertiseTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.expertiseTable.ThemeStyle.HeaderStyle.Height = 22;
+            this.expertiseTable.ThemeStyle.ReadOnly = false;
+            this.expertiseTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.expertiseTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.expertiseTable.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.expertiseTable.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.expertiseTable.ThemeStyle.RowsStyle.Height = 29;
+            this.expertiseTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.expertiseTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.expertiseTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.expertiseTable_CellContentClick);
+            // 
+            // IdExpertiseColumn
+            // 
+            this.IdExpertiseColumn.HeaderText = "ID";
+            this.IdExpertiseColumn.MinimumWidth = 6;
+            this.IdExpertiseColumn.Name = "IdExpertiseColumn";
+            this.IdExpertiseColumn.ReadOnly = true;
+            // 
+            // nameExpertiseColumn
+            // 
+            this.nameExpertiseColumn.HeaderText = "Name";
+            this.nameExpertiseColumn.MinimumWidth = 6;
+            this.nameExpertiseColumn.Name = "nameExpertiseColumn";
+            this.nameExpertiseColumn.ReadOnly = true;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.panel12);
@@ -143,30 +228,36 @@
             // panel13
             // 
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(98, 10);
+            this.panel13.Location = new System.Drawing.Point(108, 10);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(94, 43);
-            this.panel13.TabIndex = 2;
+            this.panel13.Size = new System.Drawing.Size(80, 43);
+            this.panel13.TabIndex = 6;
             // 
             // deleteExpertiseBtn
             // 
+            this.deleteExpertiseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.deleteExpertiseBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.deleteExpertiseBtn.Location = new System.Drawing.Point(192, 10);
+            this.deleteExpertiseBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.deleteExpertiseBtn.Location = new System.Drawing.Point(188, 10);
             this.deleteExpertiseBtn.Name = "deleteExpertiseBtn";
-            this.deleteExpertiseBtn.Size = new System.Drawing.Size(94, 43);
-            this.deleteExpertiseBtn.TabIndex = 1;
-            this.deleteExpertiseBtn.Text = "Delete";
-            this.deleteExpertiseBtn.UseVisualStyleBackColor = true;
+            this.deleteExpertiseBtn.Size = new System.Drawing.Size(98, 43);
+            this.deleteExpertiseBtn.TabIndex = 5;
+            this.deleteExpertiseBtn.Text = "- Delete";
+            this.deleteExpertiseBtn.UseVisualStyleBackColor = false;
+            this.deleteExpertiseBtn.Click += new System.EventHandler(this.deleteExpertiseBtn_Click);
             // 
             // addExpertiseBtn
             // 
+            this.addExpertiseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.addExpertiseBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.addExpertiseBtn.ForeColor = System.Drawing.Color.Gainsboro;
             this.addExpertiseBtn.Location = new System.Drawing.Point(10, 10);
             this.addExpertiseBtn.Name = "addExpertiseBtn";
-            this.addExpertiseBtn.Size = new System.Drawing.Size(88, 43);
-            this.addExpertiseBtn.TabIndex = 0;
-            this.addExpertiseBtn.Text = "Add";
-            this.addExpertiseBtn.UseVisualStyleBackColor = true;
+            this.addExpertiseBtn.Size = new System.Drawing.Size(98, 43);
+            this.addExpertiseBtn.TabIndex = 3;
+            this.addExpertiseBtn.Text = "+ Add";
+            this.addExpertiseBtn.UseVisualStyleBackColor = false;
+            this.addExpertiseBtn.Click += new System.EventHandler(this.addExpertiseBtn_Click);
             // 
             // panel14
             // 
@@ -197,51 +288,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Name :";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.ExpertiseGridView);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(307, 5);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(474, 386);
-            this.groupBox4.TabIndex = 6;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "List Expertise";
-            // 
-            // ExpertiseGridView
-            // 
-            this.ExpertiseGridView.AllowUserToAddRows = false;
-            this.ExpertiseGridView.AllowUserToDeleteRows = false;
-            this.ExpertiseGridView.AllowUserToOrderColumns = true;
-            this.ExpertiseGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ExpertiseGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdExpertise,
-            this.nameExpertise});
-            this.ExpertiseGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ExpertiseGridView.Location = new System.Drawing.Point(3, 23);
-            this.ExpertiseGridView.Name = "ExpertiseGridView";
-            this.ExpertiseGridView.ReadOnly = true;
-            this.ExpertiseGridView.RowHeadersWidth = 51;
-            this.ExpertiseGridView.RowTemplate.Height = 29;
-            this.ExpertiseGridView.Size = new System.Drawing.Size(468, 360);
-            this.ExpertiseGridView.TabIndex = 0;
-            // 
-            // IdExpertise
-            // 
-            this.IdExpertise.HeaderText = "ID";
-            this.IdExpertise.MinimumWidth = 6;
-            this.IdExpertise.Name = "IdExpertise";
-            this.IdExpertise.ReadOnly = true;
-            this.IdExpertise.Width = 125;
-            // 
-            // nameExpertise
-            // 
-            this.nameExpertise.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameExpertise.HeaderText = "Name Expertise";
-            this.nameExpertise.MinimumWidth = 6;
-            this.nameExpertise.Name = "nameExpertise";
-            this.nameExpertise.ReadOnly = true;
-            // 
             // QualificationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -254,12 +300,12 @@
             this.siticoneTabControl1.ResumeLayout(false);
             this.expertiseTab.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.expertiseTable)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ExpertiseGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,16 +317,16 @@
         private TabPage expertiseTab;
         private Panel panel1;
         private GroupBox groupBox4;
-        private DataGridView ExpertiseGridView;
-        private DataGridViewTextBoxColumn IdExpertise;
-        private DataGridViewTextBoxColumn nameExpertise;
         private GroupBox groupBox5;
         private Panel panel12;
-        private Panel panel13;
-        private Button deleteExpertiseBtn;
-        private Button addExpertiseBtn;
         private Panel panel14;
         private TextBox nameExpertiseText;
         private Label label5;
+        private Siticone.Desktop.UI.WinForms.SiticoneDataGridView expertiseTable;
+        private DataGridViewTextBoxColumn IdExpertiseColumn;
+        private DataGridViewTextBoxColumn nameExpertiseColumn;
+        private Panel panel13;
+        private Button deleteExpertiseBtn;
+        private Button addExpertiseBtn;
     }
 }

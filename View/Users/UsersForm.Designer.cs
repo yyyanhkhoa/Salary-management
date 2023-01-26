@@ -80,7 +80,6 @@
             this.deleteBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.deleteBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.deleteBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.deleteBtn.Enabled = false;
             this.deleteBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.deleteBtn.ForeColor = System.Drawing.Color.White;
@@ -159,6 +158,7 @@
             this.searchText.SelectedText = "";
             this.searchText.Size = new System.Drawing.Size(664, 24);
             this.searchText.TabIndex = 1;
+            this.searchText.TextChanged += new System.EventHandler(this.searchText_TextChanged);
             // 
             // label2
             // 
@@ -226,6 +226,7 @@
             this.userTable.ThemeStyle.RowsStyle.Height = 29;
             this.userTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.userTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.userTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userTable_CellClick);
             // 
             // IDColumn
             // 
