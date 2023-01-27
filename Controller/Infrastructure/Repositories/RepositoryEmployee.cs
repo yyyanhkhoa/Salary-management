@@ -278,7 +278,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		{
 			return new Employee
 			{
-
+				Id = entity.Id,
 				Name = entity.Name,
 				Gender = entity.Gender,
 				DateOfBirth = entity.DateOfBirth,
