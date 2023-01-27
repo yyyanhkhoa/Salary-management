@@ -56,7 +56,7 @@ namespace Salary_management.Infrastructure
 
 			// config
 			modelBuilder.Entity<Auth>()
-						.HasAlternateKey(e => e.Username);
+						.HasIndex(e => e.Username).IsUnique();
 
 			modelBuilder.Entity<Employee>()
 						.Property(e => e.DateCreated)
