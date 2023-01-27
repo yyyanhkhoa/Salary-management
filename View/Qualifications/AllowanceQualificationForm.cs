@@ -9,7 +9,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
+using SystemColors = System.Drawing.SystemColors;
 
 namespace Salary_management.View.Qualifications
 {
@@ -77,7 +80,16 @@ namespace Salary_management.View.Qualifications
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(allowanceInQualificationTable.Rows[allowanceInQualificationTable.CurrentRow.Index].Cells[0].Value);
+            MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to delete this Allowance ??", "Confirm delete", MessageBoxButton.YesNo);
 
+            if (confirmResult == MessageBoxResult.Yes)
+            {
+                var repo = new RepositoryQualificationAllowanceHistory();
+                repo.DeleteQualificationAllowanceHistory(id);
+                MessageBox.Show("Delete Success");
+                loadAllowanceInQualification();
+            }
         }
 
         private void deleteBtn_EnabledChanged(object sender, EventArgs e)
@@ -86,5 +98,9 @@ namespace Salary_management.View.Qualifications
             deleteBtn.ForeColor = deleteBtn.Enabled ? Color.Gainsboro : Color.Black;
         }
 
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new QualificationsForm(this.mng));
+        }
     }
 }

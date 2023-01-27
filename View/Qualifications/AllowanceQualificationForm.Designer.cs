@@ -91,6 +91,7 @@
             this.backBtn.Size = new System.Drawing.Size(82, 38);
             this.backBtn.TabIndex = 0;
             this.backBtn.Text = "< Back";
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // panel2
             // 

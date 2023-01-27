@@ -61,7 +61,7 @@ namespace Salary_management.View.Users
                 var repo = new RepositoryAuth();
                 repo.DeleteUser(id);
                 MessageBox.Show("Delete Success");
-                mng.OpenChildForm(new UsersForm(this.mng));
+                loadUser();
             }
 
         }

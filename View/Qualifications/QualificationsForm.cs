@@ -178,7 +178,7 @@ namespace Salary_management.View.Qualifications
                 var repo = new RepositoryQualification();
                 repo.DeleteQualification(id);
                 MessageBox.Show("Delete Success");
-                mng.OpenChildForm(new QualificationsForm(this.mng));
+                loadQualification();
             }
         }
     }
