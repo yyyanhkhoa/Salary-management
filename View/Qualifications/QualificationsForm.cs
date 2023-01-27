@@ -141,7 +141,8 @@ namespace Salary_management.View.Qualifications
 
         private void allowanceBtn_Click(object sender, EventArgs e)
         {
-
+            int id = Convert.ToInt32(qualificationTable.Rows[qualificationTable.CurrentRow.Index].Cells[0].Value);
+            mng.OpenChildForm(new AllowanceQualificationForm(this.mng,id));
         }
 
         private void qualificationTable_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -48,7 +48,7 @@ namespace Salary_management.View.Users
                 var result = repo.InsertUser(username, password, convertRole(role));
                 if (result.Success)
                 {
-                    MessageBox.Show("Insert new Employee success");
+                    MessageBox.Show("Insert new User success");
                     mng.OpenChildForm(new UsersForm(this.mng));
                 }
                 else
