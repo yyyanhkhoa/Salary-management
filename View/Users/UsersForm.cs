@@ -54,7 +54,7 @@ namespace Salary_management.View.Users
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(userTable.Rows[userTable.CurrentRow.Index].Cells[0].Value);
-            MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to delete this User ??", "Delete success", MessageBoxButton.YesNo);
+            MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to delete this User ??", "Confirm Delete", MessageBoxButton.YesNo);
 
             if (confirmResult == MessageBoxResult.Yes)
             {
@@ -90,7 +90,6 @@ namespace Salary_management.View.Users
                 {
                     deleteBtn.Enabled = true;
                 }
-
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Salary_management.Controller.Infrastructure.Entities.Enums;
 using Salary_management.Controller.Infrastructure.Repositories;
+using Salary_management.View.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +46,7 @@ namespace Salary_management.View.Qualifications
                 case Role.Viewer:
                     deleteQualificationBtn.Visible = false;
                     actionGroupBox.Visible = false;
+                    addQualificationBtn.Visible = false;
                     break;
                 default: return;
 
@@ -114,8 +116,6 @@ namespace Salary_management.View.Qualifications
         {
             addNewExpertise();
         }
-
-
         private void deleteExpertiseBtn_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(expertiseTable.Rows[expertiseTable.CurrentRow.Index].Cells[0].Value);
@@ -136,6 +136,48 @@ namespace Salary_management.View.Qualifications
             foreach (var item in listQualification)
             {
                 qualificationTable.Rows.Add(item.Id, item.Name, item.Expertise.Name);
+            }
+        }
+
+        private void allowanceBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void qualificationTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.qualificationTable.Rows[e.RowIndex];
+                if (qualificationTable.CurrentRow.Index == qualificationTable.Rows.Count - 1)
+                {
+                    deleteQualificationBtn.Enabled = false;
+                    allowanceBtn.Enabled = false;
+                }
+                else
+                {
+                    deleteQualificationBtn.Enabled = true;
+                    allowanceBtn.Enabled = true;
+                }
+            }
+        }
+
+        private void addQualificationBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new AddQualificationForm(this.mng));
+        }
+
+        private void deleteQualificationBtn_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(qualificationTable.Rows[qualificationTable.CurrentRow.Index].Cells[0].Value);
+            MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to delete this Qualification ??", "Confirm delete", MessageBoxButton.YesNo);
+
+            if (confirmResult == MessageBoxResult.Yes)
+            {
+                var repo = new RepositoryQualification();
+                repo.DeleteQualification(id);
+                MessageBox.Show("Delete Success");
+                mng.OpenChildForm(new QualificationsForm(this.mng));
             }
         }
     }
