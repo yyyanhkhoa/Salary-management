@@ -10,11 +10,8 @@ using System.Windows.Forms;
 
 namespace Salary_management.View
 {
-    public partial class BaseForm : System.Windows.Forms.Form
+    public partial class BaseForm : Form
     {
         protected Management mng;
-
-
-     
     }
 }
