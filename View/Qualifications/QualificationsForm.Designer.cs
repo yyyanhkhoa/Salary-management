@@ -180,7 +180,6 @@
             this.qualificationTable.ThemeStyle.RowsStyle.Height = 29;
             this.qualificationTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.qualificationTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.qualificationTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.qualificationTable_CellClick);
             // 
             // idQualificationColumn
             // 
@@ -282,7 +281,6 @@
             this.allowanceBtn.Size = new System.Drawing.Size(115, 38);
             this.allowanceBtn.TabIndex = 0;
             this.allowanceBtn.Text = "Allowance";
-            this.allowanceBtn.Click += new System.EventHandler(this.allowanceBtn_Click);
             // 
             // panel2
             // 
@@ -309,7 +307,6 @@
             this.deleteQualificationBtn.Size = new System.Drawing.Size(94, 38);
             this.deleteQualificationBtn.TabIndex = 0;
             this.deleteQualificationBtn.Text = "Delete";
-            this.deleteQualificationBtn.Click += new System.EventHandler(this.deleteQualificationBtn_Click);
             // 
             // panel4
             // 
@@ -336,7 +333,6 @@
             this.addQualificationBtn.Size = new System.Drawing.Size(94, 38);
             this.addQualificationBtn.TabIndex = 0;
             this.addQualificationBtn.Text = "Add";
-            this.addQualificationBtn.Click += new System.EventHandler(this.addQualificationBtn_Click);
             // 
             // label1
             // 

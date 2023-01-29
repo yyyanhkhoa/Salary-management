@@ -22,7 +22,10 @@ namespace Salary_management.View.Unions
            
         }
 
- 
+        private void unionTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
         private void UnionsForm_Load(object sender, EventArgs e)
         {
@@ -79,28 +82,6 @@ namespace Salary_management.View.Unions
         {
             deleteBtn.BackColor = deleteBtn.Enabled ? Color.FromArgb(26, 25, 62) : SystemColors.Control;
             deleteBtn.ForeColor = deleteBtn.Enabled ? Color.Gainsboro : Color.Black;
-        }
-
-        private void unionTable_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.unionTable.Rows[e.RowIndex];
-                if (unionTable.CurrentRow.Index == unionTable.Rows.Count - 1)
-                {
-                    deleteBtn.Enabled = false;
-                }
-                else
-                {
-                    deleteBtn.Enabled = true;
-                }
-
-            }
-        }
-
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
