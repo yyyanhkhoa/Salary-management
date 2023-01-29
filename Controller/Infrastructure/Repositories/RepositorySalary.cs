@@ -172,6 +172,29 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return new() { Success = true, Payload = query.ToList() };
 		}
 
+		public Result<Models.TotalEmployeeSalary> GetEmployeeTotalSalaryAtUnit(string unitId, DateOnly? monthAndYear)
+		{
+			var result = GetEmployeeSalariesAtUnit(unitId, monthAndYear);
+
+			if (!result.Success)
+			{
+				return new() { Success = false, ErrorMessage = result.ErrorMessage };
+			}
+
+			var salaries = result.Payload;
+
+
+			return new()
+			{
+				Success = true,
+				Payload = new Models.TotalEmployeeSalary()
+				{
+					EmployeeSalaries = salaries,
+					TotalSalary = salaries.Sum(s => s.Salary)
+				}
+			};
+		}
+
 		public Result<Models.EmployeeSalary> GetEmployeeSalary(string employeeId, DateOnly? monthAndYear = null)
 		{
 			DateOnly date = monthAndYear ?? DateOnly.FromDateTime(DateTime.Now);
