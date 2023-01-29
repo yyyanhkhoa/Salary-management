@@ -55,6 +55,7 @@ namespace Salary_management.View.Qualifications
         {
             dateTimePicker.Format = DateTimePickerFormat.Custom;
             dateTimePicker.CustomFormat = "yyyy";
+            dateTimePicker.ShowUpDown = true;
         }
     }
 }

@@ -874,6 +874,7 @@
             this.backUnionBtn.TabIndex = 8;
             this.backUnionBtn.Text = "< Back";
             this.backUnionBtn.UseVisualStyleBackColor = false;
+            this.backUnionBtn.Click += new System.EventHandler(this.backUnionBtn_Click);
             // 
             // qualificationTab
             // 

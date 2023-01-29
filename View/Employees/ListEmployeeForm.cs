@@ -75,14 +75,19 @@ namespace Salary_management.View.Employees
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
              e.RowIndex >= 0)
             {
-                mng.OpenChildForm(new Salary_management.View.Employees.Detail.InformationDetailAboutEmployeeForm(this.mng, id));
+                mng.OpenChildForm(new Detail.InformationDetailAboutEmployeeForm(this.mng, id));
             }
-            
+
         }
 
         private void employeeTab_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void retirementBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new RetirementForm(this.mng));
         }
     }
 }
