@@ -261,7 +261,6 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			return males.Concat(females).OrderByDescending(e => e.DateCreated).Select(e => MapToModel(e)).ToList();
 		}
 
-	
 		private static Models.Employee MapToModel(Employee input)
 		{
 			return new Models.Employee
