@@ -251,20 +251,19 @@ namespace Salary_management.View.Employees.Detail
             this.SalaryGridView.Rows.Clear();
             RepositorySalary repoSalary = new RepositorySalary();
             List<Model.EmployeeSalary> list = repoSalary.GetEmployeeSalaryAtYear(idEmployee).Payload;
-            double[] dataX = new double[15];
-            double[] dataY = new double[15];
+            double[] dataX = new double[12];
+            double[] dataY = new double[12];
             int count = 0;
 
             foreach (Model.EmployeeSalary salary in list)
             {
+                long BHXH = salary.Salary / 20;
+                long BHYT = salary.Salary / 100;
+                long BHTN = salary.Salary / 100;
+                dataX[count] = count + 1;
+                dataY[count] = salary.Salary - BHXH - BHYT - BHTN;
+                SalaryGridView.Rows.Add(salary.Date, Math.Round(salary.EmployeeAllowanceCoefficient, 3), BHXH, BHYT, BHTN, (salary.Salary - BHXH - BHYT - BHTN));
                 count++;
-                long BHXH = salary.Salary;
-                long BHYT = salary.Salary;
-                long BHTN = salary.Salary;
-                dataX[count] = count;
-                dataY[count] = salary.Salary;
-                // dataY[count] = salary.Salary / 1000000;
-                SalaryGridView.Rows.Add(salary.Date, salary.EmployeeAllowanceCoefficient, BHXH, BHYT, BHTN, salary.Salary);
             }
             setChart(dataX, dataY);
 
@@ -836,19 +835,19 @@ namespace Salary_management.View.Employees.Detail
             SalaryGridView.Rows.Clear();
             RepositorySalary repoSalary = new RepositorySalary();
             List<Model.EmployeeSalary> list = repoSalary.GetEmployeeSalaryAtYear(idEmployee, dateSalaryBox.Value.Year).Payload;
-            double[] dataX = new double[15];
-            double[] dataY = new double[15];
+            double[] dataX = new double[12];
+            double[] dataY = new double[12];
             int count = 0;
 
             foreach (Model.EmployeeSalary salary in list)
-            {
-                count++;
+            {              
                 long BHXH = salary.Salary / 20;
                 long BHYT = salary.Salary / 100;
                 long BHTN = salary.Salary / 100;
-                dataX[count] = count;
-                dataY[count] = salary.Salary;
-                SalaryGridView.Rows.Add(salary.Date, salary.EmployeeAllowanceCoefficient, BHXH, BHYT, BHTN, salary.Salary);               
+                dataX[count] = count+1;
+                dataY[count] = salary.Salary - BHXH - BHYT - BHTN;
+                SalaryGridView.Rows.Add(salary.Date, Math.Round( salary.EmployeeAllowanceCoefficient,3), BHXH, BHYT, BHTN, (salary.Salary - BHXH - BHYT - BHTN));
+                count++;
             }
             setChart(dataX, dataY);
         }

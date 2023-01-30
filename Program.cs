@@ -15,8 +15,8 @@ namespace Salary_management
 			// see https://aka.ms/applicationconfiguration.
 
 			ApplicationConfiguration.Initialize();
-            Application.Run(new LoginForm());
-            //Application.Run(new Management(Controller.Infrastructure.Entities.Enums.Role.Admin));            
+            //Application.Run(new LoginForm());
+            Application.Run(new Management(Controller.Infrastructure.Entities.Enums.Role.Admin));            
         }
     }
 }
