@@ -35,8 +35,10 @@ namespace Salary_management.View.Positions
                 case Role.Viewer:
                     addBtn.Visible = false;
                     addRankBtn.Visible = false;
+                    deleteBtn.Visible = false;
                     break;
                 case Role.Accountant:
+                    deleteBtn.Visible = false;
                     break;
                 case Role.Admin:
                     break;
@@ -108,6 +110,16 @@ namespace Salary_management.View.Positions
         private void addRankBtn_Click(object sender, EventArgs e)
         {
             mng.OpenChildForm(new View.Positions.AddNewRankForm(this.mng));
+
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteBtn_EnabledChanged(object sender, EventArgs e)
+        {
 
         }
     }

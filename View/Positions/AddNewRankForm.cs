@@ -50,5 +50,10 @@ namespace Salary_management.View.Positions
             }
 
         }
+
+        private void AddNewRankForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
