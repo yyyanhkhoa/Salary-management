@@ -8,8 +8,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Interop;
+using MessageBox = System.Windows.Forms.MessageBox;
+using SystemColors = System.Drawing.SystemColors;
 
 namespace Salary_management.View.Unions
 {
@@ -24,7 +27,7 @@ namespace Salary_management.View.Unions
 
         private void unionTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void UnionsForm_Load(object sender, EventArgs e)
@@ -72,7 +75,7 @@ namespace Salary_management.View.Unions
                 if (result.Success)
                 {
                     MessageBox.Show("Insert Union Success");
-                    mng.OpenChildForm(new UnionsForm(this.mng));
+                    LoadUnion();
                 }
                 else MessageBox.Show(result.ErrorMessage);
             }
@@ -82,6 +85,37 @@ namespace Salary_management.View.Unions
         {
             deleteBtn.BackColor = deleteBtn.Enabled ? Color.FromArgb(26, 25, 62) : SystemColors.Control;
             deleteBtn.ForeColor = deleteBtn.Enabled ? Color.Gainsboro : Color.Black;
+        }
+
+        private void unionTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.unionTable.Rows[e.RowIndex];
+                if (unionTable.CurrentRow.Index == unionTable.Rows.Count - 1)
+                {
+                    deleteBtn.Enabled = false;
+                }
+                else
+                {
+                    deleteBtn.Enabled = true;
+                }
+            }
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+
+            var id = unionTable.Rows[unionTable.CurrentRow.Index].Cells[0].Value.ToString();
+            MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to delete this Union ??", "Confirm delete", MessageBoxButton.YesNo);
+
+            if (confirmResult == MessageBoxResult.Yes)
+            {
+                var repo = new RepositoryUnion();
+                repo.DeleteUnion(id);
+                MessageBox.Show("Delete Success");
+                LoadUnion();
+            }
         }
     }
 }

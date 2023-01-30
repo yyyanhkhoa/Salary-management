@@ -19,7 +19,6 @@ namespace Salary_management.View.Positions
     public partial class PositionDetailForm : BaseForm
     {
         private string idPosition;
-        private int idRank;
         public PositionDetailForm(Management mng, string id)
         {
             InitializeComponent();
@@ -143,7 +142,7 @@ namespace Salary_management.View.Positions
 
         private void baseSalaryText_TextChanged(object sender, EventArgs e)
         {
-
+            fixPositionBtn.Enabled = true;
         }
 
         private void fixPositionBtn_Click(object sender, EventArgs e)
@@ -180,12 +179,14 @@ namespace Salary_management.View.Positions
 
         private void fixDetailBtn_EnabledChanged(object sender, EventArgs e)
         {
-
+            fixDetailBtn.BackColor = fixDetailBtn.Enabled ? Color.FromArgb(26, 25, 62) : SystemColors.Control;
+            fixDetailBtn.ForeColor = fixDetailBtn.Enabled ? Color.Gainsboro : Color.Black;
         }
 
         private void deleteDetailBtn_EnabledChanged(object sender, EventArgs e)
         {
-
+            deleteDetailBtn.BackColor = deleteDetailBtn.Enabled ? Color.FromArgb(26, 25, 62) : SystemColors.Control;
+            deleteDetailBtn.ForeColor = deleteDetailBtn.Enabled ? Color.Gainsboro : Color.Black;
         }
 
         private void rankComboBox_SelectedIndexChanged(object sender, EventArgs e)
