@@ -46,6 +46,8 @@
             this.positionDetailBtnTable = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.deleteBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.addBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listPositionsTable)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.rankTab.SuspendLayout();
@@ -248,6 +251,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel11);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -256,6 +260,34 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(5);
             this.panel3.Size = new System.Drawing.Size(869, 58);
             this.panel3.TabIndex = 3;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.deleteBtn);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel11.Location = new System.Drawing.Point(636, 5);
+            this.panel11.Name = "panel11";
+            this.panel11.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
+            this.panel11.Size = new System.Drawing.Size(114, 48);
+            this.panel11.TabIndex = 4;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.deleteBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.deleteBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.deleteBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.deleteBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deleteBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deleteBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteBtn.Location = new System.Drawing.Point(10, 0);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(94, 38);
+            this.deleteBtn.TabIndex = 0;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.EnabledChanged += new System.EventHandler(this.deleteBtn_EnabledChanged);
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // panel4
             // 
@@ -561,6 +593,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel11.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -612,5 +645,7 @@
         private Panel panel9;
         private Siticone.Desktop.UI.WinForms.SiticoneTextBox searchRankText;
         private Label label4;
+        private Panel panel11;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton deleteBtn;
     }
 }

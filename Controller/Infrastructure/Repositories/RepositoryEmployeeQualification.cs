@@ -61,6 +61,25 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			Context.SaveChanges();
 		}
 
+		public Result<List<Models.EmployeeQualification>> GetEmployeesAboveScoreOf(int qualificationId, float score)
+		{
+			if (!new RepositoryQualification().CheckQualificationExist(qualificationId))
+			{
+				return new() { Success = false, ErrorMessage = "Qualification with this id does not exist." };
+			}
+
+			var emps = Context.EmployeeQualifications.Where(eq => eq.QualificationId == qualificationId && eq.Score > score)
+				.Include(eq => eq.Employee)
+				.Include(eq => eq.Qualification);
+
+			return new()
+			{
+				Success = true,
+				Payload = emps.ToList().DistinctBy(e => e.EmployeeId).Select(e => MapToModel(e)).ToList()
+			};
+		}
+
+
 		private static Models.EmployeeQualification MapToModel(EmployeeQualification eq)
 		{
 			return new Models.EmployeeQualification

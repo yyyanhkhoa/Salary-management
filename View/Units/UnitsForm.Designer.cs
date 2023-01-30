@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.deleteBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.addBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,6 +50,7 @@
             this.positionDetailBtnTable = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listUnitsTable)).BeginInit();
@@ -67,6 +70,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -75,6 +79,34 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(5);
             this.panel3.Size = new System.Drawing.Size(788, 58);
             this.panel3.TabIndex = 3;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.deleteBtn);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(555, 5);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
+            this.panel5.Size = new System.Drawing.Size(114, 48);
+            this.panel5.TabIndex = 4;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.deleteBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.deleteBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.deleteBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.deleteBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.deleteBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deleteBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteBtn.Location = new System.Drawing.Point(10, 0);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(94, 38);
+            this.deleteBtn.TabIndex = 0;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.EnabledChanged += new System.EventHandler(this.deleteBtn_EnabledChanged);
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // panel4
             // 
@@ -215,6 +247,7 @@
             this.listUnitsTable.ThemeStyle.RowsStyle.Height = 29;
             this.listUnitsTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.listUnitsTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.listUnitsTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listUnitsTable_CellClick);
             this.listUnitsTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listUnitsTable_CellContentClick);
             // 
             // positionIDTable
@@ -266,6 +299,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -291,5 +325,7 @@
         private DataGridViewTextBoxColumn phoneTable;
         private DataGridViewTextBoxColumn dateFoundedTable;
         private DataGridViewButtonColumn positionDetailBtnTable;
+        private Panel panel5;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton deleteBtn;
     }
 }

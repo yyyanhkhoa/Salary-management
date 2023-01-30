@@ -223,6 +223,7 @@
             this.Controls.Add(this.panel3);
             this.Name = "AddNewRankForm";
             this.Text = "AddNewRankForm";
+            this.Load += new System.EventHandler(this.AddNewRankForm_Load);
             this.panel3.ResumeLayout(false);
             this.AddEmployeeGroupBox.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
