@@ -17,12 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="View\LoginForm.resx~RF14f3d3d4.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="EFCore.NamingConventions" Version="6.0.0" />
-    <PackageReference Include="FontAwesome.Sharp" Version="6.2.1" />
     <PackageReference Include="MappingGenerator" Version="2022.9.49" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.9">
       <PrivateAssets>all</PrivateAssets>
@@ -34,7 +29,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="140.1000.523" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.7" />
-    <PackageReference Include="ScottPlot.WinForms" Version="4.1.60" />
     <PackageReference Include="Siticone.Desktop.UI" Version="2.1.1" />
   </ItemGroup>
 
