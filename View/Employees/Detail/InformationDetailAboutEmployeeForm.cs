@@ -221,7 +221,7 @@ namespace Salary_management.View.Employees.Detail
 
             //làm biểu đồ (chart)       
             formsPlot1.Plot.XLabel("Months");
-            formsPlot1.Plot.YLabel("Salary (vnd)");
+            formsPlot1.Plot.YLabel("Salary (triệu vnd)");
             formsPlot1.Plot.SetAxisLimitsX(1, 12);
             formsPlot1.Plot.SetAxisLimitsY(0, 30);
             double[] xPositions = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -261,7 +261,7 @@ namespace Salary_management.View.Employees.Detail
                 long BHYT = salary.Salary / 100;
                 long BHTN = salary.Salary / 100;
                 dataX[count] = count + 1;
-                dataY[count] = salary.Salary - BHXH - BHYT - BHTN;
+                dataY[count] = (salary.Salary - BHXH - BHYT - BHTN)/1000000;
                 SalaryGridView.Rows.Add(salary.Date, Math.Round(salary.EmployeeAllowanceCoefficient, 3), BHXH, BHYT, BHTN, (salary.Salary - BHXH - BHYT - BHTN));
                 count++;
             }
@@ -845,7 +845,7 @@ namespace Salary_management.View.Employees.Detail
                 long BHYT = salary.Salary / 100;
                 long BHTN = salary.Salary / 100;
                 dataX[count] = count+1;
-                dataY[count] = salary.Salary - BHXH - BHYT - BHTN;
+                dataY[count] = (salary.Salary - BHXH - BHYT - BHTN) / 1000000;
                 SalaryGridView.Rows.Add(salary.Date, Math.Round( salary.EmployeeAllowanceCoefficient,3), BHXH, BHYT, BHTN, (salary.Salary - BHXH - BHYT - BHTN));
                 count++;
             }
