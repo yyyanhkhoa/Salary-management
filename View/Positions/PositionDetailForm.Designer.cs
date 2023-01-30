@@ -391,6 +391,7 @@
             this.deleteDetailBtn.TabIndex = 4;
             this.deleteDetailBtn.Text = "Delete";
             this.deleteDetailBtn.EnabledChanged += new System.EventHandler(this.deleteDetailBtn_EnabledChanged);
+            this.deleteDetailBtn.Click += new System.EventHandler(this.deleteDetailBtn_Click);
             // 
             // panel1
             // 

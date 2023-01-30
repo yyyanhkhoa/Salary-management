@@ -62,5 +62,10 @@ namespace Salary_management.View.Units
                 });*/
             }
         }
+
+        private void workRecentlyCheckBox_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -2,6 +2,7 @@
 using Salary_management.Controller.Infrastructure.Entities.Enums;
 using Salary_management.Controller.Infrastructure.Repositories;
 using Salary_management.View.Units;
+using Salary_management.View.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,13 +84,20 @@ namespace Salary_management.View.Positions
                 rankComboBox.Items.Add(rank.Id + "-" + rank.Name);
             }
             //load table
+            loadTablePositionDetail();
+            
+        }
+
+        private void loadTablePositionDetail()
+        {
             var repoTable = new RepositoryPosition();
             var table = repoTable.GetTimeline(idPosition).Payload;
             foreach (var employee in table)
             {
-                positionDetailTable.Rows.Add(employee.PositionId, employee.EmployeeId, employee.EmployeeName, employee.StartDate.ToString(), employee.EndDate.ToString());
+                positionDetailTable.Rows.Add(employee.Id, employee.EmployeeId, employee.EmployeeName, employee.StartDate.ToString(), employee.EndDate.ToString());
             }
         }
+
 
         private void addBtn_Click(object sender, EventArgs e)
         {
@@ -103,7 +111,10 @@ namespace Salary_management.View.Positions
 
         private void fixDetailBtn_Click(object sender, EventArgs e)
         {
+            int idPositionHistory = Convert.ToInt32(positionDetailTable.Rows[positionDetailTable.CurrentRow.Index].Cells[0].Value);
+            string idEmployee = positionDetailTable.Rows[positionDetailTable.CurrentRow.Index].Cells[1].Value.ToString();
 
+            mng.OpenChildForm(new FixEmployeeInPositionForm(this.mng, idPositionHistory, idPosition, idEmployee));
         }
 
         private void positionDetailTable_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -197,6 +208,20 @@ namespace Salary_management.View.Positions
         private void backBtn_Click(object sender, EventArgs e)
         {
             mng.OpenChildForm(new ListPositionForm(mng));
+        }
+
+        private void deleteDetailBtn_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(positionDetailTable.Rows[positionDetailTable.CurrentRow.Index].Cells[0].Value);
+            MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to delete this Employee in the this Position ??", "Delete success", MessageBoxButton.YesNo);
+
+            if (confirmResult == MessageBoxResult.Yes)
+            {
+                var repo = new RepositoryPositionHistory();
+                repo.DeletePositionHistory(id);
+                MessageBox.Show("Delete Success");
+                mng.OpenChildForm(new PositionDetailForm(this.mng, this.idPosition));
+            }
         }
     }
 }
