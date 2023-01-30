@@ -1,4 +1,7 @@
+using Salary_management.Controller.Infrastructure;
 using Salary_management.Controller.Infrastructure.Repositories;
+using Salary_management.Infrastructure;
+using Salary_management.Infrastructure.Entities;
 using Salary_management.View;
 
 namespace Salary_management
