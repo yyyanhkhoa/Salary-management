@@ -128,6 +128,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		{
 			return new Models.UnitTimeline
 			{
+				Id = entity.Id,
 				EmployeeName = entity.Employee.Name,
 				UnitId = entity.UnitId,
 				StartDate = entity.StartDate,

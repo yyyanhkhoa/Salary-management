@@ -104,6 +104,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 		{
 			return new Models.PositionTimeline
 			{
+				Id = entity.Id,
 				EmployeeName = entity.Employee.Name,
 				PositionId = entity.PositionId,
 				StartDate = entity.StartDate,
