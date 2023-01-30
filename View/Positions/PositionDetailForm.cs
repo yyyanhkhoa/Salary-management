@@ -83,11 +83,11 @@ namespace Salary_management.View.Positions
                 rankComboBox.Items.Add(rank.Id + "-" + rank.Name);
             }
             //load table
-            var repoTable = new RepositoryUnit();
+            var repoTable = new RepositoryPosition();
             var table = repoTable.GetTimeline(idPosition).Payload;
             foreach (var employee in table)
             {
-                positionDetailTable.Rows.Add(employee.UnitId, employee.EmployeeId, employee.EmployeeName, employee.StartDate.ToString(), employee.EndDate.ToString());
+                positionDetailTable.Rows.Add(employee.PositionId, employee.EmployeeId, employee.EmployeeName, employee.StartDate.ToString(), employee.EndDate.ToString());
             }
         }
 

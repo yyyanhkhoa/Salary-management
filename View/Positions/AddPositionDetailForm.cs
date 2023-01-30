@@ -67,7 +67,17 @@ namespace Salary_management.View.Positions
 
         private void AddPositionDetailForm_Load(object sender, EventArgs e)
         {
+            LoadEmployeeInComboBox();
+        }
 
+        private void LoadEmployeeInComboBox()
+        {
+            var repoEmployee = new RepositoryEmployee();
+            List<Model.Employee> listEmployee = repoEmployee.GetEmployees("");
+            foreach (Model.Employee employee in listEmployee)
+            {
+                employeeComboBox.Items.Add(employee.Id + ":" + employee.Name);
+            }
         }
     }
 }
