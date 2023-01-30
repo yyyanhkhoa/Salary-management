@@ -106,7 +106,12 @@ namespace Salary_management.View.Unions
         private void deleteBtn_Click(object sender, EventArgs e)
         {
 
-            var id = unionTable.Rows[unionTable.CurrentRow.Index].Cells[0].Value.ToString();
+			var rowVal = unionTable.Rows[unionTable.CurrentRow.Index].Cells[0].Value;
+			if (rowVal == null)
+			{
+				return;
+			}
+			var id = rowVal.ToString();
             MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to delete this Union ??", "Confirm delete", MessageBoxButton.YesNo);
 
             if (confirmResult == MessageBoxResult.Yes)

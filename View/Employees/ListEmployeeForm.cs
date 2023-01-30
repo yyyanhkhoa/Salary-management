@@ -70,9 +70,16 @@ namespace Salary_management.View.Employees
 
         private void listEmployeeTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var senderGrid = (DataGridView)sender;
-            string id = (listEmployeeTable.Rows[listEmployeeTable.CurrentRow.Index].Cells[0].Value).ToString();
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+			var senderGrid = (DataGridView)sender;
+			var rowVal = listEmployeeTable.Rows[listEmployeeTable.CurrentRow.Index].Cells[0].Value;
+			if (rowVal == null)
+			{
+				return;
+			}
+
+			string id = rowVal.ToString();
+            
+			if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
              e.RowIndex >= 0)
             {
                 mng.OpenChildForm(new Detail.InformationDetailAboutEmployeeForm(this.mng, id));

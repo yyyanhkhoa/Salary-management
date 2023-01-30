@@ -87,7 +87,12 @@ namespace Salary_management.View.Positions
         private void listPositionsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
-            string id = listPositionsTable.Rows[listPositionsTable.CurrentRow.Index].Cells[0].Value.ToString();
+			var rowVal = listPositionsTable.Rows[listPositionsTable.CurrentRow.Index].Cells[0].Value;
+			if (rowVal == null)
+			{
+				return;
+			}
+			string id = rowVal.ToString();
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
         e.RowIndex >= 0)
