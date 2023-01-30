@@ -131,10 +131,10 @@
             // 
             this.passwordText.Dock = System.Windows.Forms.DockStyle.Left;
             this.passwordText.Location = new System.Drawing.Point(20, 42);
-            this.passwordText.Multiline = true;
             this.passwordText.Name = "passwordText";
-            this.passwordText.Size = new System.Drawing.Size(398, 36);
+            this.passwordText.Size = new System.Drawing.Size(398, 27);
             this.passwordText.TabIndex = 1;
+            this.passwordText.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -175,9 +175,8 @@
             // 
             this.userText.Dock = System.Windows.Forms.DockStyle.Left;
             this.userText.Location = new System.Drawing.Point(20, 42);
-            this.userText.Multiline = true;
             this.userText.Name = "userText";
-            this.userText.Size = new System.Drawing.Size(398, 32);
+            this.userText.Size = new System.Drawing.Size(398, 27);
             this.userText.TabIndex = 1;
             // 
             // userNamelbl
