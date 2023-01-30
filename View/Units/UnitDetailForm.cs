@@ -82,6 +82,7 @@ namespace Salary_management.View.Units
 
         private void unionComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            filterEmployeeInUnionTable.Rows.Clear();
             var selectText = unionComboBox.Text;
             var repoUnion = new RepositoryEmployee();
             var idUnion = selectText.Trim().Split(":")[0];

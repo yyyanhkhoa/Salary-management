@@ -54,14 +54,14 @@ namespace Salary_management.View.Users
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(userTable.Rows[userTable.CurrentRow.Index].Cells[0].Value);
-            MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to delete this User ??", "Confirm Delete", MessageBoxButton.YesNo);
+            MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to delete this User ??", "Delete success", MessageBoxButton.YesNo);
 
             if (confirmResult == MessageBoxResult.Yes)
             {
                 var repo = new RepositoryAuth();
                 repo.DeleteUser(id);
                 MessageBox.Show("Delete Success");
-                loadUser();
+                mng.OpenChildForm(new UsersForm(this.mng));
             }
 
         }
@@ -90,6 +90,7 @@ namespace Salary_management.View.Users
                 {
                     deleteBtn.Enabled = true;
                 }
+
             }
         }
 

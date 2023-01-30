@@ -871,5 +871,9 @@ namespace Salary_management.View.Employees.Detail
             deleteEmployeeBtn.BackColor = deleteEmployeeBtn.Enabled ? Color.FromArgb(26, 25, 62) : SystemColors.Control;
             deleteEmployeeBtn.ForeColor = deleteEmployeeBtn.Enabled ? Color.Gainsboro : Color.Black;
         }
+        private void backUnionBtn_Click(object sender, EventArgs e)
+        {
+            mng.OpenChildForm(new ListEmployeeForm(this.mng));
+        }
     }
 }

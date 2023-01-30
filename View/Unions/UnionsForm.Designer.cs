@@ -107,7 +107,6 @@
             this.deleteBtn.TabIndex = 2;
             this.deleteBtn.Text = "- Delete";
             this.deleteBtn.EnabledChanged += new System.EventHandler(this.deleteBtn_EnabledChanged);
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // addBtn
             // 
@@ -251,7 +250,7 @@
             this.unionTable.ThemeStyle.RowsStyle.Height = 29;
             this.unionTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.unionTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.unionTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.unionTable_CellClick);
+            this.unionTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.unionTable_CellContentClick);
             // 
             // idColumn
             // 

@@ -43,13 +43,14 @@
             this.employeeDetailBtnTable = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.retirementBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.addBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.searchText = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.salaryTab = new System.Windows.Forms.TabPage();
             this.familyTab = new System.Windows.Forms.TabPage();
             this.employeeTabControl.SuspendLayout();
             this.employeeTab.SuspendLayout();
@@ -57,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listEmployeeTable)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +66,6 @@
             // employeeTabControl
             // 
             this.employeeTabControl.Controls.Add(this.employeeTab);
-            this.employeeTabControl.Controls.Add(this.salaryTab);
             this.employeeTabControl.Controls.Add(this.familyTab);
             this.employeeTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.employeeTabControl.ItemSize = new System.Drawing.Size(180, 40);
@@ -228,6 +229,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -236,6 +238,33 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(5);
             this.panel3.Size = new System.Drawing.Size(760, 58);
             this.panel3.TabIndex = 3;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.retirementBtn);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(495, 5);
+            this.panel6.Name = "panel6";
+            this.panel6.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
+            this.panel6.Size = new System.Drawing.Size(146, 48);
+            this.panel6.TabIndex = 4;
+            // 
+            // retirementBtn
+            // 
+            this.retirementBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.retirementBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.retirementBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.retirementBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.retirementBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.retirementBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.retirementBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.retirementBtn.ForeColor = System.Drawing.Color.White;
+            this.retirementBtn.Location = new System.Drawing.Point(10, 0);
+            this.retirementBtn.Name = "retirementBtn";
+            this.retirementBtn.Size = new System.Drawing.Size(126, 38);
+            this.retirementBtn.TabIndex = 0;
+            this.retirementBtn.Text = "Retirement";
+            this.retirementBtn.Click += new System.EventHandler(this.retirementBtn_Click);
             // 
             // panel4
             // 
@@ -316,16 +345,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Search:";
             // 
-            // salaryTab
-            // 
-            this.salaryTab.Location = new System.Drawing.Point(4, 44);
-            this.salaryTab.Name = "salaryTab";
-            this.salaryTab.Padding = new System.Windows.Forms.Padding(3);
-            this.salaryTab.Size = new System.Drawing.Size(792, 402);
-            this.salaryTab.TabIndex = 1;
-            this.salaryTab.Text = "Salary";
-            this.salaryTab.UseVisualStyleBackColor = true;
-            // 
             // familyTab
             // 
             this.familyTab.Location = new System.Drawing.Point(4, 44);
@@ -352,6 +371,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -363,7 +383,6 @@
 
         private Siticone.Desktop.UI.WinForms.SiticoneTabControl employeeTabControl;
         private TabPage employeeTab;
-        private TabPage salaryTab;
         private Panel panel1;
         private Panel panel3;
         private Panel panel4;
@@ -381,5 +400,7 @@
         private DataGridViewTextBoxColumn employeeAllowanceTable;
         private DataGridViewButtonColumn employeeDetailBtnTable;
         private TabPage familyTab;
+        private Panel panel6;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton retirementBtn;
     }
 }
