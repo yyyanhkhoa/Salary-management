@@ -58,7 +58,7 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			Context.Positions.Update(position);
 			Context.SaveChanges();
 
-			return new() { Success = true, Payload = MapToModel(position) };
+			return new() { Success = true, Payload = GetPositionDetail(id) };
 		}
 
 		public void DeletePosition(string id)
