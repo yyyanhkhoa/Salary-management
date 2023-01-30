@@ -37,8 +37,9 @@ namespace Salary_management.Controller.Infrastructure.Repositories
 			else
 			{
 				return Context.RewardOrDisciplines.Where(
-					e => EF.Functions.ILike(e.Content, $"%{keyword}%") ||
-						 EF.Functions.ILike(e.EmployeeId, $"%{keyword}%")
+					e => e.IsReward &&
+						 (EF.Functions.ILike(e.Content, $"%{keyword}%") ||
+						 EF.Functions.ILike(e.EmployeeId, $"%{keyword}%"))
 					)
 					.Include(e => e.Employee)
 					.Select(e => MapToModel(e)).ToList();
