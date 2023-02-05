@@ -1,6 +1,7 @@
 ﻿using Salary_management.Controller.Infrastructure.Data.Input;
 using Salary_management.Controller.Infrastructure.Repositories;
 using Salary_management.Infrastructure.Entities.Enums;
+using Salary_management.View.Positions;
 using ScottPlot.Ticks;
 using System;
 using System.Collections.Generic;
@@ -62,7 +63,7 @@ namespace Salary_management.View.Units
             var table = repoTable.GetTimeline(idUnit).Payload;
             foreach (var employee in table)
             {
-                unitDetailTable.Rows.Add(employee.UnitId,employee.EmployeeId, employee.EmployeeName, employee.StartDate.ToString(), employee.EndDate.ToString());
+                unitDetailTable.Rows.Add(employee.Id,employee.EmployeeId, employee.EmployeeName, employee.StartDate.ToString(), employee.EndDate.ToString());
             }
 
         }
@@ -180,18 +181,23 @@ namespace Salary_management.View.Units
 
         private void deleteDetailBtn_Click(object sender, EventArgs e)
         {
-            MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to update this History ??", "Confirm Delete!!", MessageBoxButton.YesNo);
+            int id = Convert.ToInt32(unitDetailTable.Rows[unitDetailTable.CurrentRow.Index].Cells[0].Value);
+
+            MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to delete this History ??", "Confirm Delete!!", MessageBoxButton.YesNo);
             if (confirmResult == MessageBoxResult.Yes)
             {
                 var repo = new RepositoryUnitHistory();
-                //repo.DeleteUnitHistory();
+                repo.DeleteUnitHistory(id);
+                MessageBox.Show("Delete Success");
+                mng.OpenChildForm(new UnitDetailForm(this.mng, this.idUnit));
             }
         }
 
         private void fixDetailBtn_Click(object sender, EventArgs e)
         {
-            string id = (unitDetailTable.Rows[unitDetailTable.CurrentRow.Index].Cells[0].Value).ToString();
-            mng.OpenChildForm(new FixUnitDetailForm(this.mng, idUnit, id));
+            int idUnitHistory = Convert.ToInt32(unitDetailTable.Rows[unitDetailTable.CurrentRow.Index].Cells[0].Value);
+            string idEmployee = unitDetailTable.Rows[unitDetailTable.CurrentRow.Index].Cells[1].Value.ToString();
+            mng.OpenChildForm(new FixUnitDetailForm(this.mng,idUnitHistory, idUnit, idEmployee));
 
         }
 

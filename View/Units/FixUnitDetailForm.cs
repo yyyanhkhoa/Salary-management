@@ -1,5 +1,6 @@
 ﻿using Salary_management.Controller.Infrastructure.Data.Input;
 using Salary_management.Controller.Infrastructure.Repositories;
+using Salary_management.View.Positions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,27 +17,47 @@ namespace Salary_management.View.Units
 {
     public partial class FixUnitDetailForm : BaseForm
     {
+        int idUnitHistory;
         string idUnit;
         string idEmployee;
 
-        public FixUnitDetailForm(Management mng, string idUnit, string idEmployee)
+
+        public FixUnitDetailForm(Management mng,int idUnitHistory, string idUnit, string idEmployee)
         {
             InitializeComponent();
             this.mng = mng;
+            this.idUnitHistory = idUnitHistory;
             this.idUnit = idUnit;
             this.idEmployee = idEmployee;
         }
 
         private void FixUnitDetailForm_Load(object sender, EventArgs e)
         {
+            LoadInfoHistory();
 
         }
 
-        private void workRecentlyCheckBox_CheckedChanged(object sender, EventArgs e)
+
+        private void LoadInfoHistory()
         {
-            if (workRecentlyCheckBox.Checked) endDatePanel.Visible = false;
-            else endDatePanel.Visible = true;
+            var repo = new RepositoryUnitHistory();
+            var result = repo.GetUnitHistory(idUnitHistory);
+            var startDate = result.StartDate;
+            var endDate = result.EndDate;
+            startDateTimePicker.Value = new DateTime(startDate.Year, startDate.Month, startDate.Day);
+
+
+            if (endDate == null)
+            {
+                workRecentlyCheckBox.Checked = true;
+            }
+            else
+            {
+                endDateTimePicker.Value = new DateTime(endDate.Value.Year, endDate.Value.Month, endDate.Value.Day);
+                workRecentlyCheckBox.Checked = false;
+            }
         }
+
 
         private void backBtn_Click(object sender, EventArgs e)
         {
@@ -45,27 +66,33 @@ namespace Salary_management.View.Units
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to update this Unit ??", "Confirm Update!!", MessageBoxButton.YesNo);
-            if (confirmResult == MessageBoxResult.Yes)
+            var repo = new RepositoryUnitHistory();
+            DateOnly startDate = DateOnly.FromDateTime(startDateTimePicker.Value);
+
+            DateOnly endDate;
+            if (!workRecentlyCheckBox.Checked)
             {
+                endDate = DateOnly.FromDateTime(endDateTimePicker.Value);
+            }
 
-                DateOnly startDay = DateOnly.FromDateTime(startDateTimePicker.Value);
-                DateOnly? endDate;
-                if (!workRecentlyCheckBox.Checked) endDate = DateOnly.FromDateTime(endDateTimePicker.Value);
-
-                var repo =new RepositoryUnitHistory();
-                /*var result = repo.FixUnitHistory(idUnit, new InputUnitHistory()
-                {
-                    EmployeeId = idEmployee,
-                    EndDate = endDate,
-                    StartDate = startDay,
-                });*/
+            var result = repo.FixUnitHistory(idUnitHistory, new InputUnitHistory()
+            {
+                StartDate = startDate,
+                EndDate = endDate,
+                EmployeeId = idEmployee,
+                UnitId = idUnit,
+            });
+            if (result.Success)
+            {
+                MessageBox.Show("Update History in Unit success");
+                mng.OpenChildForm(new UnitDetailForm(this.mng, idUnit));
             }
         }
 
-        private void workRecentlyCheckBox_CheckedChanged_1(object sender, EventArgs e)
+        private void workRecentlyCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (workRecentlyCheckBox.Checked) endDatePanel.Visible = false;
+            else endDatePanel.Visible = true;
         }
     }
 }
