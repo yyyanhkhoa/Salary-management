@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OfficeOpenXml.Attributes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -16,6 +17,7 @@ namespace Salary_management.Infrastructure.Entities
 		public string Name { get; set; } = null!;
 
 		public int ExpertiseId { get; set; }
+		[EpplusIgnore]
 		public Expertise Expertise { get; set; } = null!;
 	}
 }

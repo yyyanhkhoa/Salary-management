@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using OfficeOpenXml.Attributes;
 
 namespace Salary_management.Infrastructure.Entities
 {
@@ -18,6 +19,7 @@ namespace Salary_management.Infrastructure.Entities
 
 		public string? Description { get; set; } 
 
+		[EpplusIgnore]
 		public Rank Rank { get; set; } = null!;
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OfficeOpenXml.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace Salary_management.Infrastructure.Entities
 		public int Allowance { get; set; }
 
 		public int QualificationId { get; set; }
+		[EpplusIgnore]
 		public Qualification Qualification { get; set; } = null!;
 	}
 }

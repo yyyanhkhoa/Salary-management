@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using OfficeOpenXml.Attributes;
 using Salary_management.Infrastructure.Entities.Enums;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,7 @@ namespace Salary_management.Infrastructure.Entities
 		[MaxLength(12)]
 		public string IdentityCardNumber { get; set; } = null!;
 
+		[EpplusIgnore]
 		public byte[]? Image { get; set; }
 
 		public float CoefficientAllowance { get; set; }
