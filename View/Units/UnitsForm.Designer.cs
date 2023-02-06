@@ -48,15 +48,12 @@
             this.phoneTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateFoundedTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.positionDetailBtnTable = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.exportUnitBtn = new System.Windows.Forms.Panel();
-            this.siticoneButton1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listUnitsTable)).BeginInit();
-            this.exportUnitBtn.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,7 +70,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.exportUnitBtn);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label1);
@@ -290,32 +286,6 @@
             this.positionDetailBtnTable.MinimumWidth = 6;
             this.positionDetailBtnTable.Name = "positionDetailBtnTable";
             // 
-            // exportUnitBtn
-            // 
-            this.exportUnitBtn.Controls.Add(this.siticoneButton1);
-            this.exportUnitBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.exportUnitBtn.Location = new System.Drawing.Point(431, 5);
-            this.exportUnitBtn.Name = "exportUnitBtn";
-            this.exportUnitBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
-            this.exportUnitBtn.Size = new System.Drawing.Size(124, 48);
-            this.exportUnitBtn.TabIndex = 8;
-            // 
-            // siticoneButton1
-            // 
-            this.siticoneButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.siticoneButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.siticoneButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.siticoneButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.siticoneButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.siticoneButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.siticoneButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.siticoneButton1.ForeColor = System.Drawing.Color.White;
-            this.siticoneButton1.Location = new System.Drawing.Point(10, 0);
-            this.siticoneButton1.Name = "siticoneButton1";
-            this.siticoneButton1.Size = new System.Drawing.Size(104, 38);
-            this.siticoneButton1.TabIndex = 0;
-            this.siticoneButton1.Text = "Export";
-            // 
             // UnitsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -334,7 +304,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listUnitsTable)).EndInit();
-            this.exportUnitBtn.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -358,7 +327,5 @@
         private DataGridViewButtonColumn positionDetailBtnTable;
         private Panel panel5;
         private Siticone.Desktop.UI.WinForms.SiticoneButton deleteBtn;
-        private Panel exportUnitBtn;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton1;
     }
 }

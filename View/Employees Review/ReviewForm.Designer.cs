@@ -69,10 +69,6 @@
             this.searchDisciplineText = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.exportRewardBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.exportDisciplineBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.panel14 = new System.Windows.Forms.Panel();
             this.siticoneTabControl1.SuspendLayout();
             this.rewardTab.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -138,10 +134,10 @@
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 88);
+            this.panel5.Location = new System.Drawing.Point(3, 75);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
-            this.panel5.Size = new System.Drawing.Size(786, 261);
+            this.panel5.Size = new System.Drawing.Size(786, 274);
             this.panel5.TabIndex = 4;
             // 
             // panel7
@@ -150,7 +146,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(10, 38);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(766, 213);
+            this.panel7.Size = new System.Drawing.Size(766, 226);
             this.panel7.TabIndex = 3;
             // 
             // rewardTable
@@ -188,7 +184,7 @@
             this.rewardTable.RowHeadersVisible = false;
             this.rewardTable.RowHeadersWidth = 51;
             this.rewardTable.RowTemplate.Height = 29;
-            this.rewardTable.Size = new System.Drawing.Size(766, 213);
+            this.rewardTable.Size = new System.Drawing.Size(766, 226);
             this.rewardTable.TabIndex = 0;
             this.rewardTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.rewardTable.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -269,8 +265,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.exportRewardBtn);
-            this.panel1.Controls.Add(this.panel13);
             this.panel1.Controls.Add(this.addRewardBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(3, 349);
@@ -305,7 +299,7 @@
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10, 20, 10, 20);
-            this.panel2.Size = new System.Drawing.Size(786, 85);
+            this.panel2.Size = new System.Drawing.Size(786, 72);
             this.panel2.TabIndex = 1;
             // 
             // searchRewardText
@@ -322,7 +316,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(70, 20);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(55, 45);
+            this.panel3.Size = new System.Drawing.Size(55, 32);
             this.panel3.TabIndex = 2;
             // 
             // label2
@@ -350,8 +344,6 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.exportDisciplineBtn);
-            this.panel12.Controls.Add(this.panel14);
             this.panel12.Controls.Add(this.addDisciplineBtn);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel12.Location = new System.Drawing.Point(3, 349);
@@ -551,54 +543,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Search :";
             // 
-            // exportRewardBtn
-            // 
-            this.exportRewardBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.exportRewardBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.exportRewardBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.exportRewardBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.exportRewardBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.exportRewardBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.exportRewardBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.exportRewardBtn.ForeColor = System.Drawing.Color.White;
-            this.exportRewardBtn.Location = new System.Drawing.Point(560, 10);
-            this.exportRewardBtn.Name = "exportRewardBtn";
-            this.exportRewardBtn.Size = new System.Drawing.Size(97, 40);
-            this.exportRewardBtn.TabIndex = 7;
-            this.exportRewardBtn.Text = "Export";
-            // 
-            // panel13
-            // 
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel13.Location = new System.Drawing.Point(657, 10);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(25, 40);
-            this.panel13.TabIndex = 8;
-            // 
-            // exportDisciplineBtn
-            // 
-            this.exportDisciplineBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.exportDisciplineBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.exportDisciplineBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.exportDisciplineBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.exportDisciplineBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.exportDisciplineBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.exportDisciplineBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.exportDisciplineBtn.ForeColor = System.Drawing.Color.White;
-            this.exportDisciplineBtn.Location = new System.Drawing.Point(560, 10);
-            this.exportDisciplineBtn.Name = "exportDisciplineBtn";
-            this.exportDisciplineBtn.Size = new System.Drawing.Size(97, 40);
-            this.exportDisciplineBtn.TabIndex = 9;
-            this.exportDisciplineBtn.Text = "Export";
-            // 
-            // panel14
-            // 
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel14.Location = new System.Drawing.Point(657, 10);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(25, 40);
-            this.panel14.TabIndex = 10;
-            // 
             // ReviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -668,9 +612,5 @@
         private Label label3;
         private TextBox searchRewardText;
         private TextBox searchDisciplineText;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton exportRewardBtn;
-        private Panel panel13;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton exportDisciplineBtn;
-        private Panel panel14;
     }
 }
