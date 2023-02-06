@@ -1,4 +1,5 @@
-﻿using Salary_management.Controller.Infrastructure.Entities.Enums;
+﻿using Salary_management.Controller.Infrastructure;
+using Salary_management.Controller.Infrastructure.Entities.Enums;
 using Salary_management.Controller.Infrastructure.Repositories;
 using Salary_management.Infrastructure.Entities;
 using Salary_management.Infrastructure.Entities.Enums;
@@ -171,6 +172,11 @@ namespace Salary_management.View.Employees
             if (scoreText.Text != "") score = float.Parse(scoreText.Text);
             int id = int.Parse(qualificationComboBox.Text.Trim().Split("-")[0]);
             GetQualification(id, score);
+        }
+
+        private void exportBtn_Click(object sender, EventArgs e)
+        {
+            ExcelHelper.ExportAll();
         }
     }
 }
