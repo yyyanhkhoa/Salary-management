@@ -69,6 +69,10 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.searchRankText = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.exportPositionBtn = new System.Windows.Forms.Panel();
+            this.exportEmployeeBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.exportRankBtn = new System.Windows.Forms.Panel();
+            this.siticoneButton1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.positionsTabControl.SuspendLayout();
             this.positionTab.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -85,6 +89,8 @@
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.exportPositionBtn.SuspendLayout();
+            this.exportRankBtn.SuspendLayout();
             this.SuspendLayout();
             // 
             // positionsTabControl
@@ -251,6 +257,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.exportPositionBtn);
             this.panel3.Controls.Add(this.panel11);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label1);
@@ -489,6 +496,7 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.exportRankBtn);
             this.panel7.Controls.Add(this.panel8);
             this.panel7.Controls.Add(this.label3);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -577,6 +585,58 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Search:";
             // 
+            // exportPositionBtn
+            // 
+            this.exportPositionBtn.Controls.Add(this.exportEmployeeBtn);
+            this.exportPositionBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.exportPositionBtn.Location = new System.Drawing.Point(512, 5);
+            this.exportPositionBtn.Name = "exportPositionBtn";
+            this.exportPositionBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
+            this.exportPositionBtn.Size = new System.Drawing.Size(124, 48);
+            this.exportPositionBtn.TabIndex = 6;
+            // 
+            // exportEmployeeBtn
+            // 
+            this.exportEmployeeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.exportEmployeeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.exportEmployeeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.exportEmployeeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.exportEmployeeBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.exportEmployeeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.exportEmployeeBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exportEmployeeBtn.ForeColor = System.Drawing.Color.White;
+            this.exportEmployeeBtn.Location = new System.Drawing.Point(10, 0);
+            this.exportEmployeeBtn.Name = "exportEmployeeBtn";
+            this.exportEmployeeBtn.Size = new System.Drawing.Size(104, 38);
+            this.exportEmployeeBtn.TabIndex = 0;
+            this.exportEmployeeBtn.Text = "Export";
+            // 
+            // exportRankBtn
+            // 
+            this.exportRankBtn.Controls.Add(this.siticoneButton1);
+            this.exportRankBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.exportRankBtn.Location = new System.Drawing.Point(626, 5);
+            this.exportRankBtn.Name = "exportRankBtn";
+            this.exportRankBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
+            this.exportRankBtn.Size = new System.Drawing.Size(124, 48);
+            this.exportRankBtn.TabIndex = 7;
+            // 
+            // siticoneButton1
+            // 
+            this.siticoneButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.siticoneButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.siticoneButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.siticoneButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.siticoneButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.siticoneButton1.ForeColor = System.Drawing.Color.White;
+            this.siticoneButton1.Location = new System.Drawing.Point(10, 0);
+            this.siticoneButton1.Name = "siticoneButton1";
+            this.siticoneButton1.Size = new System.Drawing.Size(104, 38);
+            this.siticoneButton1.TabIndex = 0;
+            this.siticoneButton1.Text = "Export";
+            // 
             // ListPositionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -606,6 +666,8 @@
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.exportPositionBtn.ResumeLayout(false);
+            this.exportRankBtn.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -647,5 +709,9 @@
         private Label label4;
         private Panel panel11;
         private Siticone.Desktop.UI.WinForms.SiticoneButton deleteBtn;
+        private Panel exportPositionBtn;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton exportEmployeeBtn;
+        private Panel exportRankBtn;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton1;
     }
 }

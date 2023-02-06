@@ -49,6 +49,8 @@
             this.employeeDetailBtnTable = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.exportEmployeeBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.retirementBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -77,6 +79,8 @@
             this.nameFamilyText = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.exportFamilyBtn = new System.Windows.Forms.Panel();
+            this.exportBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.label3 = new System.Windows.Forms.Label();
             this.qualificationTab = new System.Windows.Forms.TabPage();
             this.qualificationTable = new Siticone.Desktop.UI.WinForms.SiticoneDataGridView();
@@ -97,6 +101,8 @@
             this.qualificationComboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.exportQualifiBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.label6 = new System.Windows.Forms.Label();
             this.employeeTabControl.SuspendLayout();
             this.employeeTab.SuspendLayout();
@@ -104,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listEmployeeTable)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -117,6 +124,7 @@
             this.panel9.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.exportFamilyBtn.SuspendLayout();
             this.qualificationTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qualificationTable)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -126,6 +134,7 @@
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel14.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // employeeTabControl
@@ -295,6 +304,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel20);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label1);
@@ -304,6 +314,32 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(5);
             this.panel3.Size = new System.Drawing.Size(760, 58);
             this.panel3.TabIndex = 3;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.exportEmployeeBtn);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel20.Location = new System.Drawing.Point(371, 5);
+            this.panel20.Name = "panel20";
+            this.panel20.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
+            this.panel20.Size = new System.Drawing.Size(124, 48);
+            this.panel20.TabIndex = 5;
+            // 
+            // exportEmployeeBtn
+            // 
+            this.exportEmployeeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.exportEmployeeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.exportEmployeeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.exportEmployeeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.exportEmployeeBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.exportEmployeeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.exportEmployeeBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exportEmployeeBtn.ForeColor = System.Drawing.Color.White;
+            this.exportEmployeeBtn.Location = new System.Drawing.Point(10, 0);
+            this.exportEmployeeBtn.Name = "exportEmployeeBtn";
+            this.exportEmployeeBtn.Size = new System.Drawing.Size(104, 38);
+            this.exportEmployeeBtn.TabIndex = 0;
+            this.exportEmployeeBtn.Text = "Export";
             // 
             // panel6
             // 
@@ -548,9 +584,9 @@
             this.groupBox1.Controls.Add(this.panel10);
             this.groupBox1.Controls.Add(this.panel9);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(5, 49);
+            this.groupBox1.Location = new System.Drawing.Point(5, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(774, 69);
+            this.groupBox1.Size = new System.Drawing.Size(774, 68);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
@@ -563,7 +599,7 @@
             this.panel10.Location = new System.Drawing.Point(253, 23);
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.panel10.Size = new System.Drawing.Size(518, 43);
+            this.panel10.Size = new System.Drawing.Size(518, 42);
             this.panel10.TabIndex = 1;
             // 
             // panel13
@@ -573,7 +609,7 @@
             this.panel13.Location = new System.Drawing.Point(111, 3);
             this.panel13.Name = "panel13";
             this.panel13.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel13.Size = new System.Drawing.Size(407, 40);
+            this.panel13.Size = new System.Drawing.Size(407, 39);
             this.panel13.TabIndex = 4;
             // 
             // relativeComboBox
@@ -597,7 +633,7 @@
             this.panel12.Location = new System.Drawing.Point(0, 3);
             this.panel12.Name = "panel12";
             this.panel12.Padding = new System.Windows.Forms.Padding(10);
-            this.panel12.Size = new System.Drawing.Size(111, 40);
+            this.panel12.Size = new System.Drawing.Size(111, 39);
             this.panel12.TabIndex = 3;
             // 
             // label5
@@ -617,7 +653,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel9.Location = new System.Drawing.Point(3, 23);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(250, 43);
+            this.panel9.Size = new System.Drawing.Size(250, 42);
             this.panel9.TabIndex = 0;
             // 
             // panel11
@@ -625,7 +661,7 @@
             this.panel11.Controls.Add(this.nameFamilyText);
             this.panel11.Controls.Add(this.label4);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(0, 9);
+            this.panel11.Location = new System.Drawing.Point(0, 8);
             this.panel11.Name = "panel11";
             this.panel11.Padding = new System.Windows.Forms.Padding(5);
             this.panel11.Size = new System.Drawing.Size(250, 34);
@@ -663,13 +699,40 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.exportFamilyBtn);
             this.panel8.Controls.Add(this.label3);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(5, 5);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(5);
-            this.panel8.Size = new System.Drawing.Size(774, 44);
+            this.panel8.Size = new System.Drawing.Size(774, 45);
             this.panel8.TabIndex = 3;
+            // 
+            // exportFamilyBtn
+            // 
+            this.exportFamilyBtn.Controls.Add(this.exportBtn);
+            this.exportFamilyBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.exportFamilyBtn.Location = new System.Drawing.Point(645, 5);
+            this.exportFamilyBtn.Name = "exportFamilyBtn";
+            this.exportFamilyBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
+            this.exportFamilyBtn.Size = new System.Drawing.Size(124, 35);
+            this.exportFamilyBtn.TabIndex = 6;
+            // 
+            // exportBtn
+            // 
+            this.exportBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.exportBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.exportBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.exportBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.exportBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.exportBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exportBtn.ForeColor = System.Drawing.Color.White;
+            this.exportBtn.Location = new System.Drawing.Point(10, 0);
+            this.exportBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.Size = new System.Drawing.Size(104, 34);
+            this.exportBtn.TabIndex = 0;
+            this.exportBtn.Text = "Export";
             // 
             // label3
             // 
@@ -902,6 +965,7 @@
             // 
             // panel14
             // 
+            this.panel14.Controls.Add(this.panel21);
             this.panel14.Controls.Add(this.label6);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel14.Location = new System.Drawing.Point(3, 3);
@@ -909,6 +973,32 @@
             this.panel14.Padding = new System.Windows.Forms.Padding(5);
             this.panel14.Size = new System.Drawing.Size(786, 44);
             this.panel14.TabIndex = 4;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.exportQualifiBtn);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel21.Location = new System.Drawing.Point(657, 5);
+            this.panel21.Name = "panel21";
+            this.panel21.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
+            this.panel21.Size = new System.Drawing.Size(124, 34);
+            this.panel21.TabIndex = 7;
+            // 
+            // exportQualifiBtn
+            // 
+            this.exportQualifiBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.exportQualifiBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.exportQualifiBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.exportQualifiBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.exportQualifiBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.exportQualifiBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exportQualifiBtn.ForeColor = System.Drawing.Color.White;
+            this.exportQualifiBtn.Location = new System.Drawing.Point(10, 0);
+            this.exportQualifiBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.exportQualifiBtn.Name = "exportQualifiBtn";
+            this.exportQualifiBtn.Size = new System.Drawing.Size(104, 34);
+            this.exportQualifiBtn.TabIndex = 0;
+            this.exportQualifiBtn.Text = "Export";
             // 
             // label6
             // 
@@ -937,6 +1027,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel20.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -954,6 +1045,7 @@
             this.panel11.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.exportFamilyBtn.ResumeLayout(false);
             this.qualificationTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.qualificationTable)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -967,6 +1059,7 @@
             this.panel19.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
+            this.panel21.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1034,5 +1127,11 @@
         private DataGridViewTextBoxColumn IssueDateQualificationColumn;
         private DataGridViewTextBoxColumn PlaceIssueColumn;
         private DataGridViewTextBoxColumn ScoreColumn;
+        private Panel panel20;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton exportEmployeeBtn;
+        private Panel exportFamilyBtn;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton exportBtn;
+        private Panel panel21;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton exportQualifiBtn;
     }
 }

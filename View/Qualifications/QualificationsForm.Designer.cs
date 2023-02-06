@@ -64,6 +64,8 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.nameExpertiseText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.exportQalifiBtn = new System.Windows.Forms.Panel();
+            this.siticoneButton1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.siticoneTabControl1.SuspendLayout();
             this.qualificationTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qualificationTable)).BeginInit();
@@ -79,6 +81,7 @@
             this.actionGroupBox.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel14.SuspendLayout();
+            this.exportQalifiBtn.SuspendLayout();
             this.SuspendLayout();
             // 
             // siticoneTabControl1
@@ -246,6 +249,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.exportQalifiBtn);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.panel4);
@@ -538,6 +542,32 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Name :";
             // 
+            // exportQalifiBtn
+            // 
+            this.exportQalifiBtn.Controls.Add(this.siticoneButton1);
+            this.exportQalifiBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.exportQalifiBtn.Location = new System.Drawing.Point(294, 5);
+            this.exportQalifiBtn.Name = "exportQalifiBtn";
+            this.exportQalifiBtn.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
+            this.exportQalifiBtn.Size = new System.Drawing.Size(124, 48);
+            this.exportQalifiBtn.TabIndex = 8;
+            // 
+            // siticoneButton1
+            // 
+            this.siticoneButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.siticoneButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.siticoneButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.siticoneButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.siticoneButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.siticoneButton1.ForeColor = System.Drawing.Color.White;
+            this.siticoneButton1.Location = new System.Drawing.Point(10, 0);
+            this.siticoneButton1.Name = "siticoneButton1";
+            this.siticoneButton1.Size = new System.Drawing.Size(104, 38);
+            this.siticoneButton1.TabIndex = 0;
+            this.siticoneButton1.Text = "Export";
+            // 
             // QualificationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -565,6 +595,7 @@
             this.panel12.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
+            this.exportQalifiBtn.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -601,5 +632,7 @@
         private DataGridViewTextBoxColumn idQualificationColumn;
         private DataGridViewTextBoxColumn nameColumn;
         private DataGridViewTextBoxColumn expertiseNameColumn;
+        private Panel exportQalifiBtn;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton1;
     }
 }
