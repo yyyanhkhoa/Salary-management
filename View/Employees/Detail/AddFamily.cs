@@ -17,16 +17,18 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
     {
         private Management mng;
         private int idFamily;
-        private string idEmploye;
-        public AddFamily(Management mng, int id, string idEmploye)
+        private string idEmployee;
+        public AddFamily(Management mng, int id, string idEmployee)
         {
             InitializeComponent();
             this.mng = mng;
             this.idFamily = id;
-            this.idEmploye = idEmploye;
+            this.idEmployee = idEmployee;
         }
         private void AddFamily_Load(object sender, EventArgs e)
         {
+            
+
 
             if (idFamily == 0)
             {
@@ -39,6 +41,18 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                 // fix
                 var repo = new RepositoryFamily();
                 var family = repo.GetFamilyDetail(idFamily);
+
+                var repoE = new RepositoryEmployee();
+                var employee = repoE.GetEmployeeDetail(idEmployee);
+
+                if(employee.Gender == Gender.Male)
+                {
+                    HusbanBtn.Visible = false;
+                }
+                else
+                {
+                    WifeBtn.Visible = false;
+                }
                 AddBtn.Text = "Save";                
                 NameText.Text = family.Name;
                 if (family.RelativeType == RelativeType.Husband)
@@ -70,7 +84,7 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            mng.OpenChildForm(new View.Employees.Detail.InformationDetailAboutEmployeeForm(this.mng, idEmploye, 1));
+            mng.OpenChildForm(new View.Employees.Detail.InformationDetailAboutEmployeeForm(this.mng, idEmployee, 1));
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
@@ -95,13 +109,13 @@ namespace Salary_management.View.Forms.Employee.DetailInformation
                         DateOfBirth = dateOfBirth,
                         Occupation = occupationText.Text,
                         RelativeType = relative,
-                        EmployeeId = idEmploye,
+                        EmployeeId = idEmployee,
                     });
 
                     if (result.Success)
                     {
                         MessageBox.Show("Insert Family success");
-                        mng.OpenChildForm(new View.Employees.Detail.InformationDetailAboutEmployeeForm(this.mng, idEmploye, 1));
+                        mng.OpenChildForm(new View.Employees.Detail.InformationDetailAboutEmployeeForm(this.mng, idEmployee, 1));
                     }
                     else
                     {

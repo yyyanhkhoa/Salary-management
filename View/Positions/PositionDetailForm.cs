@@ -177,7 +177,7 @@ namespace Salary_management.View.Positions
                     if (result.Success)
                     {
 
-                        MessageBox.Show("Update Unit success");
+                        MessageBox.Show("Update position success");
                         mng.OpenChildForm(new PositionDetailForm(this.mng, idPosition));
                     }
                     else

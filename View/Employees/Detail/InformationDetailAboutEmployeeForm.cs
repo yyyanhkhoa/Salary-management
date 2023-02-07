@@ -165,6 +165,14 @@ namespace Salary_management.View.Employees.Detail
             fixUnion.BackColor = Color.FromArgb(26, 25, 62);
             fixUnion.ForeColor = Color.Gainsboro;
             //set family
+            if(employee.Gender == Gender.Male)
+            {
+                HusbanBtn.Visible = false;
+            }
+            else
+            {
+                WifeBtn.Visible = false;
+            }
             enableFamily(false);
             FixFamilyBtn.BackColor = Color.FromArgb(26, 25, 62);
             FixFamilyBtn.ForeColor = Color.Gainsboro;
