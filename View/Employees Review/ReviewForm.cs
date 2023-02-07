@@ -1,4 +1,5 @@
-﻿using Salary_management.Controller.Infrastructure.Repositories;
+﻿using Salary_management.Controller.Infrastructure.Entities.Enums;
+using Salary_management.Controller.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,8 +25,25 @@ namespace Salary_management.View.Employees_Review
         {
             LoadRewardTable();
             LoadDisciplineTable();
+            AuthorizationButton(mng.Role);
+
         }
 
+        private void AuthorizationButton(Role Role)
+        {
+            switch (Role)
+            {
+                case Role.Viewer:
+                    addDisciplineBtn.Visible = false;
+                    addRewardBtn.Visible = false;
+                    break;
+                case Role.Accountant:
+                    break;
+                case Role.Admin:
+                    break;
+                default: throw new ArgumentException();
+            }
+        }
         private void LoadRewardTable()
         {
             var repoReward = new RepositoryRewardOrDiscipline();

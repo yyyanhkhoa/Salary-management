@@ -54,6 +54,7 @@ namespace Salary_management.View.Qualifications
         }
         private void loadQualification()
         {
+            qualificationTable.Rows.Clear();
             var repoQ = new RepositoryQualification();
             var listQualification = repoQ.GetQualifications("");
             foreach (var item in listQualification)
@@ -63,6 +64,7 @@ namespace Salary_management.View.Qualifications
         }
         private void loadExpertise()
         {
+            expertiseTable.Rows.Clear();
             var repoEx = new RepositoryExpertise();
             var listEx = repoEx.GetExpertises("");
             foreach (var ex in listEx)
@@ -124,7 +126,7 @@ namespace Salary_management.View.Qualifications
             {
                 deleteExpertise(id);
                 MessageBox.Show("Delete success");
-                mng.OpenChildForm(new QualificationsForm(this.mng));
+                loadExpertise();
             }
         }
 
