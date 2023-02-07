@@ -1,4 +1,5 @@
 ﻿using Salary_management.Controller.Infrastructure.Data.Input;
+using Salary_management.Controller.Infrastructure.Entities.Enums;
 using Salary_management.Controller.Infrastructure.Repositories;
 using Salary_management.Infrastructure.Entities.Enums;
 using Salary_management.View.Positions;
@@ -31,9 +32,30 @@ namespace Salary_management.View.Units
         {
             LoadUnitDetail();
             LoadUnionInComboBox();
+            AuthorizationButton(mng.Role);
             SetUI();
         }
+        private void AuthorizationButton(Role role)
+        {
+            switch (role)
+            {
+                case Role.Admin:
+                    break;
+                case Role.Viewer:
+                    addBtn.Visible = false;
+                    fixDetailBtn.Visible = false;
+                    deleteDetailBtn.Visible = false;
 
+                    fixUnitBtn.Visible = false;
+                    break;
+                case Role.Accountant:
+                    deleteDetailBtn.Visible = false;
+
+                    break;
+                default:
+                    return;
+            }
+        }
         private void SetUI()
         {
             fixUnitBtn.Enabled = false;

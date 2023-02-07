@@ -56,6 +56,7 @@ namespace Salary_management.View.Unions
 
         private void LoadUnion()
         {
+            unionTable.Rows.Clear();
             var repo = new RepositoryUnion();
             var listUnion = repo.GetUnions("");
             foreach (var item in listUnion)
