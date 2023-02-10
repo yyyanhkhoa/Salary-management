@@ -23,3 +23,4 @@ Download and install Postgresql: https://www.postgresql.org/download/
 
 2. Write your connection string inside the file, example: `Host=localhost;Database=SalaryMan;Username=postgres;Password=postgres`
 ahihi
+test
